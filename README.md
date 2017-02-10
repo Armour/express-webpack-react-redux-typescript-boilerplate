@@ -1,1 +1,1 @@
-# Express-Webpack-React-Typescript-HMR-Boilerplate-
+# Express-Webpack-React-Typescript-HMR-Boilerplate
