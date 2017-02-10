@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+// Colors
+@import "materialize/color";
+
+// Variables
+@import "materialize/variables";
+
+// Reset
+@import "materialize/normalize";
+
+// Components
+@import "materialize/global";
+@import "materialize/buttons";
+@import "materialize/grid";
+@import "materialize/icons-material-design";
+@import "materialize/navbar";
+@import "materialize/typography";
+@import "materialize/waves";
+
+$primary-color: color("blue", "base");
