@@ -1,9 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
 
-import BundleTracker from 'webpack-bundle-tracker';
-
-
 const reactVendors = [
   'react',
   'react-dom',
@@ -49,7 +46,5 @@ export default {
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
       name: '[name]_dll',
     }),
-    // Output webpack compiled bundle state json file for django backend
-    new BundleTracker({ filename: './webpack-stats.dll.json' }),
   ],
 };

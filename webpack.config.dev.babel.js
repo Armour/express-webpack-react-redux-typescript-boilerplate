@@ -2,8 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import cssnext from 'postcss-cssnext';
 
-import BundleTracker from 'webpack-bundle-tracker';
 import WebpackMd5Hash from 'webpack-md5-hash';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 
 // eslint-disable-next-line import/no-unresolved
 import * as ReactManifest from './frontend/dist/dll/react_manifest.json';
@@ -139,8 +140,16 @@ export default {
       manifest: ReactManifest,
       context: __dirname,
     }),
-    // Output webpack compiled bundle state json file for django backend
-    new BundleTracker({ filename: './webpack-stats.dev.json' }),
+    // Generate html file to dist folder
+    new HtmlWebpackPlugin({
+      title: 'title',
+      template: 'frontend/template/index.ejs',
+    }),
+    // Add dll reference files to html
+    new AddAssetHtmlPlugin({
+      filepath: 'frontend/dist/dll/react_dll.js',
+      includeSourcemap: false,
+    }),
     // Better hash for [hash] and [chunkhash]
     new WebpackMd5Hash(),
   ],

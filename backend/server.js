@@ -29,26 +29,26 @@ if (isDev) {
     // The public URL of the output resource directory (CDN), should be the same as output.publicPath
     publicPath: config.output.publicPath,
     // Where the webpack dev server serve the static files, should be the same as output.path
-    contentBase: path.resolve(__dirname, 'frontend/dist/dev'),
+    contentBase: path.resolve(__dirname, 'frontend/dist/'),
     // Allow CORS
     // https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md#no-access-control-allow-origin-header-is-present-on-the-requested-resource
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    // Set output stats
+    // Colorful stats output
     stats: {
       colors: true,
     },
   });
+  const distPath = path.resolve(__dirname, '../frontend/dist/dev');
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
-  const distPath = path.join(__dirname, 'dist', 'dev');
   app.get('*', (req, res) => {
     res.write(middleware.fileSystem.readFileSync(`${distPath}/index.html`));
     res.end();
   });
 } else {
-  const distPath = path.join(__dirname, 'dist', 'prod');
+  const distPath = path.resolve(__dirname, '../frontend/dist/prod');
   app.use(express.static(distPath));
   app.use(favicon(`${distPath}/favicon.ico`));
   app.get('*', (req, res) => {
@@ -56,6 +56,7 @@ if (isDev) {
   });
 }
 
+// Start server listen on specific port
 app.listen(port, '0.0.0.0', (error) => {
   if (error) {
     console.log(error);
