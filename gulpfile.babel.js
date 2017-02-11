@@ -15,7 +15,7 @@ const isProduction = yargs.argv.env === 'production';
 gulp.task('eslint', () =>
   gulp.src(['**/*.js', '**/*.jsx', '!node_modules/**'])
     .pipe(eslint())
-    .pipe(eslint.format('codeFrame'))
+    .pipe(eslint.format('codeframe'))
     .pipe(eslint.failAfterError()),
 );
 
@@ -23,7 +23,7 @@ gulp.task('eslint', () =>
 gulp.task('tslint', () =>
   gulp.src(['**/*.ts', '**/*.tsx', '!node_modules/**'])
     .pipe(tslint({
-      formatter: 'codeFrame',
+      formatter: 'codeframe',
     }))
     .pipe(tslint.report()),
 );
