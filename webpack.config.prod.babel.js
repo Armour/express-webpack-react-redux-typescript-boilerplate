@@ -2,14 +2,13 @@ import path from 'path';
 import webpack from 'webpack';
 import cssnext from 'postcss-cssnext';
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import WebpackMd5Hash from 'webpack-md5-hash';
 
 // eslint-disable-next-line import/no-unresolved
 import * as ReactManifest from './frontend/dist/dll/react_manifest.json';
-
 
 export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration

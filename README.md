@@ -6,6 +6,7 @@
 - [x] [express](http://expressjs.com/) as backend
 - [x] [yarn](https://github.com/yarnpkg/yarn) as dependency manager
 - [x] [gulp](https://github.com/gulpjs/gulp) as task runner
+- [x] [materialize](http://materializecss.com/) a modern responsive front-end framework based on Material Design
 - [x] [webpack 2](https://github.com/webpack/webpack) as module bundler
 - [x] [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) offers a dev middleware for webpack, which arguments a live bundle to a directory
 - [x] [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) add hot reloading into an existing server without [webpack-dev-server](https://github.com/webpack/webpack-dev-server)

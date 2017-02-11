@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// Api router
 app.use('/api', api);
 
 if (isDev) {
@@ -40,6 +41,7 @@ if (isDev) {
       colors: true,
     },
   });
+  // Server static files through webpackDevMiddleware
   const distPath = path.resolve(__dirname, '../frontend/dist/dev');
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
@@ -48,6 +50,7 @@ if (isDev) {
     res.end();
   });
 } else {
+  // Server static files as usual
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');
   app.use(express.static(distPath));
   app.use(favicon(`${distPath}/favicon.ico`));

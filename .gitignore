@@ -3,7 +3,6 @@
 .awcache/
 node_modules/
 frontend/dist/
-webpack-stats.*.json
 *.swp
 *.log
 .DS_Store
