@@ -138,7 +138,7 @@ I will write a tutorial about how to setup those stuffs together step by step as
 
 ### If you prefer use Node.js as backend
 
-Check my [another boilerplate]() with Node.js support!
+Check my [another boilerplate](https://github.com/Armour/Django-Webpack-React-Typescript-HMR-Boilerplate) with Node.js support!
 
 ### License
 
