@@ -23,6 +23,7 @@
 - [x] [tslint](https://palantir.github.io/tslint/) to lint typescript files (.ts, .tsx)
 - [x] [stylelint](https://stylelint.io/) to lint style files (.css, .scss)
 - [ ] [jest](https://facebook.github.io/jest/) for testing
+- [ ] [istanbul](https://github.com/gotwarlost/istanbul) for test coverage
 
 ## Install && Run
 
