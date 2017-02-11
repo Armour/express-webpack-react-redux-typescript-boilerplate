@@ -23,7 +23,7 @@ gulp.task('eslint', () =>
 gulp.task('tslint', () =>
   gulp.src(['**/*.ts', '**/*.tsx', '!node_modules/**'])
     .pipe(tslint({
-      formatter: 'codeframe',
+      formatter: 'codeFrame',
     }))
     .pipe(tslint.report()),
 );
