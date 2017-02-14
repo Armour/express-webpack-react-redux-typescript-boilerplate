@@ -2,15 +2,15 @@ import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
 import Home from 'pages/Home';
-import Page1 from 'pages/Page1';
-import Page2 from 'pages/Page2';
+import ParallaxPage from 'pages/ParallaxPage';
+import ReactPage from 'pages/ReactPage';
 
 import Layout from 'components/Layout';
 
 export default (
   <Route path="/" component={Layout}>
     <IndexRoute component={Home}/>
-    <Route path="/page1" component={Page1}/>
-    <Route path="/page2" component={Page2}/>
+    <Route path="/react" component={ReactPage}/>
+    <Route path="/parallax" component={ParallaxPage}/>
   </Route>
 );

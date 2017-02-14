@@ -6,7 +6,7 @@ interface IFABState {}
 class FAB extends React.Component<IFABProps, IFABState> {
   public render() {
     return (
-      <div className="fixed-action-btn horizontal">
+      <div className="fixed-action-btn vertical">
         <a className="btn-floating btn-large red">
           <i className="large material-icons">mode_edit</i>
         </a>
