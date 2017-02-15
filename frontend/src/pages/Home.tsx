@@ -1,11 +1,12 @@
 import React from 'react';
 
-interface IHomeProps {}
-interface IHomeState {}
-
 const pushpinStyle = {
   top: '0px',
 };
+
+interface IHomeProps {}
+
+interface IHomeState {}
 
 class Home extends React.Component<IHomeProps, IHomeState> {
   public componentDidMount() {
@@ -19,6 +20,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
       });
     });
   }
+
   public render() {
     return (
       <div className="home">

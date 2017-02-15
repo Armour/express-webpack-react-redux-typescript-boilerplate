@@ -1,4 +1,5 @@
 {
+  "compileOnSave": false, // Disable compile on save
   "compilerOptions": {
     "module": "es6",
     "target": "es6",

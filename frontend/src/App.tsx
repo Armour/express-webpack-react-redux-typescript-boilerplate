@@ -22,12 +22,10 @@ const store = createStore(
 const history = syncHistoryWithStore(browserHistory, store);
 
 // Set the store, history and routers
-const App = () => {
+export default () => {
   return (
     <Provider store={store}>
       <Router history={history} routes={routes}/>
     </Provider>
   );
 };
-
-export default App;
