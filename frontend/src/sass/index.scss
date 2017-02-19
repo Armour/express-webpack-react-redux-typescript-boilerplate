@@ -1,4 +1,17 @@
-@import "base";
-@import "footer";
+@charset "UTF-8";
+
+// materialize
+@import "materialize";
+
+// Common
+@import "common";
+
+// Header & Footer
 @import "header";
-@import "custom";
+@import "footer";
+
+// Components
+@import "carousel";
+@import "parallax";
+@import "prismcode";
+@import "pushpin";

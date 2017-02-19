@@ -1,4 +1,5 @@
 import express from 'express';
+
 import { apiGet, apiPost } from '../controllers/api';
 
 const router = express.Router();

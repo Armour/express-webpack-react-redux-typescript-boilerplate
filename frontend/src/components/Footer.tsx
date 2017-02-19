@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface IFooterProps {}
+
 interface IFooterState {}
 
 class Footer extends React.Component<IFooterProps, IFooterState> {

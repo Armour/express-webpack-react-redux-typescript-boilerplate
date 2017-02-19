@@ -1,3 +1,9 @@
+import pg from 'pg';
+
+import config from '../config.json';
+
+const pgConnect = `postgres://${config.pgsql_username}:${config.pgsql_password}@${config.pgsql_hostname}/${config.pgsql_database}`;
+
 export const apiGet = (req, res) => {
   res.json({
     data: 'api get data',
@@ -5,8 +11,22 @@ export const apiGet = (req, res) => {
 };
 
 export const apiPost = (req, res) => {
-  res.json({
-    data: 'api post data',
+  pg.connect(pgConnect, (err, client, done) => {
+    if (err) {
+      console.error('PostgreSQL ERROR : %s', err.message);
+      if (client) done(client);
+    } else {
+      client.query('SELECT * FROM app_name_modelname', (err2, result) => {
+        if (err) {
+          console.error('PostgreSQL ERROR : %s', err2.message);
+          if (client) done(client);
+        } else {
+          done();
+          res.json({
+            data: result.rows[0].field_name,
+          });
+        }
+      });
+    }
   });
 };
-

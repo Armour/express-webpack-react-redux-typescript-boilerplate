@@ -6,6 +6,7 @@ import Header from 'components/Header';
 interface ILayoutProps {
   children: ReactNode;
 }
+
 interface ILayoutState {}
 
 class Layout extends React.Component<ILayoutProps, ILayoutState> {

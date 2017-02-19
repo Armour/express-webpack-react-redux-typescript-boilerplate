@@ -1,0 +1,26 @@
+code,
+pre {
+  position: relative;
+  font-size: 1.1rem;
+}
+
+pre[class*="language-"] {
+  padding: 20px 22px;
+  border: solid 1px rgba(51, 51, 51, 0.12);
+}
+
+pre[class*="language-"]::before {
+  position: absolute;
+  padding: 1px 5px;
+  background: #e8e6e3;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #555;
+  content: attr(class);
+  font-size: 0.9rem;
+  border: solid 1px rgba(51, 51, 51, 0.12);
+  border-top: none;
+  border-left: none;
+}

@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 // Colors
 @import "materialize/color";
 
@@ -13,11 +11,13 @@
 @import "materialize/global";
 @import "materialize/buttons";
 @import "materialize/carousel";
+@import "materialize/dropdown";
 @import "materialize/grid";
 @import "materialize/icons-material-design";
 @import "materialize/materialbox";
 @import "materialize/navbar";
+@import "materialize/toast";
+@import "materialize/tooltip";
+@import "materialize/transitions";
 @import "materialize/typography";
 @import "materialize/waves";
-
-$primary-color: color("blue", "base");

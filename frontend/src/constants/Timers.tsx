@@ -1,0 +1,3 @@
+export const TOAST_DISPLAY_DURATION = 3000;
+
+export const TOOLTIP_DELAY_TIME = 50;

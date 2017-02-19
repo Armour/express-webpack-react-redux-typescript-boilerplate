@@ -8,12 +8,13 @@ import bodyParser from 'body-parser';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config.dev.babel';
+import webpackConfig from '../webpack.config.dev.babel';
+import config from './config.json';
 
 import api from './routes/api';
 
 const isDev = process.env.NODE_ENV !== 'production';
-const port = 3003;
+const port = config.http_port;
 const app = express();
 
 app.use(logger('dev'));
@@ -25,10 +26,10 @@ app.use(cookieParser());
 app.use('/api', api);
 
 if (isDev) {
-  const compiler = webpack(config);
+  const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
     // The public URL of the output resource directory (CDN), should be the same as output.publicPath
-    publicPath: config.output.publicPath,
+    publicPath: webpackConfig.output.publicPath,
     // Where the webpack dev server serve the static files, should be the same as output.path
     contentBase: path.resolve(__dirname, 'frontend/dist/'),
     // Allow CORS

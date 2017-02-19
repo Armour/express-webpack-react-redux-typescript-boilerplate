@@ -15,13 +15,14 @@
 - [x] [react](https://facebook.github.io/react/) for building user interfaces.
 - [x] [react-router](https://github.com/ReactTraining/react-router) for routing
 - [x] [react-redux](https://github.com/reactjs/react-redux) the official react bindings for [redux](https://github.com/reactjs/redux) (a predictable state container for js apps)
-- [x] [react-router-redux](https://github.com/reactjs/react-router-redux) to keep react-router and redux in sync 
+- [x] [react-router-redux](https://github.com/reactjs/react-router-redux) to keep react-router and redux in sync
 - [x] [typescript](https://github.com/Microsoft/TypeScript) let's write future javascript => now!
-- [x] [react-hot-loader 3](https://github.com/gaearon/react-hot-loader) for hot module reload! 
+- [x] [react-hot-loader 3](https://github.com/gaearon/react-hot-loader) for hot module reload!
 - [x] [editorconfig](http://editorconfig.org/) to maintain consistent coding styles between different editors and IDEs
 - [x] [eslint](http://eslint.org/) to lint javascript files (.js, .jsx)
 - [x] [tslint](https://palantir.github.io/tslint/) to lint typescript files (.ts, .tsx)
 - [x] [stylelint](https://stylelint.io/) to lint style files (.css, .scss)
+- [x] [prismjs](https://github.com/PrismJS/prism) for code syntax highlight
 - [ ] [jest](https://facebook.github.io/jest/) for testing
 - [ ] [istanbul](https://github.com/gotwarlost/istanbul) for test coverage
 

@@ -1,40 +1,32 @@
+// Primary color
+$primary-color: color("blue", "base");
+
 // H1 style
 h1 {
   color: $primary-color;
   text-align: center;
 }
 
-// Active nvlink color
-.active {
-  color: yellow;
-}
-
 // Images
 img {
-  &.re-zero {
+  &.re-zero,
+  &.re-zero::after {
     max-width: 50%;
     height: auto;
     content: url("../image/rezero.png");
   }
-}
 
-.block {
-  height: 100vh;
-}
+  &.parallax-img-1,
+  &.parallax-img-1::after {
+    display: block;
+    content: url("../image/parallax1.jpg");
+  }
 
-.img-wrapper {
-  margin: 10px auto;
-  height: 100%;
-  border: black solid 1px;
-}
-
-.carousel.carousel-slider {
-  height: 80%;
-}
-
-.parallax-header {
-  color: $primary-color;
-  font-weight: 300;
+  &.parallax-img-2,
+  &.parallax-img-2::after {
+    display: block;
+    content: url("../image/parallax2.jpg");
+  }
 }
 
 // Container
@@ -43,7 +35,6 @@ img {
   height: 100%;
 }
 
-// Media
 @media only screen and (min-width: 601px) {
   .container {
     width: 70%;

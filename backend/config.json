@@ -1,0 +1,7 @@
+{
+  "pgsql_username": "django",
+  "pgsql_password": "",
+  "pgsql_hostname": "localhost",
+  "pgsql_database": "django",
+  "http_port": "3003"
+}

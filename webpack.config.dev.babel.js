@@ -114,8 +114,6 @@ export default {
   plugins: [
     // Enable hot module reload, if have --hot parameter in npm script, then this line must be removed!
     new webpack.HotModuleReplacementPlugin(),
-    // Not emit assets when there is an error while compiling
-    new webpack.NoEmitOnErrorsPlugin(),
     // Better webpack module name display
     new webpack.NamedModulesPlugin(),
     // Use cssnext in postcss when loading scss
