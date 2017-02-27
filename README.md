@@ -36,7 +36,7 @@
 
 * `node`
 * `yarn` (recommended) or `npm`
-* `postgresql` or other database
+* `postgresql` or other databases
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
