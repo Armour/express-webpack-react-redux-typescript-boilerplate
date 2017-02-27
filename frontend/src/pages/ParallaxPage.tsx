@@ -1,8 +1,7 @@
 import React from 'react';
 
 import PrismCodes from 'components/PrismCodes';
-
-import { PARALLAX_CODE } from 'constants/PrismCodes';
+import { PARALLAX_CODE } from 'constants/prismCodes';
 
 interface IParallaxPageProps {}
 

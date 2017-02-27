@@ -1,18 +1,18 @@
 import React from 'react';
 
-import { upperCaseFirstChar } from 'utils/index';
+import { upperCaseFirstChar } from 'utils';
 
 const pushpinStyle = {
   top: '0px',
 };
 
-interface IPushipinProps {
+interface IPushpinProps {
   color: string;
 }
 
-interface IPushipinState {}
+interface IPushpinState {}
 
-class Pushipin extends React.Component<IPushipinProps, IPushipinState> {
+class Pushpin extends React.Component<IPushpinProps, IPushpinState> {
   public render() {
     return (
       <div id={this.props.color} className={`block ${this.props.color} lighten-1`}>
@@ -32,4 +32,4 @@ class Pushipin extends React.Component<IPushipinProps, IPushipinState> {
   }
 }
 
-export default Pushipin;
+export default Pushpin;

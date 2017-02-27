@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TodoApp from 'components/TodoApp';
+
 interface IReactPageProps {}
 
 interface IReactPageState {}
@@ -10,7 +12,7 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
       <div>
         <div className="block">
           <h1>React</h1>
-          {/* Recat code goes here */}
+          <TodoApp />
         </div>
       </div>
     );

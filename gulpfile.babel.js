@@ -1,5 +1,4 @@
 import gulp from 'gulp';
-import yargs from 'yargs';
 import del from 'del';
 import runSequence from 'run-sequence';
 import childProcess from 'child_process';
@@ -9,7 +8,7 @@ import stylelint from 'gulp-stylelint';
 
 const exec = childProcess.exec;
 const spawn = childProcess.spawn;
-const isProduction = yargs.argv.env === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 // Run eslint
 gulp.task('eslint', () =>
@@ -59,48 +58,30 @@ gulp.task('webpack:build-prod', ['webpack:build-dll'], (callback) => {
   });
 });
 
-// Run devolopment server
-gulp.task('express:run-dev', ['webpack:build-dll'], (callback) => {
-  const runDev = spawn('npm', ['run', 'run-dev']);
-  runDev.stdout.on('data', (data) => {
+// Run server
+gulp.task('express:run-server', (callback) => {
+  const runServer = spawn('npm', ['run', 'server']);
+  runServer.stdout.on('data', (data) => {
     const slicedData = data.slice(0, -1);
     console.log(`${slicedData}`);
   });
-  runDev.stderr.on('data', (data) => {
+  runServer.stderr.on('data', (data) => {
     console.log(`${data}`);
   });
-  runDev.on('close', (code) => {
+  runServer.on('close', (code) => {
     console.log(`child process exited with code ${code}`);
   });
-  runDev.on('error', (err) => {
+  runServer.on('error', (err) => {
     callback(err);
   });
 });
 
-// Run production server
-gulp.task('express:run-prod', ['webpack:build-prod'], (callback) => {
-  const runProd = spawn('npm', ['run', 'run-prod']);
-  runProd.stdout.on('data', (data) => {
-    const slicedData = data.slice(0, -1);
-    console.log(`${slicedData}`);
-  });
-  runProd.stderr.on('data', (data) => {
-    console.log(`${data}`);
-  });
-  runProd.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
-  });
-  runProd.on('error', (err) => {
-    callback(err);
-  });
-});
-
-// Build bundle and run server
-gulp.task('express:run', (callback) => {
+// Generate asset bundles and run server
+gulp.task('express:start', (callback) => {
   if (isProduction) {
-    runSequence('express:run-prod', callback);
+    runSequence('webpack:build-prod', 'express:run-server', callback);
   } else {
-    runSequence('express:run-dev', callback);
+    runSequence('webpack:build-dll', 'express:run-server', callback);
   }
 });
 
@@ -108,7 +89,7 @@ gulp.task('express:run', (callback) => {
 // 1. eslint
 // 2. tslint
 // 3. stylelint
-// 4. generate bundle and run server
+// 4. generate asset bundles and run server
 gulp.task('default', (callback) => {
-  runSequence('eslint', 'tslint', 'stylelint', 'express:run', callback);
+  runSequence('eslint', 'tslint', 'stylelint', 'express:start', callback);
 });

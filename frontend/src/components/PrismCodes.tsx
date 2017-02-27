@@ -11,11 +11,6 @@ interface IPrismCodesState {
 }
 
 class PrismCodes extends React.Component<IPrismCodesProps, IPrismCodesState> {
-  constructor(props: IPrismCodesProps) {
-    super(props);
-    this.highlightCode = this.highlightCode.bind(this);
-  }
-
   public highlightCode = (code: Element) => {
     this.setState({ code }, () => {
       Prism.highlightElement(this.state.code, false);

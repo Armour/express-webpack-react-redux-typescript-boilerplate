@@ -9,11 +9,12 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.dev.babel';
+
 import config from './config.json';
 
 import api from './routes/api';
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 const port = config.http_port;
 const app = express();
 
@@ -25,7 +26,7 @@ app.use(cookieParser());
 // Api router
 app.use('/api', api);
 
-if (isDev) {
+if (!isProduction) {
   const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
     // The public URL of the output resource directory (CDN), should be the same as output.publicPath

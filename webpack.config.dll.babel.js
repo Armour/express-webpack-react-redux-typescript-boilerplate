@@ -1,6 +1,8 @@
 import path from 'path';
 import webpack from 'webpack';
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 const reactVendors = [
   'react',
   'react-dom',
@@ -9,7 +11,8 @@ const reactVendors = [
   'redux',
 ];
 
-export default {
+// Base config
+let config = {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
@@ -30,17 +33,6 @@ export default {
 
   // A list of used webpack plugins
   plugins: [
-    // Minimize javascript files with source map generated
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-    }),
-    // Define production env which shaved off 75% of the build output size
-    // http://moduscreate.com/optimizing-react-es6-webpack-production-build
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
     // Output manifest json file for each generated dll reference file
     new webpack.DllPlugin({
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
@@ -48,3 +40,30 @@ export default {
     }),
   ],
 };
+
+// Production enviroment
+if (isProduction) {
+  config = {
+    ...config,
+    plugins: [
+      // Extend base config
+      ...config.plugins,
+      // Minimize javascript files with source map generated
+      new webpack.optimize.UglifyJsPlugin({
+        output: { comments: false },
+      }),
+      // Define production env which shaved off 75% of the build output size
+      // http://moduscreate.com/optimizing-react-es6-webpack-production-build
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production'),
+        },
+      }),
+    ],
+  };
+}
+
+// Export const (import/no-mutable-exports)
+const constConfig = config;
+
+export default constConfig;

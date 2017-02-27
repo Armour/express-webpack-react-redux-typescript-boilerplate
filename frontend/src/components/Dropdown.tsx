@@ -1,8 +1,7 @@
 import React from 'react';
 
 import NavLink from 'components/NavLink';
-
-import { upperCaseFirstChar } from 'utils/index';
+import { upperCaseFirstChar } from 'utils';
 
 interface IDropdownProps {
   id: string;
@@ -17,10 +16,9 @@ class Dropdown extends React.Component<IDropdownProps, IDropdownState> {
   }
 
   public render() {
-    const links = [];
-    for (const key of this.props.dropdownLists) {
-      links.push(<li key={key}><NavLink to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>);
-    }
+    const links = this.props.dropdownLists.map(key =>
+      <li key={key}><NavLink to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>,
+    );
     return (
       <ul id={this.props.id} className="dropdown-content">
         {links}

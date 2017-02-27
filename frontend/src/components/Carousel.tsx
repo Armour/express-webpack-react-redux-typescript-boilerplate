@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from 'constants/Timers';
+import { TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from 'constants/timers';
 
 interface ICarouselProps {}
 
 interface ICarouselState {}
 
-let tooltipConfig: Materialize.TooltipOptions = {
+const tooltipConfig: Materialize.TooltipOptions = {
   delay: TOOLTIP_DELAY_TIME,
   position: 'top',
   tooltip: 'Click Me! >. <',

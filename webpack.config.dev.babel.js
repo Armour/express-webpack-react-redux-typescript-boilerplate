@@ -139,7 +139,7 @@ export default {
     }),
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
-      title: 'title',
+      title: 'Boilerplate',
       template: 'frontend/template/index.ejs',
     }),
     // Add dll reference files to html

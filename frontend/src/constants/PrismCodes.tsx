@@ -1,3 +1,4 @@
+// Code snippets
 export const PARALLAX_CODE = `
 <div class="parallax-container">
   <div class="parallax"><img src="images/parallax1.jpg"></div>

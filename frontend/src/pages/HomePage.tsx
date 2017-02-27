@@ -14,8 +14,8 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
       let $this = $(elem);
       let $target = $('#' + $this.attr('data-target'));
       $this.pushpin({
-        bottom: $target.offset().top + $target.outerHeight() - $this.height(),
         top: $target.offset().top,
+        bottom: $target.offset().top + $target.outerHeight() - $this.height(),
       });
     });
   }

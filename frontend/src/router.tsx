@@ -1,12 +1,11 @@
 import React from 'react';
 import { IndexRoute, Route } from 'react-router';
 
+import Layout from 'components/Layout';
 import HomePage from 'pages/HomePage';
 import NotFoundPage from 'pages/NotFoundPage';
 import ParallaxPage from 'pages/ParallaxPage';
 import ReactPage from 'pages/ReactPage';
-
-import Layout from 'components/Layout';
 
 export default (
   <Route path="/" component={Layout}>

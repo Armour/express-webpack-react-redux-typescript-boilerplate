@@ -8,7 +8,7 @@ interface INavLinkState {}
 class NavLink extends React.Component<INavLinkProps, INavLinkState> {
   public render() {
     return (
-      <Link {...this.props} activeClassName="active"/>
+      <Link {...this.props} activeClassName="active-link"/>
     );
   }
 }

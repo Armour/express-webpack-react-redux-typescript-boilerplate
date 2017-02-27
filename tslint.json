@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
+    "arrow-parens": [true, "ban-single-arg-parens"], // Disallow parenthesis for single arg when using arrow function
     "arrow-return-shorthand": true, // Suggests to convert () => { return x; } to () => x
     "curly": true, // Enforces braces for if/for/do/while statements
     "eofline": true, // Ensures the file ends with a newline
@@ -15,14 +16,12 @@
     "no-duplicate-case": true, // Disallow a duplicate case label
     "no-extra-semi": true, // Disallow unnecessary semicolons
     "no-invalid-regexp": true, // Disallow invalid regular expression strings in the RegExp constructor
+    "object-literal-sort-keys": false, // Let us controll object literal sorting order
     "only-arrow-functions": true, // Disallows traditional (non-arrow) function expressions
-    "ordered-imports": [true, {
-      "import-sources-order": "lowercase-first",
-      "named-imports-order": "lowercase-last"
-    }], // Requires that import statements be alphabetized
+    "ordered-imports": true, // Requires that import statements be alphabetized
     "quotemark": [true, "single", "jsx-double"], // Enfore single quote for tsx and double quote for jsx part
     "switch-default": true, // Require a default case in all switch statements
-    "ter-indent": [true, 2], // Enforce use 2 spaces
+    "ter-indent": [true, 2, {"SwitchCase": 1}], // Enforce use 2 spaces
     "triple-equals": [true, "allow-null-check"], // Requires === and !== in place of == and !=
     "whitespace": [true,
       "check-branch",

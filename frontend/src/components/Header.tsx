@@ -13,7 +13,10 @@ interface IHeaderState {
 class Header extends React.Component<IHeaderProps, IHeaderState> {
   constructor(props: IHeaderProps) {
     super(props);
-    this.state = {dropdownLists: ['parallax'], dropdownId: 'header-dropdown'};
+    this.state = {
+      dropdownLists: ['parallax'],
+      dropdownId: 'header-dropdown',
+    };
   }
 
   public render() {
