@@ -6,12 +6,15 @@
 // Common
 @import "common";
 
-// Header & Footer
-@import "header";
-@import "footer";
-
 // Components
-@import "carousel";
-@import "parallax";
-@import "prismcode";
-@import "pushpin";
+@import "components/carousel";
+@import "components/header";
+@import "components/footer";
+@import "components/prismcode";
+@import "components/pushpin";
+@import "components/navlink";
+@import "components/todoApp";
+
+// Pages
+@import "pages/parallaxPage";
+@import "pages/reactPage";

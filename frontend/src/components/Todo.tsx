@@ -9,12 +9,29 @@ interface ITodoProps extends ITodoModel {
 interface ITodoState {}
 
 class Todo extends React.Component<ITodoProps, ITodoState> {
+  public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    this.props.onClick();
+  }
+
   public render() {
-    return (
-      <li onClick={this.props.onClick} style={{ textDecoration: this.props.completed ? 'line-through' : 'none' }}>
-        {this.props.text}
-      </li>
-    );
+    if (this.props.completed) {
+      return (
+        <a href="#" className="collection-item waves-effect" onClick={this.onClick} style={{ textDecoration: 'line-through', color: 'gray' }}>
+          <div className="truncate">
+            {this.props.text}
+          </div>
+        </a>
+      );
+    } else {
+      return (
+        <a href="#" className="collection-item waves-effect waves-teal" onClick={this.onClick} style={{ textDecoration: 'none' }}>
+          <div className="truncate">
+            {this.props.text}
+          </div>
+        </a>
+      );
+    }
   }
 }
 

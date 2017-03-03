@@ -11,7 +11,8 @@ interface ITodoAppState {}
 class TodoApp extends React.Component<ITodoAppProps, ITodoAppState> {
   public render() {
     return (
-      <div>
+      <div className="todo-app center-align z-depth-2">
+        <span className="todo-title">todos</span>
         <AddTodo />
         <VisibleTodoList />
         <TodoFooter />

@@ -1,0 +1,24 @@
+// Todo App
+.todo-app {
+  position: relative;
+  max-width: 50%;
+  height: auto;
+  margin: 50px auto 10px;
+  padding: 10px;
+  border: 1px #ccc solid;
+}
+
+.todo-title {
+  display: block;
+  font-weight: 100;
+  font-size: 5em;
+  color: color("teal", "lighten-1");
+  margin-bottom: 20px;
+}
+
+.todo-filter-btn {
+  width: 120px;
+  text-align: center;
+  margin: 3px;
+  padding: 0;
+}

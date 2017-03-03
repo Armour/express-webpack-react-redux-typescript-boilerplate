@@ -23,7 +23,7 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
   public render() {
     return (
       <div>
-        <div className="block">
+        <div className="pushpin-block">
           <h1>Home</h1>
           <div className="container">
           <Carousel />

@@ -15,7 +15,7 @@ interface IPushpinState {}
 class Pushpin extends React.Component<IPushpinProps, IPushpinState> {
   public render() {
     return (
-      <div id={this.props.color} className={`block ${this.props.color} lighten-1`}>
+      <div id={this.props.color} className={`pushpin-block ${this.props.color} lighten-1`}>
         <nav className="pushpin-demo-nav pin-top" data-target={this.props.color} style={pushpinStyle}>
           <div className={`nav-wrapper ${this.props.color}`}>
             <div className="container">

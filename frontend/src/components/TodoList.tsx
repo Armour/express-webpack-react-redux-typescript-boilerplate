@@ -27,7 +27,7 @@ class TodoList extends React.Component<ITodoListProps, ITodoListState> {
       <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} />,
     );
     return (
-      <ul>
+      <ul className="collection">
         {todoList}
       </ul>
     );

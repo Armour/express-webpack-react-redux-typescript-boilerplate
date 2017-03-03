@@ -10,7 +10,11 @@ import { ITodoAppState } from 'types';
 
 // Initial app state
 const initialState: ITodoAppState = {
-  todos: [],
+  todos: [{
+    id: 'fake-id',
+    text: 'Add your own todo task above, click to mark as completed',
+    completed: false,
+  }],
   visibilityFilter: 'SHOW_ALL',
 };
 

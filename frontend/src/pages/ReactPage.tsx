@@ -10,7 +10,7 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
   public render() {
     return (
       <div>
-        <div className="block">
+        <div className="react-block">
           <h1>React</h1>
           <TodoApp />
         </div>

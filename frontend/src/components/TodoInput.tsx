@@ -30,10 +30,10 @@ class TodoInput extends React.Component<ITodoInputProps, ITodoInputState> {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <input ref={this.setInput}/>
-          <button type="submit">
-            Add Todo
-          </button>
+          <div className="input-field">
+            <input id="input-add-todo" type="text" ref={this.setInput}/>
+            <label>Add todo</label>
+          </div>
         </form>
       </div>
     );
