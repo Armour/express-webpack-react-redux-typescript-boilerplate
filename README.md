@@ -29,6 +29,7 @@
 - [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
 - [ ] [jest](https://facebook.github.io/jest/) - testing
 - [ ] [istanbul](https://github.com/gotwarlost/istanbul) - test coverage
+- [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
 
 ## Install && Run
 
