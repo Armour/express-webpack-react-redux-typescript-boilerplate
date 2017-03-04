@@ -5,7 +5,5 @@ after_install:
   - yarn
   - yarn global add gulp
   - yarn global add babel-cli
-before_script:
-  - NODE_ENV=test gulp
 script:
   - npm test
