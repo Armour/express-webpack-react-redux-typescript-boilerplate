@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "node"
-install:
+after_install:
   - yarn
   - yarn global add gulp
   - yarn global add babel-cli
