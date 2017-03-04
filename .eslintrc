@@ -9,16 +9,16 @@
   ],
   "parser": "babel-eslint",
   "rules": {
-    "indent": ["error", 2], // Enforce 2 spaces
-    "max-len": 0, // I don't like max line length :S
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }], // Allow ES6 template literals
-    "no-console": 0, // Allow console.log()
-    "import/export": 2, // Report any invalid exports
-    "import/first": 2, // Ensure all imports appear before other statements
-    "import/no-commonjs": 2, // Report CommonJS require calls and module.exports or exports.*
-    "import/no-deprecated": 1, // Report imported names marked with @deprecated documentation tag
-    "import/no-duplicates": 2, // Report repeated import of the same module in multiple places
-    "import/no-unresolved": 2, // Ensure imports point to a file/module that can be resolved
-    "import/no-webpack-loader-syntax": 2 // Forbid Webpack loader syntax
+    "indent": ["error", 2],
+    "max-len": 0,
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "no-console": 0,
+    "import/export": 2,
+    "import/first": 2,
+    "import/no-commonjs": 2,
+    "import/no-deprecated": 1,
+    "import/no-duplicates": 2,
+    "import/no-unresolved": 2,
+    "import/no-webpack-loader-syntax": 2
   }
 }
