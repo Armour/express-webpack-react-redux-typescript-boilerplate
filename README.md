@@ -1,5 +1,10 @@
 # Express-Webpack-React-Typescript-HMR-Boilerplate
-[![Dependency Status](https://gemnasium.com/badges/eed19136f1fd6888e7a2ea6539feae5d.svg)](https://gemnasium.com/github.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
+
+[![Build Status](https://travis-ci.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate.svg?token=xzmwu2pcJ1tBo5AwTZV3&branch=master)](https://travis-ci.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
+[![Dependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
+[![DevDependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/dev-status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?type=dev)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+
 
 ## Stack
 
@@ -27,8 +32,8 @@
 - [x] [stylelint](https://stylelint.io/) - lint style files (.css, .scss)
 - [x] [postgresql](https://www.postgresql.org/) - advanced open source database
 - [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
-- [ ] [jest](https://facebook.github.io/jest/) - testing
-- [ ] [istanbul](https://github.com/gotwarlost/istanbul) - test coverage
+- [x] [jest](https://facebook.github.io/jest/) - testing
+- [x] [coveralls](https://coveralls.io/) - test coverage
 - [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
 
 ## Install && Run
