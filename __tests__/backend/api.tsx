@@ -2,7 +2,7 @@ import { agent, SuperAgent, SuperAgentRequest } from 'superagent';
 
 const testUser: SuperAgent<SuperAgentRequest> = agent();
 
-describe.skip('[Api] api test', () => {
+describe('[Api] api test', () => {
   it('[GET api] should return api data', async () => {
     expect.assertions(1);
     try {
