@@ -1,43 +1,26 @@
 import { ADD_TODO, TOGGLE_TODO } from 'constants/actionTypes';
 import { IActionsTodo, ITodoModel } from 'types';
 
-const defaultTodoModel: ITodoModel = {
-  id: 'default_id',
-  text: 'default_text',
-  completed: false,
-};
-
-const todo = (state: ITodoModel = defaultTodoModel, action: IActionsTodo): ITodoModel => {
-  switch (action.type) {
-    case ADD_TODO:
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false,
-      };
-    case TOGGLE_TODO:
-      if (state.id !== action.id) {
-        return state;
-      }
-      return Object.assign({}, state, {
-        completed: !state.completed,
-      });
-    default:
-      return state;
-  }
-};
-
 const todos = (state: ITodoModel[] = [], action: IActionsTodo): ITodoModel[] => {
   switch (action.type) {
     case ADD_TODO:
       return [
         ...state,
-        todo(undefined, action),
+        {
+          id: action.id,
+          text: action.text,
+          completed: action.completed,
+        },
       ];
     case TOGGLE_TODO:
-      return state.map(t =>
-        todo(t, action),
-      );
+      return state.map(s => {
+        if (s.id !== action.id) {
+          return s;
+        }
+        return Object.assign({}, s, {
+          completed: !s.completed,
+        });
+      });
     default:
       return state;
   }

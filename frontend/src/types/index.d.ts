@@ -1,6 +1,6 @@
 import { ADD_TODO, TOGGLE_TODO } from 'constants/actionTypes';
 import { SET_VISIBILITY_FILTER } from 'constants/actionTypes';
-import { VisibilityFiltersOptions } from 'constants/actionTypes';
+import { TEST_INVALID_ACTION, VisibilityFiltersOptions } from 'constants/actionTypes';
 
 export interface ITodoModel {
   id: string;
@@ -25,14 +25,18 @@ export interface IActionToggleTodo {
   id: string;
 }
 
-export type IActionsTodo = IActionAddTodo | IActionToggleTodo;
+export interface IActionTestInvalid {
+  type: typeof TEST_INVALID_ACTION;
+}
+
+export type IActionsTodo = IActionAddTodo | IActionToggleTodo | IActionTestInvalid;
 
 export interface IActionSetVisibilityFilter {
   type: typeof SET_VISIBILITY_FILTER;
   filter: IVisibilityFilterOptions;
 }
 
-export type IActionsFilter = IActionSetVisibilityFilter;
+export type IActionsFilter = IActionSetVisibilityFilter | IActionTestInvalid;
 
 export type IVisibilityFilterOptions = string;
 

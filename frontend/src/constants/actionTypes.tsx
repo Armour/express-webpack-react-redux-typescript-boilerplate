@@ -11,3 +11,6 @@ export const VisibilityFiltersOptions = {
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE',
 };
+
+// For coverage test
+export const TEST_INVALID_ACTION = 'TEST_INVALID_ACTION';

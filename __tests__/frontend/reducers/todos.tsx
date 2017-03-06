@@ -1,8 +1,8 @@
 import deepFreeze from 'deep-freeze';
 
-import { ADD_TODO, TOGGLE_TODO } from 'constants/actionTypes';
+import { ADD_TODO, TEST_INVALID_ACTION, TOGGLE_TODO } from 'constants/actionTypes';
 import todos from 'reducers/todos';
-import { IActionAddTodo, IActionToggleTodo, ITodoModel } from 'types';
+import { IActionAddTodo, IActionTestInvalid, IActionToggleTodo, ITodoModel } from 'types';
 
 describe('[Reducers] todos test', () => {
   let state: ITodoModel[] = [
@@ -13,7 +13,7 @@ describe('[Reducers] todos test', () => {
     },
   ];
 
-  it('[todos.ADD_TODO] should return new state array with new todo', () => {
+  it('[todos.ADD_TODO] should return new state array with added todo', () => {
     const action: IActionAddTodo = {
       type: ADD_TODO,
       id: 'test_id',
@@ -32,7 +32,7 @@ describe('[Reducers] todos test', () => {
     expect(nextState[1].completed).toBe(false);
   });
 
-  it('[todos.TOGGLE_TODO] should return new state array with one todo completed property toggled', () => {
+  it('[todos.TOGGLE_TODO] should return new state array with specific todo completed toggled', () => {
     const action: IActionToggleTodo = {
       type: TOGGLE_TODO,
       id: 'initial_id',
@@ -46,10 +46,23 @@ describe('[Reducers] todos test', () => {
     expect(nextState[0].completed).toBe(true);
   });
 
-  it('[todos.TOGGLE_TODO] should return new state array as old state array if the id is not exist', () => {
+  it('[todos.TOGGLE_TODO] should return a new copy of previous state array if the id is not exist', () => {
     const action: IActionToggleTodo = {
       type: TOGGLE_TODO,
       id: 'not_exist',
+    };
+    deepFreeze(state);
+    expect(state.length).toBe(1);
+    const nextState = todos(state, action);
+    expect(nextState.length).toBe(1);
+    expect(nextState[0].id).toBe('initial_id');
+    expect(nextState[0].text).toBe('initial_text');
+    expect(nextState[0].completed).toBe(false);
+  });
+
+  it('[todos.INVALID_ACTION] should return a new copy of previous state array if action is invalid', () => {
+    const action: IActionTestInvalid = {
+      type: TEST_INVALID_ACTION,
     };
     deepFreeze(state);
     expect(state.length).toBe(1);
