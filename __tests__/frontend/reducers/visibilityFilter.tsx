@@ -18,6 +18,15 @@ describe('[Reducers] visibilityFilter test', () => {
     expect(nextState).toBe(VisibilityFiltersOptions.SHOW_ACTIVE);
   });
 
+  it('[visibilityFilter.DEFAULT_STATE] should use default state if not defined', () => {
+    const action: IActionsFilter = {
+      type: SET_VISIBILITY_FILTER,
+      filter: VisibilityFiltersOptions.SHOW_COMPLETED,
+    };
+    const nextState = visibilityFilter(undefined, action);
+    expect(nextState).toBe(VisibilityFiltersOptions.SHOW_COMPLETED);
+  });
+
   it('[visibilityFilter.INVALID_ACTION] should return a new copy of previous state array if action is invalid', () => {
     const action: IActionTestInvalid = {
       type: TEST_INVALID_ACTION,

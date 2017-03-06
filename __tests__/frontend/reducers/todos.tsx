@@ -60,6 +60,20 @@ describe('[Reducers] todos test', () => {
     expect(nextState[0].completed).toBe(false);
   });
 
+  it('[todos.DEFAULT_STATE] should use default state if not defined', () => {
+    const action: IActionAddTodo = {
+      type: ADD_TODO,
+      id: 'test_id',
+      text: 'test_text',
+      completed: false,
+    };
+    const nextState = todos(undefined, action);
+    expect(nextState.length).toBe(1);
+    expect(nextState[0].id).toBe('test_id');
+    expect(nextState[0].text).toBe('test_text');
+    expect(nextState[0].completed).toBe(false);
+  });
+
   it('[todos.INVALID_ACTION] should return a new copy of previous state array if action is invalid', () => {
     const action: IActionTestInvalid = {
       type: TEST_INVALID_ACTION,
