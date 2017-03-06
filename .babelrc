@@ -10,6 +10,11 @@
         "react-hot-loader/babel",
         "transform-runtime"
       ]
+    },
+    "test": {
+      "plugins": [
+        "transform-runtime"
+      ]
     }
   }
 }
