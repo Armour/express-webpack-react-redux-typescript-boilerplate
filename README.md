@@ -33,7 +33,7 @@
 - [x] [stylelint](https://stylelint.io/) - lint style files (.css, .scss)
 - [x] [postgresql](https://www.postgresql.org/) - advanced open source database
 - [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
-- [x] [jest](https://facebook.github.io/jest/) - testing
+- [x] [jest](https://facebook.github.io/jest/) - painless javascript testing
 - [x] [coveralls](https://coveralls.io/) - test coverage
 - [x] [husky](https://github.com/typicode/husky) - git hooks
 - [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
@@ -58,7 +58,7 @@ yarn
 yarn global add gulp
 ```
 
-If you meet permission problem for global install, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
+If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
 
 
 ### Run gulp tasks
