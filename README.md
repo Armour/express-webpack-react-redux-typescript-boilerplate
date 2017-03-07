@@ -55,7 +55,6 @@ Go to project root directory:
 ```bash
 yarn
 yarn global add gulp
-yarn global add babel-cli
 ```
 
 If you meet permission problem for global install, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
