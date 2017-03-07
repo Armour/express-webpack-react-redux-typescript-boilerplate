@@ -25,7 +25,7 @@
 - [x] [react-router](https://github.com/ReactTraining/react-router) - routing
 - [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux](https://github.com/reactjs/redux) (a predictable state container for js apps)
 - [x] [react-router-redux](https://github.com/reactjs/react-router-redux) - keep react-router and redux in sync
-- [x] [typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
+- [x] [Typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
 - [x] [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) - high quality TypeScript type definitions
 - [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs
 - [x] [eslint](http://eslint.org/) - lint javascript files (.js, .jsx)
