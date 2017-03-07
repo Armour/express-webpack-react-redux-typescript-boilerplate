@@ -35,6 +35,7 @@
 - [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
 - [x] [jest](https://facebook.github.io/jest/) - testing
 - [x] [coveralls](https://coveralls.io/) - test coverage
+- [x] [husky](https://github.com/typicode/husky) - git hooks
 - [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
 
 ## Install && Run

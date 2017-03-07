@@ -4,6 +4,7 @@ import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import compression from 'compression';
 
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -18,6 +19,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const port = config.http_port;
 const app = express();
 
+app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

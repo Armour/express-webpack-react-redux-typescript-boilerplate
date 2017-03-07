@@ -42,7 +42,7 @@ gulp.task('webpack:clean', () => del(['frontend/dist', 'webpack-stats.*.json']))
 
 // Build dll reference files
 gulp.task('webpack:build-dll', ['webpack:clean'], (callback) => {
-  exec('npm run build-dll', (err, stdout, stderr) => {
+  exec('yarn run build-dll', (err, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);
     callback(err);
@@ -51,7 +51,7 @@ gulp.task('webpack:build-dll', ['webpack:clean'], (callback) => {
 
 // Generate webpack asset bundles for production
 gulp.task('webpack:build-prod', ['webpack:build-dll'], (callback) => {
-  exec('npm run build-prod', (err, stdout, stderr) => {
+  exec('yarn run build-prod', (err, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);
     callback(err);
@@ -60,7 +60,7 @@ gulp.task('webpack:build-prod', ['webpack:build-dll'], (callback) => {
 
 // Run server
 gulp.task('express:run-server', (callback) => {
-  const runServer = spawn('npm', ['run', 'server']);
+  const runServer = spawn('yarn', ['run', 'server']);
   runServer.stdout.on('data', (data) => {
     const slicedData = data.slice(0, -1);
     console.log(`${slicedData}`);

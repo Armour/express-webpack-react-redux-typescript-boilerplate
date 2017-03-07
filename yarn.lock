@@ -480,8 +480,8 @@ autoprefixer@^6.0.0, autoprefixer@^6.0.2, autoprefixer@^6.3.1, autoprefixer@^6.7
     postcss-value-parser "^3.2.3"
 
 awesome-typescript-loader@^3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-3.0.8.tgz#1cd13f3cfd7c0a23c7226c629b1a3b818b9e4bb1"
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/awesome-typescript-loader/-/awesome-typescript-loader-3.1.2.tgz#3df192b91a6285f795ca65e63aad114fbb44f710"
   dependencies:
     colors "^1.1.2"
     enhanced-resolve "^3.1.0"
@@ -1475,6 +1475,10 @@ builtin-status-codes@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
 
+bytes@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.3.0.tgz#d5b680a165b6201739acb611542aabc2d8ceb070"
+
 bytes@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
@@ -1798,6 +1802,23 @@ commondir@^1.0.1:
 component-emitter@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/component-emitter/-/component-emitter-1.2.1.tgz#137918d6d78283f7df7a6b7c5a63e140e69425e6"
+
+compressible@~2.0.8:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/compressible/-/compressible-2.0.9.tgz#6daab4e2b599c2770dd9e21e7a891b1c5a755425"
+  dependencies:
+    mime-db ">= 1.24.0 < 2"
+
+compression@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/compression/-/compression-1.6.2.tgz#cceb121ecc9d09c52d7ad0c3350ea93ddd402bc3"
+  dependencies:
+    accepts "~1.3.3"
+    bytes "2.3.0"
+    compressible "~2.0.8"
+    debug "~2.2.0"
+    on-headers "~1.0.1"
+    vary "~1.1.0"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -3126,6 +3147,10 @@ find-index@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/find-index/-/find-index-0.1.1.tgz#675d358b2ca3892d795a1ab47232f8b6e2e0dde4"
 
+find-parent-dir@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
+
 find-root@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/find-root/-/find-root-0.1.2.tgz#98d2267cff1916ccaf2743b3a0eea81d79d7dcd1"
@@ -3276,8 +3301,8 @@ fstream-ignore@~1.0.5:
     minimatch "^3.0.0"
 
 fstream@^1.0.0, fstream@^1.0.2, fstream@~1.0.10:
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.10.tgz#604e8a92fe26ffd9f6fae30399d4984e1ab22822"
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.11.tgz#5c1fb1f117477114f0632a0eb4b71b3cb0fd3171"
   dependencies:
     graceful-fs "^4.1.2"
     inherits "~2.0.0"
@@ -3885,6 +3910,15 @@ http-signature@~1.1.0:
 https-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-0.0.1.tgz#3f91365cabe60b77ed0ebba24b454e3e09d95a82"
+
+husky@^0.13.2:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/husky/-/husky-0.13.2.tgz#9dcf212f88e61dba36f17be1a202ed61ff6c0661"
+  dependencies:
+    chalk "^1.1.3"
+    find-parent-dir "^0.3.0"
+    is-ci "^1.0.9"
+    normalize-path "^1.0.0"
 
 husl@^5.0.0:
   version "5.0.3"
@@ -5289,7 +5323,7 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
-mime-db@~1.26.0:
+"mime-db@>= 1.24.0 < 2", mime-db@~1.26.0:
   version "1.26.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.26.0.tgz#eaffcd0e4fc6935cf8134da246e2e6c35305adff"
 
@@ -5585,6 +5619,10 @@ normalize-package-data@^2.3.2, normalize-package-data@^2.3.4:
     is-builtin-module "^1.0.0"
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
+
+normalize-path@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-1.0.0.tgz#32d0e472f91ff345701c15a8311018d3b0a90379"
 
 normalize-path@^2.0.1:
   version "2.0.1"
@@ -6562,8 +6600,8 @@ postcss-zindex@^2.0.1:
     uniqs "^2.0.0"
 
 postcss@^5.0.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.18, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.20, postcss@^5.0.21, postcss@^5.0.3, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.1.1, postcss@^5.2.0, postcss@^5.2.13, postcss@^5.2.15, postcss@^5.2.4:
-  version "5.2.15"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.15.tgz#a9e8685e50e06cc5b3fdea5297273246c26f5b30"
+  version "5.2.16"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.16.tgz#732b3100000f9ff8379a48a53839ed097376ad57"
   dependencies:
     chalk "^1.1.3"
     js-base64 "^2.1.9"
@@ -8034,8 +8072,8 @@ tslint@^4.5.1:
     update-notifier "^2.0.0"
 
 tsutils@^1.1.0:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-1.2.1.tgz#74101a75dbf435800614ccafa4cd89a8d41ea03e"
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-1.2.2.tgz#7e165c601367b9f89200b97ff47d9e38d1a6e4c8"
 
 tty-browserify@0.0.0:
   version "0.0.0"
@@ -8083,8 +8121,8 @@ ua-parser-js@^0.7.9:
   resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.12.tgz#04c81a99bdd5dc52263ea29d24c6bf8d4818a4bb"
 
 uglify-js@2.8.x, uglify-js@^2.6, uglify-js@^2.7.5, uglify-js@^2.8.5:
-  version "2.8.7"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.7.tgz#e0391911507b6d2e05697a528f1686e90a11b160"
+  version "2.8.8"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-2.8.8.tgz#1a5cd145eb528b606fa2b86e578885272b597cd7"
   dependencies:
     source-map "~0.5.1"
     uglify-to-browserify "~1.0.0"
@@ -8404,8 +8442,8 @@ webpack-md5-hash@^0.0.5:
     md5 "^2.0.0"
 
 webpack-sources@^0.1.0, webpack-sources@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.4.tgz#ccc2c817e08e5fa393239412690bb481821393cd"
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-0.1.5.tgz#aa1f3abf0f0d74db7111c40e500b84f966640750"
   dependencies:
     source-list-map "~0.1.7"
     source-map "~0.5.3"
