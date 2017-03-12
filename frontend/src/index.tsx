@@ -6,17 +6,11 @@ import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from 'App';
 import configureStore from 'store';
-import { ITodoAppState } from 'types';
 
-// Initial app state
-const initialState: ITodoAppState = {
-  todos: [{
-    id: 'fake-id',
-    text: 'Add your own todo task above, click to mark as completed',
-    completed: false,
-  }],
-  visibilityFilter: 'SHOW_ALL',
-};
+// To keep reducers self-sufficient and reusable, we choose to not set
+// initial state here, and let each reducer to handle the default state
+// https://github.com/reactjs/redux/issues/1189#issuecomment-168025590
+const initialState = {};
 
 // Configure store
 const store = configureStore(initialState);

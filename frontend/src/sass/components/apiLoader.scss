@@ -1,0 +1,15 @@
+// Api loader
+.api-loader {
+  @extend .app-background;
+
+  .input-field {
+    width: 70%;
+    padding: 0 20px 0 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .btn {
+    width: 30%;
+  }
+}

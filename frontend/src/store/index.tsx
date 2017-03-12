@@ -5,10 +5,9 @@ import thunk from 'redux-thunk';
 
 import DevTools from 'containers/DevTools';
 import reducers from 'reducers';
-import { ITodoAppState } from 'types';
 import { isProduction } from 'utils';
 
-export default (initialState: ITodoAppState) => {
+const configureStore = (initialState: {}) => {
   // Logger
   const logger = createLogger();
 
@@ -36,3 +35,5 @@ export default (initialState: ITodoAppState) => {
 
   return store;
 };
+
+export default configureStore;

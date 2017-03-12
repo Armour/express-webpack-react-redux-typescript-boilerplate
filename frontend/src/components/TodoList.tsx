@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Todo from 'components/Todo';
-import { ITodoModel } from 'types';
+import { ITodoModelList } from 'types';
 
 export interface ITodoListStateProps {
-  todos: ITodoModel[];
+  todos: ITodoModelList;
 }
 
 export interface ITodoListDispatchProps {
@@ -24,7 +24,7 @@ class TodoList extends React.Component<ITodoListProps, ITodoListState> {
 
   public render() {
     const todoList = this.props.todos.map(todo =>
-      <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} />,
+      todo !== undefined ? <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} /> : null,
     );
     return (
       <ul className="collection">

@@ -1,6 +1,7 @@
 import React from 'react';
 
-import TodoApp from 'components/TodoApp';
+import TodoLayout from 'components/TodoLayout';
+import AsyncApi from 'containers/AsyncApi';
 
 interface IReactPageProps {}
 
@@ -12,7 +13,8 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
       <div>
         <div className="react-block">
           <h1>React</h1>
-          <TodoApp />
+          <TodoLayout />
+          <AsyncApi />
         </div>
       </div>
     );
