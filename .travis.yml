@@ -6,4 +6,4 @@ after_install:
   - yarn global add gulp
   - yarn global add babel-cli
 script:
-  - npm test
+  - yarn test
