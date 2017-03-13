@@ -6,5 +6,6 @@ frontend/dist/
 *.swp
 *.log
 .DS_Store
+build/
 coverage/
 .coveralls.yml

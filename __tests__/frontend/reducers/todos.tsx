@@ -74,23 +74,6 @@ describe('[Reducers] todos test', () => {
     ]));
   });
 
-  it('[todos.DEFAULT_STATE] should use default state if not defined', () => {
-    const nextState = todos(undefined, actionAddTodo);
-    expect(nextState.count()).toBe(2);
-    expect(nextState).toEqual(Immutable.List([
-      {
-        id: 'fake_id',
-        text: 'Add your own todo task above, click to mark each todo as completed',
-        completed: false,
-      },
-      {
-        id: 'test_id',
-        text: 'test_text',
-        completed: false,
-      },
-    ]));
-  });
-
   it('[todos.DEFAULT_ACTION] should return previous state if action is not found', () => {
     expect(state.count()).toBe(1);
     const nextState = todos(state, actionTestDefault);
@@ -99,6 +82,18 @@ describe('[Reducers] todos test', () => {
       {
         id: 'initial_id',
         text: 'initial_text',
+        completed: false,
+      },
+    ]));
+  });
+
+  it('[todos.DEFAULT_STATE] should use default state if not defined', () => {
+    const nextState = todos(undefined, actionTestDefault);
+    expect(nextState.count()).toBe(1);
+    expect(nextState).toEqual(Immutable.List([
+      {
+        id: 'fake_id',
+        text: 'Add your own todo task above, click to mark each todo as completed',
         completed: false,
       },
     ]));

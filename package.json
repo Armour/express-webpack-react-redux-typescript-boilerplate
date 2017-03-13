@@ -11,7 +11,7 @@
     "build-dll": "webpack --color --config webpack.config.dll.babel.js",
     "build-prod": "webpack --color --config webpack.config.prod.babel.js",
     "server": "babel-node backend/server.js",
-    "test": "jest --no-cache --coverage",
+    "test": "jest --no-cache --coverage && tsc && babel-node remap-coverage.babel.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "precommit": "yarn test",
     "prepush": "yarn test"
@@ -21,8 +21,10 @@
     "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.2",
+    "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "pg": "^6.1.4",
+    "remap-istanbul": "^0.9.1",
     "serve-favicon": "^2.4.1",
     "webpack": "^2.2.1",
     "webpack-dev-middleware": "^1.10.1",
@@ -130,6 +132,10 @@
       "^.+\\.(t|j)sx?$": "typescript-babel-jest"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "testPathIgnorePatterns": [
+      "node_modules",
+      "build"
+    ],
     "moduleDirectories": [
       "node_modules",
       "frontend/src",
@@ -141,6 +147,11 @@
       "ts",
       "tsx",
       "json"
+    ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "build",
+      "_test_"
     ]
   }
 }
