@@ -147,11 +147,6 @@
       "ts",
       "tsx",
       "json"
-    ],
-    "coveragePathIgnorePatterns": [
-      "node_modules",
-      "build",
-      "_test_"
     ]
   }
 }

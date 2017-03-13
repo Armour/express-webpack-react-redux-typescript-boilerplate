@@ -6,7 +6,6 @@ import remap from 'remap-istanbul/lib/remap';
 import writeReport from 'remap-istanbul/lib/writeReport';
 
 const isWindows = process.platform === 'win32';
-
 const coverageFile = './coverage/coverage-final.json';
 const updatedCoverageFile = './coverage/coverage-updated.json';
 const originalCoverage = fs.readFileSync(coverageFile, 'utf8');
@@ -23,7 +22,7 @@ _.forIn(originalCoverageJson, (value, key) => {
 
 fs.writeFileSync(updatedCoverageFile, JSON.stringify(updateCoverageJson));
 
-// Remapp coverage files using sourcemap for better typescript file coverage display
+// Remap coverage files using sourcemap for better typescript file coverage display
 const collector = remap(loadCoverage(updatedCoverageFile));
 writeReport(collector, 'json', {}, './coverage/coverage-final.json');
 writeReport(collector, 'lcovonly', {}, './coverage/lcov.info');
