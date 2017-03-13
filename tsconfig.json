@@ -16,7 +16,6 @@
     "removeComments": true,
     "moduleResolution": "node",
     "baseUrl": "frontend/src",
-    "outDir": "build",
     "typeRoots": [
       "node_modules/@types"
     ]
