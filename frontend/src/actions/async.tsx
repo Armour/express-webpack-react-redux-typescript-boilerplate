@@ -30,10 +30,17 @@ const fetchApiData = (url: string) => {
   return async (dispatch: Dispatch<IAsyncApiCallState>) => {
     dispatch(startRequest(url));
     try {
-      const res: Response = await fetch(`http://localhost:3003/${url}`, { method: 'POST' });
+      const req = new Request(`http://localhost:3003/${url}`, {
+        method: 'POST',
+        headers: new Headers({
+          'Content-Type': 'application/json',
+        }),
+      });
+      const res: Response = await fetch(req);
       if (res.ok) {
-        const content = JSON.stringify(res.json());
-        dispatch(receiveResponse(url, content));
+        res.json().then(data => {
+          dispatch(receiveResponse(url, data));
+        });
       } else {
         dispatch(receiveError(url, `${res.status} ${res.statusText}`));
       }

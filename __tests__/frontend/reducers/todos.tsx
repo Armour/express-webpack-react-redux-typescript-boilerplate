@@ -2,10 +2,10 @@ import Immutable from 'immutable';
 
 import { ADD_TODO, TEST_DEFAULT_ACTION, TOGGLE_TODO } from 'constants/actionTypes';
 import todos from 'reducers/todos';
-import { IActionAddTodo, IActionTestDefault, IActionToggleTodo, ITodoModelList } from 'types';
+import { IActionAddTodo, IActionTestDefault, IActionToggleTodo, ITodoModel, ITodoModelList } from 'types';
 
 describe('[Reducers] todos test', () => {
-  const state: ITodoModelList = Immutable.List([
+  const state: ITodoModelList = Immutable.List<ITodoModel>([
     {
       id: 'initial_id',
       text: 'initial_text',
