@@ -5,6 +5,5 @@ after_install:
   - yarn
   - yarn global add gulp
   - yarn global add babel-cli
-  - bash patch.sh
 script:
   - yarn test
