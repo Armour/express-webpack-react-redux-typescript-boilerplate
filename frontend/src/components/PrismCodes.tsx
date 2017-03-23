@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'prismjs';
+import { highlightElement } from 'prismjs';
 
 interface IPrismCodesProps {
   language: string;
@@ -13,7 +13,7 @@ interface IPrismCodesState {
 class PrismCodes extends React.Component<IPrismCodesProps, IPrismCodesState> {
   public highlightCode = (code: Element) => {
     this.setState({ code }, () => {
-      Prism.highlightElement(this.state.code, false);
+      highlightElement(this.state.code, false);
     });
   }
 
