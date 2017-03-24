@@ -2,4 +2,3 @@ node_modules/
 frontend/dist/
 frontend/materialize/
 coverage/
-build/
