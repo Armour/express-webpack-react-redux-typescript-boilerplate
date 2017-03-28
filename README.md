@@ -63,7 +63,7 @@ bash patch.sh
 If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
 
 
-### Run gulp tasks
+### Build & Run
 
 **On development (with react-hot-reload):**
 
@@ -75,6 +75,19 @@ gulp
 
 ```bash
 NODE_ENV=production gulp
+```
+
+
+### Run test
+
+```bash
+yarn test
+```
+
+
+### Code coverage
+```bash
+yarn coveralls
 ```
 
 
