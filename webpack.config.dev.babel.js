@@ -93,6 +93,9 @@ export default {
           },
           {
             loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true,
+            },
           },
         ],
       },
