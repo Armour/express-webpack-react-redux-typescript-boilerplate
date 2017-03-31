@@ -72,7 +72,7 @@ export interface IActionStartRequest {
 export interface IActionReceiveResponse {
   type: typeof RECEIVE_RESPONSE;
   url: string;
-  res: string;
+  res: any;
 }
 
 export interface IActionReceiveError {

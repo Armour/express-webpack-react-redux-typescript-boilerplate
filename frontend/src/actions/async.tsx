@@ -1,6 +1,7 @@
 import { Dispatch } from 'react-redux';
 
 import { RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actionTypes';
+import { FETCH_API_DOMAIN_NAME, FETCH_API_HTTP_PORT } from 'constants/fetchApi';
 import { IActionReceiveError, IActionReceiveResponse, IActionStartRequest, IAsyncApiCallState } from 'types';
 
 export const startRequest = (url: string): IActionStartRequest => {
@@ -10,7 +11,8 @@ export const startRequest = (url: string): IActionStartRequest => {
   };
 };
 
-export const receiveResponse = (url: string, res: string): IActionReceiveResponse => {
+export const receiveResponse = (url: string, res: any): IActionReceiveResponse => {
+  alert(`Post: ${url}\nResponse: ${JSON.stringify(res)}`);
   return {
     type: RECEIVE_RESPONSE,
     url,
@@ -19,6 +21,7 @@ export const receiveResponse = (url: string, res: string): IActionReceiveRespons
 };
 
 export const receiveError = (url: string, error: string): IActionReceiveError => {
+  alert(`Post: ${url}\nResponse: ${error}`);
   return {
     type: RECEIVE_ERROR,
     url,
@@ -30,7 +33,7 @@ const fetchApiData = (url: string) => {
   return async (dispatch: Dispatch<IAsyncApiCallState>) => {
     dispatch(startRequest(url));
     try {
-      const req = new Request(`http://localhost:3003/${url}`, {
+      const req = new Request(`http://${FETCH_API_DOMAIN_NAME}:${FETCH_API_HTTP_PORT}/${url}`, {
         method: 'POST',
         headers: new Headers({
           'Content-Type': 'application/json',
