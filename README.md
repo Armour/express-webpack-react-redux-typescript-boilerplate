@@ -6,7 +6,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?branch=master)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
-
 ## Stack
 
 - [x] [express](http://expressjs.com/) - backend
@@ -38,17 +37,15 @@
 - [x] [husky](https://github.com/typicode/husky) - git hooks
 - [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
 
-
 ## Install && Run
 
 ### Prerequisite
 
-* `node`
-* `yarn` (recommended) or `npm`
-* `postgresql` or other databases
+- `node`
+- `yarn` (recommended) or `npm`
+- `postgresql` or other databases
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
-
 
 ### Install project dependencies
 
@@ -61,7 +58,6 @@ bash patch.sh
 ```
 
 If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
-
 
 ### Build & Run
 
@@ -77,29 +73,25 @@ gulp
 NODE_ENV=production gulp
 ```
 
-
 ### Run test
 
 ```bash
 yarn test
 ```
 
-
 ### Code coverage
+
 ```bash
 yarn coveralls
 ```
-
 
 ### Boilerplate setup tutorial step by step
 
 I will write a tutorial about how to setup those stuffs together step by step asap :)
 
-
 ### If you prefer to use Django as backend
 
 Check my [another boilerplate](https://github.com/Armour/Django-Webpack-React-Typescript-HMR-Boilerplate) with Django support!
-
 
 ### License
 

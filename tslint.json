@@ -5,7 +5,7 @@
     "arrow-return-shorthand": true,
     "curly": true,
     "eofline": true,
-    "max-line-length": false,
+    "max-line-length": [false],
     "no-console": [true, "log"],
     "no-magic-numbers": [true, -1, 0, 1, 2, 3],
     "no-reference": true,
@@ -17,8 +17,8 @@
     "no-extra-semi": true,
     "no-invalid-regexp": true,
     "object-literal-sort-keys": false,
-    "only-arrow-functions": true,
-    "ordered-imports": true,
+    "only-arrow-functions": [true],
+    "ordered-imports": [true],
     "quotemark": [true, "single", "jsx-double"],
     "switch-default": true,
     "ter-indent": [true, 2, {"SwitchCase": 1}],
@@ -30,9 +30,8 @@
       "check-module",
       "check-separator",
       "check-type",
-      "check-typecast",
-      "check-preblock"
+      "check-typecast"
     ]
   },
-  "rulesDirectory": "node_modules/tslint-eslint-rules/dist/rules"
+  "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"]
 }
