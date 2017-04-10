@@ -22,8 +22,9 @@ export const apiPost = (req, res) => {
           if (client) done(client);
         } else {
           done();
+          const data = result.rowCount ? result.rows[0].field_name : 'data not found, check your database';
           res.json({
-            data: result.rows[0].field_name,
+            data,
           });
         }
       });
