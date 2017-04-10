@@ -64,7 +64,7 @@ if (!isProduction) {
 }
 
 // Start server listen on specific port
-app.listen(port, 'localhost', (error) => {
+app.listen(port, '0.0.0.0', (error) => {
   if (error) {
     console.log(error);
   }
