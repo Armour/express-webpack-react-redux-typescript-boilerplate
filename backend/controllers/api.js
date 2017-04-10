@@ -16,10 +16,10 @@ export const apiRequest = (req, res, requestType) => {
           if (client) done(client);
         } else {
           done();
-          const fieldName = result.rowCount ? result.rows[0].field_name : 'data not found, check your database';
+          const data = result.rowCount ? result.rows[0].field_name : 'data not found, check your database';
           res.json({
-            field_name: fieldName,
-            request_type: requestType,
+            data,
+            requestType,
           });
         }
       });
