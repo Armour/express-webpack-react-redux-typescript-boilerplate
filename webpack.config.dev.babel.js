@@ -31,6 +31,7 @@ export default {
     // filename: specifies the name of output file on disk (required)
     filename: '[name].js',
     // publicPath: specifies the public URL of the output resource directory (CDN)
+    // port number should be the same as backend/config.json http_port
     // https://webpack.js.org/configuration/output/#output-publicpath
     publicPath: 'http://localhost:3003/',
   },

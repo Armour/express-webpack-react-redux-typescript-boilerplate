@@ -33,12 +33,7 @@ const fetchApiData = (url: string) => {
   return async (dispatch: Dispatch<IAsyncApiCallState>) => {
     dispatch(startRequest(url));
     try {
-      const req = new Request(`http://${FETCH_API_DOMAIN_NAME}:${FETCH_API_HTTP_PORT}/${url}`, {
-        method: 'POST',
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        }),
-      });
+      const req = new Request(`http://${FETCH_API_DOMAIN_NAME}:${FETCH_API_HTTP_PORT}/${url}`, { method: 'POST' });
       const res: Response = await fetch(req);
       if (res.ok) {
         res.json().then(data => {
