@@ -11,8 +11,8 @@ interface IHomePageState {}
 class HomePage extends React.Component<IHomePageProps, IHomePageState> {
   public componentDidMount() {
     $('.pushpin-demo-nav').each((_, elem) => {
-      let $this = $(elem);
-      let $target = $('#' + $this.attr('data-target'));
+      const $this = $(elem);
+      const $target = $('#' + $this.attr('data-target'));
       $this.pushpin({
         top: $target.offset().top,
         bottom: $target.offset().top + $target.outerHeight() - $this.height(),

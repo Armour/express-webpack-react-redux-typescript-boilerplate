@@ -15,6 +15,7 @@
     "no-control-regex": true,
     "no-duplicate-case": true,
     "no-extra-semi": true,
+    "no-empty-interface": false,
     "no-invalid-regexp": true,
     "object-literal-sort-keys": false,
     "only-arrow-functions": [true],
