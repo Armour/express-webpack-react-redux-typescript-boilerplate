@@ -60,9 +60,9 @@
   dependencies:
     "@types/jquery" "*"
 
-"@types/prismjs@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.6.1.tgz#a8eb810dd329618b3c12efc48a75cb93ed6911bc"
+"@types/prismjs@^1.6.2":
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.6.2.tgz#0d49b1c8a78a4d129cfd55360b06172a64139de0"
 
 "@types/react-dom@^0.14.23":
   version "0.14.23"
@@ -97,9 +97,9 @@
     "@types/history" "^3"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^15.0.21":
-  version "15.0.21"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.21.tgz#29d849427237c1463abfb7b370755ee3e5b5b375"
+"@types/react@*", "@types/react@^15.0.22":
+  version "15.0.22"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-15.0.22.tgz#50803cde8d89f60a9b034f2dd0d619bc5f0273b5"
 
 "@types/redux-devtools-dock-monitor@^1.1.30":
   version "1.1.30"
@@ -170,9 +170,9 @@
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.0.tgz#3044381647e11ee973c5af2e925323930f691d80"
 
-"@types/webpack@^2.2.14":
-  version "2.2.14"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-2.2.14.tgz#3970c56eac47013efc4e4b7f383fd59f60f50675"
+"@types/webpack@^2.2.15":
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-2.2.15.tgz#4ad7e9b7a51cae736a1dc783f203610c884789ff"
   dependencies:
     "@types/node" "*"
     "@types/tapable" "*"
@@ -8065,9 +8065,9 @@ tryit@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/tryit/-/tryit-1.0.3.tgz#393be730a9446fd1ead6da59a014308f36c289cb"
 
-ts-jest@^19.0.9:
-  version "19.0.9"
-  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-19.0.9.tgz#049a599be6e09264b421be05f56567165995199c"
+ts-jest@^19.0.10:
+  version "19.0.10"
+  resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-19.0.10.tgz#62d086569f44ed86173cf8f0f332606606142add"
   dependencies:
     fs-extra "^2.1.2"
     glob-all "^3.1.0"
