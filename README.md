@@ -21,9 +21,9 @@
 - [x] [babel](https://babeljs.io/) - compile ES6 to ES5
 - [x] [react](https://facebook.github.io/react/) - building user interfaces
 - [x] [react-hot-loader 3](https://github.com/gaearon/react-hot-loader) - hot module reload!
-- [x] [react-router](https://github.com/ReactTraining/react-router) - routing
+- [x] [react-router 4](https://github.com/ReactTraining/react-router) - routing
 - [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux](https://github.com/reactjs/redux) (a predictable state container for js apps)
-- [x] [react-router-redux](https://github.com/reactjs/react-router-redux) - keep react-router and redux in sync
+- [x] [react-router-redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux) - keep react-router and redux in sync
 - [x] [Typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
 - [x] [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) - high quality TypeScript type definitions
 - [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs
@@ -72,6 +72,12 @@ gulp
 
 ```bash
 NODE_ENV=production gulp
+```
+
+### Profiling assets bundle
+
+```bash
+gulp profiling
 ```
 
 ### Run test

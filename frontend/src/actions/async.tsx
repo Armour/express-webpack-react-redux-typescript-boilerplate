@@ -1,7 +1,6 @@
 import { Dispatch } from 'react-redux';
 
 import { RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actionTypes';
-import { FETCH_API_DOMAIN_NAME, FETCH_API_HTTP_PORT } from 'constants/fetchApi';
 import { IActionReceiveError, IActionReceiveResponse, IActionStartRequest, IAsyncApiCallState } from 'types';
 
 export const startRequest = (url: string): IActionStartRequest => {
@@ -33,7 +32,7 @@ const fetchApiData = (url: string) => {
   return async (dispatch: Dispatch<IAsyncApiCallState>) => {
     dispatch(startRequest(url));
     try {
-      const req = new Request(`http://${FETCH_API_DOMAIN_NAME}:${FETCH_API_HTTP_PORT}/${url}`, { method: 'POST' });
+      const req = new Request(`/${url}`, { method: 'POST' });
       const res: Response = await fetch(req);
       if (res.ok) {
         res.json().then(data => {

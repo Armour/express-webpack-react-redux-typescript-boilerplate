@@ -1,14 +1,43 @@
 import path from 'path';
 import webpack from 'webpack';
 
+import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
+
 const isProduction = process.env.NODE_ENV === 'production';
 
 const reactVendors = [
   'react',
   'react-dom',
-  'react-router',
+  'react-router-dom',
   'react-redux',
+  'react-router-redux',
+  'react-hot-loader',
   'redux',
+  'redux-devtools',
+  'redux-devtools-dock-monitor',
+  'redux-devtools-log-monitor',
+  'redux-logger',
+  'redux-promise',
+  'redux-thunk',
+];
+
+const jqueryVendors = [
+  'jquery',
+];
+
+const materializeVendors = [
+  'materialize-css',
+];
+
+const immutableVendors = [
+  'immutable',
+];
+
+const miscVendors = [
+  'hammerjs',
+  'lodash',
+  'prismjs',
+  'regenerator-runtime',
 ];
 
 // Base config
@@ -19,6 +48,10 @@ let config = {
   // Start entry point(s)
   entry: {
     react: reactVendors,
+    jquery: jqueryVendors,
+    materialize: materializeVendors,
+    immutable: immutableVendors,
+    misc: miscVendors,
   },
 
   // Affecting the output of the compilation
@@ -33,6 +66,10 @@ let config = {
 
   // A list of used webpack plugins
   plugins: [
+    // Better building progress display
+    new ProgressBarWebpackPlugin({
+      clear: false,
+    }),
     // Output manifest json file for each generated dll reference file
     new webpack.DllPlugin({
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),

@@ -4,10 +4,14 @@ import cssnext from 'postcss-cssnext';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import WebpackMd5Hash from 'webpack-md5-hash';
 
-// eslint-disable-next-line import/no-unresolved
-import * as ReactManifest from './frontend/dist/dll/react_manifest.json';
+import * as ReactManifest from './frontend/dist/dll/react_manifest.json'; // eslint-disable-line import/no-unresolved
+import * as JqueryManifest from './frontend/dist/dll/jquery_manifest.json'; // eslint-disable-line import/no-unresolved
+import * as ImmutableManifest from './frontend/dist/dll/immutable_manifest.json'; // eslint-disable-line import/no-unresolved
+import * as MaterializeManifest from './frontend/dist/dll/materialize_manifest.json'; // eslint-disable-line import/no-unresolved
+import * as MiscManifest from './frontend/dist/dll/misc_manifest.json'; // eslint-disable-line import/no-unresolved
 
 export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
@@ -120,6 +124,10 @@ export default {
     new webpack.HotModuleReplacementPlugin(),
     // Better webpack module name display
     new webpack.NamedModulesPlugin(),
+    // Better building progress display
+    new ProgressBarWebpackPlugin({
+      clear: false,
+    }),
     // Use cssnext in postcss when loading scss
     new webpack.LoaderOptionsPlugin({
       test: /\.scss$/,
@@ -136,9 +144,25 @@ export default {
       'window.jQuery': 'jquery',
       'root.jQuery': 'jquery',
     }),
-    // Load pre-build react dll reference files
+    // Load pre-build dll reference files
     new webpack.DllReferencePlugin({
       manifest: ReactManifest,
+      context: __dirname,
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: JqueryManifest,
+      context: __dirname,
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: ImmutableManifest,
+      context: __dirname,
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: MaterializeManifest,
+      context: __dirname,
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: MiscManifest,
       context: __dirname,
     }),
     // Generate html file to dist folder
@@ -147,10 +171,13 @@ export default {
       template: 'frontend/template/index.ejs',
     }),
     // Add dll reference files to html
-    new AddAssetHtmlPlugin({
-      filepath: 'frontend/dist/dll/react_dll.js',
-      includeSourcemap: false,
-    }),
+    new AddAssetHtmlPlugin([
+      { filepath: 'frontend/dist/dll/react_dll.js', includeSourcemap: false },
+      { filepath: 'frontend/dist/dll/jquery_dll.js', includeSourcemap: false },
+      { filepath: 'frontend/dist/dll/immutable_dll.js', includeSourcemap: false },
+      { filepath: 'frontend/dist/dll/materialize_dll.js', includeSourcemap: false },
+      { filepath: 'frontend/dist/dll/misc_dll.js', includeSourcemap: false },
+    ]),
     // Better hash for [hash] and [chunkhash]
     new WebpackMd5Hash(),
   ],
@@ -172,6 +199,11 @@ export default {
       '.json',
       '.scss',
     ],
+    // Fixed jquery version related issue that caused by materailze-css
+    // https://github.com/Dogfalo/materialize/issues/3676
+    alias: {
+      jquery: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.js'),
+    },
   },
 
   // Disable webpack asset size limit performance warning

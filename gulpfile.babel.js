@@ -1,3 +1,4 @@
+import fs from 'fs';
 import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
@@ -6,7 +7,6 @@ import eslint from 'gulp-eslint';
 import tslint from 'gulp-tslint';
 import stylelint from 'gulp-stylelint';
 
-const exec = childProcess.exec;
 const spawn = childProcess.spawn;
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -38,38 +38,50 @@ gulp.task('stylelint', () =>
 );
 
 // Clean webpack generated files
-gulp.task('webpack:clean', () => del(['frontend/dist', 'webpack-stats.*.json']));
+gulp.task('clean', () => del(['frontend/dist']));
 
 // Build dll reference files
-gulp.task('webpack:build-dll', ['webpack:clean'], (callback) => {
-  exec('yarn run build-dll', (err, stdout, stderr) => {
-    console.log(stdout);
-    console.log(stderr);
+gulp.task('webpack:build-dll', (callback) => {
+  const buildDll = spawn('yarn', ['run', 'build-dll'], { stdio: 'inherit' });
+  buildDll.on('close', (code) => {
+    console.log(`build-dll child process exited with code ${code}`);
+    callback();
+  });
+  buildDll.on('error', (err) => {
     callback(err);
   });
 });
 
 // Generate webpack asset bundles for production
-gulp.task('webpack:build-prod', ['webpack:build-dll'], (callback) => {
-  exec('yarn run build-prod', (err, stdout, stderr) => {
-    console.log(stdout);
-    console.log(stderr);
+gulp.task('webpack:build-prod', (callback) => {
+  const buildProd = spawn('yarn', ['run', 'build-prod'], { stdio: 'inherit' });
+  buildProd.on('close', (code) => {
+    console.log(`build-prod child process exited with code ${code}`);
+    callback();
+  });
+  buildProd.on('error', (err) => {
+    callback(err);
+  });
+});
+
+// Profiling webpack asset bundle
+gulp.task('webpack:profiling', (callback) => {
+  const profiling = spawn('yarn', ['run', 'profiling'], { stdio: 'inherit' });
+  profiling.on('close', (code) => {
+    console.log(`profiling child process exited with code ${code}`);
+    callback();
+  });
+  profiling.on('error', (err) => {
     callback(err);
   });
 });
 
 // Run server
 gulp.task('express:run-server', (callback) => {
-  const runServer = spawn('yarn', ['run', 'server']);
-  runServer.stdout.on('data', (data) => {
-    const slicedData = data.slice(0, -1);
-    console.log(`${slicedData}`);
-  });
-  runServer.stderr.on('data', (data) => {
-    console.log(`${data}`);
-  });
+  const runServer = spawn('yarn', ['run', 'server'], { stdio: 'inherit' });
   runServer.on('close', (code) => {
-    console.log(`child process exited with code ${code}`);
+    console.log(`run-server child process exited with code ${code}`);
+    callback();
   });
   runServer.on('error', (err) => {
     callback(err);
@@ -77,12 +89,32 @@ gulp.task('express:run-server', (callback) => {
 });
 
 // Generate asset bundles and run server
-gulp.task('express:start', (callback) => {
-  if (isProduction) {
-    runSequence('webpack:build-prod', 'express:run-server', callback);
-  } else {
-    runSequence('webpack:build-dll', 'express:run-server', callback);
-  }
+gulp.task('build & run', (callback) => {
+  fs.exists('frontend/dist', (exists) => {
+    const taskList = [
+      'express:run-server',
+    ];
+    if (isProduction) {
+      taskList.unshift('webpack:build-prod');
+    }
+    if (!exists) {
+      taskList.unshift('webpack:build-dll');
+    }
+    runSequence(...taskList, callback);
+  });
+});
+
+// Profiling
+gulp.task('profiling', (callback) => {
+  fs.exists('frontend/dist', (exists) => {
+    const taskList = [
+      'webpack:profiling',
+    ];
+    if (!exists) {
+      taskList.unshift('webpack:build-dll');
+    }
+    runSequence(...taskList, callback);
+  });
 });
 
 // Default task
@@ -91,5 +123,5 @@ gulp.task('express:start', (callback) => {
 // 3. stylelint
 // 4. generate asset bundles and run server
 gulp.task('default', (callback) => {
-  runSequence('eslint', 'tslint', 'stylelint', 'express:start', callback);
+  runSequence('eslint', 'tslint', 'stylelint', 'build & run', callback);
 });

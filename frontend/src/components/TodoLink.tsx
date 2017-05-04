@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 export interface ITodoLinkStateProps {
   active: boolean;
@@ -8,11 +8,7 @@ export interface ITodoLinkDispatchProps {
   onClick: () => void;
 }
 
-interface ITodoLinkOtherProps {
-  children: ReactNode;
-}
-
-type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps & ITodoLinkOtherProps;
+type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps;
 
 interface ITodoLinkState {}
 

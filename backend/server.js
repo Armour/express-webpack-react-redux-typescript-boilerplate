@@ -19,6 +19,16 @@ const isProduction = process.env.NODE_ENV === 'production';
 const port = config.http_port;
 const app = express();
 
+const startListenOnPort = () => {
+  // Start server listen on specific port
+  app.listen(port, '0.0.0.0', (error) => {
+    if (error) {
+      console.log(`\n${error}`);
+    }
+    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`);
+  });
+};
+
 app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -29,17 +39,13 @@ app.use(cookieParser());
 app.use('/api', api);
 
 if (!isProduction) {
+  let listend = false;
   const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
     // The public URL of the output resource directory (CDN), should be the same as output.publicPath
     publicPath: webpackConfig.output.publicPath,
     // Where the webpack dev server serve the static files, should be the same as output.path
     contentBase: path.resolve(__dirname, 'frontend/dist/'),
-    // Allow CORS
-    // https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md#no-access-control-allow-origin-header-is-present-on-the-requested-resource
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
     // Colorful stats output
     stats: {
       colors: true,
@@ -53,6 +59,12 @@ if (!isProduction) {
     res.write(middleware.fileSystem.readFileSync(`${distPath}/index.html`));
     res.end();
   });
+  middleware.waitUntilValid(() => {
+    if (!listend) {
+      startListenOnPort();
+      listend = true;
+    }
+  });
 } else {
   // Server static files as usual
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');
@@ -61,12 +73,5 @@ if (!isProduction) {
   app.get('*', (req, res) => {
     res.sendFile(`${distPath}/index.html`);
   });
+  startListenOnPort();
 }
-
-// Start server listen on specific port
-app.listen(port, '0.0.0.0', (error) => {
-  if (error) {
-    console.log(error);
-  }
-  console.log(`Node.js: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!`);
-});

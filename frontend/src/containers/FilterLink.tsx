@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>, ownProps: IFilter
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoLink);
+)(TodoLink as any);
