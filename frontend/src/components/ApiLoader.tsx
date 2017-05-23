@@ -16,7 +16,7 @@ interface IApiLoaderState {
   url: string;
 }
 
-class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState> {
+export class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState> {
   constructor(props: IApiLoaderProps) {
     super(props);
     this.state = { url: 'api' };
@@ -45,5 +45,3 @@ class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState> {
     );
   }
 }
-
-export default ApiLoader;

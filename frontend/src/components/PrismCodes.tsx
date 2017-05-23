@@ -10,7 +10,7 @@ interface IPrismCodesState {
   code: Element;
 }
 
-class PrismCodes extends React.Component<IPrismCodesProps, IPrismCodesState> {
+export class PrismCodes extends React.Component<IPrismCodesProps, IPrismCodesState> {
   public highlightCode = (code: Element) => {
     this.setState({ code }, () => {
       highlightElement(this.state.code, false);
@@ -27,5 +27,3 @@ class PrismCodes extends React.Component<IPrismCodesProps, IPrismCodesState> {
     );
   }
 }
-
-export default PrismCodes;

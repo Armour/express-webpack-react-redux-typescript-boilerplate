@@ -1,5 +1,5 @@
 import { SET_VISIBILITY_FILTER, TEST_DEFAULT_ACTION, VisibilityFiltersOptions } from 'constants/actionTypes';
-import visibilityFilter from 'reducers/visibilityFilter';
+import { visibilityFilter } from 'reducers/visibilityFilter';
 import { IActionsFilter, IActionTestDefault, IVisibilityFilterOption } from 'types';
 
 describe('[Reducers] visibilityFilter test', () => {

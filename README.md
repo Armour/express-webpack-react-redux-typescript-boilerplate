@@ -83,13 +83,13 @@ gulp profiling
 ### Run test
 
 ```bash
-yarn test
+gulp test
 ```
 
 ### Code coverage
 
 ```bash
-yarn coveralls
+gulp coveralls
 ```
 
 ### Boilerplate setup tutorial step by step

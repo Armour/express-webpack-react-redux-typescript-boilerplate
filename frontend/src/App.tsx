@@ -5,8 +5,8 @@ import { Store } from 'redux';
 
 import { History } from 'history';
 
-import DevTools from 'containers/DevTools';
-import routes from 'router';
+import { DevTools } from 'containers/DevTools';
+import { router } from 'router';
 import { isProduction } from 'utils';
 
 import 'dist/js/materialize.min.js';
@@ -27,7 +27,7 @@ export default class App extends React.Component<IAppProps, IAppState> {
       <Provider store={this.props.store}>
         <ConnectedRouter history={this.props.history}>
           <div>
-            {routes}
+            {router}
             {!isProduction && <DevTools/>}
           </div>
         </ConnectedRouter>

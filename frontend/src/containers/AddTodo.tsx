@@ -1,7 +1,7 @@
 import { connect, Dispatch } from 'react-redux';
 
 import { addTodo } from 'actions';
-import TodoInput from 'components/TodoInput';
+import { TodoInput } from 'components/TodoInput';
 import { ITodoAppState, ITodoInputDispatchProps, ITodoInputStateProps } from 'types';
 
 const mapStateToProps = (/* state: ITodoAppState */): ITodoInputStateProps => {
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>): ITodoInputDispat
   };
 };
 
-export default connect(
+export const AddTodo = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(TodoInput);

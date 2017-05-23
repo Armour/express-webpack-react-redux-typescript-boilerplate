@@ -34,7 +34,7 @@ export default {
     path: path.resolve(__dirname, 'frontend/dist/dev'),
     // filename: specifies the name of output file on disk (required)
     filename: '[name].js',
-    // publicPath: specifies the public URL of the output resource directory (CDN)
+    // publicPath: specifies the public URL of the output resource directory
     // port number should be the same as backend/config.json http_port
     // https://webpack.js.org/configuration/output/#output-publicpath
     publicPath: 'http://localhost:3003/',
@@ -79,6 +79,9 @@ export default {
           },
           {
             loader: 'postcss-loader',
+            options: {
+              plugins: () => [cssnext],
+            },
           },
           {
             loader: 'sass-loader',
@@ -127,15 +130,6 @@ export default {
     // Better building progress display
     new ProgressBarWebpackPlugin({
       clear: false,
-    }),
-    // Use cssnext in postcss when loading scss
-    new webpack.LoaderOptionsPlugin({
-      test: /\.scss$/,
-      options: {
-        postcss: {
-          plugins: [cssnext],
-        },
-      },
     }),
     // jQuery support
     new webpack.ProvidePlugin({

@@ -12,7 +12,7 @@ const tooltipConfig: Materialize.TooltipOptions = {
   tooltip: 'Click Me! >. <',
 };
 
-class Carousel extends React.Component<ICarouselProps, ICarouselState> {
+export class Carousel extends React.Component<ICarouselProps, ICarouselState> {
   public componentDidMount() {
     $('.carousel.carousel-slider').carousel({fullWidth: true});
     $('.tooltipped').tooltip(tooltipConfig);
@@ -48,5 +48,3 @@ class Carousel extends React.Component<ICarouselProps, ICarouselState> {
     );
   }
 }
-
-export default Carousel;

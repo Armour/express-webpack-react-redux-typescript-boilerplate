@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { IFilterLinkProps } from 'containers/FilterLink';
+
 export interface ITodoLinkStateProps {
   active: boolean;
 }
@@ -8,11 +10,11 @@ export interface ITodoLinkDispatchProps {
   onClick: () => void;
 }
 
-type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps;
+type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps & IFilterLinkProps;
 
 interface ITodoLinkState {}
 
-class TodoLink extends React.Component<ITodoLinkProps, ITodoLinkState> {
+export class TodoLink extends React.Component<ITodoLinkProps, ITodoLinkState> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.onClick();
@@ -34,5 +36,3 @@ class TodoLink extends React.Component<ITodoLinkProps, ITodoLinkState> {
     }
   }
 }
-
-export default TodoLink;

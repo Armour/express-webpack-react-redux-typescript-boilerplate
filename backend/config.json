@@ -1,7 +1,7 @@
 {
-  "pgsql_username": "django",
-  "pgsql_password": "",
+  "pgsql_username": "docker",
+  "pgsql_password": "docker",
   "pgsql_hostname": "localhost",
-  "pgsql_database": "django",
+  "pgsql_database": "docker",
   "http_port": "3003"
 }

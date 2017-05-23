@@ -12,7 +12,7 @@ interface ITodoInputState {}
 
 let input: HTMLInputElement;
 
-class TodoInput extends React.Component<ITodoInputProps, ITodoInputState> {
+export class TodoInput extends React.Component<ITodoInputProps, ITodoInputState> {
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!input.value.trim()) {
@@ -39,5 +39,3 @@ class TodoInput extends React.Component<ITodoInputProps, ITodoInputState> {
     );
   }
 }
-
-export default TodoInput;

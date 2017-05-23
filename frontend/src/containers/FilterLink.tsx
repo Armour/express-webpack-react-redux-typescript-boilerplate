@@ -1,10 +1,10 @@
 import { connect, Dispatch } from 'react-redux';
 
 import { setVisibilityFilter } from 'actions';
-import TodoLink from 'components/TodoLink';
-import { ITodoAppState, ITodoLinkDispatchProps, ITodoLinkStateProps, IVisibilityFilterOption } from 'types';
+import { ITodoLinkDispatchProps, ITodoLinkStateProps, TodoLink } from 'components/TodoLink';
+import { ITodoAppState,  IVisibilityFilterOption } from 'types';
 
-interface IFilterLinkProps {
+export interface IFilterLinkProps {
   filter: IVisibilityFilterOption;
 }
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>, ownProps: IFilter
   };
 };
 
-export default connect(
+export const FilterLink = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoLink as any);
+)(TodoLink);

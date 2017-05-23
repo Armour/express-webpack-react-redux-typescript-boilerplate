@@ -11,7 +11,7 @@ const initialState: ITodoModelList = Immutable.List<ITodoModel>([
   },
 ]);
 
-const todos = (state = initialState, action: IActionsTodo): ITodoModelList => {
+export const todos = (state = initialState, action: IActionsTodo): ITodoModelList => {
   switch (action.type) {
     case ADD_TODO:
       return state.push({
@@ -26,5 +26,3 @@ const todos = (state = initialState, action: IActionsTodo): ITodoModelList => {
       return state;
   }
 };
-
-export default todos;

@@ -1,13 +1,14 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-import PrismCodes from 'components/PrismCodes';
+import { PrismCodes } from 'components/PrismCodes';
 import { PARALLAX_CODE } from 'constants/prismCodes';
 
-interface IParallaxPageProps {}
+interface IParallaxPageProps extends RouteComponentProps<any> {}
 
 interface IParallaxPageState {}
 
-class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxPageState> {
+export class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxPageState> {
   public componentDidMount() {
     $('.parallax').parallax();
     // HACK: parallax transform not init when using css img content instead of src attr
@@ -46,5 +47,3 @@ class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxPageStat
     );
   }
 }
-
-export default ParallaxPage;

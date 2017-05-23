@@ -4,9 +4,14 @@
     "module": "es6",
     "target": "es6",
     "jsx": "preserve",
-    "sourceMap": true,
-    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "baseUrl": "frontend/src",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
@@ -14,10 +19,7 @@
     "noEmitOnError": true,
     "preserveConstEnums": true,
     "removeComments": true,
-    "moduleResolution": "node",
-    "baseUrl": "frontend/src",
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "sourceMap": true,
+    "strictNullChecks": true
   }
 }

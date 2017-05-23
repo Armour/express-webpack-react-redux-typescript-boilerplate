@@ -1,14 +1,15 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-import Carousel from 'components/Carousel';
-import FAB from 'components/FAB';
-import Pushpin from 'components/Pushpin';
+import { Carousel } from 'components/Carousel';
+import { FAB } from 'components/FAB';
+import { Pushpin } from 'components/Pushpin';
 
-interface IHomePageProps {}
+interface IHomePageProps extends RouteComponentProps<any> {}
 
 interface IHomePageState {}
 
-class HomePage extends React.Component<IHomePageProps, IHomePageState> {
+export class HomePage extends React.Component<IHomePageProps, IHomePageState> {
   public componentDidMount() {
     $('.pushpin-demo-nav').each((_, elem) => {
       const $this = $(elem);
@@ -37,5 +38,3 @@ class HomePage extends React.Component<IHomePageProps, IHomePageState> {
     );
   }
 }
-
-export default HomePage;

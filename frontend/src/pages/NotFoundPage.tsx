@@ -1,10 +1,11 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-interface INotFoundPageProps {}
+interface INotFoundPageProps extends RouteComponentProps<any> {}
 
 interface INotFoundPageState {}
 
-class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
+export class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
   public render() {
     return (
       <div>
@@ -15,5 +16,3 @@ class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageStat
     );
   }
 }
-
-export default NotFoundPage;

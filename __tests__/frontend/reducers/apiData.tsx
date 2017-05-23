@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 
 import { RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST, TEST_DEFAULT_ACTION } from 'constants/actionTypes';
-import apiData from 'reducers/apiData';
+import { apiData } from 'reducers/apiData';
 import { IActionReceiveError, IActionReceiveResponse, IActionStartRequest, IActionTestDefault, IApiData, IApiDataMap } from 'types';
 
 describe('[Reducers] apiData test', () => {

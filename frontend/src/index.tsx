@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import { createBrowserHistory } from 'history';
 
 import App from 'App';
-import configureStore from 'store';
+import { configureStore } from 'store';
 
 // To keep reducers self-sufficient and reusable, we choose to not set
 // initial state here, and let each reducer to handle the default state

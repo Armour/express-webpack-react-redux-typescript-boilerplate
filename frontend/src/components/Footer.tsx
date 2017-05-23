@@ -4,7 +4,7 @@ interface IFooterProps {}
 
 interface IFooterState {}
 
-class Footer extends React.Component<IFooterProps, IFooterState> {
+export class Footer extends React.Component<IFooterProps, IFooterState> {
   public render() {
     return (
       <footer className="page-footer">
@@ -36,5 +36,3 @@ class Footer extends React.Component<IFooterProps, IFooterState> {
     );
   }
 }
-
-export default Footer;

@@ -8,7 +8,7 @@ interface ITodoProps extends ITodoModel {
 
 interface ITodoState {}
 
-class Todo extends React.Component<ITodoProps, ITodoState> {
+export class Todo extends React.Component<ITodoProps, ITodoState> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.onClick();
@@ -34,5 +34,3 @@ class Todo extends React.Component<ITodoProps, ITodoState> {
     }
   }
 }
-
-export default Todo;

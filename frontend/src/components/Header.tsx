@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Dropdown from 'components/Dropdown';
+import { Dropdown } from 'components/Dropdown';
 
 interface IHeaderProps {}
 
@@ -10,7 +10,7 @@ interface IHeaderState {
   dropdownLists: string[];
 }
 
-class Header extends React.Component<IHeaderProps, IHeaderState> {
+export class Header extends React.Component<IHeaderProps, IHeaderState> {
   constructor(props: IHeaderProps) {
     super(props);
     this.state = {
@@ -39,5 +39,3 @@ class Header extends React.Component<IHeaderProps, IHeaderState> {
     );
   }
 }
-
-export default Header;

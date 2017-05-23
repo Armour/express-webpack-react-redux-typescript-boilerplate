@@ -117,6 +117,30 @@ gulp.task('profiling', (callback) => {
   });
 });
 
+// Test
+gulp.task('test', (callback) => {
+  const buildProd = spawn('yarn', ['run', 'test'], { stdio: 'inherit' });
+  buildProd.on('close', (code) => {
+    console.log(`test child process exited with code ${code}`);
+    callback();
+  });
+  buildProd.on('error', (err) => {
+    callback(err);
+  });
+});
+
+// Coveralls
+gulp.task('coveralls', (callback) => {
+  const buildProd = spawn('yarn', ['run', 'coveralls'], { stdio: 'inherit' });
+  buildProd.on('close', (code) => {
+    console.log(`coveralls child process exited with code ${code}`);
+    callback();
+  });
+  buildProd.on('error', (err) => {
+    callback(err);
+  });
+});
+
 // Default task
 // 1. eslint
 // 2. tslint

@@ -6,11 +6,11 @@ import thunk from 'redux-thunk';
 
 import { History } from 'history';
 
-import DevTools from 'containers/DevTools';
+import { DevTools } from 'containers/DevTools';
 import reducers from 'reducers';
 import { isProduction } from 'utils';
 
-const configureStore = (initialState: {}, history: History): Store<any> => {
+export const configureStore = (initialState: {}, history: History): Store<any> => {
   // Logger
   const logger = createLogger();
 
@@ -41,5 +41,3 @@ const configureStore = (initialState: {}, history: History): Store<any> => {
 
   return store;
 };
-
-export default configureStore;

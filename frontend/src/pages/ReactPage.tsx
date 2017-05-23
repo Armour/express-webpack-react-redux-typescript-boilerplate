@@ -1,13 +1,14 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 
-import TodoLayout from 'components/TodoLayout';
-import AsyncApi from 'containers/AsyncApi';
+import { TodoLayout } from 'components/TodoLayout';
+import { AsyncApi } from 'containers/AsyncApi';
 
-interface IReactPageProps {}
+interface IReactPageProps extends RouteComponentProps<any> {}
 
 interface IReactPageState {}
 
-class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
+export class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
   public render() {
     return (
       <div>
@@ -20,5 +21,3 @@ class ReactPage extends React.Component<IReactPageProps, IReactPageState> {
     );
   }
 }
-
-export default ReactPage;

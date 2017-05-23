@@ -5,7 +5,7 @@ import { IActionsAsyncApi, IApiData, IApiDataMap } from 'types';
 
 const initialState: IApiDataMap = Immutable.Map<string, IApiData>();
 
-const apiData = (state = initialState, action: IActionsAsyncApi): IApiDataMap => {
+export const apiData = (state = initialState, action: IActionsAsyncApi): IApiDataMap => {
   switch (action.type) {
     case START_REQUEST:
       return state.set(action.url, {
@@ -29,5 +29,3 @@ const apiData = (state = initialState, action: IActionsAsyncApi): IApiDataMap =>
       return state;
   }
 };
-
-export default apiData;

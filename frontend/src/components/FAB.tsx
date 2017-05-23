@@ -4,7 +4,7 @@ interface IFABProps {}
 
 interface IFABState {}
 
-class FAB extends React.Component<IFABProps, IFABState> {
+export class FAB extends React.Component<IFABProps, IFABState> {
   public render() {
     return (
       <div className="fixed-action-btn vertical">
@@ -21,5 +21,3 @@ class FAB extends React.Component<IFABProps, IFABState> {
     );
   }
 }
-
-export default FAB;

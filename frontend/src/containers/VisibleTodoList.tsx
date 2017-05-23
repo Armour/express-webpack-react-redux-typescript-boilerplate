@@ -1,7 +1,7 @@
 import { connect, Dispatch } from 'react-redux';
 
 import { toggleTodo } from 'actions';
-import TodoList from 'components/TodoList';
+import { TodoList } from 'components/TodoList';
 import { VisibilityFiltersOptions } from 'constants/actionTypes';
 import { ITodoAppState, ITodoListDispatchProps, ITodoListStateProps, ITodoModelList, IVisibilityFilterOption } from 'types';
 
@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>): ITodoListDispatc
   };
 };
 
-export default connect(
+export const VisibleTodoList = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(TodoList);

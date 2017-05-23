@@ -21,7 +21,7 @@ const app = express();
 
 const startListenOnPort = () => {
   // Start server listen on specific port
-  app.listen(port, '0.0.0.0', (error) => {
+  app.listen(port, 'localhost', (error) => {
     if (error) {
       console.log(`\n${error}`);
     }
@@ -42,10 +42,8 @@ if (!isProduction) {
   let listend = false;
   const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
-    // The public URL of the output resource directory (CDN), should be the same as output.publicPath
+    // The public URL of the output resource directory, should be the same as output.publicPath
     publicPath: webpackConfig.output.publicPath,
-    // Where the webpack dev server serve the static files, should be the same as output.path
-    contentBase: path.resolve(__dirname, 'frontend/dist/'),
     // Colorful stats output
     stats: {
       colors: true,

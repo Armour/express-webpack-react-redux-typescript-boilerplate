@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Todo from 'components/Todo';
+import { Todo } from 'components/Todo';
 import { ITodoModelList } from 'types';
 
 export interface ITodoListStateProps {
@@ -15,7 +15,7 @@ type ITodoListProps = ITodoListStateProps & ITodoListDispatchProps;
 
 interface ITodoListState {}
 
-class TodoList extends React.Component<ITodoListProps, ITodoListState> {
+export class TodoList extends React.Component<ITodoListProps, ITodoListState> {
   public onClick = (id: string) => {
     return () => {
       this.props.onClick(id);
@@ -33,5 +33,3 @@ class TodoList extends React.Component<ITodoListProps, ITodoListState> {
     );
   }
 }
-
-export default TodoList;

@@ -3,7 +3,7 @@ import { IActionsFilter, IVisibilityFilterOption } from 'types';
 
 const initialState: IVisibilityFilterOption = VisibilityFiltersOptions.SHOW_ALL;
 
-const visibilityFilter = (state = initialState, action: IActionsFilter): IVisibilityFilterOption => {
+export const visibilityFilter = (state = initialState, action: IActionsFilter): IVisibilityFilterOption => {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.filter;
@@ -11,5 +11,3 @@ const visibilityFilter = (state = initialState, action: IActionsFilter): IVisibi
       return state;
   }
 };
-
-export default visibilityFilter;

@@ -71,7 +71,7 @@ let config = {
           fallback: 'style-loader',
           use: [
             'css-loader',
-            'postcss-loader',
+            { loader: 'postcss-loader', options: { plugins: () => [cssnext] } },
             'sass-loader',
           ],
         }),
@@ -120,15 +120,6 @@ let config = {
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false },
       sourceMap: true,
-    }),
-    // Use cssnext in postcss when loading scss
-    new webpack.LoaderOptionsPlugin({
-      test: /\.scss$/,
-      options: {
-        postcss: {
-          plugins: [cssnext],
-        },
-      },
     }),
     // Define production env which shaved off 75% of the build output size
     // http://moduscreate.com/optimizing-react-es6-webpack-production-build
@@ -220,7 +211,7 @@ if (isProfiling) {
     plugins: [
       // Extend base config
       ...config.plugins,
-      // Webpack bundle analyzer
+      // Webpack bundle analyzer for profiling
       new BundleAnalyzerPlugin({
         analyzerPort: 3003,
       }),

@@ -11,7 +11,7 @@ interface IDropdownProps {
 
 interface IDropdownState {}
 
-class Dropdown extends React.Component<IDropdownProps, IDropdownState> {
+export class Dropdown extends React.Component<IDropdownProps, IDropdownState> {
   public componentDidMount() {
     $('.dropdown-button').dropdown();
   }
@@ -27,5 +27,3 @@ class Dropdown extends React.Component<IDropdownProps, IDropdownState> {
     );
   }
 }
-
-export default Dropdown;

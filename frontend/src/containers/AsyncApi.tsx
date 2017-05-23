@@ -1,7 +1,7 @@
 import { connect, Dispatch } from 'react-redux';
 
 import { fetchApiDataIfNeeded } from 'actions';
-import ApiLoader from 'components/ApiLoader';
+import { ApiLoader } from 'components/ApiLoader';
 import { IApiLoaderDispatchProps, IApiLoaderStateProps, IAsyncApiCallState } from 'types';
 
 const mapStateToProps = (state: IAsyncApiCallState): IApiLoaderStateProps => {
@@ -18,7 +18,7 @@ const mapDispatchToProps = (dispatch: Dispatch<IAsyncApiCallState>): IApiLoaderD
   };
 };
 
-export default connect(
+export const AsyncApi = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(ApiLoader);

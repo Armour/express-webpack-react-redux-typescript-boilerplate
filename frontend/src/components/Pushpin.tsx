@@ -12,7 +12,7 @@ interface IPushpinProps {
 
 interface IPushpinState {}
 
-class Pushpin extends React.Component<IPushpinProps, IPushpinState> {
+export class Pushpin extends React.Component<IPushpinProps, IPushpinState> {
   public render() {
     return (
       <div id={this.props.color} className={`pushpin-block ${this.props.color} lighten-1`}>
@@ -31,5 +31,3 @@ class Pushpin extends React.Component<IPushpinProps, IPushpinState> {
     );
   }
 }
-
-export default Pushpin;
