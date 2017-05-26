@@ -11,6 +11,8 @@ import { isProduction } from 'utils';
 
 import 'dist/js/materialize.min.js';
 import 'image/favicon.ico';
+import 'prismjs/prism.js';
+import 'prismjs/themes/prism.css';
 import 'sass/index.scss';
 
 interface IAppProps {

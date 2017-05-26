@@ -43,7 +43,6 @@ let config = {
       // Use awesome-typescript-loader and babel-loader for ts(x) files
       {
         test: /\.tsx?$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         use: [
           {
             loader: 'babel-loader',
@@ -63,10 +62,20 @@ let config = {
           // },
         ],
       },
-      // Use ExtractTextPlugin and list of loaders to load and compile scss files to css files
+      // Use ExtractTextPlugin and list of loaders to load css files
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            { loader: 'postcss-loader', options: { plugins: () => [cssnext] } },
+          ],
+        }),
+      },
+      // Use ExtractTextPlugin and list of loaders to load scss files
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
@@ -79,7 +88,6 @@ let config = {
       // Use file-loader and image-loader to load images
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         use: [
           {
             loader: 'url-loader',

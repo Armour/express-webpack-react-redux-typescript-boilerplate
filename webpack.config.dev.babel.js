@@ -46,7 +46,6 @@ export default {
       // Use awesome-typescript-loader and babel-loader for ts(x) files
       {
         test: /\.tsx?$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         use: [
           {
             loader: 'babel-loader',
@@ -66,10 +65,27 @@ export default {
           // },
         ],
       },
-      // Use a list of loaders to load and compile scss files to css files
+      // Use a list of loaders to load css files
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [cssnext],
+            },
+          },
+        ],
+      },
+      // Use a list of loaders to load scss files
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         use: [
           {
             loader: 'style-loader',
@@ -91,7 +107,6 @@ export default {
       // Use url-loader to load images in development
       {
         test: /\.(png|jpe?g|gif|svg)$/,
-        include: path.resolve(__dirname, 'frontend/src/'),
         use: [
           {
             loader: 'url-loader',
