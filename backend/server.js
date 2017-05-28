@@ -16,7 +16,7 @@ import config from './config.json';
 import api from './routes/api';
 
 const isProduction = process.env.NODE_ENV === 'production';
-const port = config.http_port;
+const port = process.env.PORT || config.http_port;
 const app = express();
 
 const startListenOnPort = () => {
