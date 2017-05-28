@@ -15,7 +15,8 @@
     "test": "jest --no-cache --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "precommit": "yarn test",
-    "prepush": "yarn test"
+    "prepush": "yarn test",
+    "postreceive": "yarn coveralls"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
