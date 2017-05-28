@@ -1,9 +1,0 @@
-language: node_js
-node_js:
-  - "node"
-after_install:
-  - yarn
-  - yarn global add gulp
-  - yarn global add babel-cli
-script:
-  - yarn test
