@@ -1,0 +1,23 @@
+checkout:
+  post:
+    - yarn global add gulp
+
+machine:
+  environment:
+      PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+
+dependencies:
+  override:
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+
+test:
+  override:
+    - yarn test
+
+deployment:
+  staging:
+    branch: master
+      heroku:
+        appname: express-react-typescript

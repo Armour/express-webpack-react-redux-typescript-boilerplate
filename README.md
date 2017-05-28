@@ -1,6 +1,6 @@
 # Express-Webpack-React-Typescript-HMR-Boilerplate
 
-[![Build Status](https://travis-ci.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate.svg?token=xzmwu2pcJ1tBo5AwTZV3&branch=master)](https://travis-ci.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
+[![CircleCI](https://circleci.com/gh/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/tree/master.svg?style=shield&circle-token=2b60a5e48d4f53d2b115efd948022c7df72a805b)](https://circleci.com/gh/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/tree/master)
 [![Dependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
 [![DevDependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/dev-status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?branch=master)
@@ -35,7 +35,8 @@
 - [x] [jest](https://facebook.github.io/jest/) - painless javascript testing
 - [x] [coveralls](https://coveralls.io/) - test coverage
 - [x] [husky](https://github.com/typicode/husky) - git hooks
-- [x] [travis-ci](https://travis-ci.org/) - continuous integration tool for testing and deployment
+- [x] [circle-ci](https://circleci.com/) - continuous integration tool for testing and deployment
+- [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 - [ ] [docker](https://github.com/docker/docker) - the open-source application container engine
 
 ## Install && Run
