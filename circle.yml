@@ -19,5 +19,5 @@ test:
 deployment:
   staging:
     branch: master
-      heroku:
-        appname: express-react-typescript
+    heroku:
+      appname: express-react-typescript
