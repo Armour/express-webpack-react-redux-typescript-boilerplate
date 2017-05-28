@@ -1,1 +1,1 @@
-web: ls && bash ./patch.sh && yarn global add gulp && gulp
+web: ./patch.sh && ./node_modules/gulp/bin/gulp.js unpack && yarn run server

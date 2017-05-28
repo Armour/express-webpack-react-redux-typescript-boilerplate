@@ -6,6 +6,8 @@ import childProcess from 'child_process';
 import eslint from 'gulp-eslint';
 import tslint from 'gulp-tslint';
 import stylelint from 'gulp-stylelint';
+import unzip from 'gulp-unzip';
+import zip from 'gulp-zip';
 
 const spawn = childProcess.spawn;
 const isProduction = process.env.NODE_ENV === 'production';
@@ -38,7 +40,21 @@ gulp.task('stylelint', () =>
 );
 
 // Clean webpack generated files
-gulp.task('clean', () => del(['frontend/dist']));
+gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip']));
+
+// Pack generated dist file for depoyment
+gulp.task('pack', () =>
+    gulp.src('frontend/dist/**')
+        .pipe(zip('dist.zip'))
+        .pipe(gulp.dest('frontend')),
+);
+
+// Unpack generated dist file for depoyment
+gulp.task('unpack', () =>
+    gulp.src('frontend/dist.zip')
+        .pipe(unzip())
+        .pipe(gulp.dest('frontend/dist')),
+);
 
 // Build dll reference files
 gulp.task('webpack:build-dll', (callback) => {
@@ -88,13 +104,13 @@ gulp.task('express:run-server', (callback) => {
   });
 });
 
-// Generate asset bundles and run server
-gulp.task('build & run', (callback) => {
+// Generate asset bundles
+gulp.task('build', (callback) => {
   fs.exists('frontend/dist', (exists) => {
     const taskList = [
-      'express:run-server',
     ];
     if (isProduction) {
+      taskList.unshift('pack');
       taskList.unshift('webpack:build-prod');
     }
     if (!exists) {
@@ -102,6 +118,11 @@ gulp.task('build & run', (callback) => {
     }
     runSequence(...taskList, callback);
   });
+});
+
+// Generate asset bundles and run server
+gulp.task('build & run', (callback) => {
+  runSequence('build', 'express:run-server', callback);
 });
 
 // Profiling
