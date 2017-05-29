@@ -93,13 +93,15 @@ gulp test
 gulp coveralls
 ```
 
+### Deployment
+
+```bash
+gulp deploy
+```
+
 ### Boilerplate setup tutorial step by step
 
 I will write a tutorial about how to setup those stuffs together step by step asap :)
-
-### If you prefer to use Django as backend
-
-Check my [another boilerplate](https://github.com/Armour/Django-Webpack-React-Typescript-HMR-Boilerplate) with Django support!
 
 ### License
 
