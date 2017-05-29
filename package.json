@@ -14,7 +14,7 @@
     "server": "babel-node backend/server.js",
     "test": "jest --no-cache --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "deploy": "gulp clean && NODE_ENV=production gulp build && git add frontend/dist.zip && git commit -m \"updated dist.zip and prepare for deploy\" --no-verify && git push heroku master",
+    "deploy": "gulp clean && NODE_ENV=production gulp build && git add frontend/dist.zip && git commit -m \"updated dist.zip and prepare for deploy\" --no-verify && git push --no-verify && git push heroku master --no-verify",
     "precommit": "yarn test",
     "prepush": "yarn test && yarn coveralls"
   },
