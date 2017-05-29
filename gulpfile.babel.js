@@ -116,7 +116,11 @@ gulp.task('build', (callback) => {
     if (!exists) {
       taskList.unshift('webpack:build-dll');
     }
-    runSequence(...taskList, callback);
+    if (taskList.length > 0) {
+      runSequence(...taskList, callback);
+    } else {
+      callback();
+    }
   });
 });
 

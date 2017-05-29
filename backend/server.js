@@ -21,7 +21,7 @@ const app = express();
 
 const startListenOnPort = () => {
   // Start server listen on specific port
-  app.listen(port, 'localhost', (error) => {
+  app.listen(port, (error) => {
     if (error) {
       console.log(`\n${error}`);
     }

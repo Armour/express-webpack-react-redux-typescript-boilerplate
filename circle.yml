@@ -17,9 +17,3 @@ dependencies:
 test:
   override:
     - yarn test
-
-deployment:
-  staging:
-    branch: master
-    heroku:
-      appname: express-react-typescript
