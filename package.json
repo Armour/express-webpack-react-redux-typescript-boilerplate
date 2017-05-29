@@ -14,8 +14,9 @@
     "server": "babel-node backend/server.js",
     "test": "jest --no-cache --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "deploy": "gulp clean && NODE_ENV=production gulp build && git push heroku master",
     "precommit": "yarn test",
-    "prepush": "yarn test && yarn coveralls && gulp clean && NODE_ENV=production gulp build"
+    "prepush": "yarn test && yarn coveralls"
   },
   "dependencies": {
     "@types/express": "^4.0.35",
