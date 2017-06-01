@@ -166,6 +166,18 @@ gulp.task('coveralls', (callback) => {
   });
 });
 
+// Deployment
+gulp.task('deploy', (callback) => {
+  const buildProd = spawn('yarn', ['run', 'deploy'], { stdio: 'inherit' });
+  buildProd.on('close', (code) => {
+    console.log(`deploy child process exited with code ${code}`);
+    callback();
+  });
+  buildProd.on('error', (err) => {
+    callback(err);
+  });
+});
+
 // Default task
 // 1. eslint
 // 2. tslint

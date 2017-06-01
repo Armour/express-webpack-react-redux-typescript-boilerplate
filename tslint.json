@@ -6,6 +6,7 @@
     "curly": true,
     "eofline": true,
     "jsx-boolean-value": false,
+    "linebreak-style": [false],
     "max-line-length": [false],
     "no-console": [true, "log"],
     "no-magic-numbers": [true, -1, 0, 1, 2, 3],
