@@ -5,6 +5,7 @@ import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import compression from 'compression';
+import helmet from 'helmet';
 
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -29,6 +30,7 @@ const startListenOnPort = () => {
   });
 };
 
+app.use(helmet());
 app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
