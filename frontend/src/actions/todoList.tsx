@@ -1,6 +1,7 @@
 import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actionTypes';
 import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo, IVisibilityFilterOption } from 'types';
-import { v1 } from 'uuid';
+
+import { v1 } from 'node-uuid';
 
 export const addTodo = (text: string): IActionAddTodo => {
   return {

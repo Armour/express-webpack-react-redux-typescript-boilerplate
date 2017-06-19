@@ -18,7 +18,7 @@ export const configureStore = (initialState: {}, history: History): Store<any> =
   const historyMiddleware = routerMiddleware(history);
 
   // Enhancer
-  let enhancer;
+  let enhancer: any;
   if (isProduction) {
     enhancer = applyMiddleware(historyMiddleware, thunk, promise, logger);
   } else {
