@@ -14,7 +14,7 @@
 - [x] [materialize](http://materializecss.com/) - a modern responsive front-end framework based on Material Design
 - [x] [sass](https://github.com/sass/sass) - CSS pre-processors
 - [x] [postcss](https://github.com/postcss/postcss) - CSS post-processor
-- [x] [webpack 2](https://github.com/webpack/webpack) - module bundler
+- [x] [webpack 3](https://github.com/webpack/webpack) - module bundler
 - [x] [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) - offers a dev middleware for webpack, which arguments a live bundle to a directory
 - [x] [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) - add hot reloading into an existing server without [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 - [x] followed [ES6 standard](https://github.com/lukehoban/es6features)
@@ -37,7 +37,7 @@
 - [x] [husky](https://github.com/typicode/husky) - git hooks
 - [x] [circle-ci](https://circleci.com/) - continuous integration tool for testing and deployment
 - [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
-- [ ] [docker](https://github.com/docker/docker) - the open-source application container engine
+- [x] [docker](https://github.com/docker/docker) - the open-source application container engine
 
 ## Install && Run
 
@@ -45,7 +45,7 @@
 
 - `node`
 - `yarn` (recommended) or `npm`
-- `postgresql` or other databases
+- `docker`
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
