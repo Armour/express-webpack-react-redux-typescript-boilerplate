@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import cssnext from 'postcss-cssnext';
+import postcssCssnext from 'postcss-cssnext';
+import postcssImport from 'postcss-import';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -74,11 +75,14 @@ export default {
           },
           {
             loader: 'css-loader',
+            options: {
+              importLoaders: 1, // https://github.com/webpack-contrib/css-loader#importloaders
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [cssnext],
+              plugins: () => [postcssImport, postcssCssnext],
             },
           },
         ],
@@ -92,11 +96,14 @@ export default {
           },
           {
             loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
           },
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [cssnext],
+              plugins: () => [postcssImport, postcssCssnext],
             },
           },
           {

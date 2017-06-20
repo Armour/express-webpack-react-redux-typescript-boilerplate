@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import cssnext from 'postcss-cssnext';
+import postcssCssnext from 'postcss-cssnext';
+import postcssImport from 'postcss-import';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -68,8 +69,8 @@ let config = {
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader',
-            { loader: 'postcss-loader', options: { plugins: () => [cssnext] } },
+            { loader: 'css-loader', options: { importLoaders: 1 } }, // https://github.com/webpack-contrib/css-loader#importloaders
+            { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
           ],
         }),
       },
@@ -79,8 +80,8 @@ let config = {
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader',
-            { loader: 'postcss-loader', options: { plugins: () => [cssnext] } },
+            { loader: 'css-loader', options: { importLoaders: 2 } },
+            { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
             'sass-loader',
           ],
         }),
@@ -129,6 +130,8 @@ let config = {
       output: { comments: false },
       sourceMap: true,
     }),
+    // Module concatenation optimization from webpack v3
+    new webpack.optimize.ModuleConcatenationPlugin(),
     // Define production env which shaved off 75% of the build output size
     // http://moduscreate.com/optimizing-react-es6-webpack-production-build
     new webpack.DefinePlugin({
