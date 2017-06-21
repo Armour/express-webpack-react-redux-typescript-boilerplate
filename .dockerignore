@@ -1,0 +1,12 @@
+.idea/
+.vscode/
+.awcache/
+node_modules/
+frontend/dist/
+dist.zip
+*.swp
+*.log
+.DS_Store
+coverage/
+.coveralls.yml
+.yarn.lock

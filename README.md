@@ -49,6 +49,18 @@
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
+### Use docker
+
+The easiest way to run our example project is to use docker-compose
+
+```bash
+docker-compose up
+```
+
+that's it :)
+
+you can also manually install and run it by following below
+
 ### Install project dependencies
 
 Go to project root directory:

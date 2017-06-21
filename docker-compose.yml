@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  web:
+    build: .
+    ports:
+      - "3003:3003"
+    links:
+      - db
+
+  db:
+    image: postgres:9.5
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
