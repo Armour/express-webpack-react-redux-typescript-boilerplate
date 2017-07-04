@@ -1,24 +1,24 @@
 // Colors
-@import "materialize/color";
+@import "~materialize-css/sass/components/color";
 
 // Variables
-@import "materialize/variables";
+@import "~materialize-css/sass/components/variables";
 
 // Reset
-@import "materialize/normalize";
+@import "~materialize-css/sass/components/normalize";
 
 // Components
-@import "materialize/global";
-@import "materialize/buttons";
-@import "materialize/carousel";
-@import "materialize/dropdown";
-@import "materialize/grid";
-@import "materialize/icons-material-design";
-@import "materialize/materialbox";
-@import "materialize/navbar";
-@import "materialize/toast";
-@import "materialize/tooltip";
-@import "materialize/transitions";
-@import "materialize/typography";
-@import "materialize/waves";
-@import "materialize/forms/input-fields";
+@import "~materialize-css/sass/components/global";
+@import "~materialize-css/sass/components/buttons";
+@import "~materialize-css/sass/components/carousel";
+@import "~materialize-css/sass/components/dropdown";
+@import "~materialize-css/sass/components/grid";
+@import "~materialize-css/sass/components/icons-material-design";
+@import "~materialize-css/sass/components/materialbox";
+@import "~materialize-css/sass/components/navbar";
+@import "~materialize-css/sass/components/toast";
+@import "~materialize-css/sass/components/tooltip";
+@import "~materialize-css/sass/components/transitions";
+@import "~materialize-css/sass/components/typography";
+@import "~materialize-css/sass/components/waves";
+@import "~materialize-css/sass/components/forms/input-fields";

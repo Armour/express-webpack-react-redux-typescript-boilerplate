@@ -11,6 +11,7 @@ import zip from 'gulp-zip';
 
 const spawn = childProcess.spawn;
 const isProduction = process.env.NODE_ENV === 'production';
+const yarn = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
 
 // Run eslint
 gulp.task('eslint', () =>
@@ -58,7 +59,7 @@ gulp.task('unpack', () =>
 
 // Build dll reference files
 gulp.task('webpack:build-dll', (callback) => {
-  const buildDll = spawn('yarn', ['run', 'build-dll'], { stdio: 'inherit' });
+  const buildDll = spawn(yarn, ['run', 'build-dll'], { stdio: 'inherit' });
   buildDll.on('close', (code) => {
     console.log(`build-dll child process exited with code ${code}`);
     callback();
@@ -70,7 +71,7 @@ gulp.task('webpack:build-dll', (callback) => {
 
 // Generate webpack asset bundles for production
 gulp.task('webpack:build-prod', (callback) => {
-  const buildProd = spawn('yarn', ['run', 'build-prod'], { stdio: 'inherit' });
+  const buildProd = spawn(yarn, ['run', 'build-prod'], { stdio: 'inherit' });
   buildProd.on('close', (code) => {
     console.log(`build-prod child process exited with code ${code}`);
     callback();
@@ -82,7 +83,7 @@ gulp.task('webpack:build-prod', (callback) => {
 
 // Profiling webpack asset bundle
 gulp.task('webpack:profiling', (callback) => {
-  const profiling = spawn('yarn', ['run', 'profiling'], { stdio: 'inherit' });
+  const profiling = spawn(yarn, ['run', 'profiling'], { stdio: 'inherit' });
   profiling.on('close', (code) => {
     console.log(`profiling child process exited with code ${code}`);
     callback();
@@ -94,7 +95,7 @@ gulp.task('webpack:profiling', (callback) => {
 
 // Run server
 gulp.task('express:run-server', (callback) => {
-  const runServer = spawn('yarn', ['run', 'server'], { stdio: 'inherit' });
+  const runServer = spawn(yarn, ['run', 'server'], { stdio: 'inherit' });
   runServer.on('close', (code) => {
     console.log(`run-server child process exited with code ${code}`);
     callback();
@@ -144,7 +145,7 @@ gulp.task('profiling', (callback) => {
 
 // Test
 gulp.task('test', (callback) => {
-  const buildProd = spawn('yarn', ['run', 'test'], { stdio: 'inherit' });
+  const buildProd = spawn(yarn, ['run', 'test'], { stdio: 'inherit' });
   buildProd.on('close', (code) => {
     console.log(`test child process exited with code ${code}`);
     callback();
@@ -156,7 +157,7 @@ gulp.task('test', (callback) => {
 
 // Coveralls
 gulp.task('coveralls', (callback) => {
-  const buildProd = spawn('yarn', ['run', 'coveralls'], { stdio: 'inherit' });
+  const buildProd = spawn(yarn, ['run', 'coveralls'], { stdio: 'inherit' });
   buildProd.on('close', (code) => {
     console.log(`coveralls child process exited with code ${code}`);
     callback();
@@ -168,7 +169,7 @@ gulp.task('coveralls', (callback) => {
 
 // Deployment
 gulp.task('deploy', (callback) => {
-  const buildProd = spawn('yarn', ['run', 'deploy'], { stdio: 'inherit' });
+  const buildProd = spawn(yarn, ['run', 'deploy'], { stdio: 'inherit' });
   buildProd.on('close', (code) => {
     console.log(`deploy child process exited with code ${code}`);
     callback();
