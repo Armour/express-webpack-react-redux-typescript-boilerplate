@@ -153,6 +153,10 @@
     "testPathIgnorePatterns": [
       "node_modules"
     ],
+    "coveragePathIgnorePatterns": [
+      "node_modules",
+      "_tests_"
+    ],
     "moduleDirectories": [
       "node_modules",
       "frontend/src",
