@@ -13,6 +13,7 @@
     "max-len": 0,
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "no-console": 0,
+    "linebreak-style": 0,
     "import/export": 2,
     "import/first": 2,
     "import/no-commonjs": 2,

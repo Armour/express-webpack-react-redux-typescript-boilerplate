@@ -11,7 +11,6 @@ import WebpackMd5Hash from 'webpack-md5-hash';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import * as ReactManifest from './frontend/dist/dll/react_manifest.json'; // eslint-disable-line import/no-unresolved
-import * as JqueryManifest from './frontend/dist/dll/jquery_manifest.json'; // eslint-disable-line import/no-unresolved
 import * as ImmutableManifest from './frontend/dist/dll/immutable_manifest.json'; // eslint-disable-line import/no-unresolved
 import * as MaterializeManifest from './frontend/dist/dll/materialize_manifest.json'; // eslint-disable-line import/no-unresolved
 import * as MiscManifest from './frontend/dist/dll/misc_manifest.json'; // eslint-disable-line import/no-unresolved
@@ -152,10 +151,6 @@ let config = {
       context: __dirname,
     }),
     new webpack.DllReferencePlugin({
-      manifest: JqueryManifest,
-      context: __dirname,
-    }),
-    new webpack.DllReferencePlugin({
       manifest: ImmutableManifest,
       context: __dirname,
     }),
@@ -175,7 +170,6 @@ let config = {
     // Add dll reference files to html
     new AddAssetHtmlPlugin([
       { filepath: 'frontend/dist/dll/react_dll.js', includeSourcemap: false },
-      { filepath: 'frontend/dist/dll/jquery_dll.js', includeSourcemap: false },
       { filepath: 'frontend/dist/dll/immutable_dll.js', includeSourcemap: false },
       { filepath: 'frontend/dist/dll/materialize_dll.js', includeSourcemap: false },
       { filepath: 'frontend/dist/dll/misc_dll.js', includeSourcemap: false },
@@ -203,11 +197,6 @@ let config = {
       '.json',
       '.scss',
     ],
-    // Fixed jquery version related issue that caused by materailze-css
-    // https://github.com/Dogfalo/materialize/issues/3676
-    alias: {
-      jquery: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.js'),
-    },
   },
 
   // Source map mode

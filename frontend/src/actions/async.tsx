@@ -56,6 +56,8 @@ export const fetchApiDataIfNeeded = (url: string) => {
   return (dispatch: Dispatch<IAsyncApiCallState>, getState: () => IAsyncApiCallState) => {
     if (shouldFetchApiData(getState(), url)) {
       return dispatch(fetchApiData(url));
+    } else {
+      return null;
     }
   };
 };

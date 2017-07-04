@@ -21,10 +21,6 @@ const reactVendors = [
   'redux-thunk',
 ];
 
-const jqueryVendors = [
-  'jquery',
-];
-
 const materializeVendors = [
   'materialize-css',
 ];
@@ -48,7 +44,6 @@ let config = {
   // Start entry point(s)
   entry: {
     react: reactVendors,
-    jquery: jqueryVendors,
     materialize: materializeVendors,
     immutable: immutableVendors,
     misc: miscVendors,
@@ -69,6 +64,13 @@ let config = {
     // Better building progress display
     new ProgressBarWebpackPlugin({
       clear: false,
+    }),
+    // jQuery support
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      'root.jQuery': 'jquery',
     }),
     // Output manifest json file for each generated dll reference file
     new webpack.DllPlugin({

@@ -9,8 +9,8 @@ import { DevTools } from 'containers/DevTools';
 import { router } from 'router';
 import { isProduction } from 'utils';
 
-import 'dist/js/materialize.min.js';
 import 'image/favicon.ico';
+import 'materialize-css';
 import 'prismjs/prism.js';
 import 'prismjs/themes/prism.css';
 import 'sass/index.scss';
