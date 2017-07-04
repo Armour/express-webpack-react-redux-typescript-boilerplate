@@ -13,19 +13,16 @@ img {
   &.re-zero::after {
     max-width: 50%;
     height: auto;
-    content: url("../image/rezero.png");
   }
 
   &.parallax-img-1,
   &.parallax-img-1::after {
     display: block;
-    content: url("../image/parallax1.jpg");
   }
 
   &.parallax-img-2,
   &.parallax-img-2::after {
     display: block;
-    content: url("../image/parallax2.jpg");
   }
 }
 

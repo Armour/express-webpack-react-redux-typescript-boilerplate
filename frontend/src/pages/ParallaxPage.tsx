@@ -11,8 +11,6 @@ interface IParallaxPageState {}
 export class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxPageState> {
   public componentDidMount() {
     $('.parallax').parallax();
-    // HACK: parallax transform not init when using css img content instead of src attr
-    $('.parallax-img-1').css('transform', 'translate3D(-50%, 299px, 0)');
   }
 
   public render() {
@@ -23,7 +21,7 @@ export class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxP
         </div>
         <div className="parallax-container">
           <div className="parallax">
-            <img className="parallax-img-1"/>
+            <img className="parallax-img-1" src={require('../image/parallax1.jpg')}/>
           </div>
         </div>
         <div className="section white">
@@ -40,7 +38,7 @@ export class ParallaxPage extends React.Component<IParallaxPageProps, IParallaxP
         </div>
         <div className="parallax-container">
           <div className="parallax">
-            <img className="parallax-img-2"/>
+            <img className="parallax-img-2" src={require('../image/parallax2.jpg')}/>
           </div>
         </div>
       </div>

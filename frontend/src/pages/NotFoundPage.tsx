@@ -10,8 +10,8 @@ export class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundP
     return (
       <div>
         <h1>Page 404</h1>
-        <img className="re-zero"/>
-        <img className="re-zero"/>
+        <img className="re-zero" src={require('../image/rezero.png')}/>
+        <img className="re-zero" src={require('../image/rezero.png')}/>
       </div>
     );
   }
