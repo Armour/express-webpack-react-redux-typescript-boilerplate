@@ -54,7 +54,7 @@ Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official d
 The easiest way to run our example project is to use docker-compose
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 that's it :)
@@ -72,6 +72,10 @@ bash patch.sh
 ```
 
 If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
+
+### Database setup
+
+Make sure you have `postgresql` installed, and set the right configs in `backend/config.json`.
 
 ### Build & Run
 

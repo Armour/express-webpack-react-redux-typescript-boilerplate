@@ -2,13 +2,11 @@ FROM node
 
 WORKDIR ~
 
-ENV NODE_ENV=production
-
 COPY . .
 
 RUN apt-get update && apt-get install -y bash git
 
-RUN yarn
+RUN yarn install
 RUN yarn global add gulp
 RUN bash ./patch.sh
 

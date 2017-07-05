@@ -1,15 +1,32 @@
-version: '3.0'
+version: '2.1'
 
 services:
   web:
     build: .
+    restart: always
     ports:
       - "3003:3003"
-    links:
-      - db
-
-  db:
-    image: postgres:9.5
+    depends_on:
+      - postgres
     environment:
-      POSTGRES_PASSWORD: docker
-      POSTGRES_USER: docker
+      - NODE_ENV=production
+
+  postgres:
+    image: postgres:9.5
+    restart: always
+    volumes:
+      - ./backend/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_DB=docker
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+
+  pgweb:
+    image: sosedoff/pgweb
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgres://docker:docker@postgres:5432/docker?sslmode=disable

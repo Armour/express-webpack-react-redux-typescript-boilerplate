@@ -2,9 +2,9 @@ import { db } from '../lib/db';
 
 export const apiRequest = async (req, res, requestType) => {
   try {
-    const data = await db.one('SELECT * FROM app_name_modelname', []);
+    const data = await db.many('SELECT * FROM tableName', []);
     res.json({
-      data: data.rows[0].field_name,
+      data,
       requestType,
     });
   } catch (e) {
