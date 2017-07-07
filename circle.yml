@@ -16,6 +16,8 @@ dependencies:
 
 test:
   pre:
-    - docker-compose up --build -d
+    - docker -v
+    - docker-compose -v
+    - docker-compose up -d
   override:
     - yarn test
