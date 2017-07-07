@@ -5,8 +5,8 @@ checkout:
 machine:
   node:
     version: 7.10.0
-  environment:
-    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  services:
+    docker
 
 dependencies:
   override:
@@ -15,5 +15,7 @@ dependencies:
     - ~/.cache/yarn
 
 test:
+  pre:
+    - docker-compose up --build -d
   override:
     - yarn test
