@@ -5,12 +5,11 @@ checkout:
 machine:
   node:
     version: 7.10.0
-  services:
-    docker
 
 dependencies:
   pre:
     - pip install --upgrade pip
+    - pip install docker
     - pip install docker-compose
   override:
     - yarn
