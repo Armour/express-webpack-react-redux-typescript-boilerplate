@@ -9,6 +9,9 @@ machine:
     docker
 
 dependencies:
+  pre:
+    - pip install --upgrade pip
+    - pip install docker-compose
   override:
     - yarn
   cache_directories:
@@ -18,6 +21,6 @@ test:
   pre:
     - docker -v
     - docker-compose -v
-    - docker-compose up -d
+    - docker-compose up --build -d
   override:
     - yarn test
