@@ -139,10 +139,12 @@
   ],
   "jest": {
     "globals": {
-      "__TS_CONFIG__": {
-        "module": "commonjs",
-        "target": "es6",
-        "jsx": "react"
+      "ts-jest": {
+        "tsConfigFile": {
+          "module": "commonjs",
+          "target": "es6",
+          "jsx": "react"
+        }
       }
     },
     "mapCoverage": true,
