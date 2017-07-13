@@ -9,5 +9,5 @@ export default combineReducers({
   apiData,
   todos,
   visibilityFilter,
-  routing: routerReducer,
+  routing: routerReducer as any,
 });
