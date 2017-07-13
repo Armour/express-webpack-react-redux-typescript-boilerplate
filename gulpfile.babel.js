@@ -45,16 +45,16 @@ gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip']));
 
 // Pack generated dist file for depoyment
 gulp.task('pack', () =>
-    gulp.src('frontend/dist/**')
-        .pipe(zip('dist.zip'))
-        .pipe(gulp.dest('frontend')),
+  gulp.src('frontend/dist/**')
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('frontend')),
 );
 
 // Unpack generated dist file for depoyment
 gulp.task('unpack', () =>
-    gulp.src('frontend/dist.zip')
-        .pipe(unzip())
-        .pipe(gulp.dest('frontend/dist')),
+  gulp.src('frontend/dist.zip')
+    .pipe(unzip())
+    .pipe(gulp.dest('frontend/dist')),
 );
 
 // Build dll reference files
