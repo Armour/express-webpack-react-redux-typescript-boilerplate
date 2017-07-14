@@ -186,7 +186,6 @@ let config = {
     modules: [
       'node_modules',
       'frontend/src',
-      'frontend/materialize',
     ],
     // Automatically resolve certain extensions (Ex. import 'folder/name(.ext)')
     extensions: [

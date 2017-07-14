@@ -1,9 +1,9 @@
-# Express-Webpack-React-Typescript-HMR-Boilerplate
+# Express Webpack React Redux Typescript Boilerplate
 
-[![CircleCI](https://circleci.com/gh/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/tree/master.svg?style=shield&circle-token=2b60a5e48d4f53d2b115efd948022c7df72a805b)](https://circleci.com/gh/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/tree/master)
-[![Dependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate)
-[![DevDependency Status](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/dev-status.svg)](https://david-dm.org/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?type=dev)
-[![Coverage Status](https://coveralls.io/repos/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate?branch=master)
+[![CircleCI](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master.svg?style=shield&circle-token=2b60a5e48d4f53d2b115efd948022c7df72a805b)](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master)
+[![Dependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate)
+[![DevDependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/dev-status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/Armour/express-webpack-react-redux-typescript-boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/express-webpack-react-redux-typescript-boilerplate?branch=master)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 ## Stack
@@ -51,7 +51,7 @@ Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official d
 
 ### Use docker
 
-The easiest way to run our example project is to use docker-compose
+The easiest way to run the example project is to use `docker-compose`
 
 ```bash
 docker-compose up --build

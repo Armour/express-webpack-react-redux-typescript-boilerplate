@@ -1,9 +1,9 @@
 {
-  "name": "express-webpack-react-typescript-hmr-boilerplate",
+  "name": "express-webpack-react-redux-typescript-boilerplate",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Armour/Express-Webpack-React-Typescript-HMR-Boilerplate.git"
+    "url": "https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate.git"
   },
   "author": "Chong Guo <cguo@azendless.com>",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "@types/jest": "^20.0.1",
     "@types/jquery": "^3.2.7",
     "@types/materialize-css": "^0.98.3",
-    "@types/node": "^8.0.11",
+    "@types/node": "^8.0.12",
     "@types/prismjs": "^1.6.2",
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.0",
@@ -122,7 +122,7 @@
     "url-loader": "^0.5.9",
     "uuid": "^3.1.0",
     "webpack": "^3.2.0",
-    "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-bundle-analyzer": "^2.8.3",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-md5-hash": "^0.0.5"
