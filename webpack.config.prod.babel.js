@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import postcssCssnext from 'postcss-cssnext';
 import postcssImport from 'postcss-import';
+import merge from 'webpack-merge';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
@@ -15,7 +16,7 @@ import * as ImmutableManifest from './frontend/dist/dll/immutable_manifest.json'
 import * as MaterializeManifest from './frontend/dist/dll/materialize_manifest.json'; // eslint-disable-line import/no-unresolved
 import * as MiscManifest from './frontend/dist/dll/misc_manifest.json'; // eslint-disable-line import/no-unresolved
 
-const isProfiling = process.env.profiling;
+const isProfile = process.env.profile;
 
 let config = {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
@@ -203,10 +204,9 @@ let config = {
   devtool: 'source-map',
 };
 
-// Profiling
-if (isProfiling) {
-  config = {
-    ...config,
+// Profile
+if (isProfile) {
+  config = merge(config, {
     plugins: [
       // Extend base config
       ...config.plugins,
@@ -215,7 +215,7 @@ if (isProfiling) {
         analyzerPort: 3003,
       }),
     ],
-  };
+  });
 }
 
 // Export const (import/no-mutable-exports)

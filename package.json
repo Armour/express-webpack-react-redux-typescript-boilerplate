@@ -10,7 +10,7 @@
   "scripts": {
     "build-dll": "webpack --color --config webpack.config.dll.babel.js",
     "build-prod": "webpack --color --config webpack.config.prod.babel.js",
-    "profiling": "profiling=true webpack --color --config webpack.config.prod.babel.js",
+    "profile": "profile=true webpack --color --config webpack.config.prod.babel.js",
     "server": "babel-node backend/server.js",
     "test": "jest --no-cache --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
@@ -23,9 +23,9 @@
     "@types/hammerjs": "^2.0.34",
     "@types/history": "^4.5.2",
     "@types/jest": "^20.0.1",
-    "@types/jquery": "^3.2.7",
+    "@types/jquery": "^3.2.8",
     "@types/materialize-css": "^0.98.3",
-    "@types/node": "^8.0.12",
+    "@types/node": "^8.0.13",
     "@types/prismjs": "^1.6.2",
     "@types/react": "^15.0.38",
     "@types/react-dom": "^15.5.0",
@@ -125,7 +125,8 @@
     "webpack-bundle-analyzer": "^2.8.3",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.2",
-    "webpack-md5-hash": "^0.0.5"
+    "webpack-md5-hash": "^0.0.5",
+    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
     "coveralls": "^2.13.1",

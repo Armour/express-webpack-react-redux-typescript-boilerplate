@@ -81,14 +81,14 @@ gulp.task('webpack:build-prod', (callback) => {
   });
 });
 
-// Profiling webpack asset bundle
-gulp.task('webpack:profiling', (callback) => {
-  const profiling = spawn(yarn, ['run', 'profiling'], { stdio: 'inherit' });
-  profiling.on('close', (code) => {
-    console.log(`profiling child process exited with code ${code}`);
+// Profile webpack asset bundle
+gulp.task('webpack:profile', (callback) => {
+  const profile = spawn(yarn, ['run', 'profile'], { stdio: 'inherit' });
+  profile.on('close', (code) => {
+    console.log(`profile child process exited with code ${code}`);
     callback();
   });
-  profiling.on('error', (err) => {
+  profile.on('error', (err) => {
     callback(err);
   });
 });
@@ -131,10 +131,10 @@ gulp.task('build & run', (callback) => {
 });
 
 // Profiling
-gulp.task('profiling', (callback) => {
+gulp.task('profile', (callback) => {
   fs.exists('frontend/dist', (exists) => {
     const taskList = [
-      'webpack:profiling',
+      'webpack:profile',
     ];
     if (!exists) {
       taskList.unshift('webpack:build-dll');

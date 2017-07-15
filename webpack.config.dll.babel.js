@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import merge from 'webpack-merge';
 
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 
@@ -82,11 +83,8 @@ let config = {
 
 // Production enviroment
 if (isProduction) {
-  config = {
-    ...config,
+  config = merge(config, {
     plugins: [
-      // Extend base config
-      ...config.plugins,
       // Minimize javascript files with source map generated
       new webpack.optimize.UglifyJsPlugin({
         output: { comments: false },
@@ -99,7 +97,7 @@ if (isProduction) {
         },
       }),
     ],
-  };
+  });
 }
 
 // Export const (import/no-mutable-exports)
