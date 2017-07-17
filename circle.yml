@@ -16,7 +16,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      - docker-compose up
+      - run: docker-compose up
   test:
     <<: *defaults
     steps:
