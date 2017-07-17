@@ -9,4 +9,3 @@ dist.zip
 .DS_Store
 coverage/
 .coveralls.yml
-.yarn.lock

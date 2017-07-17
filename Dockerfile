@@ -2,6 +2,10 @@ FROM node
 
 WORKDIR ~
 
+ARG PORT=3003
+
+ENV NODE_ENV=production
+
 COPY . .
 
 RUN apt-get update && apt-get install -y bash git
@@ -9,7 +13,8 @@ RUN apt-get update && apt-get install -y bash git
 RUN yarn install
 RUN yarn global add gulp
 RUN bash ./patch.sh
+RUN gulp build
 
-EXPOSE 3003
+EXPOSE $PORT
 
-CMD ["gulp"]
+CMD ["yarn", "run", "server"]

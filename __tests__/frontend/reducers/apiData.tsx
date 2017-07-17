@@ -5,7 +5,7 @@ import { apiData } from 'reducers/apiData';
 import { IActionReceiveError, IActionReceiveResponse, IActionStartRequest, IActionTestDefault, IApiData, IApiDataMap } from 'types';
 
 describe('[Reducers] apiData test', () => {
-  const state: IApiDataMap = Immutable.Map<string, IApiData>();
+  const initialState: IApiDataMap = Immutable.Map<string, IApiData>();
   const actionStartRequest: IActionStartRequest = {
     type: START_REQUEST,
     url: 'test_url',
@@ -24,11 +24,14 @@ describe('[Reducers] apiData test', () => {
     type: TEST_DEFAULT_ACTION,
   };
 
+  beforeEach(() => {
+    expect(initialState.count()).toBe(0);
+  });
+
   it('[apiData.START_REQUEST] should return state with url fetching started', () => {
-    expect(state.count()).toBe(0);
-    const nextState = apiData(state, actionStartRequest);
-    expect(nextState.count()).toBe(1);
-    expect(nextState).toEqual(Immutable.Map<string, IApiData>([
+    const stateStartRequest = apiData(initialState, actionStartRequest);
+    expect(stateStartRequest.count()).toBe(1);
+    expect(stateStartRequest).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'loading...',
@@ -40,10 +43,9 @@ describe('[Reducers] apiData test', () => {
   });
 
   it('[apiData.RECEIVE_RESPONSE] should return state with response data fetched', () => {
-    expect(state.count()).toBe(0);
-    const state1 = apiData(state, actionStartRequest);
-    expect(state1.count()).toBe(1);
-    expect(state1).toEqual(Immutable.Map<string, IApiData>([
+    const stateStartRequest = apiData(initialState, actionStartRequest);
+    expect(stateStartRequest.count()).toBe(1);
+    expect(stateStartRequest).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'loading...',
@@ -52,9 +54,10 @@ describe('[Reducers] apiData test', () => {
         },
       ],
     ]));
-    const state2 = apiData(state1, actionReceiveResponse);
-    expect(state2.count()).toBe(1);
-    expect(state2).toEqual(Immutable.Map<string, IApiData>([
+
+    const stateReceiveResponse = apiData(stateStartRequest, actionReceiveResponse);
+    expect(stateReceiveResponse.count()).toBe(1);
+    expect(stateReceiveResponse).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'response_data',
@@ -66,10 +69,9 @@ describe('[Reducers] apiData test', () => {
   });
 
   it('[apiData.RECEIVE_ERROR] should return state with error message fetched', () => {
-    expect(state.count()).toBe(0);
-    const state1 = apiData(state, actionStartRequest);
-    expect(state1.count()).toBe(1);
-    expect(state1).toEqual(Immutable.Map<string, IApiData>([
+    const stateStartRequest = apiData(initialState, actionStartRequest);
+    expect(stateStartRequest.count()).toBe(1);
+    expect(stateStartRequest).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'loading...',
@@ -78,9 +80,10 @@ describe('[Reducers] apiData test', () => {
         },
       ],
     ]));
-    const state2 = apiData(state1, actionReceiveError);
-    expect(state2.count()).toBe(1);
-    expect(state2).toEqual(Immutable.Map<string, IApiData>([
+
+    const stateReceiveError = apiData(stateStartRequest, actionReceiveError);
+    expect(stateReceiveError.count()).toBe(1);
+    expect(stateReceiveError).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'error_msg',
@@ -92,22 +95,9 @@ describe('[Reducers] apiData test', () => {
   });
 
   it('[apiData.DEFAULT_ACTION] should return previous state if action is not found', () => {
-    expect(state.count()).toBe(0);
-
-    const state1 = apiData(state, actionStartRequest);
-    expect(state1.count()).toBe(1);
-    expect(state1).toEqual(Immutable.Map<string, IApiData>([
-      [
-        'test_url', {
-          content: 'loading...',
-          isFetching: true,
-          hasError: false,
-        },
-      ],
-    ]));
-    const state2 = apiData(state1, actionTestDefault);
-    expect(state2.count()).toBe(1);
-    expect(state2).toEqual(Immutable.Map<string, IApiData>([
+    const stateStartRequest = apiData(initialState, actionStartRequest);
+    expect(stateStartRequest.count()).toBe(1);
+    expect(stateStartRequest).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'loading...',
@@ -117,20 +107,23 @@ describe('[Reducers] apiData test', () => {
       ],
     ]));
 
-    const state3 = apiData(state, actionReceiveResponse);
-    expect(state3.count()).toBe(1);
-    expect(state3).toEqual(Immutable.Map<string, IApiData>([
+    const stateTestDefault = apiData(stateStartRequest, actionTestDefault);
+    expect(stateTestDefault.count()).toBe(1);
+    expect(stateTestDefault).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
-          content: 'response_data',
-          isFetching: false,
+          content: 'loading...',
+          isFetching: true,
           hasError: false,
         },
       ],
     ]));
-    const state4 = apiData(state3, actionTestDefault);
-    expect(state4.count()).toBe(1);
-    expect(state4).toEqual(Immutable.Map<string, IApiData>([
+  });
+
+  it('[apiData.DEFAULT_ACTION] should return previous state if action is not found', () => {
+    const stateReceiveResponse = apiData(initialState, actionReceiveResponse);
+    expect(stateReceiveResponse.count()).toBe(1);
+    expect(stateReceiveResponse).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'response_data',
@@ -140,9 +133,23 @@ describe('[Reducers] apiData test', () => {
       ],
     ]));
 
-    const state5 = apiData(state, actionReceiveError);
-    expect(state5.count()).toBe(1);
-    expect(state5).toEqual(Immutable.Map<string, IApiData>([
+    const stateTestDefault = apiData(stateReceiveResponse, actionTestDefault);
+    expect(stateTestDefault.count()).toBe(1);
+    expect(stateTestDefault).toEqual(Immutable.Map<string, IApiData>([
+      [
+        'test_url', {
+          content: 'response_data',
+          isFetching: false,
+          hasError: false,
+        },
+      ],
+    ]));
+  });
+
+  it('[apiData.DEFAULT_ACTION] should return previous state if action is not found', () => {
+    const stateReceiveError = apiData(initialState, actionReceiveError);
+    expect(stateReceiveError.count()).toBe(1);
+    expect(stateReceiveError).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'error_msg',
@@ -151,9 +158,10 @@ describe('[Reducers] apiData test', () => {
         },
       ],
     ]));
-    const state6 = apiData(state5, actionTestDefault);
-    expect(state6.count()).toBe(1);
-    expect(state6).toEqual(Immutable.Map<string, IApiData>([
+
+    const stateTestDefault = apiData(stateReceiveError, actionTestDefault);
+    expect(stateTestDefault.count()).toBe(1);
+    expect(stateTestDefault).toEqual(Immutable.Map<string, IApiData>([
       [
         'test_url', {
           content: 'error_msg',
@@ -165,8 +173,7 @@ describe('[Reducers] apiData test', () => {
   });
 
   it('[apiData.DEFAULT_STATE] should use default state if not defined', () => {
-    expect(state.count()).toBe(0);
-    const nextState = apiData(undefined, actionTestDefault);
-    expect(nextState.count()).toBe(0);
+    const stateTestDefault = apiData(undefined, actionTestDefault);
+    expect(stateTestDefault.count()).toBe(0);
   });
 });

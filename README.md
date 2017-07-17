@@ -4,6 +4,7 @@
 [![Dependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate)
 [![DevDependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/dev-status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/Armour/express-webpack-react-redux-typescript-boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/express-webpack-react-redux-typescript-boilerplate?branch=master)
+[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 ## Stack
@@ -54,7 +55,7 @@ Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official d
 The easiest way to run the example project is to use `docker-compose`
 
 ```bash
-docker-compose up --build
+docker-compose up
 ```
 
 that's it :)

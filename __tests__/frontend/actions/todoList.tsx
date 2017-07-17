@@ -4,28 +4,30 @@ import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo } from 't
 
 describe('[Actions] todoList test', () => {
   it('[addTodo] should return IActionAddTodo with input text, random id string and completed as false', () => {
-    const action: IActionAddTodo = addTodo('text');
-    expect(action.type === ADD_TODO).toBeTruthy();
-    expect(typeof action.id === 'string').toBeTruthy();
-    expect(action.text).toBe('text');
-    expect(action.completed).toBe(false);
+    const actionAddTodo: IActionAddTodo = addTodo('text');
+    expect(actionAddTodo.type === ADD_TODO).toBeTruthy();
+    expect(typeof actionAddTodo.id === 'string').toBeTruthy();
+    expect(actionAddTodo.text).toBe('text');
+    expect(actionAddTodo.completed).toBe(false);
   });
 
   it('[toggleTodo] should return IActionToggleTodo with input id', () => {
-    const action: IActionToggleTodo = toggleTodo('id');
-    expect(action.type === TOGGLE_TODO).toBeTruthy();
-    expect(action.id).toBe('id');
+    const actionToggleTodo: IActionToggleTodo = toggleTodo('id');
+    expect(actionToggleTodo.type === TOGGLE_TODO).toBeTruthy();
+    expect(actionToggleTodo.id).toBe('id');
   });
 
   it('[setVisibilityFilter] should return SET_VISIBILITY_FILTER action with input filter', () => {
-    const action1: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_ALL);
-    const action2: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_ACTIVE);
-    const action3: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_COMPLETED);
-    expect(action1.type === SET_VISIBILITY_FILTER).toBeTruthy();
-    expect(action2.type === SET_VISIBILITY_FILTER).toBeTruthy();
-    expect(action3.type === SET_VISIBILITY_FILTER).toBeTruthy();
-    expect(action1.filter).toBe(VisibilityFiltersOptions.SHOW_ALL);
-    expect(action2.filter).toBe(VisibilityFiltersOptions.SHOW_ACTIVE);
-    expect(action3.filter).toBe(VisibilityFiltersOptions.SHOW_COMPLETED);
+    const actionSetVisibilityShowAll: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_ALL);
+    expect(actionSetVisibilityShowAll.type === SET_VISIBILITY_FILTER).toBeTruthy();
+    expect(actionSetVisibilityShowAll.filter).toBe(VisibilityFiltersOptions.SHOW_ALL);
+
+    const actionSetVisibilityShowActive: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_ACTIVE);
+    expect(actionSetVisibilityShowActive.type === SET_VISIBILITY_FILTER).toBeTruthy();
+    expect(actionSetVisibilityShowActive.filter).toBe(VisibilityFiltersOptions.SHOW_ACTIVE);
+
+    const actionSetVisibilityShowComleted: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_COMPLETED);
+    expect(actionSetVisibilityShowComleted.type === SET_VISIBILITY_FILTER).toBeTruthy();
+    expect(actionSetVisibilityShowComleted.filter).toBe(VisibilityFiltersOptions.SHOW_COMPLETED);
   });
 });
