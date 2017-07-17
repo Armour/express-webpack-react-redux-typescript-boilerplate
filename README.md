@@ -46,7 +46,7 @@
 
 - `node`
 - `yarn` (recommended) or `npm`
-- `docker`
+- `docker` (optional)
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
