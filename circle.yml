@@ -6,7 +6,7 @@
 version: 2
 
 jobs:
-  build_and_test:
+  build:
     working_directory: ~
     docker:
       - image: circleci/node:7.10.0
