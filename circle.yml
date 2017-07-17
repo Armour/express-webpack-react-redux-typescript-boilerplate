@@ -32,5 +32,8 @@ jobs:
           name: Run Docker Compose
           command: docker-compose up -d
       - run:
+          name: Install dependencies
+          command: yarn install
+      - run:
           name: Run test
           command: yarn test
