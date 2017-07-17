@@ -15,7 +15,7 @@ services:
       - PORT=${PORT}
 
   postgres:
-    image: postgres:9.5
+    image: postgres:9.5-alpine
     restart: always
     volumes:
       - ./backend/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql
