@@ -8,13 +8,19 @@ version: 2
 defaults: &defaults
   working_directory: ~
   docker:
-    - image: docker/compose
+    - image: circleci/node:7.10.0
 
 jobs:
   build:
     <<: *defaults
     steps:
       - checkout
+      - run:
+        name: Install Docker Compose
+        command: |
+          set -x
+          curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+          chmod +x /usr/local/bin/docker-compose
       - setup_remote_docker
       - run: docker-compose up
   test:
