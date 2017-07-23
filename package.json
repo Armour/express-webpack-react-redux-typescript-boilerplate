@@ -118,7 +118,7 @@
     "tslint-eslint-rules": "^4.1.1",
     "tslint-react": "^3.0.0",
     "typescript": "2.4.0",
-    "uglify-js": "^3.0.25",
+    "uglify-js": "^3.0.26",
     "url-loader": "^0.5.9",
     "uuid": "^3.1.0",
     "webpack": "^3.3.0",
