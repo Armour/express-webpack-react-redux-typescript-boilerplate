@@ -25,7 +25,7 @@
     "@types/jest": "^20.0.5",
     "@types/jquery": "^3.2.10",
     "@types/materialize-css": "^0.98.3",
-    "@types/node": "^8.0.17",
+    "@types/node-uuid": "^0.0.28",
     "@types/prismjs": "^1.6.2",
     "@types/react": "^15.6.0",
     "@types/react-dom": "^15.5.0",
