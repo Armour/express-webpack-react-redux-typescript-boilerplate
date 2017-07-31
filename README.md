@@ -92,10 +92,10 @@ gulp
 NODE_ENV=production gulp
 ```
 
-### Profiling assets bundle
+### Profile assets bundle
 
 ```bash
-gulp profiling
+gulp profile
 ```
 
 ### Run test
@@ -115,10 +115,6 @@ gulp coveralls
 ```bash
 gulp deploy
 ```
-
-### Boilerplate setup tutorial step by step
-
-I will write a tutorial about how to setup those stuffs together step by step asap :)
 
 ### License
 
