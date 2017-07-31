@@ -40,9 +40,9 @@
 - [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 - [x] [docker](https://github.com/docker/docker) - the open-source application container engine
 
-## Install && Run
+## How to run the example code?
 
-### Prerequisite
+#### Prerequisite
 
 - `node`
 - `yarn` (recommended) or `npm`
@@ -50,7 +50,7 @@
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
-### Use docker
+#### Use docker
 
 The easiest way to run the example project is to use `docker-compose`
 
@@ -62,7 +62,7 @@ that's it :)
 
 you can also manually install and run it by following below
 
-### Install project dependencies
+#### Install project dependencies
 
 Go to project root directory:
 
@@ -74,43 +74,43 @@ bash patch.sh
 
 If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
 
-### Database setup
+#### Database setup
 
 Make sure you have `postgresql` installed, and set the right configs in `backend/config.json`.
 
-### Build & Run
+#### Build & Run
 
-**On development (with react-hot-reload):**
+On development (with react-hot-reload):
 
 ```bash
 gulp
 ```
 
-**On production (with uglify-js and other optimazitions):**
+On production (with uglify-js and other optimazitions):
 
 ```bash
 NODE_ENV=production gulp
 ```
 
-### Profile assets bundle
+#### Profile assets bundle
 
 ```bash
 gulp profile
 ```
 
-### Run test
+#### Run test
 
 ```bash
 gulp test
 ```
 
-### Code coverage
+#### Code coverage
 
 ```bash
 gulp coveralls
 ```
 
-### Deployment
+#### Deployment
 
 ```bash
 gulp deploy
