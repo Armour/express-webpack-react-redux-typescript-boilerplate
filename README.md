@@ -116,6 +116,6 @@ gulp coveralls
 gulp deploy
 ```
 
-### License
+## License
 
 MIT License
