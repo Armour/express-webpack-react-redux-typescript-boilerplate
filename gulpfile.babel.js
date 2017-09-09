@@ -15,7 +15,7 @@ const yarn = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
 
 // Run eslint
 gulp.task('eslint', () =>
-  gulp.src(['**/*.js', '**/*.jsx', '!node_modules/**'])
+  gulp.src(['**/*.js', '**/*.jsx']) // respect .eslintignore
     .pipe(eslint())
     .pipe(eslint.format('codeframe'))
     .pipe(eslint.failAfterError()),
@@ -32,7 +32,7 @@ gulp.task('tslint', () =>
 
 // Run stylelint
 gulp.task('stylelint', () =>
-  gulp.src(['**/*.scss', '**/*.css', '!node_modules/**', '!**/materialize/**'])
+  gulp.src(['**/*.scss', '**/*.css']) // respect .stylelintignore
     .pipe(stylelint({
       reporters: [
         { formatter: 'string', console: true },
@@ -41,7 +41,7 @@ gulp.task('stylelint', () =>
 );
 
 // Clean webpack generated files
-gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip']));
+gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip', '.awcache']));
 
 // Pack generated dist file for depoyment
 gulp.task('pack', () =>
@@ -111,7 +111,6 @@ gulp.task('build', (callback) => {
     const taskList = [
     ];
     if (isProduction) {
-      taskList.unshift('pack');
       taskList.unshift('webpack:build-prod');
     }
     if (!exists) {
