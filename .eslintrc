@@ -7,13 +7,7 @@
   "extends": [
     "airbnb"
   ],
-  "parser": "babel-eslint",
   "rules": {
-    "indent": ["error", 2],
-    "max-len": 0,
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
-    "no-console": 0,
-    "linebreak-style": 0,
     "import/export": 2,
     "import/first": 2,
     "import/no-commonjs": 2,
@@ -22,6 +16,11 @@
     "import/no-unresolved": 2,
     "import/no-webpack-loader-syntax": 2,
     "import/prefer-default-export": 0,
-    "jsx-a11y/href-no-hash": "off"
+    "indent": ["error", 2],
+    "jsx-a11y/href-no-hash": "off", // FIXME: remove this line
+    "linebreak-style": 0,
+    "max-len": 0,
+    "no-console": 0,
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
   }
 }

@@ -36,7 +36,7 @@
 - [x] [jest](https://facebook.github.io/jest/) - painless javascript testing
 - [x] [coveralls](https://coveralls.io/) - test coverage
 - [x] [husky](https://github.com/typicode/husky) - git hooks
-- [x] [circle-ci](https://circleci.com/) - continuous integration tool for testing and deployment
+- [x] [circle-ci 2](https://circleci.com/) - continuous integration tool for testing and deployment
 - [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 - [x] [docker](https://github.com/docker/docker) - the open-source application container engine
 

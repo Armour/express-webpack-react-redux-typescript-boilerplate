@@ -18,23 +18,22 @@ const history = createBrowserHistory();
 // Configure store
 const store = configureStore(initialState, history);
 
+const render = (Component: any) => {
+  ReactDom.render(
+    <AppContainer>
+      <Component store={store} history={history}/>
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
+
 // First time render
-ReactDom.render(
-  <AppContainer>
-    <App store={store} history={history}/>
-  </AppContainer>,
-  document.getElementById('root'),
-);
+render(App);
 
 // Hot Reload Module API
 if (module.hot) {
   module.hot.accept('./App', () => {
     const NextApp = require('App').default;
-    ReactDom.render(
-      <AppContainer>
-        <NextApp store={store} history={history}/>
-      </AppContainer>,
-      document.getElementById('root'),
-    );
+    render(NextApp);
   });
 }

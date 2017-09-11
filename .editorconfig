@@ -9,8 +9,8 @@ charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# Indentation override for js, ts and json files
-[*.{js,jsx,ts,tsx,json}]
+# Indentation override for js, ts and config files
+[*.{js,jsx,ts,tsx,json,yml}]
 indent_size = 2
 indent_style = space
 
