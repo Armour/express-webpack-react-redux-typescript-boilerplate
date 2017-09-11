@@ -1,8 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
 import { Store } from 'redux';
 
+import { ConnectedRouter } from 'connected-react-router';
 import { History } from 'history';
 
 import { DevTools } from 'containers/DevTools';

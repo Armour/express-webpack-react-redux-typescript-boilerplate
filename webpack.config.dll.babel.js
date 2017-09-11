@@ -11,7 +11,6 @@ const reactVendors = [
   'react-dom',
   'react-router-dom',
   'react-redux',
-  'react-router-redux',
   'react-hot-loader',
   'redux',
   'redux-devtools',
@@ -20,6 +19,7 @@ const reactVendors = [
   'redux-logger',
   'redux-promise',
   'redux-thunk',
+  'connected-react-router',
 ];
 
 const materializeVendors = [

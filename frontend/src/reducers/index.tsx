@@ -1,4 +1,3 @@
-import { routerReducer } from 'react-router-redux';
 import { combineReducers } from 'redux';
 
 import { apiData } from 'reducers/apiData';
@@ -9,5 +8,4 @@ export default combineReducers({
   apiData,
   todos,
   visibilityFilter,
-  routing: routerReducer as any,
 });

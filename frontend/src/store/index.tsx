@@ -1,4 +1,4 @@
-import { routerMiddleware } from 'react-router-redux';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { createLogger } from 'redux-logger';
 import promise from 'redux-promise';
@@ -29,13 +29,13 @@ export const configureStore = (initialState: {}, history: History): Store<any> =
   }
 
   // Store
-  const store = createStore(reducers, initialState, enhancer);
+  const store = createStore(connectRouter(history)(reducers), initialState, enhancer);
 
   // Enable Webpack hot module replacement for reducers
   if (!isProduction && module.hot) {
     module.hot.accept('../reducers', () => {
       const nextReducers = require('reducers').default;
-      store.replaceReducer(nextReducers);
+      store.replaceReducer(connectRouter(history)(nextReducers));
     });
   }
 
