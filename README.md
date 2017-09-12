@@ -12,7 +12,7 @@
 * [Main Page](https://express-react-typescript.herokuapp.com/)
   * Contains the classic [Todo List](https://express-react-typescript.herokuapp.com/react) like below:
 
-    ![](https://user-images.githubusercontent.com/5276065/30264513-c64690f0-968d-11e7-8646-0c0611ed72f2.jpg)
+    ![](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
 
 ## Stack
 
