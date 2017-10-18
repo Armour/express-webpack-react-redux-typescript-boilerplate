@@ -17,7 +17,6 @@
     "import/no-webpack-loader-syntax": 2,
     "import/prefer-default-export": 0,
     "indent": ["error", 2],
-    "jsx-a11y/href-no-hash": "off", // FIXME: remove this line
     "linebreak-style": 0,
     "max-len": 0,
     "no-console": 0,

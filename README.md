@@ -76,7 +76,6 @@ Go to project root directory:
 ```bash
 yarn
 yarn global add gulp
-bash patch.sh
 ```
 
 If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.

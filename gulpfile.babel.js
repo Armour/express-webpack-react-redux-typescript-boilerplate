@@ -9,36 +9,47 @@ import stylelint from 'gulp-stylelint';
 import unzip from 'gulp-unzip';
 import zip from 'gulp-zip';
 
-const spawn = childProcess.spawn;
+const { spawn } = childProcess;
 const isProduction = process.env.NODE_ENV === 'production';
 const yarn = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
 
+const path = {
+  src: {
+    js: '**/*.js',
+    jsx: '**/*.jsx',
+    ts: '**/*.ts',
+    tsx: '**/*.tsx',
+    css: '**/*.css',
+    scss: '**/*.scss',
+  },
+  exclude: {
+    node_modules: '!node_modules/**',
+  },
+};
+
 // Run eslint
 gulp.task('eslint', () =>
-  gulp.src(['**/*.js', '**/*.jsx']) // respect .eslintignore
+  gulp.src([path.src.js, path.src.jsx]) // respect .eslintignore
     .pipe(eslint())
     .pipe(eslint.format('codeframe'))
-    .pipe(eslint.failAfterError()),
-);
+    .pipe(eslint.failAfterError()));
 
 // Run tslint
 gulp.task('tslint', () =>
-  gulp.src(['**/*.ts', '**/*.tsx', '!node_modules/**'])
+  gulp.src([path.src.ts, path.src.tsx, path.exclude.node_modules])
     .pipe(tslint({
       formatter: 'codeFrame',
     }))
-    .pipe(tslint.report()),
-);
+    .pipe(tslint.report()));
 
 // Run stylelint
 gulp.task('stylelint', () =>
-  gulp.src(['**/*.scss', '**/*.css']) // respect .stylelintignore
+  gulp.src([path.src.css, path.src.scss]) // respect .stylelintignore
     .pipe(stylelint({
       reporters: [
         { formatter: 'string', console: true },
       ],
-    })),
-);
+    })));
 
 // Clean webpack generated files
 gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip', '.awcache']));
@@ -47,15 +58,13 @@ gulp.task('clean', () => del(['frontend/dist', 'frontend/dist.zip', '.awcache'])
 gulp.task('pack', () =>
   gulp.src('frontend/dist/**')
     .pipe(zip('dist.zip'))
-    .pipe(gulp.dest('frontend')),
-);
+    .pipe(gulp.dest('frontend')));
 
 // Unpack generated dist file for depoyment
 gulp.task('unpack', () =>
   gulp.src('frontend/dist.zip')
     .pipe(unzip())
-    .pipe(gulp.dest('frontend/dist')),
-);
+    .pipe(gulp.dest('frontend/dist')));
 
 // Build dll reference files
 gulp.task('webpack:build-dll', (callback) => {
