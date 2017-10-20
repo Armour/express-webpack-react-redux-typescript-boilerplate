@@ -11,7 +11,7 @@
     "import/export": 2,
     "import/first": 2,
     "import/no-commonjs": 2,
-    "import/no-deprecated": 1,
+    "import/no-deprecated": 2,
     "import/no-duplicates": 2,
     "import/no-unresolved": 2,
     "import/no-webpack-loader-syntax": 2,

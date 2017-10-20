@@ -13,7 +13,7 @@
     "profile": "profile=true webpack --color --config webpack.config.prod.babel.js",
     "server": "babel-node backend/server.js",
     "test": "jest --no-cache --coverage",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "deploy": "heroku container:push web",
     "precommit": "yarn test",
     "prepush": "yarn test && yarn coveralls"
