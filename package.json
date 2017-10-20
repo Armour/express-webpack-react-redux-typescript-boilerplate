@@ -16,7 +16,7 @@
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "deploy": "heroku container:push web",
     "precommit": "yarn test",
-    "prepush": "yarn test && yarn coveralls"
+    "prepush": "yarn test && yarn coverage"
   },
   "dependencies": {
     "@types/express": "4.0.37",
