@@ -19,7 +19,7 @@
     "prepush": "yarn test && yarn coverage"
   },
   "dependencies": {
-    "@types/express": "4.0.37",
+    "@types/express": "4.0.38",
     "@types/hammerjs": "2.0.35",
     "@types/history": "4.6.1",
     "@types/jest": "21.1.4",
