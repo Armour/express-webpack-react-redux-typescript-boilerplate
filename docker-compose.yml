@@ -2,6 +2,7 @@ version: '2.1'
 
 services:
   web:
+    image: cguo/express-webpack-react-redux-typescript-boilerplate
     build:
       context: .
       args:
