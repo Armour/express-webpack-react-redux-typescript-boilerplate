@@ -24,7 +24,7 @@
     "@types/history": "4.6.1",
     "@types/jest": "21.1.5",
     "@types/jquery": "3.2.15",
-    "@types/materialize-css": "0.100.0",
+    "@types/materialize-css": "0.100.1",
     "@types/node-uuid": "0.0.28",
     "@types/prismjs": "1.6.4",
     "@types/react": "16.0.15",
