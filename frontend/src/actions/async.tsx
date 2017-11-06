@@ -3,12 +3,10 @@ import { Dispatch } from 'react-redux';
 import { RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actionTypes';
 import { IActionReceiveError, IActionReceiveResponse, IActionStartRequest, IAsyncApiCallState } from 'types';
 
-export const startRequest = (url: string): IActionStartRequest => {
-  return {
-    type: START_REQUEST,
-    url,
-  };
-};
+export const startRequest = (url: string): IActionStartRequest => ({
+  type: START_REQUEST,
+  url,
+});
 
 export const receiveResponse = (url: string, res: any): IActionReceiveResponse => {
   alert(`Post: ${url}\nResponse: ${JSON.stringify(res)}`);

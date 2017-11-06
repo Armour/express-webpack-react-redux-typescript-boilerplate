@@ -11,13 +11,13 @@ import { ReactPage } from 'pages/ReactPage';
 
 export const router = (
   <div>
-    <Header/>
+    <Header />
     <Switch>
-      <Route exact path="/" component={HomePage}/>
-      <Route path="/react" component={ReactPage}/>
-      <Route path="/parallax" component={ParallaxPage}/>
-      <Route component={NotFoundPage}/>
+      <Route exact path='/' component={HomePage} />
+      <Route path='/react' component={ReactPage} />
+      <Route path='/parallax' component={ParallaxPage} />
+      <Route component={NotFoundPage} />
     </Switch>
-    <Footer/>
+    <Footer />
   </div>
 );

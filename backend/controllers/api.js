@@ -1,10 +1,10 @@
-import { db } from '../lib/db';
+import db from '../db';
 
-export const apiRequest = async (req, res, requestType) => {
+const apiRequest = async (req, res, requestType) => {
   try {
-    const data = await db.many('SELECT * FROM tableName', []);
+    const { rows } = await db.query('SELECT * FROM tableName', []);
     res.json({
-      data,
+      data: rows,
       requestType,
     });
   } catch (e) {

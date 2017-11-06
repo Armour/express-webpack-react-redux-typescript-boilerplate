@@ -7,7 +7,7 @@ export interface IApiLoaderStateProps {
 }
 
 export interface IApiLoaderDispatchProps {
-  fetchData: (url: string) => void;
+  fetchData(url: string): void;
 }
 
 type IApiLoaderProps = IApiLoaderStateProps & IApiLoaderDispatchProps;
@@ -36,11 +36,11 @@ export class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState>
 
   public render() {
     return (
-      <div className="api-loader center-align z-depth-2">
-        <div className="input-field inline">
-          <input id="input-url-api-call" type="text" value={this.state.url} onChange={this.onChange}/>
+      <div className='api-loader center-align z-depth-2'>
+        <div className='input-field inline'>
+          <input id='input-url-api-call' type='text' value={this.state.url} onChange={this.onChange} />
         </div>
-        <a className="btn waves-effect" onClick={this.onClick}>Async Post Api Call</a>
+        <a className='btn waves-effect' onClick={this.onClick} role='button'>Async Post Api Call</a>
       </div>
     );
   }

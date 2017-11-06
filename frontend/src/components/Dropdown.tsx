@@ -9,19 +9,17 @@ interface IDropdownProps {
   dropdownLists: string[];
 }
 
-interface IDropdownState {}
-
-export class Dropdown extends React.Component<IDropdownProps, IDropdownState> {
+export class Dropdown extends React.Component<IDropdownProps, {}> {
   public componentDidMount() {
     $('.dropdown-button').dropdown();
   }
 
   public render() {
     const links = this.props.dropdownLists.map(key =>
-      <li key={key}><NavLink activeClassName="active-link" to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>,
+      <li key={key}><NavLink activeClassName='active-link' to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>,
     );
     return (
-      <ul id={this.props.id} className="dropdown-content">
+      <ul id={this.props.id} className='dropdown-content'>
         {links}
       </ul>
     );

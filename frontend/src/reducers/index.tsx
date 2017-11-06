@@ -4,7 +4,7 @@ import { apiData } from 'reducers/apiData';
 import { todos } from 'reducers/todos';
 import { visibilityFilter } from 'reducers/visibilityFilter';
 
-export default combineReducers({
+export const reducers = combineReducers({
   apiData,
   todos,
   visibilityFilter,

@@ -20,17 +20,15 @@ interface IAppProps {
   history: History;
 }
 
-interface IAppState {}
-
 // Set the store, history and routers
-export default class App extends React.Component<IAppProps, IAppState> {
+export class App extends React.Component<IAppProps, {}> {
   public render() {
     return (
       <Provider store={this.props.store}>
         <ConnectedRouter history={this.props.history}>
           <div>
             {router}
-            {!isProduction && <DevTools/>}
+            {!isProduction && <DevTools />}
           </div>
         </ConnectedRouter>
       </Provider>

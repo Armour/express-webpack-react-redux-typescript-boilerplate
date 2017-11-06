@@ -45,23 +45,14 @@ let config = {
       {
         test: /\.tsx?$/,
         use: [
-          {
-            loader: 'babel-loader',
-          },
-          {
-            loader: 'awesome-typescript-loader',
-            options: {
-              // Use those two flags to speed up babel compilation
-              // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
-              useBabel: true,
-              useCache: true,
-            },
-          },
+          { loader: 'babel-loader' },
+          // Use those two flags to speed up babel compilation
+          // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
+          { loader: 'awesome-typescript-loader', options: { useBabel: true, useCache: true } },
           // Alternatively, we can use ts-loader instead of awesome-typescript-loader
-          // {
-          //   loader: 'ts-loader',
-          // },
+          // { loader: 'ts-loader' },
         ],
+        exclude: /node_modules/,
       },
       // Use ExtractTextPlugin and list of loaders to load css files
       {
@@ -90,30 +81,15 @@ let config = {
       {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-            },
-          },
+          { loader: 'url-loader', options: { limit: 10000 } },
+          { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
         ],
       },
       // Use file-loader to load font related files and icon
       {
         test: /\.(eot|woff2?|ttf|ico)$/,
         use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
+          { loader: 'file-loader', options: { name: '[name].[ext]' } },
         ],
       },
     ],

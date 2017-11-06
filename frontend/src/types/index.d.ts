@@ -7,9 +7,9 @@ import { TEST_DEFAULT_ACTION } from 'constants/actionTypes';
 
 // Components Interfaces
 export { IApiLoaderStateProps, IApiLoaderDispatchProps } from 'components/ApiLoader';
-export { ITodoInputStateProps, ITodoInputDispatchProps } from 'components/TodoInput';
 export { ITodoLinkStateProps, ITodoLinkDispatchProps } from 'components/TodoLink';
 export { ITodoListStateProps, ITodoListDispatchProps } from 'components/TodoList';
+export { ITodoInputDispatchProps } from 'components/TodoInput';
 
 // Todo App State
 export interface ITodoModel {

@@ -1,18 +1,12 @@
 import React from 'react';
 
-export interface ITodoInputStateProps {}
-
 export interface ITodoInputDispatchProps {
-  onSubmit: (inputValue: string) => void;
+  onSubmit(inputValue: string): void;
 }
-
-type ITodoInputProps = ITodoInputStateProps & ITodoInputDispatchProps;
-
-interface ITodoInputState {}
 
 let input: HTMLInputElement;
 
-export class TodoInput extends React.Component<ITodoInputProps, ITodoInputState> {
+export class TodoInput extends React.Component<ITodoInputDispatchProps, {}> {
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!input.value.trim()) {
@@ -30,8 +24,8 @@ export class TodoInput extends React.Component<ITodoInputProps, ITodoInputState>
     return (
       <div>
         <form onSubmit={this.onSubmit}>
-          <div className="input-field">
-            <input id="input-add-todo" type="text" ref={this.setInput}/>
+          <div className='input-field'>
+            <input id='input-add-todo' type='text' ref={this.setInput} />
             <label>Add todo</label>
           </div>
         </form>

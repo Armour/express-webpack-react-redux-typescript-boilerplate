@@ -4,15 +4,11 @@ import { TodoFooter } from 'components/TodoFooter';
 import { AddTodo } from 'containers/AddTodo';
 import { VisibleTodoList } from 'containers/VisibleTodoList';
 
-interface ITodoLayoutProps {}
-
-interface ITodoLayoutState {}
-
-export class TodoLayout extends React.Component<ITodoLayoutProps, ITodoLayoutState> {
+export class TodoLayout extends React.Component {
   public render() {
     return (
-      <div className="todo-app center-align z-depth-2">
-        <span className="todo-title">todos</span>
+      <div className='todo-app center-align z-depth-2'>
+        <span className='todo-title'>todos</span>
         <AddTodo />
         <VisibleTodoList />
         <TodoFooter />

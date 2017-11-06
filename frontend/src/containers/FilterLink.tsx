@@ -8,19 +8,15 @@ export interface IFilterLinkProps {
   filter: IVisibilityFilterOption;
 }
 
-const mapStateToProps = (state: ITodoAppState, ownProps: IFilterLinkProps): ITodoLinkStateProps => {
-  return {
-    active: ownProps.filter === state.visibilityFilter,
-  };
-};
+const mapStateToProps = (state: ITodoAppState, ownProps: IFilterLinkProps): ITodoLinkStateProps => ({
+  active: ownProps.filter === state.visibilityFilter,
+});
 
-const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>, ownProps: IFilterLinkProps): ITodoLinkDispatchProps => {
-  return {
-    onClick: () => {
-      dispatch(setVisibilityFilter(ownProps.filter));
-    },
-  };
-};
+const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>, ownProps: IFilterLinkProps): ITodoLinkDispatchProps => ({
+  onClick: () => {
+    dispatch(setVisibilityFilter(ownProps.filter));
+  },
+});
 
 export const FilterLink = connect(
   mapStateToProps,

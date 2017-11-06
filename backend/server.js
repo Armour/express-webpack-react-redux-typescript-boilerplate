@@ -30,11 +30,19 @@ const startListenOnPort = () => {
   });
 };
 
-app.use(helmet());
+if (isProduction) {
+  app.use(helmet());
+  app.disable('x-powered-by');
+}
 app.use(compression());
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json({
+  limit: '20mb',
+}));
+app.use(bodyParser.urlencoded({
+  limit: '20mb',
+  extended: true,
+}));
 app.use(cookieParser());
 
 // Api router

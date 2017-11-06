@@ -2,21 +2,17 @@ import React from 'react';
 
 import { FilterLink } from 'containers/FilterLink';
 
-interface ITodoFooterProps {}
-
-interface ITodoFooterState {}
-
-export class TodoFooter extends React.Component<ITodoFooterProps, ITodoFooterState> {
+export class TodoFooter extends React.Component {
   public render() {
     return (
-      <p className="todo-footer">
-        <FilterLink filter="SHOW_ALL">
+      <p className='todo-footer'>
+        <FilterLink filter='SHOW_ALL'>
           All
         </FilterLink>
-        <FilterLink filter="SHOW_ACTIVE">
+        <FilterLink filter='SHOW_ACTIVE'>
           Active
         </FilterLink>
-        <FilterLink filter="SHOW_COMPLETED">
+        <FilterLink filter='SHOW_COMPLETED'>
           Completed
         </FilterLink>
       </p>

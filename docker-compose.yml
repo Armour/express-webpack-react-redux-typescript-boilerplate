@@ -1,26 +1,22 @@
-version: '2.1'
+version: '3'
 
 services:
   web:
     image: cguo/express-webpack-react-redux-typescript-boilerplate
     build:
       context: .
-      args:
-        PORT: ${PORT}
-    restart: always
     ports:
-      - "$PORT:$PORT"
+      - "3003:3003"
     depends_on:
       - postgres
-    environment:
-      - PORT=${PORT}
+    restart: always
 
   postgres:
     image: postgres:9.5-alpine
-    restart: always
     volumes:
       - ./backend/postgres-init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=docker
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    restart: always

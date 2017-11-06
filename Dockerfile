@@ -2,8 +2,6 @@ FROM node
 
 WORKDIR ~
 
-ARG PORT=3003
-
 ENV NODE_ENV=production
 
 COPY . .
@@ -14,6 +12,6 @@ RUN yarn install
 RUN yarn global add gulp
 RUN gulp build
 
-EXPOSE $PORT
+EXPOSE 3003
 
 CMD ["yarn", "run", "server"]

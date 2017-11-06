@@ -8,14 +8,12 @@ export interface ITodoListStateProps {
 }
 
 export interface ITodoListDispatchProps {
-  onClick: (id: string) => void;
+  onClick(id: string): void;
 }
 
 type ITodoListProps = ITodoListStateProps & ITodoListDispatchProps;
 
-interface ITodoListState {}
-
-export class TodoList extends React.Component<ITodoListProps, ITodoListState> {
+export class TodoList extends React.Component<ITodoListProps, {}> {
   public onClick = (id: string) => {
     return () => {
       this.props.onClick(id);
@@ -27,7 +25,7 @@ export class TodoList extends React.Component<ITodoListProps, ITodoListState> {
       todo !== undefined ? <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} /> : null,
     );
     return (
-      <ul className="collection">
+      <ul className='collection'>
         {todoList}
       </ul>
     );

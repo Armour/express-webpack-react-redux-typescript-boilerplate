@@ -3,12 +3,10 @@ import React from 'react';
 import { ITodoModel } from 'types';
 
 interface ITodoProps extends ITodoModel {
-  onClick: () => void;
+  onClick(): void;
 }
 
-interface ITodoState {}
-
-export class Todo extends React.Component<ITodoProps, ITodoState> {
+export class Todo extends React.Component<ITodoProps, {}> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.onClick();
@@ -17,16 +15,16 @@ export class Todo extends React.Component<ITodoProps, ITodoState> {
   public render() {
     if (this.props.completed) {
       return (
-        <a href="#" className="collection-item waves-effect" onClick={this.onClick} style={{ textDecoration: 'line-through', color: 'gray' }}>
-          <div className="truncate">
+        <a href='#' className='collection-item waves-effect' onClick={this.onClick} style={{ textDecoration: 'line-through', color: 'gray' }}>
+          <div className='truncate'>
             {this.props.text}
           </div>
         </a>
       );
     } else {
       return (
-        <a href="#" className="collection-item waves-effect waves-teal" onClick={this.onClick} style={{ textDecoration: 'none' }}>
-          <div className="truncate">
+        <a href='#' className='collection-item waves-effect waves-teal' onClick={this.onClick} style={{ textDecoration: 'none' }}>
+          <div className='truncate'>
             {this.props.text}
           </div>
         </a>
