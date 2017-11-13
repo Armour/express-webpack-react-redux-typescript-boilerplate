@@ -102,9 +102,16 @@
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@4.0.16":
+"@types/react-router@*":
   version "4.0.16"
   resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.16.tgz#5153d07cb138a30c50aaaa33c8d654e8f321ae13"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react-router@4.0.17":
+  version "4.0.17"
+  resolved "https://registry.yarnpkg.com/@types/react-router/-/react-router-4.0.17.tgz#1032c800ed0da188d8a3bb38fe6afa8c917865d5"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -131,13 +138,6 @@
   resolved "https://registry.yarnpkg.com/@types/redux-devtools/-/redux-devtools-3.0.41.tgz#37fef23a42b4659dabbc2009e70511771dce73b9"
   dependencies:
     "@types/react" "*"
-    redux "^3.6.0"
-
-"@types/redux-immutable@3.0.38":
-  version "3.0.38"
-  resolved "https://registry.yarnpkg.com/@types/redux-immutable/-/redux-immutable-3.0.38.tgz#9e2fcce4a9c64e60f13de2165d2765f7af85d487"
-  dependencies:
-    immutable "^3.8.1"
     redux "^3.6.0"
 
 "@types/redux-logger@3.0.5":
@@ -7713,10 +7713,6 @@ redux-devtools@3.4.0:
     lodash "^4.2.0"
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.0.1"
-
-redux-immutable@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
 
 redux-logger@3.0.6:
   version "3.0.6"
