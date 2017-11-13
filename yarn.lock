@@ -74,9 +74,9 @@
   version "1.6.5"
   resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.6.5.tgz#e222615538ea2df248c72512e1faf346af2640d6"
 
-"@types/react-dom@16.0.2":
-  version "16.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.2.tgz#2da9de21fd83f0140b64794ad9c47930230aedae"
+"@types/react-dom@16.0.3":
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.3.tgz#8accad7eabdab4cca3e1a56f5ccb57de2da0ff64"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
@@ -131,13 +131,6 @@
   resolved "https://registry.yarnpkg.com/@types/redux-devtools/-/redux-devtools-3.0.41.tgz#37fef23a42b4659dabbc2009e70511771dce73b9"
   dependencies:
     "@types/react" "*"
-    redux "^3.6.0"
-
-"@types/redux-immutable@3.0.38":
-  version "3.0.38"
-  resolved "https://registry.yarnpkg.com/@types/redux-immutable/-/redux-immutable-3.0.38.tgz#9e2fcce4a9c64e60f13de2165d2765f7af85d487"
-  dependencies:
-    immutable "^3.8.1"
     redux "^3.6.0"
 
 "@types/redux-logger@3.0.5":
@@ -7713,10 +7706,6 @@ redux-devtools@3.4.0:
     lodash "^4.2.0"
     prop-types "^15.5.7"
     redux-devtools-instrument "^1.0.1"
-
-redux-immutable@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
 
 redux-logger@3.0.6:
   version "3.0.6"
