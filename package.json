@@ -114,7 +114,7 @@
     "tslint-microsoft-contrib": "5.0.1",
     "tslint-react": "3.2.0",
     "typescript": "2.6.1",
-    "uglify-js": "3.1.9",
+    "uglify-js": "3.1.10",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-bundle-analyzer": "2.9.1",
