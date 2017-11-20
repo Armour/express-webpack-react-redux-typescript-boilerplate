@@ -1985,12 +1985,12 @@ concat-stream@^1.4.6, concat-stream@^1.4.7, concat-stream@^1.6.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
-connected-react-router@4.2.3:
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-4.2.3.tgz#7066a7f83da484ddfa9c353903a6b07d19cbe9e1"
+connected-react-router@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-4.3.0.tgz#a3bcba9e82ec5ee9f2018daeeddca827a7ef6235"
   dependencies:
     immutable "^3.8.1"
-    react-router "^4.1.0"
+    react-router "^4.2.0"
 
 console-browserify@^1.1.0:
   version "1.1.0"
@@ -7546,7 +7546,7 @@ react-router-dom@4.2.2:
     react-router "^4.2.0"
     warning "^3.0.0"
 
-react-router@^4.1.0, react-router@^4.2.0:
+react-router@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
   dependencies:
