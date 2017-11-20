@@ -109,9 +109,13 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.0.23":
+"@types/react@*":
   version "16.0.23"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.23.tgz#f0f713b07912c6fd8e10c9ccc539443ceb06dbca"
+
+"@types/react@16.0.25":
+  version "16.0.25"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.25.tgz#bf696b83fe480c5e0eff4335ee39ebc95884a1ed"
 
 "@types/redux-devtools-dock-monitor@1.1.31":
   version "1.1.31"
