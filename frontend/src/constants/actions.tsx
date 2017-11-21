@@ -5,17 +5,13 @@ export const TOGGLE_TODO = 'TOGGLE_TODO';
 // Visibility action types
 export const SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER';
 
-// Visibility filter options
-export const VisibilityFiltersOptions = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE',
-};
-
-// Async fetch request states
+// Async fetching data action types
 export const START_REQUEST = 'START_REQUEST';
 export const RECEIVE_RESPONSE = 'RECEIVE_RESPONSE';
-export const RECEIVE_ERROR = 'RECEIVE_ERROR';
+export const DEFAULT_RECEIVE_ERROR = 'DEFAULT_RECEIVE_ERROR';
 
-// For coverage test
+// Fetching api data action types
+export const RECEIVE_NOTE = 'RECEIVE_NOTE';
+
+// Coverage test default action type
 export const TEST_DEFAULT_ACTION = 'TEST_DEFAULT_ACTION';

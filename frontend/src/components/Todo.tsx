@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { ITodoModel } from 'types';
+import { ITodo } from 'types';
 
-interface ITodoProps extends ITodoModel {
+interface ITodoProps extends ITodo {
   onClick(): void;
 }
 
-export class Todo extends React.Component<ITodoProps, {}> {
+export class Todo extends React.Component<ITodoProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.onClick();

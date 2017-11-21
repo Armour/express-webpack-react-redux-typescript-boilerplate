@@ -31,7 +31,8 @@
 * [x] [react-hot-loader 3](https://github.com/gaearon/react-hot-loader) - hot module reload!
 * [x] [react-router 4](https://github.com/ReactTraining/react-router) - routing
 * [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux](https://github.com/reactjs/redux) (a predictable state container for js apps)
-* [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4
+* [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, currently a replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+* [x] [immutable.js](https://github.com/facebook/immutable-js/) - persistent Immutable data structures for react redux state management
 * [x] [Typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
 * [x] [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) - high quality TypeScript type definitions
 * [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs
@@ -62,12 +63,18 @@ Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official d
 The easiest way to run the example project is to use `docker-compose`
 
 ```bash
-docker-compose up
+docker-compose up --build
+```
+
+or
+
+``` bash
+NODE_ENV=production docker-compose up --build
 ```
 
 that's it :)
 
-you can also manually install and run it by following below
+you can also manually install and run it by following below steps
 
 ### Install project dependencies
 

@@ -1,4 +1,5 @@
-import { SET_VISIBILITY_FILTER, TEST_DEFAULT_ACTION, VisibilityFiltersOptions } from 'constants/actionTypes';
+import { SET_VISIBILITY_FILTER, TEST_DEFAULT_ACTION } from 'constants/actions';
+import { VisibilityFiltersOptions } from 'constants/visibilityFilers';
 import { visibilityFilter } from 'reducers/visibilityFilter';
 import { IActionsFilter, IActionTestDefault, IVisibilityFilterOption } from 'types';
 

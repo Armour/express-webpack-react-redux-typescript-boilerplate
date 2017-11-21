@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 
-import { apiData } from 'reducers/apiData';
+import { fetchingData } from 'reducers/fetchingData';
+import { notes } from 'reducers/notes';
 import { todos } from 'reducers/todos';
 import { visibilityFilter } from 'reducers/visibilityFilter';
 
 export const reducers = combineReducers({
-  apiData,
+  fetchingData,
+  notes,
   todos,
   visibilityFilter,
 });

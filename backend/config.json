@@ -3,5 +3,7 @@
   "pgsql_username": "docker",
   "pgsql_password": "docker",
   "pgsql_database": "docker",
+  "redis_hostname": "redis",
+  "redis_port": "6379",
   "http_port": "3003"
 }

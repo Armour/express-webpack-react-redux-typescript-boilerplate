@@ -1,9 +1,9 @@
-import Immutable from 'immutable';
+import { List } from 'immutable';
 
-import { ADD_TODO, TOGGLE_TODO } from 'constants/actionTypes';
-import { IActionsTodo, ITodoModel, ITodoModelList } from 'types';
+import { ADD_TODO, TOGGLE_TODO } from 'constants/actions';
+import { IActionsTodo, ITodo, ITodoList } from 'types';
 
-const initialState: ITodoModelList = Immutable.List<ITodoModel>([
+const initialState: ITodoList = List<ITodo>([
   {
     id: 'fake_id',
     text: 'Add your own todo task above, click to mark each todo as completed',
@@ -11,7 +11,7 @@ const initialState: ITodoModelList = Immutable.List<ITodoModel>([
   },
 ]);
 
-export const todos = (state = initialState, action: IActionsTodo): ITodoModelList => {
+export const todos = (state = initialState, action: IActionsTodo): ITodoList => {
   switch (action.type) {
   case ADD_TODO:
     return state.push({

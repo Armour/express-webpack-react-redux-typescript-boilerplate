@@ -1,5 +1,6 @@
 import { addTodo, setVisibilityFilter, toggleTodo } from 'actions/todoList';
-import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO, VisibilityFiltersOptions } from 'constants/actionTypes';
+import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actions';
+import { VisibilityFiltersOptions } from 'constants/visibilityFilers';
 import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo } from 'types';
 
 describe('[Actions] todoList test', () => {

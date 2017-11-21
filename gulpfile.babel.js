@@ -72,7 +72,7 @@ const generateTask = (taskName, args) => {
   gulp.task(taskName, (callback) => {
     const proc = spawn(yarn, args, { stdio: 'inherit' });
     proc.on('close', (code) => {
-      console.log(`child process exited with code ${code}`);
+      console.log(`child process exited with code ${code}`); // eslint-disable-line no-console
       callback();
     });
     proc.on('error', (err) => {

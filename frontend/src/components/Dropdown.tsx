@@ -9,7 +9,7 @@ interface IDropdownProps {
   dropdownLists: string[];
 }
 
-export class Dropdown extends React.Component<IDropdownProps, {}> {
+export class Dropdown extends React.Component<IDropdownProps> {
   public componentDidMount() {
     $('.dropdown-button').dropdown();
   }

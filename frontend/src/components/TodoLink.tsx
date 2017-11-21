@@ -1,21 +1,19 @@
 import React from 'react';
 
-import { IFilterLinkProps } from 'containers/FilterLink';
-
 export interface ITodoLinkStateProps {
   active: boolean;
 }
 
 export interface ITodoLinkDispatchProps {
-  onClick(): void;
+  setVisibilityFilter(): void;
 }
 
-type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps & IFilterLinkProps;
+type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps;
 
-export class TodoLink extends React.Component<ITodoLinkProps, {}> {
+export class TodoLink extends React.Component<ITodoLinkProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    this.props.onClick();
+    this.props.setVisibilityFilter();
   }
 
   public render() {

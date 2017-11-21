@@ -11,7 +11,7 @@
     "build-dll": "webpack --color --config webpack.config.dll.babel.js",
     "build-prod": "webpack --color --config webpack.config.prod.babel.js",
     "profile": "profile=true webpack --color --config webpack.config.prod.babel.js",
-    "server": "babel-node backend/server.js",
+    "server": "nodemon --exec babel-node backend/server.js",
     "test": "jest --no-cache --coverage",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "deploy": "heroku container:push web",
@@ -27,7 +27,7 @@
     "@types/materialize-css": "0.100.2",
     "@types/node-uuid": "0.0.28",
     "@types/prismjs": "1.6.5",
-    "@types/react": "16.0.23",
+    "@types/react": "16.0.25",
     "@types/react-dom": "16.0.3",
     "@types/react-hot-loader": "3.0.5",
     "@types/react-redux": "5.0.13",
@@ -43,7 +43,7 @@
     "@types/webpack-env": "1.13.2",
     "add-asset-html-webpack-plugin": "2.1.2",
     "autoprefixer": "7.1.6",
-    "awesome-typescript-loader": "3.3.0",
+    "awesome-typescript-loader": "3.4.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.2",
@@ -53,8 +53,10 @@
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.26.0",
     "body-parser": "1.18.2",
+    "colors": "1.1.2",
     "compression": "1.7.1",
-    "connected-react-router": "4.2.3",
+    "connect-redis": "3.3.2",
+    "connected-react-router": "4.3.0",
     "cookie-parser": "1.4.3",
     "css-loader": "0.28.7",
     "del": "3.0.0",
@@ -63,8 +65,9 @@
     "eslint-import-resolver-webpack": "0.8.3",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-jsx-a11y": "6.0.2",
-    "eslint-plugin-react": "7.4.0",
+    "eslint-plugin-react": "7.5.1",
     "express": "4.16.2",
+    "express-session": "1.15.6",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "1.1.5",
     "gulp": "3.9.1",
@@ -81,8 +84,9 @@
     "lodash": "4.17.4",
     "materialize-css": "0.100.2",
     "morgan": "1.9.0",
-    "node-sass": "4.6.1",
+    "node-sass": "4.7.2",
     "node-uuid": "1.4.8",
+    "nodemon": "1.12.1",
     "pg": "7.4.0",
     "postcss": "6.0.14",
     "postcss-cssnext": "3.0.2",
@@ -114,25 +118,33 @@
     "tslint-microsoft-contrib": "5.0.1",
     "tslint-react": "3.2.0",
     "typescript": "2.6.1",
-    "uglify-js": "3.1.9",
+    "uglify-js": "3.1.10",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-bundle-analyzer": "2.9.1",
     "webpack-dev-middleware": "1.12.0",
     "webpack-hot-middleware": "2.20.0",
-    "webpack-md5-hash": "0.0.5",
     "webpack-merge": "4.1.1"
   },
   "devDependencies": {
     "coveralls": "3.0.0",
     "husky": "0.14.3",
     "jest": "21.2.1",
-    "ts-jest": "21.2.2"
+    "ts-jest": "21.2.3"
   },
   "browserslist": [
     "> 1%",
     "last 2 versions"
   ],
+  "nodemonConfig": {
+    "watch": [
+      "backend/controllers/",
+      "backend/routes/",
+      "backend/db/",
+      "backend/config.json",
+      "backend/server.js"
+    ]
+  },
   "jest": {
     "globals": {
       "ts-jest": {

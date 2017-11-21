@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { IApiDataMap } from 'types';
+import { INoteDataMap } from 'types';
 
 export interface IApiLoaderStateProps {
-  apiData: IApiDataMap;
+  noteData: INoteDataMap;
 }
 
 export interface IApiLoaderDispatchProps {
-  fetchData(url: string): void;
+  fetchNoteIfNeeded(url: string): void;
 }
 
 type IApiLoaderProps = IApiLoaderStateProps & IApiLoaderDispatchProps;
@@ -16,7 +16,7 @@ interface IApiLoaderState {
   url: string;
 }
 
-export class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState> {
+export class NoteFetcher extends React.Component<IApiLoaderProps, IApiLoaderState> {
   constructor(props: IApiLoaderProps) {
     super(props);
     this.state = { url: 'api' };
@@ -27,7 +27,7 @@ export class ApiLoader extends React.Component<IApiLoaderProps, IApiLoaderState>
     if (!this.state.url.trim()) {
       return;
     }
-    this.props.fetchData(this.state.url);
+    this.props.fetchNoteIfNeeded(this.state.url);
   }
 
   public onChange = (e: React.FormEvent<HTMLInputElement>) => {

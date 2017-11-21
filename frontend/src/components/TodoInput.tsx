@@ -6,7 +6,7 @@ export interface ITodoInputDispatchProps {
 
 let input: HTMLInputElement;
 
-export class TodoInput extends React.Component<ITodoInputDispatchProps, {}> {
+export class TodoInput extends React.Component<ITodoInputDispatchProps> {
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!input.value.trim()) {

@@ -1,11 +1,11 @@
-import Immutable from 'immutable';
+import { List } from 'immutable';
 
-import { ADD_TODO, TEST_DEFAULT_ACTION, TOGGLE_TODO } from 'constants/actionTypes';
+import { ADD_TODO, TEST_DEFAULT_ACTION, TOGGLE_TODO } from 'constants/actions';
 import { todos } from 'reducers/todos';
-import { IActionAddTodo, IActionTestDefault, IActionToggleTodo, ITodoModel, ITodoModelList } from 'types';
+import { IActionAddTodo, IActionTestDefault, IActionToggleTodo, ITodo, ITodoList } from 'types';
 
 describe('[Reducers] todos test', () => {
-  const initialState: ITodoModelList = Immutable.List<ITodoModel>([
+  const initialState: ITodoList = List<ITodo>([
     {
       id: 'initial_id',
       text: 'initial_text',
@@ -37,7 +37,7 @@ describe('[Reducers] todos test', () => {
   it('[todos.ADD_TODO] should return state with new todo added', () => {
     const stateAddTodo = todos(initialState, actionAddTodo);
     expect(stateAddTodo.count()).toBe(2);
-    expect(stateAddTodo).toEqual(Immutable.List([
+    expect(stateAddTodo).toEqual(List([
       {
         id: 'initial_id',
         text: 'initial_text',
@@ -54,7 +54,7 @@ describe('[Reducers] todos test', () => {
   it('[todos.TOGGLE_TODO] should return state with one todo completed toggled', () => {
     const stateToggleTodo = todos(initialState, actionToggleTodo);
     expect(stateToggleTodo.count()).toBe(1);
-    expect(stateToggleTodo).toEqual(Immutable.List([
+    expect(stateToggleTodo).toEqual(List([
       {
         id: 'initial_id',
         text: 'initial_text',
@@ -66,7 +66,7 @@ describe('[Reducers] todos test', () => {
   it('[todos.TOGGLE_TODO] should return previous state if id is not found', () => {
     const stateToggleTodoInvalid = todos(initialState, actionToggleTodoInvalid);
     expect(stateToggleTodoInvalid.count()).toBe(1);
-    expect(stateToggleTodoInvalid).toEqual(Immutable.List([
+    expect(stateToggleTodoInvalid).toEqual(List([
       {
         id: 'initial_id',
         text: 'initial_text',
@@ -78,7 +78,7 @@ describe('[Reducers] todos test', () => {
   it('[todos.DEFAULT_ACTION] should return previous state if action is not found', () => {
     const stateTestDefault = todos(initialState, actionTestDefault);
     expect(stateTestDefault.count()).toBe(1);
-    expect(stateTestDefault).toEqual(Immutable.List([
+    expect(stateTestDefault).toEqual(List([
       {
         id: 'initial_id',
         text: 'initial_text',
@@ -90,7 +90,7 @@ describe('[Reducers] todos test', () => {
   it('[todos.DEFAULT_STATE] should use default state if not defined', () => {
     const stateTestDefault = todos(undefined, actionTestDefault);
     expect(stateTestDefault.count()).toBe(1);
-    expect(stateTestDefault).toEqual(Immutable.List([
+    expect(stateTestDefault).toEqual(List([
       {
         id: 'fake_id',
         text: 'Add your own todo task above, click to mark each todo as completed',

@@ -1,21 +1,15 @@
 import db from '../db';
 
-const apiRequest = async (req, res, requestType) => {
+export const apiGetData = async (req, res) => {
   try {
-    const { rows } = await db.query('SELECT * FROM tableName', []);
+    const { rows: data } = await db.query('SELECT * FROM tableName', []);
+    if (data === undefined || data.length === 0) throw Error();
     res.json({
-      data: rows,
-      requestType,
+      data,
     });
   } catch (e) {
     res.json({
       data: 'data not found, check your database',
-      requestType,
     });
   }
 };
-
-export const apiGet = (req, res) => apiRequest(req, res, 'GET');
-
-export const apiPost = (req, res) => apiRequest(req, res, 'POST');
-

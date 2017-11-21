@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TodoLayout } from 'components/TodoLayout';
-import { AsyncApi } from 'containers/AsyncApi';
+import { FetchNote } from 'containers/FetchNote';
 
 export class ReactPage extends React.Component {
   public render() {
@@ -10,7 +10,7 @@ export class ReactPage extends React.Component {
         <div className='react-block'>
           <h1>React</h1>
           <TodoLayout />
-          <AsyncApi />
+          <FetchNote />
         </div>
       </div>
     );

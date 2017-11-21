@@ -3,20 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import { Dropdown } from 'components/Dropdown';
 
-interface IHeaderState {
-  dropdownId: string;
+interface IHeaderProps {
   dropdownLists: string[];
 }
 
-export class Header extends React.Component<{}, IHeaderState> {
-  constructor(props: {}) {
-    super(props);
-    this.state = {
-      dropdownLists: ['parallax'],
-      dropdownId: 'header-dropdown',
-    };
-  }
-
+export class Header extends React.Component<IHeaderProps> {
   public render() {
     return (
       <nav>
@@ -26,10 +17,10 @@ export class Header extends React.Component<{}, IHeaderState> {
             <ul id='nav-mobile' className='right hide-on-med-and-down'>
               <li key='react'><NavLink activeClassName='active-link' to='/react'>React</NavLink></li>
               <li key='materialize'>
-                <a className='dropdown-button' href='#' data-beloworigin='true' data-activates={this.state.dropdownId}>Dropdown</a>
+                <a className='dropdown-button' href='#' data-beloworigin='true' data-activates='header-dropdown'>Dropdown</a>
               </li>
               <li key='404'><NavLink activeClassName='active-link' to='/404'>NotFound</NavLink></li>
-              <Dropdown id={this.state.dropdownId} dropdownLists={this.state.dropdownLists} />
+              <Dropdown id='header-dropdown' dropdownLists={this.props.dropdownLists} />
             </ul>
           </div>
         </div>

@@ -1,22 +1,22 @@
 import React from 'react';
 
 import { Todo } from 'components/Todo';
-import { ITodoModelList } from 'types';
+import { ITodoList } from 'types';
 
 export interface ITodoListStateProps {
-  todos: ITodoModelList;
+  todos: ITodoList;
 }
 
 export interface ITodoListDispatchProps {
-  onClick(id: string): void;
+  toggleTodo(id: string): void;
 }
 
 type ITodoListProps = ITodoListStateProps & ITodoListDispatchProps;
 
-export class TodoList extends React.Component<ITodoListProps, {}> {
+export class TodoList extends React.Component<ITodoListProps> {
   public onClick = (id: string) => {
     return () => {
-      this.props.onClick(id);
+      this.props.toggleTodo(id);
     };
   }
 

@@ -1,11 +1,10 @@
 import express from 'express';
 
-import { apiGet, apiPost } from '../controllers/api';
+import { apiGetData } from '../controllers/api';
 
 const router = express.Router();
 
 /* API */
-router.get('/', apiGet);
-router.post('/', apiPost);
+router.get('/getData', apiGetData);
 
 export default router;

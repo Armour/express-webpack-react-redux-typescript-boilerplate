@@ -2,10 +2,10 @@ import { connect, Dispatch } from 'react-redux';
 
 import { toggleTodo } from 'actions';
 import { TodoList } from 'components/TodoList';
-import { VisibilityFiltersOptions } from 'constants/actionTypes';
-import { ITodoAppState, ITodoListDispatchProps, ITodoListStateProps, ITodoModelList, IVisibilityFilterOption } from 'types';
+import { VisibilityFiltersOptions } from 'constants/visibilityFilers';
+import { IAppState, ITodoList, ITodoListDispatchProps, ITodoListStateProps, IVisibilityFilterOption } from 'types';
 
-const getVisibleTodos = (todos: ITodoModelList, filter: IVisibilityFilterOption): ITodoModelList => {
+const getVisibleTodos = (todos: ITodoList, filter: IVisibilityFilterOption): ITodoList => {
   switch (filter) {
   case VisibilityFiltersOptions.SHOW_ALL:
     return todos;
@@ -18,12 +18,12 @@ const getVisibleTodos = (todos: ITodoModelList, filter: IVisibilityFilterOption)
   }
 };
 
-const mapStateToProps = (state: ITodoAppState): ITodoListStateProps => ({
+const mapStateToProps = (state: IAppState): ITodoListStateProps => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<ITodoAppState>): ITodoListDispatchProps => ({
-  onClick: (id: string) => {
+const mapDispatchToProps = (dispatch: Dispatch<IAppState>): ITodoListDispatchProps => ({
+  toggleTodo: (id: string) => {
     dispatch(toggleTodo(id));
   },
 });

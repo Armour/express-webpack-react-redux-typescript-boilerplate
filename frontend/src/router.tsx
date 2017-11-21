@@ -11,7 +11,7 @@ import { ReactPage } from 'pages/ReactPage';
 
 export const router = (
   <div>
-    <Header />
+    <Header dropdownLists={['parallax']} />
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route path='/react' component={ReactPage} />

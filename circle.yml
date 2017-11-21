@@ -24,13 +24,13 @@ jobs:
           name: Install Docker Compose
           command: |
             set -x
-            curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
+            curl -L https://github.com/docker/compose/releases/download/1.17.1/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
             sudo cp /tmp/docker-compose /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
       - setup_remote_docker
       - run:
           name: Run Docker Compose
-          command: docker-compose up -d
+          command: NODE_ENV=production docker-compose up -d
       - run:
           name: Install dependencies
           command: yarn install

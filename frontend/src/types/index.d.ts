@@ -1,44 +1,43 @@
-import Immutable from 'immutable';
+import { List, Map, Set } from 'immutable';
 
-import { ADD_TODO, TOGGLE_TODO } from 'constants/actionTypes';
-import { SET_VISIBILITY_FILTER, VisibilityFiltersOptions } from 'constants/actionTypes';
-import { RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actionTypes';
-import { TEST_DEFAULT_ACTION } from 'constants/actionTypes';
+// Constants
+import { ADD_TODO, RECEIVE_NOTE, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actions';
+import { DEFAULT_RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actions';
+import { TEST_DEFAULT_ACTION } from 'constants/actions';
 
 // Components Interfaces
-export { IApiLoaderStateProps, IApiLoaderDispatchProps } from 'components/ApiLoader';
+export { IApiLoaderStateProps, IApiLoaderDispatchProps } from 'components/FetchNote';
 export { ITodoLinkStateProps, ITodoLinkDispatchProps } from 'components/TodoLink';
 export { ITodoListStateProps, ITodoListDispatchProps } from 'components/TodoList';
 export { ITodoInputDispatchProps } from 'components/TodoInput';
 
-// Todo App State
-export interface ITodoModel {
+// Global State
+export type IAppState = {
+  todos: ITodoList;
+  visibilityFilter: IVisibilityFilterOption;
+  fetching: IFetchingSet;
+  noteData: INoteDataMap;
+};
+
+// Todos
+export interface ITodo {
   id: string;
   text: string;
   completed: boolean;
 }
+export type ITodoList = List<ITodo>;
 
-export type ITodoModelList = Immutable.List<ITodoModel>;
-
+// VisibilityFilter
 export type IVisibilityFilterOption = string;
 
-export interface ITodoAppState {
-  todos: ITodoModelList;
-  visibilityFilter: IVisibilityFilterOption;
-}
+// Fetching
+export type IFetchingSet = Set<string>;
 
-// Async Api Call State
-export interface IApiData {
+// NoteData
+export interface INoteData {
   content: string;
-  isFetching: boolean;
-  hasError: boolean;
 }
-
-export type IApiDataMap = Immutable.Map<string, IApiData>;
-
-export interface IAsyncApiCallState {
-  apiData: IApiDataMap;
-}
+export type INoteDataMap = Map<string, INoteData>;
 
 // Todo Actions
 export interface IActionAddTodo {
@@ -47,43 +46,56 @@ export interface IActionAddTodo {
   text: string;
   completed: boolean;
 }
-
 export interface IActionToggleTodo {
   type: typeof TOGGLE_TODO;
   id: string;
 }
+export type IActionsTodo =
+  | IActionAddTodo
+  | IActionToggleTodo
+  | IActionTestDefault;
 
-export type IActionsTodo = IActionAddTodo | IActionToggleTodo | IActionTestDefault;
-
-// Filter Actions
+// VisibilityFilter Actions
 export interface IActionSetVisibilityFilter {
   type: typeof SET_VISIBILITY_FILTER;
   filter: IVisibilityFilterOption;
 }
+export type IActionsFilter =
+  | IActionSetVisibilityFilter
+  | IActionTestDefault;
 
-export type IActionsFilter = IActionSetVisibilityFilter | IActionTestDefault;
-
-// Async Api Call Actions
+// Fetching Actions
 export interface IActionStartRequest {
   type: typeof START_REQUEST;
   url: string;
+  method: string;
 }
-
 export interface IActionReceiveResponse {
   type: typeof RECEIVE_RESPONSE;
   url: string;
-  res: any;
+  method: string;
 }
-
-export interface IActionReceiveError {
-  type: typeof RECEIVE_ERROR;
+export interface IActionDefaultReceiveError {
+  type: typeof DEFAULT_RECEIVE_ERROR;
   url: string;
   error: string;
 }
+export type IActionsFetchApi =
+  | IActionStartRequest
+  | IActionReceiveResponse
+  | IActionDefaultReceiveError
+  | IActionTestDefault;
 
-export type IActionsAsyncApi = IActionStartRequest | IActionReceiveResponse | IActionReceiveError | IActionTestDefault;
+// NoteData Actions
+export interface IActionReceiveNote {
+  type: typeof RECEIVE_NOTE;
+  data: INoteData;
+}
+export type IActionsFetchNote =
+  | IActionReceiveNote
+  | IActionTestDefault;
 
-// Test switch default branch for code coverage
+// Default Action for code coverage (default switch branch)
 export interface IActionTestDefault {
   type: typeof TEST_DEFAULT_ACTION;
 }

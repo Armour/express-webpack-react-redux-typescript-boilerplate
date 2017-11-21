@@ -1,4 +1,5 @@
-import { SET_VISIBILITY_FILTER, VisibilityFiltersOptions } from 'constants/actionTypes';
+import { SET_VISIBILITY_FILTER } from 'constants/actions';
+import { VisibilityFiltersOptions } from 'constants/visibilityFilers';
 import { IActionsFilter, IVisibilityFilterOption } from 'types';
 
 const initialState: IVisibilityFilterOption = VisibilityFiltersOptions.SHOW_ALL;

@@ -8,7 +8,6 @@ import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
-import WebpackMd5Hash from 'webpack-md5-hash';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import * as ReactManifest from './frontend/dist/dll/react_manifest.json'; // eslint-disable-line import/no-unresolved
@@ -34,8 +33,10 @@ let config = {
     // path: the output directory as an absolute path (required)
     path: path.resolve(__dirname, 'frontend/dist/prod'),
     // filename: specifies the name of output file on disk (required)
-    // Use hash string to handle client side cache problem
-    filename: '[name]-[chunkhash:10].js',
+    filename: '[name].[chunkhash:10].js',
+    // publicPath: specifies the server-relative URL of the output resource directory
+    // https://webpack.js.org/configuration/output/#output-publicpath
+    publicPath: '/',
   },
 
   // Determine how the different types of modules within a project will be treated
@@ -73,7 +74,7 @@ let config = {
           use: [
             { loader: 'css-loader', options: { importLoaders: 2 } },
             { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
-            'sass-loader',
+            { loader: 'sass-loader' },
           ],
         }),
       },
@@ -97,10 +98,6 @@ let config = {
 
   // A list of used webpack plugins
   plugins: [
-    // Better building progress display
-    new ProgressBarWebpackPlugin({
-      clear: false,
-    }),
     // Minimize javascript files with source map generated
     new webpack.optimize.UglifyJsPlugin({
       output: { comments: false },
@@ -108,6 +105,8 @@ let config = {
     }),
     // Module concatenation optimization from webpack v3
     new webpack.optimize.ModuleConcatenationPlugin(),
+    // Better webpack module name display
+    new webpack.HashedModuleIdsPlugin(),
     // Define production env which shaved off 75% of the build output size
     // http://moduscreate.com/optimizing-react-es6-webpack-production-build
     new webpack.DefinePlugin({
@@ -123,38 +122,25 @@ let config = {
       'root.jQuery': 'jquery',
     }),
     // Load pre-build dll reference files
-    new webpack.DllReferencePlugin({
-      manifest: ReactManifest,
-      context: __dirname,
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: ImmutableManifest,
-      context: __dirname,
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: MaterializeManifest,
-      context: __dirname,
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: MiscManifest,
-      context: __dirname,
+    new webpack.DllReferencePlugin({ manifest: ReactManifest }),
+    new webpack.DllReferencePlugin({ manifest: ImmutableManifest }),
+    new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
+    new webpack.DllReferencePlugin({ manifest: MiscManifest }),
+    // Better building progress display
+    new ProgressBarWebpackPlugin({
+      clear: false,
     }),
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
-      template: 'frontend/template/index.ejs',
+      template: path.resolve(__dirname, 'frontend/template/index.ejs'),
     }),
     // Add dll reference files to html
-    new AddAssetHtmlPlugin([
-      { filepath: 'frontend/dist/dll/react_dll.js', includeSourcemap: false },
-      { filepath: 'frontend/dist/dll/immutable_dll.js', includeSourcemap: false },
-      { filepath: 'frontend/dist/dll/materialize_dll.js', includeSourcemap: false },
-      { filepath: 'frontend/dist/dll/misc_dll.js', includeSourcemap: false },
-    ]),
+    new AddAssetHtmlPlugin({
+      filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'), includeSourcemap: false,
+    }),
     // Extract css part from javascript bundle into a file
-    new ExtractTextPlugin('[name]-[contenthash:10].css'),
-    // Better hash for [hash] and [chunkhash]
-    new WebpackMd5Hash(),
+    new ExtractTextPlugin('[name].[contenthash:10].css'),
   ],
 
   // Change how modules are resolved

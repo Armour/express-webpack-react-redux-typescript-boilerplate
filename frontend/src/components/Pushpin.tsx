@@ -10,7 +10,7 @@ interface IPushpinProps {
   color: string;
 }
 
-export class Pushpin extends React.Component<IPushpinProps, {}> {
+export class Pushpin extends React.Component<IPushpinProps> {
   public render() {
     return (
       <div id={this.props.color} className={`pushpin-block ${this.props.color} lighten-1`}>

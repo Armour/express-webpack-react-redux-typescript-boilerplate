@@ -1,10 +1,12 @@
 FROM node
 
-WORKDIR ~
+ARG NODE_ENV=development
 
-ENV NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
 
-COPY . .
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app/
 
 RUN apt-get update && apt-get install -y bash git
 
