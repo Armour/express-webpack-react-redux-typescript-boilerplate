@@ -30,7 +30,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Run Docker Compose
-          command: NODE_ENV=production docker-compose up -d
+          command: docker-compose up -d
       - run:
           name: Install dependencies
           command: yarn install

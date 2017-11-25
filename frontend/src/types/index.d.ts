@@ -6,7 +6,7 @@ import { DEFAULT_RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constant
 import { TEST_DEFAULT_ACTION } from 'constants/actions';
 
 // Components Interfaces
-export { IApiLoaderStateProps, IApiLoaderDispatchProps } from 'components/FetchNote';
+export { INoteFetcherStateProps, INoteFetcherDispatchProps } from 'components/FetchNote';
 export { ITodoLinkStateProps, ITodoLinkDispatchProps } from 'components/TodoLink';
 export { ITodoListStateProps, ITodoListDispatchProps } from 'components/TodoList';
 export { ITodoInputDispatchProps } from 'components/TodoInput';

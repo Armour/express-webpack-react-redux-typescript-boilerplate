@@ -52,13 +52,18 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(session({
   store: new RedisStore({
-    host: config.redis_hostname,
+    host: isProduction ? config.redis_hostname_prod : config.redis_hostname_dev,
     port: config.redis_port,
   }),
   name: 'fRy_t0-haCk)me<br0B',
   secret: 'mIceqvv8EgECGOVKIPlR83UGGxMOARaYJKxQK6kWwwx3pv06G0n9ZPLMNqIOwX9rS69YCXDHDmV4O2JAWHEWGYI8pZ2M60VocBc92ILjOM1Gp3S42EHNmQ65c4W7ryj9',
-  resave: false,
   saveUninitialized: false,
+  // If only use http:
+  // resave: true,
+  // cookie: {
+  //   httpOnly: false,
+  //   secure: false,
+  // },
 }));
 
 // index router

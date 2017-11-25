@@ -2,22 +2,22 @@ import React from 'react';
 
 import { INoteDataMap } from 'types';
 
-export interface IApiLoaderStateProps {
+export interface INoteFetcherStateProps {
   noteData: INoteDataMap;
 }
 
-export interface IApiLoaderDispatchProps {
+export interface INoteFetcherDispatchProps {
   fetchNoteIfNeeded(url: string): void;
 }
 
-type IApiLoaderProps = IApiLoaderStateProps & IApiLoaderDispatchProps;
+type INoteFetcherProps = INoteFetcherStateProps & INoteFetcherDispatchProps;
 
 interface IApiLoaderState {
   url: string;
 }
 
-export class NoteFetcher extends React.Component<IApiLoaderProps, IApiLoaderState> {
-  constructor(props: IApiLoaderProps) {
+export class NoteFetcher extends React.Component<INoteFetcherProps, IApiLoaderState> {
+  constructor(props: INoteFetcherProps) {
     super(props);
     this.state = { url: 'api' };
   }

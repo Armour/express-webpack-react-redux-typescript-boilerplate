@@ -5,8 +5,6 @@ services:
     image: cguo/express-webpack-react-redux-typescript-boilerplate
     build:
       context: .
-      args:
-        NODE_ENV: ${NODE_ENV-development}
     ports:
       - "3003:3003"
     depends_on:
@@ -23,8 +21,12 @@ services:
       - POSTGRES_DB=docker
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
+    ports:
+      - "5432:5432"
     restart: always
 
   redis:
     image: redis:alpine
+    ports:
+      - "6379:6379"
     restart: always

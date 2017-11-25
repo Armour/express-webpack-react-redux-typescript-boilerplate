@@ -31,15 +31,15 @@ const tasks = {
   tslint: 'tslint',
   stylelint: 'stylelint',
   clean: 'clean',
-  buildDll: 'yarn:run-build-dll',
-  buildProd: 'yarn:run-build-prod',
-  profile: 'yarn:run-profile',
-  server: 'yarn:run-server',
-  test: 'yarn:run-test',
-  coverage: 'yarn:run-coverage',
-  deploy: 'yarn:run-deploy',
+  buildDll: 'buildDll',
+  buildProd: 'buildProd',
+  profile: 'profile',
+  server: 'server',
+  test: 'test',
+  coverage: 'coverage',
+  deploy: 'deploy',
   build: 'build',
-  start: 'build & run server',
+  start: 'start',
 };
 
 // Run eslint
@@ -68,8 +68,8 @@ gulp.task(tasks.stylelint, () =>
 gulp.task(tasks.clean, () => del([path.dist, '.awcache', 'coverage']));
 
 // Yarn task generator
-const generateTask = (taskName, args) => {
-  gulp.task(taskName, (callback) => {
+const generateTask = args =>
+  (callback) => {
     const proc = spawn(yarn, args, { stdio: 'inherit' });
     proc.on('close', (code) => {
       console.log(`child process exited with code ${code}`); // eslint-disable-line no-console
@@ -78,29 +78,28 @@ const generateTask = (taskName, args) => {
     proc.on('error', (err) => {
       callback(err);
     });
-  });
-};
+  };
 
 // Build dll reference files
-generateTask(tasks.buildDll, ['run', 'build-dll']);
+gulp.task(tasks.buildDll, generateTask(['run', 'build-dll']));
 
 // Generate webpack asset bundles for production
-generateTask(tasks.buildProd, ['run', 'build-prod']);
+gulp.task(tasks.buildProd, generateTask(['run', 'build-prod']));
 
 // Profile webpack asset bundle
-generateTask(tasks.profile, ['run', 'profile']);
+gulp.task(tasks.profile, generateTask(['run', 'profile']));
 
 // Run server
-generateTask(tasks.server, ['run', 'server']);
+gulp.task(tasks.server, generateTask(['run', 'server']));
 
 // Test
-generateTask(tasks.test, ['run', 'test']);
+gulp.task(tasks.test, generateTask(['run', 'test']));
 
 // Coverage
-generateTask(tasks.coverage, ['run', 'coverage']);
+gulp.task(tasks.coverage, generateTask(['run', 'coverage']));
 
 // Deployment
-generateTask(tasks.deploy, ['run', 'deploy']);
+gulp.task(tasks.deploy, generateTask(['run', 'deploy']));
 
 // Generate asset bundles
 gulp.task(tasks.build, (callback) => {

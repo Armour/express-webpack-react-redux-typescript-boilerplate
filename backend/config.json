@@ -1,9 +1,11 @@
 {
-  "pgsql_hostname": "postgres",
+  "pgsql_hostname_dev": "localhost",
+  "pgsql_hostname_prod": "postgres",
   "pgsql_username": "docker",
   "pgsql_password": "docker",
   "pgsql_database": "docker",
-  "redis_hostname": "redis",
+  "redis_hostname_dev": "localhost",
+  "redis_hostname_prod": "redis",
   "redis_port": "6379",
   "http_port": "3003"
 }

@@ -35,9 +35,17 @@ async (dispatch: Dispatch<IAppState>) => {
     if (method.toUpperCase() === METHOD_POST) {
       const headers: Headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      req = new Request(`/fetch${url}`, { method: METHOD_POST, headers, body: JSON.stringify(postData) });
+      req = new Request(`/fetch${url}`, {
+        method: METHOD_POST,
+        headers,
+        body: JSON.stringify(postData),
+        credentials: 'same-origin',
+      });
     } else {
-      req = new Request(`/fetch${url}`, { method });
+      req = new Request(`/fetch${url}`, {
+        method,
+        credentials: 'same-origin'
+      });
     }
     const res = await fetch(req);
     if (res.ok) {
@@ -47,7 +55,9 @@ async (dispatch: Dispatch<IAppState>) => {
         dispatch(receiveData()); // no content
       });
     } else {
-      dispatch(receiveError(url, `${res.status} ${res.statusText}`));
+      res.json().then((e) => {
+        dispatch(receiveError(url, `${res.status} ${e.message}`));
+      });
     }
   } catch (e) {
     dispatch(receiveError(url, e.message));

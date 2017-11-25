@@ -6,6 +6,14 @@ import { createBrowserHistory } from 'history';
 
 import { App } from 'App';
 import { configureStore } from 'store';
+import { isProduction } from 'utils';
+
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+
+// Webpack offline plugin
+if (isProduction) {
+  OfflinePluginRuntime.install();
+}
 
 // To keep reducers self-sufficient and reusable, we choose to not set
 // initial state here, and let each reducer to handle the default state
