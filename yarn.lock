@@ -176,9 +176,9 @@
   dependencies:
     "@types/source-map" "*"
 
-"@types/webpack-env@1.13.2":
-  version "1.13.2"
-  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.2.tgz#c290b99dbef74df21b06671aea36e355bf3b27e1"
+"@types/webpack-env@1.13.3":
+  version "1.13.3"
+  resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.3.tgz#0ecbe70f87341767793774d3683b51aa3246434c"
 
 "@types/webpack@3.8.1":
   version "3.8.1"
