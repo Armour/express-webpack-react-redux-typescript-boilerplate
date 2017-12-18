@@ -69,7 +69,7 @@
     "express": "4.16.2",
     "express-session": "1.15.6",
     "extract-text-webpack-plugin": "3.0.2",
-    "file-loader": "1.1.5",
+    "file-loader": "1.1.6",
     "gulp": "3.9.1",
     "gulp-eslint": "4.0.0",
     "gulp-stylelint": "5.0.0",
