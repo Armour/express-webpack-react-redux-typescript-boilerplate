@@ -1,10 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import merge from 'webpack-merge';
 
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
-
-const isProduction = process.env.NODE_ENV === 'production';
 
 const reactVendors = [
   'react',
@@ -38,7 +35,7 @@ const miscVendors = [
 ];
 
 // Base config
-let config = {
+const config = {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
@@ -78,29 +75,18 @@ let config = {
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
       name: '[name]_dll',
     }),
+    // Minimize javascript files with source map generated
+    new webpack.optimize.UglifyJsPlugin({
+      output: { comments: false },
+    }),
+    // Define production env which shaved off 75% of the build output size
+    // http://moduscreate.com/optimizing-react-es6-webpack-production-build
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
 };
 
-// Production enviroment
-if (isProduction) {
-  config = merge(config, {
-    plugins: [
-      // Minimize javascript files with source map generated
-      new webpack.optimize.UglifyJsPlugin({
-        output: { comments: false },
-      }),
-      // Define production env which shaved off 75% of the build output size
-      // http://moduscreate.com/optimizing-react-es6-webpack-production-build
-      new webpack.DefinePlugin({
-        'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
-      }),
-    ],
-  });
-}
-
-// Export const (import/no-mutable-exports)
-const constConfig = config;
-
-export default constConfig;
+export default config;

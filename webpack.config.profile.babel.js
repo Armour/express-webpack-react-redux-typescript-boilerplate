@@ -6,8 +6,6 @@ import ProdWebpackConfig from './webpack.config.prod.babel';
 
 export default merge(ProdWebpackConfig, {
   plugins: [
-    // Extend base config
-    ...ProdWebpackConfig.plugins,
     // Webpack bundle analyzer for profiling
     new BundleAnalyzerPlugin({
       analyzerPort: 3003,

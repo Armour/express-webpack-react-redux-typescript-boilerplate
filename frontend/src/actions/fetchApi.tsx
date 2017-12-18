@@ -44,7 +44,7 @@ async (dispatch: Dispatch<IAppState>) => {
     } else {
       req = new Request(`/fetch${url}`, {
         method,
-        credentials: 'same-origin'
+        credentials: 'same-origin',
       });
     }
     const res = await fetch(req);
