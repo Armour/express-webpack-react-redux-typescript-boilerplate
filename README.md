@@ -9,10 +9,15 @@
 
 ## Example
 
-* [Main Page](https://express-react-typescript.herokuapp.com/)
+* [Demo Page](https://express-react-typescript.herokuapp.com/)
   * Contains the classic [Todo List](https://express-react-typescript.herokuapp.com/react) like below:
 
-    ![](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
+    ![Demo page](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
+
+* [Cocomic](https://cocomic.azendless.com/)
+  * An open-source platform for comic/manga collaboration (SFU CMPT470 course project, no typescript), [source code here](https://github.com/Armour/Cocomic)
+
+    ![Cocomic](https://user-images.githubusercontent.com/5276065/34108373-bb440764-e43a-11e7-98f8-7c94d08e2575.jpg)
 
 ## Stack
 
@@ -54,27 +59,27 @@
 
 * `node`
 * `yarn` (recommended) or `npm`
-* `docker` (optional)
+* `docker` (recommended)
 
 Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
 
 ### Use docker
 
-The easiest way to run the example project is to use `docker-compose`
+The easiest way to run the example project is to use `docker-compose` (default build in production mode):
 
 ```bash
 docker-compose up --build
 ```
 
-or
-
-``` bash
-NODE_ENV=production docker-compose up --build
-```
-
 that's it :)
 
-you can also manually install and run it by following below steps
+you can also run postgresql and redis only:
+
+```bash
+docker-compose up -d postgres redis
+```
+
+and then mannually run `gulp` with different `NODE_ENV` by following below steps
 
 ### Install project dependencies
 
@@ -89,7 +94,7 @@ If you meet permission problem when try to install yarn globally, check [this](h
 
 ### Database setup
 
-Make sure you have `postgresql` installed, and set the right configs in `backend/config.json`.
+Make sure you have `postgresql` and `redis` ready (either on your own machine or from the docker container), and set the right configs of that in `backend/config.json`.
 
 ### Build & Run
 
