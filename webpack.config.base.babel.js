@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
@@ -25,7 +26,7 @@ export default {
           { loader: 'babel-loader' },
           // Use those two flags to speed up babel compilation
           // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
-          { loader: 'awesome-typescript-loader', options: { useBabel: true, useCache: true } },
+          { loader: 'awesome-typescript-loader', options: { useBabel: true, useCache: true, silent: true } },
           // Alternatively, we can use ts-loader instead of awesome-typescript-loader
           // { loader: 'ts-loader' },
         ],
@@ -58,6 +59,8 @@ export default {
       'window.jQuery': 'jquery',
       'root.jQuery': 'jquery',
     }),
+    // Warns when multiple versions of the same package exist in a build
+    new DuplicatePackageCheckerPlugin(),
     // Load pre-build dll reference files
     new webpack.DllReferencePlugin({ manifest: ReactManifest }),
     new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
@@ -121,5 +124,9 @@ export default {
       '.json',
       '.scss',
     ],
+    // Solve duplicated package issue
+    alias: {
+      'hash-base': path.resolve(__dirname, 'node_modules/hash-base'),
+    },
   },
 };
