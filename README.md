@@ -59,13 +59,11 @@
 
 * `node`
 * `yarn` (recommended) or `npm`
-* `docker` (recommended)
+* `docker` (recommended) with `docker-compose`
 
-Install [yarn](https://yarnpkg.com/en/docs/install#linux-tab) follows official documentation.
+### Quickest way
 
-### Use docker
-
-The easiest way to run the example project is to use `docker-compose` (default build in production mode):
+The easiest way to run the example project is to use `docker-compose`:
 
 ```bash
 docker-compose up --build
@@ -73,32 +71,32 @@ docker-compose up --build
 
 that's it :)
 
-you can also run postgresql and redis only:
-
-```bash
-docker-compose up -d postgres redis
-```
-
-and then mannually run `gulp` with different `NODE_ENV` by following below steps
+You can also follow below instructions if you want it to be more customizable
 
 ### Install project dependencies
 
 Go to project root directory:
 
 ```bash
-yarn
+yarn install
 yarn global add gulp
 ```
 
-If you meet permission problem when try to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
+If you meet permission problem when trying to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
 
-### Database setup
+### Setup database and session store
 
-Make sure you have `postgresql` and `redis` ready (either on your own machine or from the docker container), and set the right configs of that in `backend/config.json`.
+You can either run `postgresql` and `redis` using docker images:
+
+```bash
+docker-compose up -d postgres redis
+```
+
+or maintain it by your own, if so, make sure you set the right configs in `backend/config.json`
 
 ### Build & Run
 
-On development (with react-hot-reload):
+On development (with react-hot-reload and redux-devtools):
 
 ```bash
 gulp
@@ -110,25 +108,27 @@ On production (with uglify-js and other optimazitions):
 NODE_ENV=production gulp
 ```
 
-### Profile assets bundle
+## Profile assets bundle
+
+Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), we can analyze and then optimize our assets bundle through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
 
 ```bash
 gulp profile
 ```
 
-### Run test
+## Run test
 
 ```bash
 gulp test
 ```
 
-### Code coverage
+## Code coverage
 
 ```bash
 gulp coveralls
 ```
 
-### Deployment
+## Deployment
 
 ```bash
 gulp deploy
