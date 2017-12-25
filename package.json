@@ -128,7 +128,7 @@
     "webpack-dev-middleware": "2.0.2",
     "webpack-hot-middleware": "2.21.0",
     "webpack-merge": "4.1.1",
-    "webpack-pwa-manifest": "3.3.4"
+    "webpack-pwa-manifest": "3.4.1"
   },
   "devDependencies": {
     "coveralls": "3.0.0",
