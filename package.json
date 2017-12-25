@@ -88,7 +88,7 @@
     "morgan": "1.9.0",
     "node-sass": "4.7.2",
     "node-uuid": "1.4.8",
-    "nodemon": "1.14.1",
+    "nodemon": "1.14.3",
     "offline-plugin": "4.8.5",
     "pg": "7.4.0",
     "postcss": "6.0.14",
