@@ -1,0 +1,22 @@
+environment:
+  nodejs_version: "9"
+  NODE_ENV: production
+
+install:
+  # Get the latest stable version of Node.js
+  - ps: Install-Product node $env:nodejs_version
+  # install modules
+  - yarn install
+  - yarn global add gulp
+
+build_script:
+  - gulp build
+
+test_script:
+  - node --version
+  - npm --version
+  - yarn --version
+  - yarn test
+
+cache:
+  - "%LOCALAPPDATA%\\Yarn"
