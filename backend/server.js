@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import favicon from 'serve-favicon';
 import logger from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
@@ -98,7 +97,6 @@ if (!isProduction) {
   // Serve static files as usual
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');
   app.use(express.static(distPath));
-  app.use(favicon(`${distPath}/favicon.ico`));
   app.get('*', (_, res) => {
     res.sendFile(`${distPath}/index.html`);
   });

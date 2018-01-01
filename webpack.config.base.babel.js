@@ -43,9 +43,9 @@ export default {
           { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
         ],
       },
-      // Use url-loader to load font related files and icon
+      // Use url-loader to load font related files
       {
-        test: /\.(woff2?|eot|ttf|otf|ico)(\?.*)?$/,
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
         ],
@@ -91,17 +91,17 @@ export default {
       display: 'standalone',
       icons: [
         {
-          src: path.resolve('frontend/src/image/logo.png'),
+          src: path.resolve('frontend/src/images/logo.png'),
           sizes: [16, 32, 96, 128, 192, 256, 384, 512],
         },
         {
-          src: path.resolve('frontend/src/image/apple-touch-icon.png'),
+          src: path.resolve('frontend/src/images/apple-touch-icon.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
           ios: true,
         },
         {
-          src: path.resolve('frontend/src/image/android-icon.png'),
+          src: path.resolve('frontend/src/images/android-icon.png'),
           sizes: [192, 256],
           destination: path.join('icons', 'android'),
         },
@@ -110,6 +110,7 @@ export default {
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
+      favicon: path.resolve(__dirname, 'frontend/src/images/favicon.ico'),
       template: path.resolve(__dirname, 'frontend/template/index.ejs'),
     }),
     // Add dll reference files to html

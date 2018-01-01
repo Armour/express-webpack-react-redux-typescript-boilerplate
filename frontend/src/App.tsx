@@ -9,7 +9,6 @@ import { DevTools } from 'containers/DevTools';
 import { router } from 'router';
 import { isProduction } from 'utils';
 
-import 'image/favicon.ico';
 import 'material-design-icons/iconfont/material-icons.css';
 import 'materialize-css';
 import 'prismjs/prism.js';
