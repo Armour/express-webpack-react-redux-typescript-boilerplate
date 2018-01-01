@@ -1,8 +1,9 @@
 # Express Webpack React Redux Typescript Boilerplate
 
-[![CircleCI](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master.svg?style=shield&circle-token=2b60a5e48d4f53d2b115efd948022c7df72a805b)](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master)
 [![Dependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate)
 [![DevDependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/dev-status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate?type=dev)
+[![CircleCI](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master.svg?style=shield&circle-token=2b60a5e48d4f53d2b115efd948022c7df72a805b)](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/kgnfn2r88h90cgx5?svg=true)](https://ci.appveyor.com/api/projects/status/kgnfn2r88h90cgx5?svg=true)
 [![Coverage Status](https://coveralls.io/repos/github/Armour/express-webpack-react-redux-typescript-boilerplate/badge.svg?branch=master&t=H7lCqC)](https://coveralls.io/github/Armour/express-webpack-react-redux-typescript-boilerplate?branch=master)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
