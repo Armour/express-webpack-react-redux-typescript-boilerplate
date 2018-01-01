@@ -16,6 +16,9 @@ export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
+  // Minimal log level
+  stats: 'minimal',
+
   // Determine how the different types of modules within a project will be treated
   module: {
     rules: [
@@ -32,19 +35,26 @@ export default {
         ],
         exclude: /node_modules/,
       },
-      // Use url-loader to load images in development
+      // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg)$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         use: [
-          { loader: 'url-loader', options: { limit: 10000 } },
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
           { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
         ],
       },
-      // Use file-loader to load font related files and icon
+      // Use url-loader to load font related files and icon
       {
-        test: /\.(eot|woff2?|ttf|ico)$/,
+        test: /\.(woff2?|eot|ttf|otf|ico)(\?.*)?$/,
         use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
+        ],
+      },
+      // Use url-loader to load audio related files
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        use: [
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
         ],
       },
     ],

@@ -79,7 +79,7 @@ if (!isProduction) {
     // Only output when errors or new compilation happen
     stats: 'minimal',
   });
-  // Server static files through webpackDevMiddleware
+  // Serve static files through webpackDevMiddleware
   const distPath = path.resolve(__dirname, '../frontend/dist/dev');
   app.use(middleware);
   app.use(webpackHotMiddleware(compiler));
@@ -95,7 +95,7 @@ if (!isProduction) {
     }
   });
 } else {
-  // Server static files as usual
+  // Serve static files as usual
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');
   app.use(express.static(distPath));
   app.use(favicon(`${distPath}/favicon.ico`));
