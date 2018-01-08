@@ -93,7 +93,7 @@
     "node-uuid": "1.4.8",
     "nodemon": "1.14.7",
     "offline-plugin": "4.9.0",
-    "pg": "7.4.0",
+    "pg": "7.4.1",
     "postcss": "6.0.14",
     "postcss-cssnext": "3.0.2",
     "postcss-import": "11.0.0",
