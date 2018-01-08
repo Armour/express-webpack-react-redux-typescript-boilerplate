@@ -55,7 +55,7 @@
     "body-parser": "1.18.2",
     "colors": "1.1.2",
     "compression": "1.7.1",
-    "connect-redis": "3.3.2",
+    "connect-redis": "3.3.3",
     "connected-react-router": "4.3.0",
     "cookie-parser": "1.4.3",
     "coveralls": "3.0.0",
