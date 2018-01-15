@@ -61,7 +61,7 @@
     "coveralls": "3.0.0",
     "css-loader": "0.28.8",
     "del": "3.0.0",
-    "duplicate-package-checker-webpack-plugin": "2.0.2",
+    "duplicate-package-checker-webpack-plugin": "2.1.0",
     "eslint": "4.15.0",
     "eslint-config-airbnb": "16.1.0",
     "eslint-import-resolver-webpack": "0.8.4",
