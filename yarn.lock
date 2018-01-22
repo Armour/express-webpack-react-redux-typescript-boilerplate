@@ -184,9 +184,9 @@
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.3.tgz#0ecbe70f87341767793774d3683b51aa3246434c"
 
-"@types/webpack@3.8.2":
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.2.tgz#489276aa101b8364fa444f358e7c220a65c2cc66"
+"@types/webpack@3.8.3":
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-3.8.3.tgz#92501a9c7e41a560aa9b354345768b7348d80764"
   dependencies:
     "@types/node" "*"
     "@types/tapable" "*"
