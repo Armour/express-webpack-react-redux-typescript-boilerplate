@@ -85,7 +85,7 @@
     "immutable": "4.0.0-rc.9",
     "jest": "22.0.4",
     "jquery": "3.2.1",
-    "lodash": "4.17.4",
+    "lodash": "4.17.5",
     "material-design-icons": "3.0.1",
     "materialize-css": "0.100.2",
     "morgan": "1.9.0",
