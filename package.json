@@ -42,7 +42,7 @@
     "@types/webpack": "3.8.2",
     "@types/webpack-env": "1.13.3",
     "add-asset-html-webpack-plugin": "2.1.2",
-    "autoprefixer": "7.2.4",
+    "autoprefixer": "8.0.0",
     "awesome-typescript-loader": "3.4.1",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
