@@ -96,7 +96,7 @@
     "pg": "7.4.1",
     "postcss": "6.0.16",
     "postcss-cssnext": "3.0.2",
-    "postcss-import": "11.0.0",
+    "postcss-import": "11.1.0",
     "postcss-loader": "2.0.10",
     "prismjs": "1.9.0",
     "progress-bar-webpack-plugin": "1.10.0",
