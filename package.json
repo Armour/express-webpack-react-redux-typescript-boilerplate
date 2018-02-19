@@ -116,7 +116,7 @@
     "sass-loader": "6.0.6",
     "style-loader": "0.19.1",
     "stylelint": "8.4.0",
-    "stylelint-config-standard": "18.0.0",
+    "stylelint-config-standard": "18.1.0",
     "superagent": "3.8.2",
     "ts-jest": "22.0.1",
     "ts-loader": "3.2.0",
