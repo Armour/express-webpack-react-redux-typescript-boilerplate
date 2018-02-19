@@ -131,9 +131,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/redux-devtools-log-monitor@1.0.32":
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools-log-monitor/-/redux-devtools-log-monitor-1.0.32.tgz#3a497be2cd1342d059560d4797dc2a78a41ee78c"
+"@types/redux-devtools-log-monitor@1.0.33":
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/@types/redux-devtools-log-monitor/-/redux-devtools-log-monitor-1.0.33.tgz#2432606c74250cac15fc74bb891762376b533a19"
   dependencies:
     "@types/base16" "*"
     "@types/react" "*"
