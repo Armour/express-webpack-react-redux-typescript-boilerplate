@@ -94,7 +94,7 @@
     "nodemon": "1.14.9",
     "offline-plugin": "4.9.0",
     "pg": "7.4.1",
-    "postcss": "6.0.16",
+    "postcss": "6.0.19",
     "postcss-cssnext": "3.0.2",
     "postcss-import": "11.0.0",
     "postcss-loader": "2.0.10",
