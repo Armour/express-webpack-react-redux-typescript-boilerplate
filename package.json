@@ -75,7 +75,7 @@
     "gulp": "3.9.1",
     "gulp-eslint": "4.0.1",
     "gulp-stylelint": "6.0.0",
-    "gulp-tslint": "8.1.2",
+    "gulp-tslint": "8.1.3",
     "hammerjs": "2.0.8",
     "helmet": "3.9.0",
     "husky": "0.14.3",
