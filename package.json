@@ -131,7 +131,7 @@
     "webpack-dev-middleware": "2.0.4",
     "webpack-hot-middleware": "2.21.0",
     "webpack-merge": "4.1.1",
-    "webpack-pwa-manifest": "3.4.1"
+    "webpack-pwa-manifest": "3.5.0"
   },
   "browserslist": [
     "> 1%",
