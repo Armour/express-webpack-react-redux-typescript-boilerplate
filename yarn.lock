@@ -125,9 +125,9 @@
   version "16.0.34"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.34.tgz#7a8f795afd8a404a9c4af9539b24c75d3996914e"
 
-"@types/redux-devtools-dock-monitor@1.1.31":
-  version "1.1.31"
-  resolved "https://registry.yarnpkg.com/@types/redux-devtools-dock-monitor/-/redux-devtools-dock-monitor-1.1.31.tgz#6b44fbfd8821131b3183c537d1c897eb3683c41b"
+"@types/redux-devtools-dock-monitor@1.1.32":
+  version "1.1.32"
+  resolved "https://registry.yarnpkg.com/@types/redux-devtools-dock-monitor/-/redux-devtools-dock-monitor-1.1.32.tgz#09103f3734de63a02fbd2d42618291061dd6fce0"
   dependencies:
     "@types/react" "*"
 
