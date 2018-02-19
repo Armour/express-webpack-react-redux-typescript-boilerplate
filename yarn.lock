@@ -10011,9 +10011,9 @@ tslint-microsoft-contrib@5.0.1:
   dependencies:
     tsutils "^1.4.0"
 
-tslint-react@3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-3.3.3.tgz#06a6beb826645ab21d85339663a1295e107bc405"
+tslint-react@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-3.5.1.tgz#a5ca48034bf583fb63b42763bb89fa23062d5390"
   dependencies:
     tsutils "^2.13.1"
 
