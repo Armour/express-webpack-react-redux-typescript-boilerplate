@@ -35,7 +35,7 @@
     "@types/react-router-dom": "4.2.3",
     "@types/redux-devtools": "3.0.42",
     "@types/redux-devtools-dock-monitor": "1.1.31",
-    "@types/redux-devtools-log-monitor": "1.0.32",
+    "@types/redux-devtools-log-monitor": "1.0.33",
     "@types/redux-logger": "3.0.5",
     "@types/redux-promise": "0.5.28",
     "@types/superagent": "3.5.6",
