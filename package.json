@@ -59,7 +59,7 @@
     "connected-react-router": "4.3.0",
     "cookie-parser": "1.4.3",
     "coveralls": "3.0.0",
-    "css-loader": "0.28.8",
+    "css-loader": "0.28.10",
     "del": "3.0.0",
     "duplicate-package-checker-webpack-plugin": "2.0.2",
     "eslint": "4.15.0",
