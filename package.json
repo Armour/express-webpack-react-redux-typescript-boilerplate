@@ -71,7 +71,7 @@
     "express": "4.16.2",
     "express-session": "1.15.6",
     "extract-text-webpack-plugin": "3.0.2",
-    "file-loader": "1.1.6",
+    "file-loader": "1.1.9",
     "gulp": "3.9.1",
     "gulp-eslint": "4.0.1",
     "gulp-stylelint": "6.0.0",
