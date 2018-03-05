@@ -118,7 +118,7 @@
     "stylelint": "8.4.0",
     "stylelint-config-standard": "18.0.0",
     "superagent": "3.8.2",
-    "ts-jest": "22.0.1",
+    "ts-jest": "22.4.1",
     "ts-loader": "3.2.0",
     "tslint": "5.8.0",
     "tslint-microsoft-contrib": "5.0.1",
