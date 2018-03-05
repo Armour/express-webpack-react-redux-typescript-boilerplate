@@ -113,7 +113,7 @@
     "redux-promise": "0.5.3",
     "redux-thunk": "2.2.0",
     "run-sequence": "2.2.1",
-    "sass-loader": "6.0.6",
+    "sass-loader": "6.0.7",
     "style-loader": "0.19.1",
     "stylelint": "8.4.0",
     "stylelint-config-standard": "18.0.0",
