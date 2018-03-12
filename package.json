@@ -53,7 +53,7 @@
     "babel-preset-stage-0": "6.24.1",
     "babel-register": "6.26.0",
     "body-parser": "1.18.2",
-    "colors": "1.1.2",
+    "colors": "1.2.1",
     "compression": "1.7.1",
     "connect-redis": "3.3.3",
     "connected-react-router": "4.3.0",
