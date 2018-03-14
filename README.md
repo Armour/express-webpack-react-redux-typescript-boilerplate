@@ -11,12 +11,12 @@
 ## Example
 
 * [Demo Page](https://express-react-typescript.herokuapp.com/)
-  * Contains the classic [Todo List](https://express-react-typescript.herokuapp.com/react) like below:
+  * A page contains the classic [Todo List](https://express-react-typescript.herokuapp.com/react) as follows:
 
     ![Demo page](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
 
 * [Cocomic](https://cocomic.azendless.com/)
-  * An open-source platform for comic/manga collaboration (SFU CMPT470 course project, no typescript), [source code here](https://github.com/Armour/Cocomic)
+  * An open-source platform for comic/manga collaboration (SFU CMPT470 course project, no typescript). [source code here](https://github.com/Armour/Cocomic).
 
     ![Cocomic](https://user-images.githubusercontent.com/5276065/34108373-bb440764-e43a-11e7-98f8-7c94d08e2575.jpg)
 
@@ -72,7 +72,7 @@ docker-compose up --build
 
 that's it :)
 
-You can also follow below instructions if you want it to be more customizable
+You can also follow instructions below if you want customize it.
 
 ### Install project dependencies
 
@@ -83,17 +83,17 @@ yarn install
 yarn global add gulp
 ```
 
-If you meet permission problem when trying to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
+If you find permission problem when trying to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
 
 ### Setup database and session store
 
-You can either run `postgresql` and `redis` using docker images:
+You can either run `postgresql` or `redis` using docker images:
 
 ```bash
 docker-compose up -d postgres redis
 ```
 
-or maintain it by your own, if so, make sure you set the right configs in `backend/config.json`
+or maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
 
 ### Build & Run
 
