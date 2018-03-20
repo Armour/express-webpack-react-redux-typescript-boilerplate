@@ -72,7 +72,7 @@ docker-compose up --build
 
 that's it :)
 
-You can also follow instructions below if you want customize it.
+You can also follow instructions below if you want to customize it.
 
 ### Install project dependencies
 
@@ -87,13 +87,17 @@ If you find permission problem when trying to install yarn globally, check [this
 
 ### Setup database and session store
 
-You can either run `postgresql` or `redis` using docker images:
+You can either 
+<br>
+* run `postgresql` and `redis` using docker images:
 
 ```bash
 docker-compose up -d postgres redis
 ```
 
-or maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
+or 
+<br>
+* maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
 
 ### Build & Run
 
