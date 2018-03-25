@@ -6,10 +6,5 @@
         "extend"
       ]
     }]
-  },
-  "ignoreFiles": [
-    "./node_modules/**",
-    "./frontend/dist/**",
-    "./coverage/**"
-  ]
+  }
 }

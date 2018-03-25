@@ -7,12 +7,12 @@ import postcssImport from 'postcss-import';
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
+  // Development mode
+  mode: 'development',
+
   // Start entry point(s)
   entry: {
     app: [
-      // Important! 'react-hot-loader/patch' must goes first
-      // https://github.com/gaearon/redux-devtools/commit/64f58b7010a1b2a71ad16716eb37ac1031f93915#diff-efacb933fc2cf0fd7e8dacf55a958839
-      'react-hot-loader/patch',
       'webpack-hot-middleware/client',
       './frontend/src/index',
     ],
@@ -58,11 +58,9 @@ export default merge(BaseWebpackConfig, {
   plugins: [
     // Enable hot module reload, if have --hot parameter in npm script, then this line must be removed!
     new webpack.HotModuleReplacementPlugin(),
-    // Better webpack module name display
-    new webpack.NamedModulesPlugin(),
   ],
 
   // Source map mode
   // https://webpack.js.org/configuration/devtool
-  devtool: 'eval-source-map',
+  devtool: 'eval',
 });

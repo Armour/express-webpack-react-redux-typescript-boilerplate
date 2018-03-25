@@ -20,8 +20,8 @@ export const todos = (state = initialState, action: IActionsTodo): ITodoList => 
       completed: action.completed,
     });
   case TOGGLE_TODO:
-    const index = state.findIndex(s => s !== undefined && s.id === action.id);
-    return index === -1 ? state : state.update(index, s => ({ ...s, completed: !s.completed }));
+    const index = state.findIndex((s) => s !== undefined && s.id === action.id);
+    return index === -1 ? state : state.update(index, (s) => ({ ...s, completed: !s.completed }));
   default:
     return state;
   }

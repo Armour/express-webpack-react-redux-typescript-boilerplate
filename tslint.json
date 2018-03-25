@@ -1,26 +1,39 @@
 {
   "extends": [
-    "tslint:recommended",
-    "tslint-microsoft-contrib"
+    "tslint:recommended"
   ],
   "rules": {
-    "missing-jsdoc": false,
-    "react-tsx-curly-spacing": [true, "never", {"allowMultiline": true}],
-    "react-a11y-anchors": false,
-    "import-name": false,
-    "export-name": false,
-    "variable-name": false,
-    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}],
+    "arrow-parens": true,
+    "max-line-length": false,
     "no-any": false,
-    "no-multiline-string": false,
+    "no-console": [
+      true,
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
     "no-non-null-assertion": false,
     "no-require-imports": false,
-    "no-reserved-keywords": false,
     "no-import-side-effect": false,
+    "no-submodule-imports": false,
     "newline-before-return": false,
-    "max-line-length": false,
-    "mocha-no-side-effect-code": false,
-    "no-backbone-get-set-outside-model": false,
-    "typedef": false
+    "object-literal-sort-keys": false,
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape",
+      "avoid-template"
+    ],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "variable-name": false
   }
 }

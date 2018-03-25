@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 
@@ -20,18 +20,13 @@ interface IAppProps {
   history: History;
 }
 
-// Set the store, history and routers
-export class App extends React.Component<IAppProps, {}> {
-  public render() {
-    return (
-      <Provider store={this.props.store}>
-        <ConnectedRouter history={this.props.history}>
-          <div>
-            {router}
-            {!isProduction && <DevTools />}
-          </div>
-        </ConnectedRouter>
-      </Provider>
-    );
-  }
-}
+export const App = (props: IAppProps) => (
+  <Provider store={props.store}>
+    <ConnectedRouter history={props.history}>
+      <div>
+        {router}
+        {!isProduction && <DevTools />}
+      </div>
+    </ConnectedRouter>
+  </Provider>
+);

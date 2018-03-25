@@ -1,10 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "module": "es6",
+    "module": "commonjs",
     "target": "es6",
-    "jsx": "preserve",
-    "moduleResolution": "node",
+    "jsx": "react",
     "baseUrl": "frontend/src",
     "typeRoots": [
       "node_modules/@types"

@@ -13,7 +13,7 @@ services:
     restart: always
 
   postgres:
-    image: postgres:10.0-alpine
+    image: postgres:10.3-alpine
     volumes:
       - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
       - ./backend/sql/data.sql:/docker-entrypoint-initdb.d/2-data.sql

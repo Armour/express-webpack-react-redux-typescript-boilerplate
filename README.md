@@ -22,19 +22,18 @@
 
 ## Stack
 
-* [x] [express](http://expressjs.com/) - backend
 * [x] [yarn](https://github.com/yarnpkg/yarn) - dependency manager
-* [x] [gulp](https://github.com/gulpjs/gulp) - task runner
+* [x] [express](http://expressjs.com/) - node.js framework for backend
 * [x] [materialize](http://materializecss.com/) - a modern responsive front-end framework based on Material Design
 * [x] [sass](https://github.com/sass/sass) - CSS pre-processors
 * [x] [postcss](https://github.com/postcss/postcss) - CSS post-processor
-* [x] [webpack 3](https://github.com/webpack/webpack) - module bundler
+* [x] [webpack 4](https://github.com/webpack/webpack) - module bundler
 * [x] [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) - offers a dev middleware for webpack, which arguments a live bundle to a directory
 * [x] [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) - add hot reloading into an existing server without [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
 * [x] followed [ES6 standard](https://github.com/lukehoban/es6features)
 * [x] [babel](https://babeljs.io/) - compile ES6 to ES5
 * [x] [react](https://facebook.github.io/react/) - building user interfaces
-* [x] [react-hot-loader 3](https://github.com/gaearon/react-hot-loader) - hot module reload!
+* [x] [react-hot-loader 4](https://github.com/gaearon/react-hot-loader) - hot module reload!
 * [x] [react-router 4](https://github.com/ReactTraining/react-router) - routing
 * [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux](https://github.com/reactjs/redux) (a predictable state container for js apps)
 * [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, currently a replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
@@ -80,7 +79,6 @@ Go to project root directory:
 
 ```bash
 yarn install
-yarn global add gulp
 ```
 
 If you meet permission problem when trying to install yarn globally, check [this](https://github.com/yarnpkg/yarn/issues/1060#issuecomment-268160528) out.
@@ -100,13 +98,13 @@ or maintain it by your own, if so, make sure you set the right configs in `backe
 On development (with react-hot-reload and redux-devtools):
 
 ```bash
-gulp
+yarn run-dev
 ```
 
 On production (with uglify-js and other optimazitions):
 
 ```bash
-NODE_ENV=production gulp
+yarn run-prod
 ```
 
 ## Profile assets bundle
@@ -114,25 +112,25 @@ NODE_ENV=production gulp
 Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), we can analyze and then optimize our assets bundle through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
 
 ```bash
-gulp profile
+yarn profile
 ```
 
 ## Run test
 
 ```bash
-gulp test
+yarn test
 ```
 
 ## Code coverage
 
 ```bash
-gulp coveralls
+yarn coveralls
 ```
 
 ## Deployment
 
 ```bash
-gulp deploy
+yarn deploy
 ```
 
 ## Contributing

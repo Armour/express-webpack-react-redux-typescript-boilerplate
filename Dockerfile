@@ -5,9 +5,8 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app/
 
 RUN yarn install
-RUN yarn global add gulp
-RUN gulp build
+RUN yarn build-prod
 
 EXPOSE 3003
 
-CMD ["yarn", "run", "server"]
+CMD ["yarn", "server"]

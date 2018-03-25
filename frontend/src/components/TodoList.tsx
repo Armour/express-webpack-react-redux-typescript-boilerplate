@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { Todo } from 'components/Todo';
 import { ITodoList } from 'types';
@@ -21,7 +21,7 @@ export class TodoList extends React.Component<ITodoListProps> {
   }
 
   public render() {
-    const todoList = this.props.todos.map(todo =>
+    const todoList = this.props.todos.map((todo) =>
       todo !== undefined ? <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} /> : null,
     );
     return (

@@ -14,7 +14,6 @@ const reactVendors = [
   'redux-devtools-dock-monitor',
   'redux-devtools-log-monitor',
   'redux-logger',
-  'redux-promise',
   'redux-thunk',
   'connected-react-router',
 ];
@@ -28,14 +27,15 @@ const immutableVendors = [
 ];
 
 const miscVendors = [
-  'hammerjs',
   'lodash',
   'prismjs',
-  'regenerator-runtime',
 ];
 
 // Base config
 const config = {
+  // Production mode
+  mode: 'production',
+
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
@@ -75,18 +75,12 @@ const config = {
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
       name: '[name]_dll',
     }),
-    // Minimize javascript files with source map generated
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-    }),
-    // Define production env which shaved off 75% of the build output size
-    // http://moduscreate.com/optimizing-react-es6-webpack-production-build
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
   ],
+
+  // Turn off performance hints (assets size limit)
+  performance: {
+    hints: false,
+  },
 };
 
 export default config;

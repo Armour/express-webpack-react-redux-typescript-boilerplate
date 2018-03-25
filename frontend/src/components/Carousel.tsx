@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from 'constants/timers';
 

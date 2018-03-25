@@ -7,10 +7,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 
-import * as ReactManifest from './frontend/dist/dll/react_manifest.json'; // eslint-disable-line import/no-unresolved
-import * as ImmutableManifest from './frontend/dist/dll/immutable_manifest.json'; // eslint-disable-line import/no-unresolved
-import * as MaterializeManifest from './frontend/dist/dll/materialize_manifest.json'; // eslint-disable-line import/no-unresolved
-import * as MiscManifest from './frontend/dist/dll/misc_manifest.json'; // eslint-disable-line import/no-unresolved
+const ReactManifest = './frontend/dist/dll/react_manifest.json';
+const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
+const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
+const MiscManifest = './frontend/dist/dll/misc_manifest.json';
 
 export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
@@ -26,10 +26,23 @@ export default {
       {
         test: /\.tsx?$/,
         use: [
-          { loader: 'babel-loader' },
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: true,
+              plugins: ['react-hot-loader/babel'],
+            },
+          },
           // Use those two flags to speed up babel compilation
           // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
-          { loader: 'awesome-typescript-loader', options: { useBabel: true, useCache: true, silent: true } },
+          {
+            loader: 'awesome-typescript-loader',
+            options: {
+              useBabel: true,
+              useCache: true,
+              silent: true,
+            },
+          },
           // Alternatively, we can use ts-loader instead of awesome-typescript-loader
           // { loader: 'ts-loader' },
         ],

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { NavLink } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ export class Dropdown extends React.Component<IDropdownProps> {
   }
 
   public render() {
-    const links = this.props.dropdownLists.map(key =>
+    const links = this.props.dropdownLists.map((key) =>
       <li key={key}><NavLink activeClassName='active-link' to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>,
     );
     return (

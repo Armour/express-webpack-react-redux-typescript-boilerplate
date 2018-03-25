@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 import { PrismCodes } from 'components/PrismCodes';
 import { PARALLAX_CODE } from 'constants/prismCodes';

@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 import merge from 'webpack-merge';
 import postcssCssnext from 'postcss-cssnext';
 import postcssImport from 'postcss-import';
@@ -10,6 +9,9 @@ import OfflinePlugin from 'offline-plugin';
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
+  // Production mode
+  mode: 'production',
+
   // Start entry point(s)
   entry: {
     app: [
@@ -59,26 +61,14 @@ export default merge(BaseWebpackConfig, {
 
   // A list of used webpack plugins
   plugins: [
-    // Minimize javascript files with source map generated
-    new webpack.optimize.UglifyJsPlugin({
-      output: { comments: false },
-      sourceMap: true,
-    }),
-    // Module concatenation optimization from webpack v3
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    // Better webpack module name display
-    new webpack.HashedModuleIdsPlugin(),
-    // Define production env which shaved off 75% of the build output size
-    // http://moduscreate.com/optimizing-react-es6-webpack-production-build
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
     // Extract css part from javascript bundle into a file
     new ExtractTextPlugin('[name].[contenthash:10].css'),
     // It's always better if OfflinePlugin is the last plugin added
-    new OfflinePlugin(),
+    new OfflinePlugin({
+      ServiceWorker: {
+        minify: false, // FIXME: https://github.com/NekR/offline-plugin/issues/351
+      },
+    }),
   ],
 
   // Source map mode
