@@ -85,16 +85,16 @@ If you find permission problem when trying to install yarn globally, check [this
 
 ### Setup database and session store
 
-You can either 
-<br>
+You can either
+
 * run `postgresql` and `redis` using docker images:
 
 ```bash
 docker-compose up -d postgres redis
 ```
 
-or 
-<br>
+or
+
 * maintain it by yourself, if so, make sure you set the right config in `backend/config.json`.
 
 ### Build & Run
