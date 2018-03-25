@@ -5,10 +5,9 @@ environment:
 install:
   - ps: Install-Product node $env:nodejs_version
   - yarn install
-  - yarn global add gulp
 
 build_script:
-  - gulp build
+  - yarn run-prod
 
 test_script:
   - yarn test
