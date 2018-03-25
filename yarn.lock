@@ -69,12 +69,11 @@
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.3.1.tgz#55758d44d422756d6329cbf54e6d41931d7ba28f"
 
-"@types/materialize-css@0.100.4":
-  version "0.100.4"
-  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-0.100.4.tgz#0916aa6f78200539b05b00caf682187db11b0802"
+"@types/materialize-css@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@types/materialize-css/-/materialize-css-1.0.1.tgz#f06beace24f8c3f8aea5345987fb42c4b51bdf35"
   dependencies:
     "@types/jquery" "*"
-    "@types/pickadate" "*"
 
 "@types/mime@*":
   version "2.0.0"
@@ -89,12 +88,6 @@
 "@types/node@*":
   version "9.6.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.0.tgz#d3480ee666df9784b1001a1872a2f6ccefb6c2d7"
-
-"@types/pickadate@*":
-  version "3.5.31"
-  resolved "https://registry.yarnpkg.com/@types/pickadate/-/pickadate-3.5.31.tgz#b5d0c1b0f2b07653d41fded4aad2e86346a4247c"
-  dependencies:
-    "@types/jquery" "*"
 
 "@types/prismjs@1.9.0":
   version "1.9.0"
