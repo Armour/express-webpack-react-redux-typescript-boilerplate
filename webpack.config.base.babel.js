@@ -153,4 +153,9 @@ export default {
       'hash-base': path.resolve(__dirname, 'node_modules/hash-base'),
     },
   },
+
+  // Turn off performance hints (assets size limit)
+  performance: {
+    hints: false,
+  },
 };

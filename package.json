@@ -8,8 +8,8 @@
   "author": "Chong Guo <armourcy@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "run-dev": "yarn build-dll && NODE_ENV=development yarn server",
-    "run-prod": "yarn build-prod && NODE_ENV=production yarn server",
+    "run-dev": "yarn build-dll && cross-env NODE_ENV=development yarn server",
+    "run-prod": "yarn build-prod && cross-env NODE_ENV=production yarn server",
     "build-dll": "yarn clean && webpack --config webpack.config.dll.babel.js",
     "build-prod": "yarn build-dll && webpack --config webpack.config.prod.babel.js",
     "profile": "yarn build-dll && webpack --config webpack.config.profile.babel.js",
@@ -61,6 +61,7 @@
     "connected-react-router": "4.3.0",
     "cookie-parser": "1.4.3",
     "coveralls": "3.0.0",
+    "cross-env": "5.1.4",
     "css-loader": "0.28.11",
     "duplicate-package-checker-webpack-plugin": "3.0.0",
     "eslint": "4.19.1",
