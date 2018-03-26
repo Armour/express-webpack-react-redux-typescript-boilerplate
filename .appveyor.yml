@@ -7,7 +7,7 @@ install:
   - yarn install
 
 build_script:
-  - yarn run-prod
+  - yarn build-prod
 
 test_script:
   - yarn test
