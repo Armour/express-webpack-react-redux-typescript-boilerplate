@@ -124,7 +124,7 @@
     "webpack": "4.2.0",
     "webpack-bundle-analyzer": "2.11.1",
     "webpack-cli": "2.0.13",
-    "webpack-dev-middleware": "3.0.1",
+    "webpack-dev-middleware": "3.1.0",
     "webpack-hot-middleware": "2.21.2",
     "webpack-merge": "4.1.2",
     "webpack-pwa-manifest": "3.6.2"
