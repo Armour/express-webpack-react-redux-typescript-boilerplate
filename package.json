@@ -35,7 +35,7 @@
     "@types/react-dom": "16.0.4",
     "@types/react-redux": "5.0.15",
     "@types/react-router": "4.0.23",
-    "@types/react-router-dom": "4.2.5",
+    "@types/react-router-dom": "4.2.6",
     "@types/redux-devtools": "3.0.43",
     "@types/redux-devtools-dock-monitor": "1.1.32",
     "@types/redux-devtools-log-monitor": "1.0.33",
