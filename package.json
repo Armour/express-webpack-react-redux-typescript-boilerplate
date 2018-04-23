@@ -31,7 +31,7 @@
     "@types/materialize-css": "0.100.4",
     "@types/node-uuid": "0.0.28",
     "@types/prismjs": "1.9.0",
-    "@types/react": "16.0.41",
+    "@types/react": "16.3.12",
     "@types/react-dom": "16.0.4",
     "@types/react-redux": "5.0.15",
     "@types/react-router": "4.0.23",
