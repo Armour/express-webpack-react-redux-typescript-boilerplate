@@ -118,7 +118,7 @@
     "tslint": "5.9.1",
     "tslint-react": "3.5.1",
     "typescript": "2.7.2",
-    "uglify-js": "3.3.16",
+    "uglify-js": "3.3.22",
     "uglifyjs-webpack-plugin": "1.2.4",
     "url-loader": "1.0.1",
     "webpack": "4.2.0",
