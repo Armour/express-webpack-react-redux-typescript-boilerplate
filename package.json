@@ -123,7 +123,7 @@
     "url-loader": "1.0.1",
     "webpack": "4.2.0",
     "webpack-bundle-analyzer": "2.11.1",
-    "webpack-cli": "2.0.13",
+    "webpack-cli": "2.1.0",
     "webpack-dev-middleware": "3.0.1",
     "webpack-hot-middleware": "2.21.2",
     "webpack-merge": "4.1.2",
