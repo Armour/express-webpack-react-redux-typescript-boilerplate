@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { IFilterLinkProps } from 'types';
+
 export interface ITodoLinkStateProps {
   active: boolean;
 }
@@ -8,7 +10,7 @@ export interface ITodoLinkDispatchProps {
   setVisibilityFilter(): void;
 }
 
-type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps;
+type ITodoLinkProps = ITodoLinkStateProps & ITodoLinkDispatchProps & IFilterLinkProps;
 
 export class TodoLink extends React.Component<ITodoLinkProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

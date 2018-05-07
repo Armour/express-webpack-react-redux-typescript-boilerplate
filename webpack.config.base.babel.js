@@ -1,9 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
+import postcssCssnext from 'postcss-cssnext';
+import postcssImport from 'postcss-import';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import WebpackPwaManifest from 'webpack-pwa-manifest';
 
@@ -11,6 +14,7 @@ const ReactManifest = './frontend/dist/dll/react_manifest.json';
 const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
 const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
 const MiscManifest = './frontend/dist/dll/misc_manifest.json';
+const devMode = process.env.NODE_ENV !== 'production';
 
 export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
@@ -48,9 +52,28 @@ export default {
         ],
         exclude: /node_modules/,
       },
+      // Use a list of loaders to load css files
+      {
+        test: /\.css$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 1 } }, // https://github.com/webpack-contrib/css-loader#importloaders
+          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
+        ],
+      },
+      // Use a list of loaders to load scss files
+      {
+        test: /\.scss$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { importLoaders: 2 } },
+          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'sass-loader' },
+        ],
+      },
       // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
           { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
@@ -75,13 +98,6 @@ export default {
 
   // A list of used webpack plugins
   plugins: [
-    // jQuery support
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      'root.jQuery': 'jquery',
-    }),
     // Warns when multiple versions of the same package exist in a build
     new DuplicatePackageCheckerPlugin(),
     // Load pre-build dll reference files
@@ -89,6 +105,11 @@ export default {
     new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
     new webpack.DllReferencePlugin({ manifest: ImmutableManifest }),
     new webpack.DllReferencePlugin({ manifest: MiscManifest }),
+    // Extract css part from javascript bundle into separated file
+    new MiniCssExtractPlugin({
+      filename: devMode ? '[name].css' : '[name].[contenthash:10].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[contenthash:10].css',
+    }),
     // Better building progress display
     new ProgressBarWebpackPlugin({
       clear: false,

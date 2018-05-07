@@ -4,7 +4,7 @@ import { setVisibilityFilter } from 'actions';
 import { ITodoLinkDispatchProps, ITodoLinkStateProps, TodoLink } from 'components/TodoLink';
 import { IAppState, IVisibilityFilterOption } from 'types';
 
-interface IFilterLinkProps {
+export interface IFilterLinkProps {
   filter: IVisibilityFilterOption;
 }
 

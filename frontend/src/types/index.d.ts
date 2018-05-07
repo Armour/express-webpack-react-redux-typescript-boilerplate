@@ -10,6 +10,7 @@ export { INoteFetcherStateProps, INoteFetcherDispatchProps } from 'components/Fe
 export { ITodoLinkStateProps, ITodoLinkDispatchProps } from 'components/TodoLink';
 export { ITodoListStateProps, ITodoListDispatchProps } from 'components/TodoList';
 export { ITodoInputDispatchProps } from 'components/TodoInput';
+export { IFilterLinkProps } from 'containers/FilterLink';
 
 // Global State
 export type IAppState = {

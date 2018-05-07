@@ -9,9 +9,14 @@ interface IDropdownProps {
   dropdownLists: string[];
 }
 
+const dropdownConfig: Partial<M.DropdownOptions> = {
+  coverTrigger: false,
+};
+
 export class Dropdown extends React.Component<IDropdownProps> {
   public componentDidMount() {
-    $('.dropdown-button').dropdown();
+    const elems = document.querySelectorAll('.dropdown-button');
+    M.Dropdown.init(elems, dropdownConfig);
   }
 
   public render() {

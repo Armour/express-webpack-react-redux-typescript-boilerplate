@@ -5,7 +5,8 @@ import { PARALLAX_CODE } from 'constants/prismCodes';
 
 export class ParallaxPage extends React.Component {
   public componentDidMount() {
-    $('.parallax').parallax();
+    const elems = document.querySelectorAll('.parallax');
+    M.Parallax.init(elems);
   }
 
   public render() {

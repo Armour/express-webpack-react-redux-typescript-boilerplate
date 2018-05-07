@@ -6,11 +6,16 @@ import { Pushpin } from 'components/Pushpin';
 
 export class HomePage extends React.Component {
   public componentDidMount() {
-    $('.pushpin-demo-nav').each((_, elem) => {
-      const target = $(`#${$(elem).attr('data-target')}`);
-      const top = target.offset()!.top;
-      const bottom = top + target.outerHeight()! - $(elem).height()!;
-      $(elem).pushpin({
+    document.querySelectorAll('.pushpin-demo-nav').forEach((elem, _) => {
+      const target = document.querySelector('.' + elem.getAttribute('data-target')!);
+      const rect = target!.getBoundingClientRect();
+      let top = rect.top;
+      // Make sure element is not hidden (display: none) or disconnected
+      if (rect.width || rect.height || target!.getClientRects().length) {
+        top += window.pageYOffset - target!.ownerDocument.documentElement.clientTop;
+      }
+      const bottom = top + elem.parentElement!.getBoundingClientRect().height - rect.height;
+      M.Pushpin.init(elem, {
         top,
         bottom,
       });

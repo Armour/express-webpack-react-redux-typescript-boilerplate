@@ -1,16 +1,27 @@
 import path from 'path';
 import merge from 'webpack-merge';
-import postcssCssnext from 'postcss-cssnext';
-import postcssImport from 'postcss-import';
 
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
   // Production mode
   mode: 'production',
+
+  // override default optimization, add OptimizeCSSAssetsPlugin support, consider remove this after webpack v5
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true, // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
 
   // Start entry point(s)
   entry: {
@@ -30,45 +41,10 @@ export default merge(BaseWebpackConfig, {
     publicPath: '/',
   },
 
-  // Determine how the different types of modules within a project will be treated
-  module: {
-    rules: [
-      // Use ExtractTextPlugin and list of loaders to load css files
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { importLoaders: 1 } }, // https://github.com/webpack-contrib/css-loader#importloaders
-            { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
-          ],
-        }),
-      },
-      // Use ExtractTextPlugin and list of loaders to load scss files
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { importLoaders: 2 } },
-            { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
-            { loader: 'sass-loader' },
-          ],
-        }),
-      },
-    ],
-  },
-
   // A list of used webpack plugins
   plugins: [
-    // Extract css part from javascript bundle into a file
-    new ExtractTextPlugin('[name].[contenthash:10].css'),
     // It's always better if OfflinePlugin is the last plugin added
-    new OfflinePlugin({
-      ServiceWorker: {
-        minify: false, // FIXME: https://github.com/NekR/offline-plugin/issues/351
-      },
-    }),
+    new OfflinePlugin(),
   ],
 
   // Source map mode
