@@ -13,12 +13,12 @@ export { ITodoInputDispatchProps } from 'components/TodoInput';
 export { IFilterLinkProps } from 'containers/FilterLink';
 
 // Global State
-export type IAppState = {
+export interface IAppState {
   todos: ITodoList;
   visibilityFilter: IVisibilityFilterOption;
   fetching: IFetchingSet;
   noteData: INoteDataMap;
-};
+}
 
 // Todos
 export interface ITodo {

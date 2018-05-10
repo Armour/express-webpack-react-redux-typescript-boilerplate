@@ -6,11 +6,16 @@ root = true
 # Unix-style newlines with a newline ending every file
 [*]
 charset = utf-8
+end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# Indentation override for js, ts and config files
-[*.{js,jsx,ts,tsx,json,yml}]
+# Trailing space override for markdown file
+[*.md]
+trim_trailing_whitespace = false
+
+# Indentation override for js(x), ts(x) files
+[*.{js,jsx,ts,tsx}]
 indent_size = 2
 indent_style = space
 
@@ -23,3 +28,13 @@ indent_style = space
 [*.html]
 indent_size = 2
 indent_style = space
+
+# Indentation override for config files
+[*.{json,yml}]
+indent_size = 2
+indent_style = space
+
+# Minified JavaScript files shouldn't be changed
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore

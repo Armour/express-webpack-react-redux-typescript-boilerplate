@@ -1,10 +1,22 @@
-.idea/
-.vscode/
-.awcache/
-node_modules/
-frontend/dist/
+# General
+.DS_Store
+*~
 *.swp
 *.log
-.DS_Store
+
+# Editor config folder
+.idea/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Code coverage
 coverage/
 .coveralls.yml
+
+# Misc
+.awcache/
+node_modules/
+dist/

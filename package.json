@@ -14,9 +14,9 @@
     "build-prod": "yarn build-dll && webpack --config webpack.config.prod.babel.js",
     "profile": "yarn build-dll && webpack --config webpack.config.profile.babel.js",
     "server": "nodemon --exec babel-node backend/server.js",
-    "eslint": "eslint -f codeframe \"**/*.js\" \"**/*.jsx\" ",
-    "tslint": "tslint -t codeFrame -e \"node_modules/**\" \"**/*.ts(x)\" \"**/*.tsx\" ",
-    "stylelint": "stylelint \"**/*.css **/*.scss\" ",
+    "eslint": "eslint -f codeframe \"**/*.js\" \"**/*.jsx\"",
+    "tslint": "tslint -t codeFrame -e \"node_modules/**\" \"**/*.ts\" \"**/*.tsx\"",
+    "stylelint": "stylelint \"**/*.css **/*.sass **/*.scss\"",
     "clean": "rm -rf frontend/dist .awcache coverage",
     "test": "jest --no-cache --coverage",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
@@ -78,7 +78,7 @@
     "history": "4.7.2",
     "html-webpack-plugin": "3.2.0",
     "husky": "0.14.3",
-    "image-webpack-loader": "4.2.0",
+    "image-webpack-loader": "3.6.0",
     "immutable": "4.0.0-rc.9",
     "jest": "22.4.3",
     "lodash": "4.17.10",
@@ -149,13 +149,13 @@
     "transform": {
       "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "testRegex": "(/tests/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
     "testPathIgnorePatterns": [
       "node_modules"
     ],
     "coveragePathIgnorePatterns": [
       "node_modules",
-      "_tests_"
+      "tests"
     ],
     "moduleDirectories": [
       "node_modules",
