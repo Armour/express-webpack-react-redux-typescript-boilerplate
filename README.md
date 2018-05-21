@@ -15,7 +15,7 @@
 
     ![Demo page](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
 
-* [Cocomic](https://cocomic.azendless.com/)
+* Cocomic
   * An open-source platform for comic/manga collaboration (SFU CMPT470 course project, no typescript). [source code here](https://github.com/Armour/Cocomic).
 
     ![Cocomic](https://user-images.githubusercontent.com/5276065/34108373-bb440764-e43a-11e7-98f8-7c94d08e2575.jpg)
