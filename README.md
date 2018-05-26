@@ -1,12 +1,13 @@
 # Express Webpack React Redux Typescript Boilerplate
 
 [![Dependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate)
-[![DevDependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/dev-status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate?type=dev)
 [![CircleCI](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master.svg?style=shield)](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master)
-[![Appveyor](https://ci.appveyor.com/api/projects/status/kgnfn2r88h90cgx5/branch/master?svg=true)](https://ci.appveyor.com/project/Armour/express-webpack-react-redux-typescript-boilerplate/branch/master)
+[![Appveyor](https://ci.appveyor.com/api/projects/status/github/Armour/express-webpack-react-redux-typescript-boilerplate?svg=true&branch=master)](https://ci.appveyor.com/api/projects/status/github/Armour/express-webpack-react-redux-typescript-boilerplate?svg=true&branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/Armour/express-webpack-react-redux-typescript-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Armour/express-webpack-react-redux-typescript-boilerplate?branch=master)
-[![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![Tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Template from jarvis](https://img.shields.io/badge/Hi-Jarvis-ff69b4.svg)](https://github.com/Armour/Jarvis)
 
 ## Example
 
@@ -147,4 +148,4 @@ yarn deploy
 
 ## License
 
-MIT License
+[MIT License](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate/blob/master/LICENSE)
