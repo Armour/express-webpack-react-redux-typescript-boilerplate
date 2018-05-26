@@ -13,7 +13,6 @@ import WebpackPwaManifest from 'webpack-pwa-manifest';
 const ReactManifest = './frontend/dist/dll/react_manifest.json';
 const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
 const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
-const MiscManifest = './frontend/dist/dll/misc_manifest.json';
 const devMode = process.env.NODE_ENV !== 'production';
 
 export default {
@@ -49,6 +48,20 @@ export default {
           },
           // Alternatively, we can use ts-loader instead of awesome-typescript-loader
           // { loader: 'ts-loader' },
+        ],
+        exclude: /node_modules/,
+      },
+      // Use babel-loader for js(x) files
+      {
+        test: /\.jsx?$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: true,
+              plugins: ['react-hot-loader/babel'],
+            },
+          },
         ],
         exclude: /node_modules/,
       },
@@ -102,18 +115,15 @@ export default {
     new DuplicatePackageCheckerPlugin(),
     // Load pre-build dll reference files
     new webpack.DllReferencePlugin({ manifest: ReactManifest }),
-    new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
     new webpack.DllReferencePlugin({ manifest: ImmutableManifest }),
-    new webpack.DllReferencePlugin({ manifest: MiscManifest }),
+    new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
     // Extract css part from javascript bundle into separated file
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[contenthash:10].css',
       chunkFilename: devMode ? '[id].css' : '[id].[contenthash:10].css',
     }),
     // Better building progress display
-    new ProgressBarWebpackPlugin({
-      clear: false,
-    }),
+    new ProgressBarWebpackPlugin(),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
       name: 'Boilerplate',
@@ -149,7 +159,8 @@ export default {
     }),
     // Add dll reference files to html
     new AddAssetHtmlPlugin({
-      filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'), includeSourcemap: false,
+      filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'),
+      includeSourcemap: false,
     }),
   ],
 
@@ -169,10 +180,6 @@ export default {
       '.json',
       '.scss',
     ],
-    // Solve duplicated package issue
-    alias: {
-      'hash-base': path.resolve(__dirname, 'node_modules/hash-base'),
-    },
   },
 
   // Turn off performance hints (assets size limit)

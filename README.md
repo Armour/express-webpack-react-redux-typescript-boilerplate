@@ -6,7 +6,7 @@
 [![Appveyor](https://ci.appveyor.com/api/projects/status/kgnfn2r88h90cgx5/branch/master?svg=true)](https://ci.appveyor.com/project/Armour/express-webpack-react-redux-typescript-boilerplate/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/Armour/express-webpack-react-redux-typescript-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/Armour/express-webpack-react-redux-typescript-boilerplate?branch=master)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Example
 

@@ -18,17 +18,12 @@ const reactVendors = [
   'connected-react-router',
 ];
 
-const materializeVendors = [
-  'materialize-css',
-];
-
 const immutableVendors = [
   'immutable',
 ];
 
-const miscVendors = [
-  'lodash',
-  'prismjs',
+const materializeVendors = [
+  'materialize-css',
 ];
 
 // Base config
@@ -42,9 +37,8 @@ const config = {
   // Start entry point(s)
   entry: {
     react: reactVendors,
-    materialize: materializeVendors,
     immutable: immutableVendors,
-    misc: miscVendors,
+    materialize: materializeVendors,
   },
 
   // Affecting the output of the compilation
@@ -60,9 +54,7 @@ const config = {
   // A list of used webpack plugins
   plugins: [
     // Better building progress display
-    new ProgressBarWebpackPlugin({
-      clear: false,
-    }),
+    new ProgressBarWebpackPlugin(),
     // Output manifest json file for each generated dll reference file
     new webpack.DllPlugin({
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
