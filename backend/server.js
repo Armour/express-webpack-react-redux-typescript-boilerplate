@@ -75,8 +75,7 @@ if (!isProduction) {
   const middleware = webpackDevMiddleware(compiler, {
     // The public URL of the output resource directory, should be the same as output.publicPath
     publicPath: webpackConfig.output.publicPath,
-    // Only output when errors or new compilation happen
-    stats: 'minimal',
+    stats: webpackConfig.stats,
   });
   // Serve static files through webpackDevMiddleware
   const distPath = path.resolve(__dirname, '../frontend/dist/dev');

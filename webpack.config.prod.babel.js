@@ -8,9 +8,6 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
-  // Production mode
-  mode: 'production',
-
   // override default optimization, add OptimizeCSSAssetsPlugin support, consider remove this after webpack v5
   optimization: {
     minimizer: [
@@ -23,11 +20,9 @@ export default merge(BaseWebpackConfig, {
     ],
   },
 
-  // Start entry point(s)
+  // The point or points to enter the application.
   entry: {
-    app: [
-      './frontend/src/index',
-    ],
+    app: './frontend/src/index',
   },
 
   // Affecting the output of the compilation
@@ -50,4 +45,9 @@ export default merge(BaseWebpackConfig, {
   // Source map mode
   // https://webpack.js.org/configuration/devtool
   devtool: 'source-map',
+
+  // Turn off performance hints (assets size limit)
+  performance: {
+    hints: false,
+  },
 });

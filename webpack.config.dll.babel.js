@@ -28,13 +28,13 @@ const materializeVendors = [
 
 // Base config
 const config = {
-  // Production mode
-  mode: 'production',
+  // Get mode from NODE_ENV
+  mode: process.env.NODE_ENV,
 
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
-  // Start entry point(s)
+  // The point or points to enter the application.
   entry: {
     react: reactVendors,
     immutable: immutableVendors,

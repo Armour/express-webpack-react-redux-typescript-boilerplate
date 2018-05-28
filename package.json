@@ -10,9 +10,9 @@
   "scripts": {
     "run-dev": "yarn build-dll && cross-env NODE_ENV=development yarn server",
     "run-prod": "yarn build-prod && cross-env NODE_ENV=production yarn server",
-    "build-dll": "yarn clean && webpack --config webpack.config.dll.babel.js",
-    "build-prod": "yarn build-dll && webpack --config webpack.config.prod.babel.js",
-    "profile": "yarn build-dll && webpack --config webpack.config.profile.babel.js",
+    "build-dll": "yarn clean && cross-env NODE_ENV=production webpack --config webpack.config.dll.babel.js",
+    "build-prod": "yarn build-dll && cross-env NODE_ENV=production webpack --config webpack.config.prod.babel.js",
+    "profile": "yarn build-dll && cross-env NODE_ENV=production webpack --config webpack.config.profile.babel.js",
     "server": "nodemon --exec babel-node backend/server.js",
     "eslint": "eslint -f codeframe \"**/*.js\" \"**/*.jsx\"",
     "tslint": "tslint -t codeFrame -e \"node_modules/**\" \"**/*.ts\" \"**/*.tsx\"",

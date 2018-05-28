@@ -5,10 +5,7 @@ import merge from 'webpack-merge';
 import BaseWebpackConfig from './webpack.config.base.babel';
 
 export default merge(BaseWebpackConfig, {
-  // Development mode
-  mode: 'development',
-
-  // Start entry point(s)
+  // The point or points to enter the application.
   entry: {
     app: [
       'webpack-hot-middleware/client',
@@ -35,5 +32,5 @@ export default merge(BaseWebpackConfig, {
 
   // Source map mode
   // https://webpack.js.org/configuration/devtool
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
 });

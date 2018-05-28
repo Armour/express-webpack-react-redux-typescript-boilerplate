@@ -22,6 +22,9 @@ export default {
   // Minimal log level
   stats: 'minimal',
 
+  // Get mode from NODE_ENV
+  mode: process.env.NODE_ENV,
+
   // Determine how the different types of modules within a project will be treated
   module: {
     rules: [
@@ -70,8 +73,8 @@ export default {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } }, // https://github.com/webpack-contrib/css-loader#importloaders
-          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
         ],
       },
       // Use a list of loaders to load scss files
@@ -79,14 +82,14 @@ export default {
         test: /\.scss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 2 } },
-          { loader: 'postcss-loader', options: { plugins: () => [postcssImport, postcssCssnext] } },
-          { loader: 'sass-loader' },
+          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg|webp)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
           { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
@@ -135,18 +138,24 @@ export default {
       display: 'standalone',
       icons: [
         {
-          src: path.resolve('frontend/src/images/logo.png'),
-          sizes: [16, 32, 96, 128, 192, 256, 384, 512],
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          sizes: [192, 512],
         },
         {
-          src: path.resolve('frontend/src/images/apple-touch-icon.png'),
+          src: path.resolve(__dirname, 'frontend/src/images/apple-touch-icon.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
           ios: true,
         },
         {
-          src: path.resolve('frontend/src/images/android-icon.png'),
-          sizes: [192, 256],
+          src: path.resolve(__dirname, 'frontend/src/images/apple-touch-startup-image.png'),
+          sizes: 1024,
+          destination: path.join('icons', 'ios'),
+          ios: 'startup',
+        },
+        {
+          src: path.resolve(__dirname, 'frontend/src/images/android-icon.png'),
+          sizes: [144, 192, 512],
           destination: path.join('icons', 'android'),
         },
       ],
@@ -180,10 +189,5 @@ export default {
       '.json',
       '.scss',
     ],
-  },
-
-  // Turn off performance hints (assets size limit)
-  performance: {
-    hints: false,
   },
 };
