@@ -83,7 +83,7 @@
     "node-sass": "4.9.0",
     "nodemon": "1.17.5",
     "offline-plugin": "5.0.3",
-    "optimize-css-assets-webpack-plugin": "4.0.1",
+    "optimize-css-assets-webpack-plugin": "4.0.2",
     "pg": "7.4.3",
     "postcss": "6.0.22",
     "postcss-cssnext": "3.1.0",
