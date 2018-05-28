@@ -22,16 +22,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || config.http_port;
 const app = express();
 
-const startListenOnPort = () => {
-  // Start server listen on specific port
-  app.listen(port, (error) => {
-    if (error) {
-      console.log(`\n${error}`); // eslint-disable-line no-console
-    }
-    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
-  });
-};
-
 if (isProduction) {
   app.use(helmet());
   app.disable('x-powered-by');
@@ -55,19 +45,27 @@ app.use(session({
     host: isProduction ? config.redis_hostname_prod : config.redis_hostname_dev,
     port: config.redis_port,
   }),
-  name: 'fRy_t0-haCk)me<br0B',
-  secret: 'mIceqvv8EgECGOVKIPlR83UGGxMOARaYJKxQK6kWwwx3pv06G0n9ZPLMNqIOwX9rS69YCXDHDmV4O2JAWHEWGYI8pZ2M60VocBc92ILjOM1Gp3S42EHNmQ65c4W7ryj9',
+  secret: 'keyboard cat',
   saveUninitialized: false,
-  resave: true,
-  // https support
-  // cookie: {
-  //   httpOnly: !isProduction,
-  //   secure: isProduction,
-  // },
+  resave: false,
+  cookie: {
+    httpOnly: !isProduction,
+    secure: isProduction,
+  },
 }));
 
 // index router
 app.use('/fetch', indexRtr);
+
+const startListenOnPort = () => {
+  // Start server listen on specific port
+  app.listen(port, (error) => {
+    if (error) {
+      console.log(`\n${error}`); // eslint-disable-line no-console
+    }
+    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
+  });
+};
 
 if (!isProduction) {
   let listend = false;
