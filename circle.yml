@@ -24,7 +24,7 @@ jobs:
           name: Install Docker Compose
           command: |
             set -x
-            VER="1.21.1"
+            VER="1.21.2"
             curl -L https://github.com/docker/compose/releases/download/$VER/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
             sudo cp /tmp/docker-compose /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose

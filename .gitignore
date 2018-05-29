@@ -4,6 +4,20 @@
 *.swp
 *.log
 
+# Thumbnails
+._*
+Thumbs.db
+
+# Trash folder or files
+.Trashes
+.Trash-*
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
 # Editor config folder
 .idea/
 .vscode/

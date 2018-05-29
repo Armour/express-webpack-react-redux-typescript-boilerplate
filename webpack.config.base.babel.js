@@ -129,8 +129,8 @@ export default {
     new ProgressBarWebpackPlugin(),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
-      name: 'Boilerplate',
       short_name: 'Boilerplate',
+      name: 'Boilerplate',
       description: 'My full-stack boilerplate that using express with webpack, react and typescirpt! (hot module reload and materialize-css supported)',
       background_color: '#2196f3',
       theme_color: '#2196f3',
@@ -139,24 +139,24 @@ export default {
       icons: [
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [192, 512],
+          sizes: [192, 512], // Generate general icons
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/apple-touch-icon.png'),
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
-          ios: true,
+          ios: true, // Generate apple touch icons
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/apple-touch-startup-image.png'),
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: 1024,
           destination: path.join('icons', 'ios'),
-          ios: 'startup',
+          ios: 'startup', // Generate apple touch startup image
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/android-icon.png'),
+          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [144, 192, 512],
-          destination: path.join('icons', 'android'),
+          destination: path.join('icons', 'android'), // Generate android icons
         },
       ],
     }),
