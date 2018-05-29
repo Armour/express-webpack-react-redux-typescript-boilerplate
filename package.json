@@ -75,7 +75,7 @@
     "husky": "0.14.3",
     "image-webpack-loader": "3.6.0",
     "immutable": "4.0.0-rc.9",
-    "jest": "23.0.0",
+    "jest": "23.0.1",
     "material-design-icons": "3.0.1",
     "materialize-css": "1.0.0-rc.1",
     "mini-css-extract-plugin": "0.4.0",
