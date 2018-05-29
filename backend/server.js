@@ -54,8 +54,8 @@ app.use(session({
   },
 }));
 
-// index router
-app.use('/fetch', indexRtr);
+// api router
+app.use('/api', indexRtr);
 
 const startListenOnPort = () => {
   // Start server listen on specific port

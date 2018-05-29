@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { INoteDataMap } from 'types';
+import { INoteList } from 'types';
 
 export interface INoteFetcherStateProps {
-  noteData: INoteDataMap;
+  notes: INoteList;
 }
 
 export interface INoteFetcherDispatchProps {
@@ -19,7 +19,7 @@ interface IApiLoaderState {
 export class NoteFetcher extends React.Component<INoteFetcherProps, IApiLoaderState> {
   constructor(props: INoteFetcherProps) {
     super(props);
-    this.state = { url: 'api' };
+    this.state = { url: 'note/getNotes' };
   }
 
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

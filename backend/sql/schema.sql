@@ -1,5 +1,5 @@
-Create Table tableName (
+Create Table notes (
     id serial primary key,
-    fieldName text not null,
+    content text not null,
     created timestamptz default now()
 );

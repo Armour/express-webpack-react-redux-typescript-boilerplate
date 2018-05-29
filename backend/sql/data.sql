@@ -1,2 +1,2 @@
-INSERT INTO tableName (fieldName) VALUES ('test data 1');
-INSERT INTO tableName (fieldName) VALUES ('test data 2');
+INSERT INTO notes (content) VALUES ('note data 1');
+INSERT INTO notes (content) VALUES ('note data 2');

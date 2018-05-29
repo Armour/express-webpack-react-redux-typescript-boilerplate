@@ -1,9 +1,9 @@
 import express from 'express';
 
-import noteRtr from './note';
+import { getNotes } from '../controllers/note';
 
 const router = express.Router();
 
-router.use('/note', noteRtr);
+router.get('/getNotes', getNotes);
 
 export default router;

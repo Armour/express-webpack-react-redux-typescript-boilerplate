@@ -6,7 +6,7 @@ import { IActionsFetchApi, IAppState, IFetchingSet } from 'types';
 // store fetching urls and received error
 const initialState: IFetchingSet = Set<string>();
 
-export const fetchingData = (state = initialState, action: IActionsFetchApi): IFetchingSet => {
+export const fetching = (state = initialState, action: IActionsFetchApi): IFetchingSet => {
   switch (action.type) {
   case START_REQUEST:
     return state.add(`${action.method} ${action.url}`);
@@ -17,4 +17,4 @@ export const fetchingData = (state = initialState, action: IActionsFetchApi): IF
   }
 };
 
-export const isFetching = (url: string, method: string, state: IAppState) => getIn(state, ['fetchingData', `${method} ${url}`], false) === true;
+export const isFetching = (url: string, method: string, state: IAppState) => getIn(state, ['fetching', `${method} ${url}`], false) === true;

@@ -2,7 +2,7 @@ import { Dispatch } from 'react-redux';
 
 import { DEFAULT_RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actions';
 import { METHOD_POST } from 'constants/requestMethods';
-import { isFetching } from 'reducers/fetchingData';
+import { isFetching } from 'reducers/fetching';
 import { IActionDefaultReceiveError, IActionReceiveResponse, IActionStartRequest, IAppState } from 'types';
 
 export const startRequest = (url: string, method: string): IActionStartRequest => ({
@@ -35,14 +35,14 @@ async (dispatch: Dispatch<IAppState>) => {
     if (method.toUpperCase() === METHOD_POST) {
       const headers: Headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      req = new Request(`/fetch${url}`, {
+      req = new Request(`/api/${url}`, {
         method: METHOD_POST,
         headers,
         body: JSON.stringify(postData),
         credentials: 'same-origin',
       });
     } else {
-      req = new Request(`/fetch${url}`, {
+      req = new Request(`/api/${url}`, {
         method,
         credentials: 'same-origin',
       });

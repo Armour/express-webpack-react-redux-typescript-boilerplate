@@ -1,4 +1,4 @@
-import { List, Map, Set } from 'immutable';
+import { List, Set } from 'immutable';
 
 // Constants
 import { ADD_TODO, RECEIVE_NOTE, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actions';
@@ -17,7 +17,7 @@ export interface IAppState {
   todos: ITodoList;
   visibilityFilter: IVisibilityFilterOption;
   fetching: IFetchingSet;
-  noteData: INoteDataMap;
+  notes: INoteList;
 }
 
 // Todos
@@ -34,11 +34,12 @@ export type IVisibilityFilterOption = string;
 // Fetching
 export type IFetchingSet = Set<string>;
 
-// NoteData
-export interface INoteData {
+// Notes
+export interface INote {
+  id: number;
   content: string;
 }
-export type INoteDataMap = Map<string, INoteData>;
+export type INoteList = List<INote>;
 
 // Todo Actions
 export interface IActionAddTodo {
@@ -87,10 +88,13 @@ export type IActionsFetchApi =
   | IActionDefaultReceiveError
   | IActionTestDefault;
 
-// NoteData Actions
+// Notes Actions
 export interface IActionReceiveNote {
   type: typeof RECEIVE_NOTE;
-  data: INoteData;
+  data: {
+    notes: INoteList;
+    code: number;
+  };
 }
 export type IActionsFetchNote =
   | IActionReceiveNote
