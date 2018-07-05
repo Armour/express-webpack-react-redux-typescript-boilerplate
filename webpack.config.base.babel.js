@@ -92,7 +92,7 @@ export default {
         test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
-          { loader: 'image-webpack-loader', options: { bypassOnDebug: true } },
+          { loader: 'image-webpack-loader', options: { disable: true } },
         ],
       },
       // Use url-loader to load font related files

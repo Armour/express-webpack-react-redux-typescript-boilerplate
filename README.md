@@ -103,13 +103,13 @@ or
 On development (with react-hot-reload and redux-devtools):
 
 ```bash
-yarn run-dev
+yarn dev
 ```
 
 On production (with uglify-js and other optimazitions):
 
 ```bash
-yarn run-prod
+yarn prod
 ```
 
 ## Profile assets bundle
