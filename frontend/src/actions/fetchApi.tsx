@@ -1,4 +1,4 @@
-import { Dispatch } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 
 import { DEFAULT_RECEIVE_ERROR, RECEIVE_RESPONSE, START_REQUEST } from 'constants/actions';
 import { METHOD_POST } from 'constants/requestMethods';
@@ -28,7 +28,7 @@ export const defaultReceiveError = (url: string, error: string): IActionDefaultR
   detail see: https://github.com/gaearon/redux-thunk
 */
 const fetchData = (url: string, method: string, postData: any, receiveData: any, receiveError: any) =>
-async (dispatch: Dispatch<IAppState>) => {
+async (dispatch: Dispatch<AnyAction>) => {
   dispatch(startRequest(url, method));
   try {
     let req;
@@ -70,9 +70,9 @@ async (dispatch: Dispatch<IAppState>) => {
   fetchDataIfNeeded prevents duplicate fetch request to same url at the same time
 */
 export const fetchDataIfNeeded = (url: string, method: string, postData: any, receiveData: any, receiveError = defaultReceiveError) =>
-  (dispatch: Dispatch<IAppState>, getState: () => IAppState) => {
+  (dispatch: Dispatch<AnyAction>, getState: () => IAppState) => {
     if (!isFetching(url, method, getState())) {
-      return dispatch(fetchData(url, method, postData, receiveData, receiveError));
+      return dispatch(fetchData(url, method, postData, receiveData, receiveError) as any);
     }
     return null;
   };

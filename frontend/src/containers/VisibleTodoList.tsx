@@ -1,4 +1,5 @@
-import { connect, Dispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 
 import { toggleTodo } from 'actions';
 import { TodoList } from 'components/TodoList';
@@ -22,7 +23,7 @@ const mapStateToProps = (state: IAppState): ITodoListStateProps => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter),
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IAppState>): ITodoListDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoListDispatchProps => ({
   toggleTodo: (id: string) => {
     dispatch(toggleTodo(id));
   },

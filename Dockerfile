@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY . /usr/src/app/
 
 RUN yarn install
-RUN yarn build-prod
+RUN yarn build
 
 EXPOSE 3003
 

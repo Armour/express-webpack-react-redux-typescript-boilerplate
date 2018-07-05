@@ -1,11 +1,11 @@
 {
   "extends": [
-    "tslint:recommended"
+    "tslint:recommended",
+    "tslint-react"
   ],
   "rules": {
-    "arrow-parens": true,
+    "jsx-boolean-value": false,
     "max-line-length": false,
-    "no-any": false,
     "no-console": [
       true,
       {
@@ -15,9 +15,7 @@
         ]
       }
     ],
-    "no-non-null-assertion": false,
     "no-require-imports": false,
-    "no-import-side-effect": false,
     "no-submodule-imports": false,
     "newline-before-return": false,
     "object-literal-sort-keys": false,
@@ -34,6 +32,14 @@
         "singleline": "never"
       }
     ],
-    "variable-name": false
+    "variable-name": [
+      true,
+      "ban-keywords"
+    ]
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
   }
 }

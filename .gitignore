@@ -20,7 +20,7 @@ $RECYCLE.BIN/
 
 # Editor config folder
 .idea/
-.vscode/
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json

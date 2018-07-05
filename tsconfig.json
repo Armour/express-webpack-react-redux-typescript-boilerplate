@@ -1,16 +1,20 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "jsx": "react",
     "baseUrl": "frontend/src",
-    "typeRoots": [
-      "node_modules/@types"
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom",
+      "dom.iterable"
     ],
+    "jsx": "react",
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
+    "keyofStringsOnly": true,
     "noEmitOnError": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -20,6 +24,7 @@
     "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true
   }
 }

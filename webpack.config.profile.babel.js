@@ -9,6 +9,7 @@ export default merge(ProdWebpackConfig, {
     // Webpack bundle analyzer for profiling
     new BundleAnalyzerPlugin({
       analyzerPort: 3003,
+      generateStatsFile: true,
     }),
   ],
 });

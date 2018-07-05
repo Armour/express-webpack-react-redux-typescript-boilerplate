@@ -1,10 +1,11 @@
-import { connect, Dispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 
 import { addTodo } from 'actions';
 import { TodoInput } from 'components/TodoInput';
-import { IAppState, ITodoInputDispatchProps } from 'types';
+import { ITodoInputDispatchProps } from 'types';
 
-const mapDispatchToProps = (dispatch: Dispatch<IAppState>): ITodoInputDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoInputDispatchProps => ({
   onSubmit: (inputValue: string) => {
     dispatch(addTodo(inputValue));
   },

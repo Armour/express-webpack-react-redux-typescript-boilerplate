@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
-import postcssCssnext from 'postcss-cssnext';
 import postcssImport from 'postcss-import';
+import postcssPresetEnv from 'postcss-preset-env';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
@@ -74,7 +74,7 @@ export default {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv] } },
         ],
       },
       // Use a list of loaders to load scss files
@@ -83,7 +83,7 @@ export default {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssCssnext] } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv] } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
@@ -122,8 +122,8 @@ export default {
     new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
     // Extract css part from javascript bundle into separated file
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[contenthash:10].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[contenthash:10].css',
+      filename: '[name].[contenthash:10].css',
+      chunkFilename: '[id].[contenthash:10].css',
     }),
     // Better building progress display
     new ProgressBarWebpackPlugin(),

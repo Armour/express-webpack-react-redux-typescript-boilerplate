@@ -1,4 +1,5 @@
-import { connect, Dispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 
 import { setVisibilityFilter } from 'actions';
 import { ITodoLinkDispatchProps, ITodoLinkStateProps, TodoLink } from 'components/TodoLink';
@@ -12,7 +13,7 @@ const mapStateToProps = (state: IAppState, ownProps: IFilterLinkProps): ITodoLin
   active: ownProps.filter === state.visibilityFilter,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IAppState>, ownProps: IFilterLinkProps): ITodoLinkDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, ownProps: IFilterLinkProps): ITodoLinkDispatchProps => ({
   setVisibilityFilter: () => {
     dispatch(setVisibilityFilter(ownProps.filter));
   },

@@ -1,4 +1,5 @@
-import { connect, Dispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { AnyAction, Dispatch } from 'redux';
 
 import { fetchNoteIfNeeded } from 'actions';
 import { NoteFetcher } from 'components/FetchNote';
@@ -8,9 +9,9 @@ const mapStateToProps = (state: IAppState): INoteFetcherStateProps => ({
   notes: state.notes,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IAppState>): INoteFetcherDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): INoteFetcherDispatchProps => ({
   fetchNoteIfNeeded: (url: string) => {
-    dispatch(fetchNoteIfNeeded(url));
+    dispatch(fetchNoteIfNeeded(url) as any);
   },
 });
 
