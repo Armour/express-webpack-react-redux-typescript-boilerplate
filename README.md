@@ -1,4 +1,4 @@
-# Express Webpack React Redux Typescript Boilerplate
+# express-webpack-react-redux-typescript-boilerplate
 
 [![Dependency Status](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate/status.svg)](https://david-dm.org/Armour/express-webpack-react-redux-typescript-boilerplate)
 [![CircleCI](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master.svg?style=shield)](https://circleci.com/gh/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master)
@@ -140,11 +140,7 @@ yarn deploy
 
 ## Contributing
 
-1. Fork it!
-1. Create your feature branch: `git checkout -b my-new-feature`
-1. Commit your changes: `git commit -am 'Add some feature'`
-1. Push to the branch: `git push origin my-new-feature`
-1. Submit a pull request :D
+See [CONTRIBUTING.md](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate/blob/master/.github/CONTRIBUTING.md)
 
 ## License
 
