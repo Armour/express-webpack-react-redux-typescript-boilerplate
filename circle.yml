@@ -14,7 +14,7 @@ jobs:
       - checkout
       - run:
           name: Install System Dependencies
-          command: sudo apt-get update && sudo apt-get install gcc make libpng-dev libpng16-dev nasm -y
+          command: sudo apt-get update && sudo apt-get install gcc make libpng12-dev nasm -y
       - run:
           name: Install Docker client
           command: |
