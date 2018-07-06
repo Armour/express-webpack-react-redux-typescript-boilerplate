@@ -127,6 +127,12 @@ export default {
     }),
     // Better building progress display
     new ProgressBarWebpackPlugin(),
+    // Generate html file to dist folder
+    new HtmlWebpackPlugin({
+      title: 'Boilerplate',
+      favicon: path.resolve(__dirname, 'frontend/src/images/favicon.ico'),
+      template: path.resolve(__dirname, 'frontend/template/index.ejs'),
+    }),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
       short_name: 'Boilerplate',
@@ -136,6 +142,7 @@ export default {
       theme_color: '#2196f3',
       orientation: 'portrait',
       display: 'standalone',
+      ios: true,
       icons: [
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
@@ -159,12 +166,6 @@ export default {
           destination: path.join('icons', 'android'), // Generate android icons
         },
       ],
-    }),
-    // Generate html file to dist folder
-    new HtmlWebpackPlugin({
-      title: 'Boilerplate',
-      favicon: path.resolve(__dirname, 'frontend/src/images/favicon.ico'),
-      template: path.resolve(__dirname, 'frontend/template/index.ejs'),
     }),
     // Add dll reference files to html
     new AddAssetHtmlPlugin({
