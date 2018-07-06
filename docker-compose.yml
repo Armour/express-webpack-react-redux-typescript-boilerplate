@@ -1,16 +1,20 @@
-version: '3'
+version: '3.5'
 
 services:
   web:
     image: cguo/express-webpack-react-redux-typescript-boilerplate
-    build:
+    build: # ignored when deploying a stack in swarm mode or kubernetes
       context: .
     ports:
       - "3003:3003"
-    depends_on:
+    depends_on: # ignored when deploying a stack in swarm mode or kubernetes
       - postgres
       - redis
-    restart: always
+    restart: always # ignored when deploying a stack in swarm mode or kubernetes
+    deploy: # ignored by docker-compose
+      replicas: 3
+      restart_policy:
+        condition: on-failure
 
   postgres:
     image: postgres:alpine
@@ -23,10 +27,19 @@ services:
       - POSTGRES_PASSWORD=docker
     ports:
       - "5432:5432"
-    restart: always
+    restart: always # ignored when deploying a stack in swarm mode or kubernetes
+    deploy: # ignored by docker-compose
+      restart_policy:
+        condition: on-failure
 
   redis:
     image: redis:alpine
     ports:
       - "6379:6379"
-    restart: always
+    volumes:
+      - ./backend/redis-data:/data
+    restart: always # ignored when deploying a stack in swarm mode or kubernetes
+    deploy: # ignored by docker-compose
+      restart_policy:
+        condition: on-failure
+    command: redis-server --appendonly yes
