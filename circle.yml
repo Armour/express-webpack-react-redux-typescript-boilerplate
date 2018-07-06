@@ -9,9 +9,12 @@ jobs:
   build:
     working_directory: ~
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:10.5.0
     steps:
       - checkout
+      - run:
+          name: Install System Dependencies
+          command: sudo apt-get update && sudo apt-get install gcc make libpng-dev libpng16-dev nasm -y
       - run:
           name: Install Docker client
           command: |

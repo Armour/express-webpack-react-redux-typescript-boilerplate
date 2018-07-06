@@ -57,21 +57,23 @@ app.use(session({
 // api router
 app.use('/api', indexRtr);
 
+let listend = false;
 const startListenOnPort = () => {
-  // Start server listen on specific port
-  app.listen(port, (error) => {
-    if (error) {
-      console.log(`\n${error}`); // eslint-disable-line no-console
-    }
-    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
-  });
+  if (!listend) {
+    // Start server listen on specific port
+    app.listen(port, (error) => {
+      if (error) {
+        console.log(`\n${error}`); // eslint-disable-line no-console
+      }
+      listend = true;
+      console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
+    });
+  }
 };
 
 if (!isProduction) {
-  let listend = false;
   const compiler = webpack(webpackConfig);
   const middleware = webpackDevMiddleware(compiler, {
-    // The public URL of the output resource directory, should be the same as output.publicPath
     publicPath: webpackConfig.output.publicPath,
     stats: webpackConfig.stats,
   });
@@ -84,12 +86,7 @@ if (!isProduction) {
     res.end();
   });
   // Start listening on port when webpack has finished compiling
-  compiler.plugin('done', () => {
-    if (!listend) {
-      startListenOnPort();
-      listend = true;
-    }
-  });
+  compiler.plugin('done', () => startListenOnPort());
 } else {
   // Serve static files as usual
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');

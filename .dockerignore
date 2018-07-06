@@ -20,7 +20,7 @@ $RECYCLE.BIN/
 
 # Editor config folder
 .idea/
-.vscode/
+.vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -32,5 +32,7 @@ coverage/
 
 # Misc
 .awcache/
+.github/
 node_modules/
 dist/
+yarn.lock
