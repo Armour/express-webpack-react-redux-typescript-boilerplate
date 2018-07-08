@@ -32,13 +32,7 @@ export default {
       {
         test: /\.tsx?$/,
         use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              babelrc: true,
-              plugins: ['react-hot-loader/babel'],
-            },
-          },
+          { loader: 'babel-loader' },
           // Use those two flags to speed up babel compilation
           // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
           {
@@ -49,22 +43,8 @@ export default {
               silent: true,
             },
           },
-          // Alternatively, we can use ts-loader instead of awesome-typescript-loader
+          // Alternatively, we can use ts-loader
           // { loader: 'ts-loader' },
-        ],
-        exclude: /node_modules/,
-      },
-      // Use babel-loader for js(x) files
-      {
-        test: /\.jsx?$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              babelrc: true,
-              plugins: ['react-hot-loader/babel'],
-            },
-          },
         ],
         exclude: /node_modules/,
       },

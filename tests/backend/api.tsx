@@ -2,24 +2,12 @@ import { agent, SuperAgent, SuperAgentRequest } from 'superagent';
 
 const testUser: SuperAgent<SuperAgentRequest> = agent();
 
-describe.skip('[Api] api test', () => {
-  it('[GET api] should return api data', async () => {
-    expect.assertions(1);
+describe.skip('[Api] note', () => {
+  it('[GET getNotes] should return notes data', async () => {
     try {
-      const { text } = await testUser.get('localhost:3003/api');
-      const content = JSON.parse(text);
-      expect(content.data).toBe('api get data');
-    } catch (err) {
-      console.error(err);
-    }
-  });
-
-  it('[POST api] should return api data', async () => {
-    expect.assertions(1);
-    try {
-      const { text } = await testUser.post('localhost:3003/api');
-      const content = JSON.parse(text);
-      expect(content.data).toBe('api post data');
+      const { text: notes } = await testUser.get('localhost:3003/api/note/getNotes');
+      const content = JSON.parse(notes);
+      expect(content.data).toBe('notes here');
     } catch (err) {
       console.error(err);
     }
