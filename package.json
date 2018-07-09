@@ -87,7 +87,7 @@
     "materialize-css": "1.0.0-rc.2",
     "mini-css-extract-plugin": "0.4.1",
     "morgan": "1.9.0",
-    "node-sass": "4.9.1",
+    "node-sass": "4.9.2",
     "nodemon": "1.17.5",
     "offline-plugin": "5.0.5",
     "optimize-css-assets-webpack-plugin": "4.0.3",
