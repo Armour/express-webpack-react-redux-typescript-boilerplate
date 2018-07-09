@@ -8,14 +8,14 @@ import { IAppState, ITodoList, ITodoListDispatchProps, ITodoListStateProps, IVis
 
 const getVisibleTodos = (todos: ITodoList, filter: IVisibilityFilterOption): ITodoList => {
   switch (filter) {
-  case VisibilityFiltersOptions.SHOW_ALL:
-    return todos;
-  case VisibilityFiltersOptions.SHOW_COMPLETED:
-    return todos.filter((t) => t !== undefined && t.completed).toList();
-  case VisibilityFiltersOptions.SHOW_ACTIVE:
-    return todos.filter((t) => t !== undefined && !t.completed).toList();
-  default:
-    return todos;
+    case VisibilityFiltersOptions.SHOW_ALL:
+      return todos;
+    case VisibilityFiltersOptions.SHOW_COMPLETED:
+      return todos.filter((t) => t !== undefined && t.completed).toList();
+    case VisibilityFiltersOptions.SHOW_ACTIVE:
+      return todos.filter((t) => t !== undefined && !t.completed).toList();
+    default:
+      return todos;
   }
 };
 

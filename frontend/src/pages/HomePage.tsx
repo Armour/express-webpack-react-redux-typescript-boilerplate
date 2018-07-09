@@ -28,7 +28,7 @@ export class HomePage extends React.Component {
         <div className='pushpin-block'>
           <h1>Home</h1>
           <div className='container'>
-          <Carousel />
+            <Carousel />
           </div>
         </div>
         <Pushpin color='orange' />

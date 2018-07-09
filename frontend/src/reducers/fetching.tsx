@@ -8,12 +8,12 @@ const initialState: IFetchingSet = Set<string>();
 
 export const fetching = (state = initialState, action: IActionsFetchApi): IFetchingSet => {
   switch (action.type) {
-  case START_REQUEST:
-    return state.add(`${action.method} ${action.url}`);
-  case RECEIVE_RESPONSE:
-    return state.delete(`${action.method} ${action.url}`);
-  default:
-    return state;
+    case START_REQUEST:
+      return state.add(`${action.method} ${action.url}`);
+    case RECEIVE_RESPONSE:
+      return state.delete(`${action.method} ${action.url}`);
+    default:
+      return state;
   }
 };
 

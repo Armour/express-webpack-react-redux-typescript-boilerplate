@@ -28,43 +28,43 @@ export const defaultReceiveError = (url: string, error: string): IActionDefaultR
   detail see: https://github.com/gaearon/redux-thunk
 */
 const fetchData = (url: string, method: string, postData: any, receiveData: any, receiveError: any) =>
-async (dispatch: Dispatch<AnyAction>) => {
-  dispatch(startRequest(url, method));
-  try {
-    let req;
-    if (method.toUpperCase() === METHOD_POST) {
-      const headers: Headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-      req = new Request(`/api/${url}`, {
-        method: METHOD_POST,
-        headers,
-        body: JSON.stringify(postData),
-        credentials: 'same-origin',
-      });
-    } else {
-      req = new Request(`/api/${url}`, {
-        method,
-        credentials: 'same-origin',
-      });
+  async (dispatch: Dispatch<AnyAction>) => {
+    dispatch(startRequest(url, method));
+    try {
+      let req;
+      if (method.toUpperCase() === METHOD_POST) {
+        const headers: Headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        req = new Request(`/api/${url}`, {
+          method: METHOD_POST,
+          headers,
+          body: JSON.stringify(postData),
+          credentials: 'same-origin',
+        });
+      } else {
+        req = new Request(`/api/${url}`, {
+          method,
+          credentials: 'same-origin',
+        });
+      }
+      const res = await fetch(req);
+      if (res.ok) {
+        res.json().then((data) => {
+          dispatch(receiveData(data));
+        }).catch(() => {
+          dispatch(receiveData()); // no content
+        });
+      } else {
+        res.json().then((e) => {
+          dispatch(receiveError(url, `${res.status} ${e.message}`));
+        });
+      }
+    } catch (e) {
+      dispatch(receiveError(url, e.message));
+    } finally {
+      dispatch(receiveResponse(url, method));
     }
-    const res = await fetch(req);
-    if (res.ok) {
-      res.json().then((data) => {
-        dispatch(receiveData(data));
-      }).catch(() => {
-        dispatch(receiveData()); // no content
-      });
-    } else {
-      res.json().then((e) => {
-        dispatch(receiveError(url, `${res.status} ${e.message}`));
-      });
-    }
-  } catch (e) {
-    dispatch(receiveError(url, e.message));
-  } finally {
-    dispatch(receiveResponse(url, method));
-  }
-};
+  };
 
 /*
   fetchDataIfNeeded prevents duplicate fetch request to same url at the same time

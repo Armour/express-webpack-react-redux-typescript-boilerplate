@@ -7,9 +7,9 @@ const initialState: INoteList = List<INote>();
 
 export const notes = (state = initialState, action: IActionsFetchNote) => {
   switch (action.type) {
-  case RECEIVE_NOTE:
-    return fromJS(action.data.notes);
-  default:
-    return state;
+    case RECEIVE_NOTE:
+      return fromJS(action.data.notes);
+    default:
+      return state;
   }
 };
