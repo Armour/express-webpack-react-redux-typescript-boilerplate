@@ -1,5 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
+
+import cssnano from 'cssnano';
 import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 
@@ -54,7 +56,7 @@ export default {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv] } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
         ],
       },
       // Use a list of loaders to load scss files
@@ -63,7 +65,7 @@ export default {
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv] } },
+          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
