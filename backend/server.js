@@ -21,6 +21,7 @@ const RedisStore = connectRedis(session);
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || config.http_port;
 const app = express();
+const server = require('http').createServer(app);
 
 if (isProduction) {
   app.use(helmet());
@@ -57,18 +58,21 @@ app.use(session({
 // api router
 app.use('/api', indexRtr);
 
-let listend = false;
+const stopListenOnPort = () => {
+  server.close(() => {
+    console.error(`\nClosed out remaining connections.`.red); // eslint-disable-line no-console
+  });
+};
 const startListenOnPort = () => {
-  if (!listend) {
-    // Start server listen on specific port
-    app.listen(port, (error) => {
-      if (error) {
-        console.log(`\n${error}`); // eslint-disable-line no-console
-      }
-      listend = true;
-      console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
-    });
-  }
+  // Start server listen on specific port
+  server.listen(port, (error) => {
+    if (error) {
+      console.error(`\n${error}`); // eslint-disable-line no-console
+      stopListenOnPort();
+      process.exit(1);
+    }
+    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
+  });
 };
 
 if (!isProduction) {
@@ -96,3 +100,13 @@ if (!isProduction) {
   });
   startListenOnPort();
 }
+
+const stopHandler = (signal) => {
+  console.error(`\nExit process in responding to %s`.red, signal); // eslint-disable-line no-console
+  stopListenOnPort();
+  process.exit(1);
+};
+
+process.on('SIGTERM', stopHandler, 'SIGTERM');
+process.on('SIGINT', stopHandler, 'SIGINT');
+process.on('SIGHUP', stopHandler, 'SIGINT');
