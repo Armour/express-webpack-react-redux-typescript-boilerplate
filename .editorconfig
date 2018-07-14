@@ -24,7 +24,7 @@ indent_style = space
 indent_size = 2
 indent_style = space
 
-# Indentation override for all html files
+# Indentation override for html files
 [*.html]
 indent_size = 2
 indent_style = space
