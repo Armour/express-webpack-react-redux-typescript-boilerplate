@@ -91,7 +91,7 @@
     "node-sass": "^4.9.2",
     "nodemon": "^1.18.2",
     "offline-plugin": "^5.0.5",
-    "optimize-css-assets-webpack-plugin": "^4.0.3",
+    "optimize-css-assets-webpack-plugin": "^5.0.0",
     "pg": "^7.4.3",
     "postcss": "^6.0.23",
     "postcss-import": "^11.1.0",
