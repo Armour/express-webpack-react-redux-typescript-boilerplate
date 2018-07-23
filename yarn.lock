@@ -267,9 +267,9 @@
   dependencies:
     redux "^3.6.0"
 
-"@types/superagent@^3.8.2":
-  version "3.8.2"
-  resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-3.8.2.tgz#ffdda92843f8966fb4c5f482755ee641ffc53aa7"
+"@types/superagent@^3.8.3":
+  version "3.8.3"
+  resolved "https://registry.yarnpkg.com/@types/superagent/-/superagent-3.8.3.tgz#51aa6040c21b66df00f46e10bb08fb51c541acfc"
   dependencies:
     "@types/cookiejar" "*"
     "@types/node" "*"
