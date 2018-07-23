@@ -96,7 +96,7 @@
     "postcss": "^7.0.0",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.6",
-    "postcss-preset-env": "^5.2.2",
+    "postcss-preset-env": "^5.2.3",
     "prismjs": "^1.15.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "react": "^16.4.1",
