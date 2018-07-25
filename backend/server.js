@@ -9,18 +9,13 @@ import session from 'express-session';
 import connectRedis from 'connect-redis';
 import 'colors';
 
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import webpackConfig from '../webpack.config.dev.babel';
-
 import config from './config.json';
-import indexRtr from './routes/index';
+import router from './routes/index';
 
-const RedisStore = connectRedis(session);
+const app = express();
 const isProduction = process.env.NODE_ENV === 'production';
 const port = process.env.PORT || config.http_port;
-const app = express();
+const RedisStore = connectRedis(session);
 const server = require('http').createServer(app);
 
 if (isProduction) {
@@ -56,54 +51,39 @@ app.use(session({
 }));
 
 // api router
-app.use('/api', indexRtr);
+app.use('/api/v1', router);
 
-const stopListenOnPort = () => {
-  server.close(() => {
-    console.error(`\nClosed out remaining connections.`.red); // eslint-disable-line no-console
-  });
-};
-const startListenOnPort = () => {
-  // Start server listen on specific port
-  server.listen(port, (error) => {
-    if (error) {
-      console.error(`\n${error}`); // eslint-disable-line no-console
-      stopListenOnPort();
-      process.exit(1);
-    }
-    console.log(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green); // eslint-disable-line no-console
-  });
-};
-
-if (!isProduction) {
-  const compiler = webpack(webpackConfig);
-  const middleware = webpackDevMiddleware(compiler, {
-    publicPath: webpackConfig.output.publicPath,
-    stats: webpackConfig.stats,
-  });
-  // Serve static files through webpackDevMiddleware
-  const distPath = path.resolve(__dirname, '../frontend/dist/dev');
-  app.use(middleware);
-  app.use(webpackHotMiddleware(compiler));
-  app.get('*', (_, res) => {
-    res.write(middleware.fileSystem.readFileSync(`${distPath}/index.html`));
-    res.end();
-  });
-  // Start listening on port when webpack has finished compiling
-  compiler.plugin('done', () => startListenOnPort());
-} else {
-  // Serve static files as usual
+if (isProduction) {
+  // Serve dist files if is production mode
   const distPath = path.resolve(__dirname, '../frontend/dist/prod');
   app.use(express.static(distPath));
   app.get('*', (_, res) => {
     res.sendFile(`${distPath}/index.html`);
   });
-  startListenOnPort();
+} else {
+  // Return 404 for non-exist api
+  app.get('*', (req, res) => {
+    res.status(404).send(`Api not exist for ${req.url}`);
+  });
 }
 
+// Start server listen on specific port
+server.listen(port, (error) => {
+  if (error) {
+    console.error(`\n${error}`);
+    server.close();
+    process.exit(1);
+  }
+  if (isProduction) {
+    console.info(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green);
+  } else {
+    console.info(`\nExpress: Listening on port ${port}, now you can access api on http://localhost:${port}/ \n`.green);
+  }
+});
+
 const stopHandler = (signal) => {
-  console.error(`\nExit process in responding to %s`.red, signal); // eslint-disable-line no-console
-  stopListenOnPort();
+  console.error(`\nExit process in responding to %s`.red, signal);
+  server.close();
   process.exit(1);
 };
 

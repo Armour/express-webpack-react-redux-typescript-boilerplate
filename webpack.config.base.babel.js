@@ -21,9 +21,6 @@ export default {
   // The base directory, an absolute path, for resolving entry points and loaders from configuration
   context: path.resolve(__dirname),
 
-  // Minimal log level
-  stats: 'minimal',
-
   // Get mode from NODE_ENV
   mode: process.env.NODE_ENV,
 
@@ -55,7 +52,7 @@ export default {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 1 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'css-loader', options: { sourceMap: !devMode, importLoaders: 1 } }, // TODO: enable sourceMap in devMode without FOUC
           { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
         ],
       },
@@ -64,17 +61,17 @@ export default {
         test: /\.scss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: false, importLoaders: 2 } }, // TODO: enable sourceMap without FOUC
+          { loader: 'css-loader', options: { sourceMap: !devMode, importLoaders: 2 } }, // TODO: enable sourceMap in devMode without FOUC
           { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp|ico|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
-          { loader: 'image-webpack-loader', options: { disable: true } },
+          { loader: 'image-webpack-loader', options: { disable: devMode } },
         ],
       },
       // Use url-loader to load font related files

@@ -2,13 +2,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "frontend/src",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "target": "es5",
     "lib": [
-      "es6",
       "dom",
-      "dom.iterable"
+      "dom.iterable",
+      "es2015",
+      "es2015.iterable"
     ],
     "jsx": "react",
     "alwaysStrict": true,
@@ -26,5 +27,8 @@
     "sourceMap": true,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

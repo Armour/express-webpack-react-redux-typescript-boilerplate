@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
+import { HeaderContainer } from 'containers/HeaderContainer';
 
 import { HomePage } from 'pages/HomePage';
 import { NotFoundPage } from 'pages/NotFoundPage';
@@ -11,7 +11,7 @@ import { ReactPage } from 'pages/ReactPage';
 
 export const router = (
   <div>
-    <Header dropdownLists={['parallax']} />
+    <HeaderContainer/>
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route path='/react' component={ReactPage} />

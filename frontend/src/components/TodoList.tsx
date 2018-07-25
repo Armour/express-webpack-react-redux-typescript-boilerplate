@@ -1,10 +1,13 @@
+import { List } from 'immutable';
+
 import * as React from 'react';
 
-import { Todo } from 'components/Todo';
-import { ITodoList } from 'types';
+import { Todo } from './Todo';
+
+import { ITodo } from 'types';
 
 export interface ITodoListStateProps {
-  todos: ITodoList;
+  todos: List<ITodo>;
 }
 
 export interface ITodoListDispatchProps {
@@ -22,12 +25,16 @@ export class TodoList extends React.Component<ITodoListProps> {
 
   public render() {
     const todoList = this.props.todos.map((todo) =>
-      todo !== undefined ? <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} /> : null,
+      <Todo key={todo.id} {...todo} onClick={this.onClick(todo.id)} />,
     );
-    return (
-      <ul className='collection'>
-        {todoList}
-      </ul>
-    );
+    if (todoList.count() > 0) {
+      return (
+        <ul className='collection'>
+          {todoList}
+        </ul>
+      );
+    } else {
+      return (null);
+    }
   }
 }

@@ -1,3 +1,2 @@
-export * from 'actions/note';
-export * from 'actions/fetchApi';
-export * from 'actions/todoList';
+export * from './notes';
+export * from './todos';

@@ -1,13 +1,10 @@
 import { combineReducers } from 'redux';
 
-import { fetching } from 'reducers/fetching';
-import { notes } from 'reducers/notes';
-import { todos } from 'reducers/todos';
-import { visibilityFilter } from 'reducers/visibilityFilter';
+import { IGlobalState } from 'types';
+import { notes } from './notes';
+import { todos } from './todos';
 
-export const reducers = combineReducers({
-  fetching,
-  notes,
-  todos,
-  visibilityFilter,
+export default combineReducers<IGlobalState>({
+  notesState: notes,
+  todosState: todos,
 });

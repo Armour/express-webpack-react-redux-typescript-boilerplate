@@ -6,15 +6,12 @@ import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 const reactVendors = [
   'react',
   'react-dom',
+  'react-hot-loader',
   'react-router-dom',
   'react-redux',
-  'react-hot-loader',
   'redux',
-  'redux-devtools',
-  'redux-devtools-dock-monitor',
-  'redux-devtools-log-monitor',
   'redux-logger',
-  'redux-thunk',
+  'redux-saga',
   'connected-react-router',
 ];
 

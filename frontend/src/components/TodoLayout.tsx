@@ -1,16 +1,17 @@
 import * as React from 'react';
 
-import { TodoFooter } from 'components/TodoFooter';
-import { AddTodo } from 'containers/AddTodo';
-import { VisibleTodoList } from 'containers/VisibleTodoList';
+import { TodoFooter } from './TodoFooter';
+
+import { TodoInputContainer } from 'containers/TodoInputContainer';
+import { TodoListContainer } from 'containers/TodoListContainer';
 
 export class TodoLayout extends React.Component {
   public render() {
     return (
-      <div className='todo-app center-align z-depth-2'>
+      <div className='todo-layout center-align z-depth-2'>
         <span className='todo-title'>todos</span>
-        <AddTodo />
-        <VisibleTodoList />
+        <TodoInputContainer />
+        <TodoListContainer />
         <TodoFooter />
       </div>
     );

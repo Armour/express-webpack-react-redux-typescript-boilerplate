@@ -1,27 +1,41 @@
 import { List } from 'immutable';
 
-import { ADD_TODO, TOGGLE_TODO } from 'constants/actions';
-import { IActionsTodo, ITodo, ITodoList } from 'types';
+import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO, VisibilityFiltersOptions } from 'constants/actions';
+import { IActionsTodo, ITodo, ITodosState } from 'types';
 
-const initialState: ITodoList = List<ITodo>([
-  {
-    id: 'fake_id',
-    text: 'Add your own todo task above, click to mark each todo as completed',
-    completed: false,
-  },
-]);
+const initialState: ITodosState = {
+  todos: List<ITodo>([
+    {
+      id: 'fake_id',
+      text: 'Add your own todo task above, click to mark each todo as completed',
+      completed: false,
+    },
+  ]),
+  visibilityFilter: VisibilityFiltersOptions.SHOW_ALL,
+};
 
-export const todos = (state = initialState, action: IActionsTodo): ITodoList => {
+export const todos = (state = initialState, action: IActionsTodo): ITodosState => {
   switch (action.type) {
     case ADD_TODO:
-      return state.push({
-        id: action.id,
-        text: action.text,
-        completed: action.completed,
-      });
+      return {
+        ...state,
+        todos: state.todos.push({
+          id: action.id,
+          text: action.text,
+          completed: action.completed,
+        }),
+      };
     case TOGGLE_TODO:
-      const index = state.findIndex((s) => s !== undefined && s.id === action.id);
-      return index === -1 ? state : state.update(index, (s) => ({ ...s, completed: !s.completed }));
+      const index = state.todos.findIndex((s) => s !== undefined && s.id === action.id);
+      return {
+        ...state,
+        todos: index === -1 ? state.todos : state.todos.update(index, (s) => ({ ...s, completed: !s.completed })),
+      };
+    case SET_VISIBILITY_FILTER:
+      return {
+        ...state,
+        visibilityFilter: action.filter,
+      };
     default:
       return state;
   }

@@ -6,7 +6,7 @@ import { Pushpin } from 'components/Pushpin';
 
 export class HomePage extends React.Component {
   public componentDidMount() {
-    document.querySelectorAll('.pushpin-demo-nav').forEach((elem, _) => {
+    document.querySelectorAll('.pushpin-nav').forEach((elem, _) => {
       const target = document.querySelector('.' + elem.getAttribute('data-target')!);
       const rect = target!.getBoundingClientRect();
       let top = rect.top;
@@ -25,15 +25,18 @@ export class HomePage extends React.Component {
   public render() {
     return (
       <div>
-        <div className='pushpin-block'>
-          <h1>Home</h1>
+        <div className='pushpin'>
+          <h1 className='page-title'>Home</h1>
           <div className='container'>
             <Carousel />
           </div>
         </div>
-        <Pushpin color='orange' />
-        <Pushpin color='red' />
-        <Pushpin color='green' />
+        <Pushpin color='blue' depth='lighten-1' />
+        <Pushpin color='green' depth='lighten-1'/>
+        <Pushpin color='orange' depth='lighten-1'/>
+        <Pushpin color='red' depth='lighten-1'/>
+        <Pushpin color='purple' depth='lighten-1'/>
+        <Pushpin color='cyan' depth='lighten-1'/>
         <FAB />
       </div>
     );

@@ -1,16 +1,16 @@
 import * as React from 'react';
 
 import { TodoLayout } from 'components/TodoLayout';
-import { FetchNote } from 'containers/FetchNote';
+import { FetchNoteContainer } from 'containers/FetchNoteContainer';
 
 export class ReactPage extends React.Component {
   public render() {
     return (
       <div>
-        <div className='react-block'>
-          <h1>React</h1>
+        <div className='react-container'>
+          <h1 className='page-title'>React</h1>
           <TodoLayout />
-          <FetchNote />
+          <FetchNoteContainer />
         </div>
       </div>
     );

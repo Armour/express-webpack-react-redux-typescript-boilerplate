@@ -1,5 +1,5 @@
 import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actions';
-import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo, IVisibilityFilterOption } from 'types';
+import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo } from 'types';
 
 import { v4 } from 'uuid';
 
@@ -15,7 +15,7 @@ export const toggleTodo = (id: string): IActionToggleTodo => ({
   id,
 });
 
-export const setVisibilityFilter = (filter: IVisibilityFilterOption): IActionSetVisibilityFilter => ({
+export const setVisibilityFilter = (filter: string): IActionSetVisibilityFilter => ({
   type: SET_VISIBILITY_FILTER,
   filter,
 });

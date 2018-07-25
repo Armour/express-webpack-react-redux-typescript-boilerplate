@@ -1,9 +1,8 @@
-import { addTodo, setVisibilityFilter, toggleTodo } from 'actions/todoList';
-import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO } from 'constants/actions';
-import { VisibilityFiltersOptions } from 'constants/visibilityFilers';
+import { addTodo, setVisibilityFilter, toggleTodo } from 'actions/todos';
+import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO, VisibilityFiltersOptions } from 'constants/actions';
 import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo } from 'types';
 
-describe('[Actions] todoList test', () => {
+describe('[Actions] todos test', () => {
   it('[addTodo] should return IActionAddTodo with input text, random id string and completed as false', () => {
     const actionAddTodo: IActionAddTodo = addTodo('text');
     expect(actionAddTodo.type === ADD_TODO).toBeTruthy();
@@ -18,7 +17,7 @@ describe('[Actions] todoList test', () => {
     expect(actionToggleTodo.id).toBe('id');
   });
 
-  it('[setVisibilityFilter] should return SET_VISIBILITY_FILTER action with input filter', () => {
+  it('[setVisibilityFilter] should return IActionSetVisibilityFilter with input filter', () => {
     const actionSetVisibilityShowAll: IActionSetVisibilityFilter = setVisibilityFilter(VisibilityFiltersOptions.SHOW_ALL);
     expect(actionSetVisibilityShowAll.type === SET_VISIBILITY_FILTER).toBeTruthy();
     expect(actionSetVisibilityShowAll.filter).toBe(VisibilityFiltersOptions.SHOW_ALL);

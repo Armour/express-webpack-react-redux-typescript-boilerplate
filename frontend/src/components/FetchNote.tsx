@@ -1,46 +1,57 @@
+import { List } from 'immutable';
+
 import * as React from 'react';
 
-import { INoteList } from 'types';
+import { INote } from 'types';
 
-export interface INoteFetcherStateProps {
-  notes: INoteList;
+export interface IFetchNoteStateProps {
+  notes: List<INote>;
+  loading: boolean;
+  error: string;
 }
 
-export interface INoteFetcherDispatchProps {
-  fetchNoteIfNeeded(url: string): void;
+export interface IFetchNoteDispatchProps {
+  fetchAllNotes(): void;
+  fetchNote(id: number): void;
+  addNote(content: string): void;
+  editNote(id: number, content: string): void;
+  removeNote(id: number): void;
 }
 
-type INoteFetcherProps = INoteFetcherStateProps & INoteFetcherDispatchProps;
+type IFetchNoteProps = IFetchNoteStateProps & IFetchNoteDispatchProps;
 
-interface IApiLoaderState {
-  url: string;
-}
-
-export class NoteFetcher extends React.Component<INoteFetcherProps, IApiLoaderState> {
-  constructor(props: INoteFetcherProps) {
+export class FetchNote extends React.Component<IFetchNoteProps> {
+  constructor(props: IFetchNoteProps) {
     super(props);
-    this.state = { url: 'note/getNotes' };
   }
 
-  public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  public fetchAllNotes = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    if (!this.state.url.trim()) {
-      return;
-    }
-    this.props.fetchNoteIfNeeded(this.state.url);
-  }
-
-  public onChange = (e: React.FormEvent<HTMLInputElement>) => {
-    this.setState({ url: e.currentTarget.value });
+    this.props.fetchAllNotes();
   }
 
   public render() {
+    const noteList = this.props.notes.map((note) =>
+      (
+        <li className='collection-item'>
+          <div>Id: {note.id} &emsp; Content: {note.content}</div>
+        </li>
+      ),
+    );
+    const noteListCollection = <ul className='collection fetch-note-collection'> {noteList} </ul>;
+    const errorPanel = (
+      <div className='fetch-note-error-panel card-panel red'>
+        <span className='white-text'>{this.props.error}</span>
+      </div>
+    );
     return (
-      <div className='api-loader center-align z-depth-2'>
-        <div className='input-field inline'>
-          <input id='input-url-api-call' type='text' value={this.state.url} onChange={this.onChange} />
+      <div className='fetch-note-layout center-align z-depth-2'>
+        <span className='fetch-note-title'>async calls</span>
+        <div className='fetch-all-notes'>
+          <a className='btn waves-effect' onClick={this.fetchAllNotes} role='button'>Fetch All Notes</a>
         </div>
-        <a className='btn waves-effect' onClick={this.onClick} role='button'>Async Post Api Call</a>
+        {noteList.count() > 0 && noteListCollection}
+        {this.props.error !== '' && errorPanel}
       </div>
     );
   }

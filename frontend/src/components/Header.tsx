@@ -1,30 +1,57 @@
 import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { Dropdown } from 'components/Dropdown';
+import { Dropdown } from './Dropdown';
 
-interface IHeaderProps {
+export interface IHeaderProps {
   dropdownLists: string[];
+  pathname: string;
 }
 
 export class Header extends React.Component<IHeaderProps> {
+  public checkActive(urls: string[]) {
+    let active = false;
+    urls.forEach((url) => {
+      if (this.props.pathname === '/' + url) {
+        active = true;
+      }
+    });
+    return active ? 'active' : '';
+  }
+
+  public componentDidMount() {
+    const elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+  }
+
   public render() {
     return (
-      <nav>
-        <div className='nav-wrapper'>
-          <div className='container'>
-            <span className='brand-logo'><NavLink exact={true} activeClassName='active-link' to='/'>Logo</NavLink></span>
-            <ul id='nav-mobile' className='right hide-on-med-and-down'>
-              <li key='react'><NavLink activeClassName='active-link' to='/react'>React</NavLink></li>
-              <li key='materialize'>
-                <a className='dropdown-button' href='#' data-target='header-dropdown'>Dropdown</a>
-              </li>
-              <li key='404'><NavLink activeClassName='active-link' to='/404'>NotFound</NavLink></li>
-              <Dropdown id='header-dropdown' dropdownLists={this.props.dropdownLists} />
-            </ul>
+      <div>
+        <nav>
+          <div className='nav-wrapper'>
+            <div className='container'>
+              <a className='brand-logo'><Link to='/'>Logo</Link></a>
+              <a href='#' data-target='nav-mobile' className='sidenav-trigger'><i className='material-icons'>menu</i></a>
+              <ul id='nav-desktop' className='right hide-on-med-and-down'>
+                <li className={this.checkActive(['react'])} key='react'><Link to='/react'>React</Link></li>
+                <li className={this.checkActive(this.props.dropdownLists)} key='materialize'>
+                  <a className='dropdown-button' href='#' data-target='header-dropdown-desktop'>Dropdown</a>
+                </li>
+                <li className={this.checkActive(['404'])} key='404'><Link to='/404'>NotFound</Link></li>
+                <Dropdown id='header-dropdown-desktop' dropdownLists={this.props.dropdownLists} />
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+        <ul id='nav-mobile' className='sidenav'>
+          <li className={this.checkActive(['react'])} key='react'><Link to='/react'>React</Link></li>
+          <li className={this.checkActive(this.props.dropdownLists)} key='materialize'>
+            <a className='dropdown-button' href='#' data-target='header-dropdown-mobile'>Dropdown</a>
+          </li>
+          <li className={this.checkActive(['404'])} key='404'><Link to='/404'>NotFound</Link></li>
+          <Dropdown id='header-dropdown-mobile' dropdownLists={this.props.dropdownLists} />
+        </ul>
+      </div>
     );
   }
 }

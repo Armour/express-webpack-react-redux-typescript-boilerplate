@@ -1,21 +1,22 @@
 @charset "UTF-8";
 
-// materialize
+// Materialize
 @import "materialize";
 
-// Common
-@import "common";
+// Global
+@import "global";
 
 // Components
 @import "components/carousel";
-@import "components/header";
 @import "components/footer";
-@import "components/prismcode";
+@import "components/header";
+@import "components/fetchNote";
+@import "components/prismCodes";
 @import "components/pushpin";
-@import "components/navlink";
-@import "components/todoApp";
-@import "components/apiLoader";
+@import "components/todo";
+@import "components/todoLayout";
 
 // Pages
+@import "pages/notFoundPage";
 @import "pages/parallaxPage";
 @import "pages/reactPage";

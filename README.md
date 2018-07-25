@@ -25,35 +25,34 @@
 
 * [x] [yarn](https://github.com/yarnpkg/yarn) - dependency manager
 * [x] [express](http://expressjs.com/) - node.js web framework for backend
+* [x] [postgresql](https://www.postgresql.org/) - advanced open source database
 * [x] [materialize](http://materializecss.com/) - a modern responsive front-end framework based on Material Design
 * [x] [sass](https://github.com/sass/sass) - CSS pre-processors
 * [x] [postcss](https://github.com/postcss/postcss) - CSS post-processor
+* [x] [typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
 * [x] [webpack 4](https://github.com/webpack/webpack) - module bundler
-* [x] [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) - offers a dev middleware for webpack, which arguments a live bundle to a directory
-* [x] [webpack-hot-middleware](https://github.com/glenjamin/webpack-hot-middleware) - add hot reloading into an existing server without [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
+* [x] [webpack-dev-server](https://github.com/webpack/webpack-dev-server) - serves a webpack app in development mode with hot reload
 * [x] followed [ES6 standard](https://github.com/lukehoban/es6features)
 * [x] [babel](https://babeljs.io/) - a JavaScript compiler that compile ES6 to ES5
 * [x] [react](https://facebook.github.io/react/) - a JavaScript library for building user interfaces
 * [x] [react-hot-loader 4](https://github.com/gaearon/react-hot-loader) - hot module reload!
 * [x] [react-router 4](https://github.com/ReactTraining/react-router) - declarative routing for React
 * [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux 4](https://github.com/reactjs/redux) (a predictable state container for js apps)
+* [x] [react-saga](https://github.com/redux-saga/redux-saga/) - make redux asynchronous flows easy to read, write and test, the replacement for [redux-thunk](https://github.com/reduxjs/redux-thunk)
 * [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, the replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
 * [x] [immutable.js](https://github.com/facebook/immutable-js/) - persistent Immutable data structures for react redux state management
-* [x] [Typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
-* [x] [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) - high quality TypeScript type definitions
 * [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs
 * [x] [eslint](http://eslint.org/) - lint javascript files (.js, .jsx)
 * [x] [tslint](https://palantir.github.io/tslint/) - lint typescript files (.ts, .tsx)
 * [x] [stylelint](https://stylelint.io/) - lint style files (.css, .scss)
 * [x] [commitlint](https://github.com/marionebl/commitlint) - lint git commit messages
-* [x] [postgresql](https://www.postgresql.org/) - advanced open source database
-* [x] [prismjs](https://github.com/PrismJS/prism) - code syntax highlight
 * [x] [jest](https://facebook.github.io/jest/) - painless javascript testing
 * [x] [coveralls](https://coveralls.io/) - test coverage
 * [x] [husky](https://github.com/typicode/husky) - git hooks
 * [x] [circle-ci 2](https://circleci.com/) - continuous integration tool for testing and deployment
 * [x] [heroku](https://www.heroku.com/) - a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 * [x] [docker](https://github.com/docker/docker) - the open-source application container engine
+* [x] [RESTful API design](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design) - follow RESTful api design best practice
 
 ## How to run the example code
 
@@ -101,7 +100,7 @@ or
 
 ### Build & Run
 
-On development (with react-hot-reload and redux-devtools):
+On development (with react-hot-reload):
 
 ```bash
 yarn dev

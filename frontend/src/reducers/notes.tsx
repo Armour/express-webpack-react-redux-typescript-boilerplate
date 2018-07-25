@@ -1,14 +1,40 @@
-import { fromJS, List } from 'immutable';
+import { List } from 'immutable';
 
-import { RECEIVE_NOTE } from 'constants/actions';
-import { IActionsFetchNote, INote, INoteList } from 'types';
+import { FETCH_ALL_NOTES_FAILURE, FETCH_ALL_NOTES_REQUESTED, FETCH_ALL_NOTES_SUCCESS } from 'constants/actions';
+import { IActionsNotes, INote, INotesState } from 'types';
 
-const initialState: INoteList = List<INote>();
+const initialState: INotesState = {
+  notes: List<INote>(),
+  loading: false,
+  error: '',
+};
 
-export const notes = (state = initialState, action: IActionsFetchNote) => {
+export const notes = (state = initialState, action: IActionsNotes): INotesState => {
   switch (action.type) {
-    case RECEIVE_NOTE:
-      return fromJS(action.data.notes);
+    case FETCH_ALL_NOTES_REQUESTED:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FETCH_ALL_NOTES_SUCCESS:
+      const noteList: INote[] = [];
+      action.payload.data.notes.forEach((note: INote) => {
+        noteList.push({
+          id: note.id,
+          content: note.content,
+        });
+      });
+      return {
+        notes: List(noteList),
+        loading: false,
+        error: '',
+      };
+    case FETCH_ALL_NOTES_FAILURE:
+      return {
+        notes: List<INote>(),
+        loading: false,
+        error: action.payload.error,
+      };
     default:
       return state;
   }

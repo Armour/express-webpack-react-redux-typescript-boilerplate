@@ -1,33 +1,40 @@
+import Immutable from 'immutable';
+
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
+import createSagaMiddleware from 'redux-saga';
 
 import { History } from 'history';
 
-import { DevTools } from 'containers/DevTools';
-import { reducers } from 'reducers';
-import { isProduction } from 'utils';
+import reducers from 'reducers';
+import sagas from 'sagas';
+import { IGlobalState } from 'types';
 
-export const configureStore = (initialState: {}, history: History): Store<any> => {
+export const configureStore = (initialState: {} | IGlobalState, history: History): Store<IGlobalState> => {
+  // Create the saga middleware
+  const sagaMiddleware = createSagaMiddleware();
+
   // Enhancer
-  let enhancer: any;
-  if (isProduction) {
-    enhancer = applyMiddleware(routerMiddleware(history), thunk, logger);
-  } else {
-    enhancer = compose(
-      applyMiddleware(routerMiddleware(history), thunk, logger),
-      DevTools.instrument(),
-    );
-  }
+  const composeEnhancers =
+    typeof window === 'object' && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+      (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        serialize: {
+          immutable: Immutable,
+        },
+      }) : compose;
+  const enhancer = composeEnhancers(
+    applyMiddleware(routerMiddleware(history), sagaMiddleware, logger),
+  );
 
   // Store
   const store = createStore(connectRouter(history)(reducers), initialState, enhancer);
+  sagaMiddleware.run(sagas);
 
   // Enable Webpack hot module replacement for reducers
-  if (!isProduction && module.hot) {
+  if (module.hot) {
     module.hot.accept('../reducers', () => {
-      const nextReducers = require('reducers').reducers;
+      const nextReducers = require('reducers').default;
       store.replaceReducer(connectRouter(history)(nextReducers));
     });
   }

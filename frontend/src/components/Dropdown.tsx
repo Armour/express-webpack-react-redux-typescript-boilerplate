@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { upperCaseFirstChar } from 'utils';
 
@@ -21,7 +21,7 @@ export class Dropdown extends React.Component<IDropdownProps> {
 
   public render() {
     const links = this.props.dropdownLists.map((key) =>
-      <li key={key}><NavLink activeClassName='active-link' to={`/${key}`}>{upperCaseFirstChar(key)}</NavLink></li>,
+      <li key={key}><Link to={`/${key}`}>{upperCaseFirstChar(key)}</Link></li>,
     );
     return (
       <ul id={this.props.id} className='dropdown-content'>
