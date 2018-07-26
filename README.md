@@ -58,9 +58,8 @@
 
 ### Prerequisite
 
-* `node`
-* `yarn` (recommended) or `npm`
-* `docker` (recommended) with `docker-compose`
+* `yarn` or `npm`
+* (optional) `docker` with `docker-compose`
 
 ### Quickest way
 
@@ -88,7 +87,7 @@ If you find permission problem when trying to install yarn globally, check [this
 
 You can either
 
-* run `postgresql` and `redis` using docker images:
+* setup `postgresql` and `redis` using docker images:
 
 ```bash
 docker-compose up -d postgres redis
@@ -100,7 +99,7 @@ or
 
 ### Build & Run
 
-On development (with react-hot-reload):
+On development (with hot reload):
 
 ```bash
 yarn dev

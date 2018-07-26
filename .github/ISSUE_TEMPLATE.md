@@ -8,12 +8,12 @@ ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
 
 <!-- Check one of the following options with "x" -->
 
-[ ] Bug report  <!-- Please search GitHub for a similar issue or PR before submitting -->
-[ ] Feature request
-[ ] Performance issue
-[ ] Regression (a behavior that used to work and stopped working in a new release)
-[ ] Documentation issue or request
-[ ] Other... Please describe:
+- [ ] Bug report  <!-- Please search GitHub for a similar issue or PR before submitting -->
+- [ ] Feature request
+- [ ] Performance issue
+- [ ] Regression (a behavior that used to work and stopped working in a new release)
+- [ ] Documentation issue or request
+- [ ] Other... Please describe:
 
 ## Current behavior
 
