@@ -2,31 +2,24 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "frontend/src",
-    "module": "commonjs",
-    "moduleResolution": "node",
     "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "dom.iterable",
       "es2015",
-      "es2015.iterable"
     ],
     "jsx": "react",
-    "alwaysStrict": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "keyofStringsOnly": true,
+    "allowSyntheticDefaultImports": true, // FIXME: workaround for immutable.js
+    "keyofStringsOnly": true, // FIXME: workaround for immutable.js
     "noEmitOnError": true,
-    "noImplicitAny": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "preserveConstEnums": true,
     "removeComments": true,
     "sourceMap": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true
+    "strict": true,
   },
   "exclude": [
     "node_modules"

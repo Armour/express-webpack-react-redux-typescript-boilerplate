@@ -21,7 +21,7 @@ const toastConfig: Partial<M.ToastOptions> = {
 };
 
 export class Carousel extends React.Component {
-  public timer: number;
+  public timer: number = 0;
 
   public componentDidMount() {
     const tooltipElems = document.querySelectorAll('.tooltipped');
