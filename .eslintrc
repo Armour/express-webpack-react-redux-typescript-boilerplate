@@ -16,9 +16,11 @@
     "import/no-duplicates": "error",
     "import/no-unresolved": "error",
     "import/no-webpack-loader-syntax": "error",
-    "import/prefer-default-export": "off",
     "linebreak-style": "off",
-    "max-len": "off",
+    "indent": [
+      "error",
+      2
+    ],
     "no-console": [
       "error",
       {

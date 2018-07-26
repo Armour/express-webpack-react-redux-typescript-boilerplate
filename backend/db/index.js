@@ -17,7 +17,9 @@ if (process.env.DATABASE_URL !== undefined) {
 } else {
   // All config is optional, the environment variables will be used if the config is not present
   pool = new Pool({
-    host: isProduction ? config.pgsql_hostname_prod : config.pgsql_hostname_dev, // Default: process.env.PGHOST
+    host: isProduction
+      ? config.pgsql_hostname_prod
+      : config.pgsql_hostname_dev, // Default: process.env.PGHOST
     database: config.pgsql_database, // Default: process.env.PGDATABASE
     user: config.pgsql_username, // Default: process.env.PGUSER
     password: config.pgsql_password, // Default: process.env.PGPASSWORD
