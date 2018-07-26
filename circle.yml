@@ -9,7 +9,7 @@ jobs:
   build:
     working_directory: ~
     docker:
-      - image: circleci/node:10.5.0
+      - image: circleci/node:10.7.0
     steps:
       - checkout
       - run:
@@ -19,7 +19,7 @@ jobs:
           name: Install Docker client
           command: |
             set -x
-            VER="18.03.1-ce"
+            VER="18.06.0-ce"
             curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
             tar -xz -C /tmp -f /tmp/docker-$VER.tgz
             sudo cp -r /tmp/docker/* /usr/bin
@@ -27,7 +27,7 @@ jobs:
           name: Install Docker Compose
           command: |
             set -x
-            VER="1.21.2"
+            VER="1.22.0"
             curl -L https://github.com/docker/compose/releases/download/$VER/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
             sudo cp /tmp/docker-compose /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose
