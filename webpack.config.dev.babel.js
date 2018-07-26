@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 import merge from 'webpack-merge';
 
 import BaseWebpackConfig from './webpack.config.base.babel';
@@ -34,15 +33,7 @@ export default merge(BaseWebpackConfig, {
     open: true,
     // Served index.html (contains 404 page in react-router) in place of any 404 responses
     historyApiFallback: true,
-    // Enable hot reload
-    hot: true,
   },
-
-  // A list of used webpack plugins
-  plugins: [
-    // Enable hot module reload, if have --hot parameter in npm script, then this line must be removed!
-    new webpack.HotModuleReplacementPlugin(),
-  ],
 
   // Source map mode
   // https://webpack.js.org/configuration/devtool

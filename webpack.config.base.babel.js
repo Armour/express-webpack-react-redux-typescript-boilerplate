@@ -116,7 +116,7 @@ export default {
     new WebpackPwaManifest({
       short_name: 'Boilerplate',
       name: 'Boilerplate',
-      description: 'My full-stack boilerplate that using express with webpack, react and typescirpt! (hot module reload and materialize-css supported)',
+      description: 'Full-stack boilerplate that using express with webpack, react and typescirpt!',
       background_color: '#2196f3',
       theme_color: '#2196f3',
       orientation: 'portrait',

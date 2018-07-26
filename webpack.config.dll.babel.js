@@ -58,11 +58,6 @@ const config = {
       name: '[name]_dll',
     }),
   ],
-
-  // Turn off performance hints (assets size limit)
-  performance: {
-    hints: false,
-  },
 };
 
 export default config;
