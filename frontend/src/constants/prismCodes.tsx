@@ -1,17 +1,28 @@
 // Code snippets
 export const PARALLAX_CODE = `
-<div class="parallax-container">
-  <div class="parallax"><img src="images/parallax1.jpg"></div>
+<div className='white'>
+  <h1 className='page-title'>Parallax</h1>
 </div>
-<div class="section white">
-  <div class="row container">
-    <h2 class="header">Parallax</h2>
-    <p class="grey-text text-darken-3 lighten-3">
-      Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
-    </p>
+<div className='parallax-container'>
+  <div className='parallax'>
+    <img className='parallax-img' src={require('../images/parallax1.jpg')} alt='parallax-img' />
   </div>
 </div>
-<div class="parallax-container">
-  <div class="parallax"><img src="images/parallax2.jpg"></div>
+<div className='section white'>
+  <div className='row container'>
+    <h2 className='parallax-header'>Parallax</h2>
+    <p className='grey-text text-darken-3'>Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+  </div>
+  <div className='row container'>
+    <h4 className='light'>Parallax Demo HTML</h4>
+    <PrismCodes language='language-markup'>
+      {PARALLAX_CODE}
+    </PrismCodes>
+  </div>
+</div>
+<div className='parallax-container'>
+  <div className='parallax'>
+    <img className='parallax-img' src={require('../images/parallax2.jpg')} alt='parallax-img' />
+  </div>
 </div>
 `;

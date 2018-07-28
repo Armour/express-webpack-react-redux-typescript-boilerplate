@@ -88,6 +88,13 @@ export default {
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
         ],
       },
+      // Use file-loader to load text files (e.g. robots.txt)
+      {
+        test: /\.txt$/,
+        use: [
+          { loader: 'file-loader', options: { name: '[name].[ext]' } },
+        ],
+      },
     ],
   },
 
@@ -114,19 +121,15 @@ export default {
     }),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
-      short_name: 'Boilerplate',
       name: 'Boilerplate',
-      description: 'Full-stack boilerplate that using express with webpack, react and typescirpt!',
+      short_name: 'Boilerplate',
+      start_url: '.',
       background_color: '#2196f3',
       theme_color: '#2196f3',
       orientation: 'portrait',
       display: 'standalone',
       ios: true,
       icons: [
-        {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [192, 512], // Generate general icons
-        },
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
           sizes: [120, 152, 167, 180],
@@ -141,7 +144,7 @@ export default {
         },
         {
           src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
-          sizes: [144, 192, 512],
+          sizes: [36, 48, 72, 96, 144, 192, 512],
           destination: path.join('icons', 'android'), // Generate android icons
         },
       ],

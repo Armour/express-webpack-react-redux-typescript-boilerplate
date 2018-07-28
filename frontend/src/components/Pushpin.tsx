@@ -15,7 +15,7 @@ export class Pushpin extends React.Component<IPushpinProps> {
           <div className={`nav-wrapper ${this.props.color} pushpin-${this.props.color}`}>
             <div className='container'>
               <a href='#' className='brand-logo'>{upperCaseFirstChar(this.props.color)}</a>
-              <ul id='nav-demo' className='right hide-on-med-and-down'>
+              <ul id={`nav-demo-${this.props.color}`}  className='right hide-on-med-and-down'>
                 <li><a href='#'>{upperCaseFirstChar(this.props.color)} link 1</a></li>
                 <li><a href='#'>{upperCaseFirstChar(this.props.color)} link 2</a></li>
               </ul>
