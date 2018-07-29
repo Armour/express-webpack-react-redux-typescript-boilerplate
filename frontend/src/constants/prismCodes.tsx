@@ -5,7 +5,7 @@ export const PARALLAX_CODE = `
 </div>
 <div className='parallax-container'>
   <div className='parallax'>
-    <img className='parallax-img' src={require('../images/parallax1.jpg')} alt='parallax-img' />
+    <img className='parallax-img' src={require('../assets/images/parallax1.jpg')} alt='parallax-img' />
   </div>
 </div>
 <div className='section white'>
@@ -22,7 +22,7 @@ export const PARALLAX_CODE = `
 </div>
 <div className='parallax-container'>
   <div className='parallax'>
-    <img className='parallax-img' src={require('../images/parallax2.jpg')} alt='parallax-img' />
+    <img className='parallax-img' src={require('../assets/images/parallax2.jpg')} alt='parallax-img' />
   </div>
 </div>
 `;

@@ -45,7 +45,6 @@ export default {
           // Alternatively, we can use ts-loader
           // { loader: 'ts-loader' },
         ],
-        exclude: /node_modules/,
       },
       // Use a list of loaders to load css files
       {
@@ -68,7 +67,7 @@ export default {
       },
       // Use image-webpack-loader and url-loader to load images
       {
-        test: /\.(png|jpe?g|gif|svg|webp|ico|tiff)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
           { loader: 'image-webpack-loader', options: { disable: devMode } },
@@ -86,13 +85,6 @@ export default {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
-        ],
-      },
-      // Use file-loader to load text files (e.g. robots.txt)
-      {
-        test: /\.txt$/,
-        use: [
-          { loader: 'file-loader', options: { name: '[name].[ext]' } },
         ],
       },
     ],
@@ -116,8 +108,8 @@ export default {
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
-      favicon: path.resolve(__dirname, 'frontend/src/images/favicon.ico'),
-      template: path.resolve(__dirname, 'frontend/template/index.ejs'),
+      favicon: path.resolve(__dirname, 'frontend/public/favicon.ico'),
+      template: path.resolve(__dirname, 'frontend/public/index.ejs'),
     }),
     // Add Progressive Web Application manifest
     new WebpackPwaManifest({
@@ -131,19 +123,19 @@ export default {
       ios: true,
       icons: [
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
           sizes: [120, 152, 167, 180],
           destination: path.join('icons', 'ios'),
           ios: true, // Generate apple touch icons
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
           sizes: 1024,
           destination: path.join('icons', 'ios'),
           ios: 'startup', // Generate apple touch startup image
         },
         {
-          src: path.resolve(__dirname, 'frontend/src/images/logo.png'),
+          src: path.resolve(__dirname, 'frontend/public/logo.png'),
           sizes: [36, 48, 72, 96, 144, 192, 512],
           destination: path.join('icons', 'android'), // Generate android icons
         },
