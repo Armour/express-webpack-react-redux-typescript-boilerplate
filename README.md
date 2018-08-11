@@ -29,6 +29,7 @@
 * [x] [materialize](http://materializecss.com/) - a modern responsive front-end framework based on Material Design
 * [x] [sass](https://github.com/sass/sass) - CSS pre-processors
 * [x] [postcss](https://github.com/postcss/postcss) - CSS post-processor
+* [x] [css-modules](https://github.com/css-modules/css-modules) - For default scoped local css.
 * [x] [typescript](https://github.com/Microsoft/TypeScript) - a typed superset of javascript that scales
 * [x] [webpack 4](https://github.com/webpack/webpack) - module bundler
 * [x] [webpack-dev-server](https://github.com/webpack/webpack-dev-server) - serves a webpack app in development mode with hot reload
