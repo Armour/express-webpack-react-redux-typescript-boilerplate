@@ -1,14 +1,12 @@
+import { createBrowserHistory } from 'history';
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import { createBrowserHistory } from 'history';
-
 import { App } from 'App';
 import { configureStore } from 'store';
 import { isProduction } from 'utils';
-
-import * as OfflinePluginRuntime from 'offline-plugin/runtime';
 
 // Webpack offline plugin
 if (isProduction) {

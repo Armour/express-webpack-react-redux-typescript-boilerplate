@@ -1,25 +1,24 @@
-$primary-color: color("blue", "base");
-$secondary-color: #26A59A;
-$small-screen-size: 600px;
-$median-screen-size: 992px;
+@import "variables";
 
-.page-title {
-  color: $primary-color;
-  text-align: center;
-}
-
-.container {
-  height: 100%;
-}
-
-@media only screen and (max-width: $median-screen-size) {
-  .page-title {
-    font-size: 4em;
+:global {
+  .container {
+    height: 100%;
   }
-}
 
-@media only screen and (max-width: $small-screen-size) {
   .page-title {
-    font-size: 3em;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: $median-screen-size) {
+    .page-title {
+      font-size: 4em;
+    }
+  }
+
+  @media only screen and (max-width: $small-screen-size) {
+    .page-title {
+      font-size: 3em;
+    }
   }
 }

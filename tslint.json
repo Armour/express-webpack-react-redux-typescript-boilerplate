@@ -17,6 +17,7 @@
     ],
     "no-require-imports": false,
     "no-submodule-imports": false,
+    "no-var-requires": false,
     "newline-before-return": false,
     "object-literal-sort-keys": false,
     "quotemark": [

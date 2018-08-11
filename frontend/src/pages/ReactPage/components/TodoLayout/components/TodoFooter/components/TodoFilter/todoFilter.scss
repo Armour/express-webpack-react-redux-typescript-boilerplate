@@ -1,0 +1,17 @@
+@import 'sass/variables';
+
+.todo-filter-btn {
+  width: 120px;
+  text-align: center;
+  margin: 3px;
+  padding: 0;
+}
+
+@media only screen and (max-width: $small-screen-size) {
+  .todo-filter-btn {
+    display: block;
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+  }
+}

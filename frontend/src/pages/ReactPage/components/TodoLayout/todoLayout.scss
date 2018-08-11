@@ -1,0 +1,10 @@
+@import 'sass/variables';
+@import '../../reactPage';
+
+.todo-layout {
+  @extend .react-block;
+}
+
+.todo-title {
+  @extend .react-block-title;
+}

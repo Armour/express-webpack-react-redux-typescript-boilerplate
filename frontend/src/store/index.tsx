@@ -1,15 +1,13 @@
-import Immutable from 'immutable';
-
 import { connectRouter, routerMiddleware } from 'connected-react-router';
+import { History } from 'history';
+import Immutable from 'immutable';
 import { applyMiddleware, compose, createStore, Store } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 
-import { History } from 'history';
-
 import reducers from 'reducers';
 import sagas from 'sagas';
-import { IGlobalState } from 'types';
+import { IGlobalState } from 'types/global';
 
 export const configureStore = (initialState: {} | IGlobalState, history: History): Store<IGlobalState> => {
   // Create the saga middleware

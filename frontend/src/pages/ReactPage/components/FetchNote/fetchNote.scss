@@ -1,0 +1,31 @@
+@import 'sass/variables';
+@import '../../reactPage';
+
+.fetch-note-layout {
+  @extend .react-block;
+}
+
+@media only screen and (max-width: $small-screen-size) {
+.fetch-note-layout {
+    .btn {
+      width: 80%;
+      max-width: 300px;
+    }
+  }
+}
+
+.fetch-note-title {
+  @extend .react-block-title;
+}
+
+.fetch-note-collection {
+  margin: 25px 0 0 0;
+}
+
+.fetch-note-error-panel {
+  margin: 20px 0 0 0;
+}
+
+.fetch-note-filter-btn {
+  width: 30%;
+}

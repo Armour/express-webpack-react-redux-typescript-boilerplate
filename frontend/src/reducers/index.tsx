@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { IGlobalState } from 'types';
-import { notes } from './notes';
-import { todos } from './todos';
+import { notes } from 'services/notes/reducer';
+import { todos } from 'services/todos/reducer';
+import { IGlobalState } from 'types/global';
 
 export default combineReducers<IGlobalState>({
   notesState: notes,

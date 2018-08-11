@@ -5,7 +5,6 @@
   <meta content="ie=edge" http-equiv="x-ua-compatible">
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <meta content="Full-stack boilerplate that using express with webpack, react and typescirpt!" name="description">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
@@ -24,5 +23,20 @@
     To begin the development, run `yarn dev`.
     To run in production mode, use `yarn prod`.
   -->
+  <script>
+    // Async load Google Material Icons, eliminate render-blocking resources.
+    // See https://github.com/typekit/webfontloader#get-started for details.
+    WebFontConfig = {
+      google: {
+        families: ['Material Icons']
+      }
+    };
+    (function (d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+    })(document);
+  </script>
 </body>
 </html>

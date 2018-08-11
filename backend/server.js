@@ -77,7 +77,7 @@ server.listen(port, (error) => {
   if (isProduction) {
     console.info(`\nExpress: Listening on port ${port}, open up http://localhost:${port}/ in your broswer!\n`.green);
   } else {
-    console.info(`\nExpress: Listening on port ${port}, now you can access api on http://localhost:${port}/ \n`.green);
+    console.info(`\nExpress: Serve api on http://localhost:${port}/ \n`);
   }
 });
 

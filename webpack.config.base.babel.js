@@ -46,13 +46,25 @@ export default {
           // { loader: 'ts-loader' },
         ],
       },
-      // Use a list of loaders to load css files
+      // Use a list of loaders to load materialize and prism css files
       {
         test: /\.css$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: !devMode, importLoaders: 1 } }, // TODO: enable sourceMap in devMode without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !devMode,
+              importLoaders: 1,
+            },
+          }, // TODO: enable sourceMap in devMode without FOUC
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [postcssImport, postcssPresetEnv, cssnano],
+            },
+          },
         ],
       },
       // Use a list of loaders to load scss files
@@ -60,8 +72,22 @@ export default {
         test: /\.scss$/,
         use: [
           devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: !devMode, importLoaders: 2 } }, // TODO: enable sourceMap in devMode without FOUC
-          { loader: 'postcss-loader', options: { sourceMap: true, plugins: () => [postcssImport, postcssPresetEnv, cssnano] } },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: !devMode,
+              importLoaders: 2,
+              modules: true,
+              localIdentName: '[local]--[hash:base64:8]',
+            },
+          }, // TODO: enable sourceMap in devMode without FOUC
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: () => [postcssImport, postcssPresetEnv, cssnano],
+            },
+          },
           { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
@@ -162,6 +188,7 @@ export default {
       '.js',
       '.jsx',
       '.json',
+      '.css',
       '.scss',
     ],
   },
