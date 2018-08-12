@@ -2,8 +2,6 @@ import * as React from 'react';
 
 import { CAROUSEL_AUTOPLAY_INTERVAL, TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from './constants/carousel';
 
-const styles = require('./carousel.scss');
-
 const tooltipConfig: Partial<M.TooltipOptions> = {
   enterDelay: TOOLTIP_DELAY_TIME,
   position: 'top',
@@ -50,7 +48,7 @@ export class Carousel extends React.Component {
 
   public render() {
     return (
-      <div className={`carousel carousel-slider center z-depth-3 ${styles.carousel}`} data-indicators='true'>
+      <div className='carousel carousel-slider center z-depth-3' data-indicators='true'>
         <div className='carousel-fixed-item center'>
           <a className='btn tooltipped waves-effect white grey-text text-darken-2' data-position={tooltipConfig.position} data-delay={tooltipConfig.enterDelay} data-tooltip={tooltipConfig.html} onClick={this.displayToast} role='button'>Focus me!</a>
         </div>

@@ -7,6 +7,18 @@
   padding: 20px 30px 40px;
 }
 
+@media only screen and (max-width: $medium-screen) {
+  .react-block {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: $small-screen) {
+  .react-block {
+    max-width: 85%;
+  }
+}
+
 .react-block-title {
   display: block;
   font-weight: 100;
@@ -15,23 +27,16 @@
   margin-bottom: 20px;
 }
 
-@media only screen and (max-width: $median-screen-size) {
-  .react-block {
-    max-width: 80%;
-  }
+@media only screen and (max-width: $medium-screen) {
   .react-block-title {
     font-weight: 100;
     font-size: 4em;
   }
 }
 
-@media only screen and (max-width: $small-screen-size) {
-  .react-block {
-    max-width: 85%;
-  }
+@media only screen and (max-width: $small-screen) {
   .react-block-title {
     font-weight: 100;
     font-size: 3em;
   }
 }
-

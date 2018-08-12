@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import 'materialize-css';
-import 'materialize-css/dist/css/materialize';
 import 'sass/global';
 
 import { Footer } from 'components/Footer';

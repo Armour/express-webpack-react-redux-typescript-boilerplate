@@ -1,4 +1,9 @@
-$primary-color: #2196f3;
-$secondary-color: #26A59A;
-$small-screen-size: 600px;
-$median-screen-size: 992px;
+// This file override materialize css variables
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
+
+$primary-color: #2196F3;
+$secondary-color: #26A69A;
+$carousel-height: 80%;
+$small-screen: 600px;
+$medium-screen: 992px;
+$large-screen: 1200px;

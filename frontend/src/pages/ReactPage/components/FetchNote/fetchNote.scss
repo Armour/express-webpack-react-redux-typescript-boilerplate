@@ -5,15 +5,6 @@
   @extend .react-block;
 }
 
-@media only screen and (max-width: $small-screen-size) {
-.fetch-note-layout {
-    .btn {
-      width: 80%;
-      max-width: 300px;
-    }
-  }
-}
-
 .fetch-note-title {
   @extend .react-block-title;
 }
@@ -28,4 +19,11 @@
 
 .fetch-note-filter-btn {
   width: 30%;
+}
+
+@media only screen and (max-width: $small-screen) {
+  .fetch-note-filter-btn {
+    width: 80%;
+    max-width: 300px;
+  }
 }

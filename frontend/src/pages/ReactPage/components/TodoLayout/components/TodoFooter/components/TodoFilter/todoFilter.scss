@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-@media only screen and (max-width: $small-screen-size) {
+@media only screen and (max-width: $small-screen) {
   .todo-filter-btn {
     display: block;
     width: 80%;

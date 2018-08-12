@@ -1,6 +1,8 @@
 @import "variables";
 
 :global {
+  @import "~materialize-css/sass/materialize";
+
   .container {
     height: 100%;
   }
@@ -10,15 +12,21 @@
     text-align: center;
   }
 
-  @media only screen and (max-width: $median-screen-size) {
+  @media only screen and (max-width: $medium-screen) {
     .page-title {
       font-size: 4em;
     }
   }
 
-  @media only screen and (max-width: $small-screen-size) {
+  @media only screen and (max-width: $small-screen) {
     .page-title {
       font-size: 3em;
     }
+  }
+
+  // Highlight css-module caused undefined class
+  .undefined {
+    border: solid white 3px;
+    outline: solid red 3px;
   }
 }

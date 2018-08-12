@@ -1,11 +1,9 @@
 import * as React from 'react';
 
-const styles = require('./footer.scss');
-
 export class Footer extends React.Component {
   public render() {
     return (
-      <footer className={`page-footer ${styles.footer}`}>
+      <footer className='page-footer'>
         <div className='container'>
           <div className='row'>
             <div className='col l6 s12'>

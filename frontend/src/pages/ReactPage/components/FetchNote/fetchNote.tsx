@@ -45,7 +45,7 @@ class FetchNoteComponent extends React.Component<IFetchNoteProps> {
         </li>
       ),
     );
-    const noteListCollection = <ul className={`collection ${styles['fetch-note-collection}']}`}> {noteList} </ul>;
+    const noteListCollection = <ul className={`collection ${styles['fetch-note-collection']}`}> {noteList} </ul>;
     const errorPanel = (
       <div className={`card-panel red ${styles['fetch-note-error-panel']}`}>
         <span className='white-text'>{this.props.error}</span>

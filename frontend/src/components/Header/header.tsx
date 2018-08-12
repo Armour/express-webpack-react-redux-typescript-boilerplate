@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { Dropdown } from 'components/Dropdown';
 import { IGlobalState } from 'types/global';
 
-const styles = require('./header.scss');
-
 // Component
 
 interface IHeaderProps {
@@ -33,7 +31,7 @@ class HeaderComponent extends React.Component<IHeaderProps> {
   public render() {
     return (
       <div>
-        <nav className={styles.header}>
+        <nav>
           <div className='nav-wrapper'>
             <div className='container'>
               <a className='brand-logo'><Link to='/'>Logo</Link></a>
