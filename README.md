@@ -13,11 +13,11 @@
 
 * [Demo Page](https://express-react-typescript.herokuapp.com/) - contains classic todo list, async call example, and 404 pages (with random [moe images](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master/frontend/src/pages/NotFoundPage/assets/images) lol)
 
-  ![Home Page](https://user-images.githubusercontent.com/5276065/44063162-561a6c8a-9f14-11e8-9fbb-ab0549d52e27.png)
+  ![Home Page](https://user-images.githubusercontent.com/5276065/44063567-dc99dc68-9f15-11e8-942f-e13acc45584a.png)
 
-  ![React Page](https://user-images.githubusercontent.com/5276065/44063163-562eca86-9f14-11e8-8f13-7f15d4f3ffa5.png)
+  ![React Page](https://user-images.githubusercontent.com/5276065/44063568-dcabd422-9f15-11e8-8976-2c697dd011a6.png)
 
-  ![404 Page](https://user-images.githubusercontent.com/5276065/44063164-56417212-9f14-11e8-8a03-f0c1c953b9a6.png)
+  ![404 Page](https://user-images.githubusercontent.com/5276065/44063569-dcbe94ea-9f15-11e8-86db-52d636eef1af.png)
 
 ## Stack
 
