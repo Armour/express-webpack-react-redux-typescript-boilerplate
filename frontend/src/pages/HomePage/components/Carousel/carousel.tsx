@@ -37,7 +37,9 @@ export class Carousel extends React.Component {
 
   public autoPlayCarousel = (carousels: M.Carousel[]) => {
     carousels.forEach((carousel) => {
-      carousel.next();
+      if (!carousel.pressed) {
+        carousel.next();
+      }
     });
     this.timer = window.setTimeout(() => this.autoPlayCarousel(carousels), CAROUSEL_AUTOPLAY_INTERVAL);
   }
