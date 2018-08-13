@@ -11,15 +11,13 @@
 
 ## Example
 
-* [Demo Page](https://express-react-typescript.herokuapp.com/)
-  * A page contains the classic [Todo List](https://express-react-typescript.herokuapp.com/react) as follows:
+* [Demo Page](https://express-react-typescript.herokuapp.com/) - contains classic todo list, async call example, and 404 pages (with random [moe images](https://github.com/Armour/express-webpack-react-redux-typescript-boilerplate/tree/master/frontend/src/pages/NotFoundPage/assets/images) lol)
 
-    ![Demo page](https://user-images.githubusercontent.com/5276065/30264746-b629fa26-968e-11e7-82ca-090b4c8c5580.jpg)
+  ![Home Page](https://user-images.githubusercontent.com/5276065/44063162-561a6c8a-9f14-11e8-9fbb-ab0549d52e27.png)
 
-* Cocomic
-  * An open-source platform for comic/manga collaboration (SFU CMPT470 course project, no typescript). [source code here](https://github.com/Armour/Cocomic).
+  ![React Page](https://user-images.githubusercontent.com/5276065/44063163-562eca86-9f14-11e8-8f13-7f15d4f3ffa5.png)
 
-    ![Cocomic](https://user-images.githubusercontent.com/5276065/34108373-bb440764-e43a-11e7-98f8-7c94d08e2575.jpg)
+  ![404 Page](https://user-images.githubusercontent.com/5276065/44063164-56417212-9f14-11e8-8a03-f0c1c953b9a6.png)
 
 ## Stack
 
