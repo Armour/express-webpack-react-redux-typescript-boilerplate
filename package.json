@@ -110,7 +110,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "commitlint": "^7.0.0",
-    "commitlint-config-armour": "^1.2.0",
+    "commitlint-config-armour": "^1.2.1",
     "coveralls": "^3.0.2",
     "eslint": "^5.3.0",
     "eslint-config-airbnb": "^17.0.0",
