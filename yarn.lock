@@ -11642,9 +11642,9 @@ webpack-merge@^4.1.4:
   dependencies:
     lodash "^4.17.5"
 
-webpack-pwa-manifest@^3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.6.3.tgz#519da004b0060f874ec7acdc838caed3f90061d5"
+webpack-pwa-manifest@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack-pwa-manifest/-/webpack-pwa-manifest-3.7.1.tgz#ef3ca4571b1f799a470225be537c0ca6a1ac9505"
   dependencies:
     css-color-names "0.0.4"
     jimp "^0.2.28"
