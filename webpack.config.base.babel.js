@@ -127,7 +127,7 @@ export default {
     // Extract css part from javascript bundle into separated file
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:10].css',
-      chunkFilename: '[id].[contenthash:10].css',
+      chunkFilename: '[name].[contenthash:10].css',
     }),
     // Better building progress display
     new ProgressBarWebpackPlugin(),

@@ -15,8 +15,10 @@ export default merge(BaseWebpackConfig, {
   output: {
     // path: the output directory as an absolute path (required)
     path: path.resolve(__dirname, 'frontend/dist/dev'),
-    // filename: specifies the name of output file on disk (required)
+    // filename: specifies the name of entry output file (required)
     filename: '[name].[hash:10].js',
+    // chunkFilename: specifies the name of non-entry output files (e.g. dynamic import component)
+    chunkFilename: '[name].[hash:10].js',
   },
 
   devServer: {

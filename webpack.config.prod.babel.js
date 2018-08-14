@@ -16,8 +16,10 @@ export default merge(BaseWebpackConfig, {
   output: {
     // path: the output directory as an absolute path (required)
     path: path.resolve(__dirname, 'frontend/dist/prod'),
-    // filename: specifies the name of output file on disk (required)
+    // filename: specifies the name of entry output file (required)
     filename: '[name].[chunkhash:10].js',
+    // chunkFilename: specifies the name of non-entry output files (e.g. dynamic import component)
+    chunkFilename: '[name].[chunkhash:10].js',
     // publicPath: specifies the server-relative URL of the output resource directory
     // https://webpack.js.org/configuration/output/#output-publicpath
     publicPath: '/',

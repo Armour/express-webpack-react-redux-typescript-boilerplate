@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { PARALLAX_CODE } from './components/PrismCodes';
-import PrismCodes from './components/PrismCodes';
+import PrismCodes, { PARALLAX_CODE } from './components/PrismCodes';
 
 const styles = require('./parallaxPage.scss');
 

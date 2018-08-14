@@ -29,7 +29,7 @@ export default class NotFoundPage extends React.Component<{}, INotFoundPageState
     return (
       <div>
         <h1 className='page-title'>404 Not Found</h1>
-        <img className={styles['not-found-img']} src={require('./assets/images/' + notFoundImageList[this.state.imageId])} alt='not-found-img' />
+        <img className={styles['not-found-img']} src={require('./assets/images/' + notFoundImageList[this.state.imageId])} alt='not-found-img' height='550px' width='750px' />
       </div>
     );
   }

@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": "frontend/src",
     "target": "es5",
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "lib": [
       "dom",
@@ -17,7 +17,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": true,
     "sourceMap": true,
     "strict": true
   },
