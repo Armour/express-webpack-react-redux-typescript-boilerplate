@@ -1,1 +1,1 @@
-export * from './reactPage';
+export {default} from './reactPage';

@@ -7,7 +7,7 @@ import { toggleTodo } from 'services/todos/actions';
 import { VISIBILITY_FILTER_OPTIONS } from 'services/todos/constants';
 import { ITodo, ITodosState } from 'services/todos/types';
 import { IGlobalState } from 'types/global';
-import { Todo } from './components/Todo';
+import Todo from './components/Todo';
 
 // Component
 
@@ -21,7 +21,7 @@ interface ITodoListDispatchProps {
 
 type ITodoListProps = ITodoListStateProps & ITodoListDispatchProps;
 
-class TodoListComponent extends React.Component<ITodoListProps> {
+class TodoList extends React.Component<ITodoListProps> {
   public onClick = (id: string) => {
     return () => {
       this.props.toggleTodo(id);
@@ -69,7 +69,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoListDispatchPro
   },
 });
 
-export const TodoList = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoListComponent);
+)(TodoList);

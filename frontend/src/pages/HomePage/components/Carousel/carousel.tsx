@@ -20,7 +20,7 @@ const toastConfig: Partial<M.ToastOptions> = {
   html: 'I am a toast!',
 };
 
-export class Carousel extends React.Component {
+export default class Carousel extends React.Component {
   public timer: number = 0;
 
   public componentDidMount() {

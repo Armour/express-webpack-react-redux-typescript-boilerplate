@@ -4,16 +4,16 @@ import { Route, Switch } from 'react-router';
 import 'materialize-css';
 import 'sass/global';
 
-import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
-import { HomePage } from 'pages/HomePage';
-import { NotFoundPage } from 'pages/NotFoundPage';
-import { ParallaxPage } from 'pages/ParallaxPage';
-import { ReactPage } from 'pages/ReactPage';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import HomePage from 'pages/HomePage';
+import NotFoundPage from 'pages/NotFoundPage';
+import ParallaxPage from 'pages/ParallaxPage';
+import ReactPage from 'pages/ReactPage';
 
-export const router = (
+export default (
   <div>
-    <Header/>
+    <Header />
     <Switch>
       <Route exact path='/' component={HomePage} />
       <Route path='/react' component={ReactPage} />

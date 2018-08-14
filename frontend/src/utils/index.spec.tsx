@@ -1,4 +1,4 @@
-import { upperCaseFirstChar } from 'utils';
+import { upperCaseFirstChar } from '.';
 
 describe('[Utils] utils test', () => {
   it('[upperCaseFirstChar] should return string with first character captitalized', () => {

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { FetchNote } from './components/FetchNote';
-import { TodoLayout } from './components/TodoLayout';
+import FetchNote from './components/FetchNote';
+import TodoLayout from './components/TodoLayout';
 
-export class ReactPage extends React.Component {
+export default class ReactPage extends React.Component {
   public render() {
     return (
       <div>

@@ -1,1 +1,1 @@
-export * from './todoFooter';
+export {default} from './todoFooter';

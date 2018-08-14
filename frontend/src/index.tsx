@@ -4,8 +4,8 @@ import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
-import { App } from 'App';
-import { configureStore } from 'store';
+import App from 'App';
+import configureStore from 'store';
 import { isProduction } from 'utils';
 
 // Webpack offline plugin
@@ -40,7 +40,7 @@ render(App);
 // Hot Reload Module API
 if (module.hot) {
   module.hot.accept('./App', () => {
-    const NextApp = require('App').App;
+    const NextApp = require('App').default;
     render(NextApp);
   });
 }

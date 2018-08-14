@@ -8,7 +8,7 @@ interface ITodoProps extends ITodo {
   onClick(): void;
 }
 
-export class Todo extends React.Component<ITodoProps> {
+export default class Todo extends React.Component<ITodoProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.onClick();

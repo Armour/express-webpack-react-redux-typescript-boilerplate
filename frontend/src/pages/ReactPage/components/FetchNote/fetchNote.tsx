@@ -27,7 +27,7 @@ interface IFetchNoteDispatchProps {
 
 type IFetchNoteProps = IFetchNoteStateProps & IFetchNoteDispatchProps;
 
-class FetchNoteComponent extends React.Component<IFetchNoteProps> {
+class FetchNote extends React.Component<IFetchNoteProps> {
   constructor(props: IFetchNoteProps) {
     super(props);
   }
@@ -90,7 +90,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): IFetchNoteDispatchPr
   },
 });
 
-export const FetchNote = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(FetchNoteComponent);
+)(FetchNote);

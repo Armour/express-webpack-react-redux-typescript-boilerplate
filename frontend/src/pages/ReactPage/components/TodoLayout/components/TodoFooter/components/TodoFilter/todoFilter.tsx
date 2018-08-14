@@ -19,7 +19,7 @@ interface ITodoFilterDispatchProps {
 
 type ITodoFilterProps = ITodoFilterStateProps & ITodoFilterDispatchProps;
 
-class TodoFilterComponent extends React.Component<ITodoFilterProps> {
+class TodoFilter extends React.Component<ITodoFilterProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.setVisibilityFilter();
@@ -44,21 +44,21 @@ class TodoFilterComponent extends React.Component<ITodoFilterProps> {
 
 // Container
 
-interface IFilterLinkProps {
+interface ITodoFilterOwnProps {
   filter: string;
 }
 
-const mapStateToProps = (state: IGlobalState, ownProps: IFilterLinkProps): ITodoFilterStateProps => ({
+const mapStateToProps = (state: IGlobalState, ownProps: ITodoFilterOwnProps): ITodoFilterStateProps => ({
   active: ownProps.filter === state.todosState.visibilityFilter,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, ownProps: IFilterLinkProps): ITodoFilterDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, ownProps: ITodoFilterOwnProps): ITodoFilterDispatchProps => ({
   setVisibilityFilter: () => {
     dispatch(setVisibilityFilter(ownProps.filter));
   },
 });
 
-export const TodoFilter = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoFilterComponent);
+)(TodoFilter);

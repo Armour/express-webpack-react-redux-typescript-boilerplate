@@ -1,10 +1,11 @@
 import * as React from 'react';
 
-import { PARALLAX_CODE, PrismCodes } from './components/PrismCodes';
+import { PARALLAX_CODE } from './components/PrismCodes';
+import PrismCodes from './components/PrismCodes';
 
 const styles = require('./parallaxPage.scss');
 
-export class ParallaxPage extends React.Component {
+export default class ParallaxPage extends React.Component {
   public componentDidMount() {
     const elems = document.querySelectorAll('.parallax');
     M.Parallax.init(elems);

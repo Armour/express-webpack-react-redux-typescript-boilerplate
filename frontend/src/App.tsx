@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';
 
-import { router } from 'router';
+import router from 'router';
 import { IGlobalState } from 'types/global';
 
 interface IAppProps {
@@ -12,7 +12,7 @@ interface IAppProps {
   history: History;
 }
 
-export const App = (props: IAppProps) => (
+export default (props: IAppProps) => (
   <Provider store={props.store}>
     <ConnectedRouter history={props.history}>
       {router}

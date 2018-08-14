@@ -1,1 +1,1 @@
-export * from './parallaxPage';
+export {default} from './parallaxPage';

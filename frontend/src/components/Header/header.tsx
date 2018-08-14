@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { Dropdown } from 'components/Dropdown';
+import Dropdown from 'components/Dropdown';
 import { IGlobalState } from 'types/global';
 
 // Component
@@ -12,7 +12,7 @@ interface IHeaderProps {
   pathname: string;
 }
 
-class HeaderComponent extends React.Component<IHeaderProps> {
+class Header extends React.Component<IHeaderProps> {
   public checkActive(urls: string[]) {
     let active = false;
     urls.forEach((url) => {
@@ -67,7 +67,7 @@ const mapStateToProps = (state: IGlobalState): IHeaderProps => ({
   pathname: state.router!.location.pathname,
 });
 
-export const Header = connect(
+export default connect(
   mapStateToProps,
   null,
-)(HeaderComponent);
+)(Header);

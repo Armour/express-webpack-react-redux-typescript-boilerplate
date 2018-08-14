@@ -14,7 +14,7 @@ const initialState: ITodosState = {
   visibilityFilter: VISIBILITY_FILTER_OPTIONS.SHOW_ALL,
 };
 
-export const todos = (state = initialState, action: IActionsTodo): ITodosState => {
+export default (state = initialState, action: IActionsTodo): ITodosState => {
   switch (action.type) {
     case ADD_TODO:
       return {

@@ -4,7 +4,7 @@ const floatingActionButtonConfig: Partial<M.FloatingActionButtonOptions> = {
   direction: 'top',
 };
 
-export class FAB extends React.Component {
+export default class FAB extends React.Component {
   public componentDidMount() {
     const elems = document.querySelectorAll('.fixed-action-btn');
     M.FloatingActionButton.init(elems, floatingActionButtonConfig);

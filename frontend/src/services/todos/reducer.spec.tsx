@@ -1,7 +1,7 @@
 import { List } from 'immutable';
 
 import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO, VISIBILITY_FILTER_OPTIONS } from './constants';
-import { todos } from './reducer';
+import reducer from './reducer';
 import { IActionAddTodo, IActionSetVisibilityFilter, IActionToggleTodo, ITodo, ITodosState } from './types';
 
 describe('[Reducers] todos test', () => {
@@ -49,7 +49,7 @@ describe('[Reducers] todos test', () => {
   });
 
   it('[ADD_TODO] should return state with new todo added', () => {
-    const stateAddTodo = todos(initialState, actionAddTodo);
+    const stateAddTodo = reducer(initialState, actionAddTodo);
     expect(stateAddTodo.visibilityFilter).toEqual(initialState.visibilityFilter);
     expect(stateAddTodo.todos).toEqual(List([
       {
@@ -66,7 +66,7 @@ describe('[Reducers] todos test', () => {
   });
 
   it('[TOGGLE_TODO] should return state with one todo completed toggled', () => {
-    const stateToggleTodo = todos(initialState, actionToggleTodo);
+    const stateToggleTodo = reducer(initialState, actionToggleTodo);
     expect(stateToggleTodo.visibilityFilter).toEqual(initialState.visibilityFilter);
     expect(stateToggleTodo.todos).toEqual(List([
       {
@@ -78,33 +78,33 @@ describe('[Reducers] todos test', () => {
   });
 
   it('[TOGGLE_TODO] should return previous state if id is not found', () => {
-    const stateToggleTodoInvalid = todos(initialState, actionToggleTodoInvalid);
+    const stateToggleTodoInvalid = reducer(initialState, actionToggleTodoInvalid);
     expect(stateToggleTodoInvalid.visibilityFilter).toEqual(initialState.visibilityFilter);
     expect(stateToggleTodoInvalid.todos).toEqual(initialState.todos);
   });
 
   it('[SET_VISIBILITY_FILTER] should return state with corresponding filter', () => {
-    const stateShowCompleted = todos(initialState, actionShowCompleted);
+    const stateShowCompleted = reducer(initialState, actionShowCompleted);
     expect(stateShowCompleted.visibilityFilter).toBe(VISIBILITY_FILTER_OPTIONS.SHOW_COMPLETED);
     expect(stateShowCompleted.todos).toEqual(initialState.todos);
 
-    const stateShowActive = todos(stateShowCompleted, actionShowActive);
+    const stateShowActive = reducer(stateShowCompleted, actionShowActive);
     expect(stateShowActive.visibilityFilter).toBe(VISIBILITY_FILTER_OPTIONS.SHOW_ACTIVE);
     expect(stateShowActive.todos).toEqual(initialState.todos);
 
-    const stateShowAll = todos(stateShowActive, actionShowAll);
+    const stateShowAll = reducer(stateShowActive, actionShowAll);
     expect(stateShowAll.visibilityFilter).toBe(VISIBILITY_FILTER_OPTIONS.SHOW_ALL);
     expect(stateShowAll.todos).toEqual(initialState.todos);
   });
 
   it('[DEFAULT_ACTION] should return previous state if action is not found', () => {
-    const stateTestDefault = todos(initialState, {} as any);
+    const stateTestDefault = reducer(initialState, {} as any);
     expect(stateTestDefault.visibilityFilter).toEqual(initialState.visibilityFilter);
     expect(stateTestDefault.todos).toEqual(initialState.todos);
   });
 
   it('[UNDEFINED_STATE] should use default state if not defined', () => {
-    const stateTestUndefined = todos(undefined, {} as any);
+    const stateTestUndefined = reducer(undefined, {} as any);
     expect(stateTestUndefined.visibilityFilter).toEqual(initialState.visibilityFilter);
     expect(stateTestUndefined.todos).toEqual(List([
       {

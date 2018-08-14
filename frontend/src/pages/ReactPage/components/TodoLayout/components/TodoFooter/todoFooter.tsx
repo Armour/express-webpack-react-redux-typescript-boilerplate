@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import { TodoFilter } from './components/TodoFilter';
+import TodoFilter from './components/TodoFilter';
 
-export class TodoFooter extends React.Component {
+export default class TodoFooter extends React.Component {
   public render() {
     return (
       <div className='todo-footer'>

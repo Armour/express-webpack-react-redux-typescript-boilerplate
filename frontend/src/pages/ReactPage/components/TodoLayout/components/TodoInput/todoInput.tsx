@@ -12,7 +12,7 @@ interface ITodoInputDispatchProps {
 
 let input: HTMLInputElement;
 
-class TodoInputComponent extends React.Component<ITodoInputDispatchProps> {
+class TodoInput extends React.Component<ITodoInputDispatchProps> {
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!input.value.trim()) {
@@ -48,7 +48,7 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoInputDispatchPr
   },
 });
 
-export const TodoInput = connect(
+export default connect(
   null,
   mapDispatchToProps,
-)(TodoInputComponent);
+)(TodoInput);

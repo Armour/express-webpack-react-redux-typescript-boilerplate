@@ -9,7 +9,7 @@ import reducers from 'reducers';
 import sagas from 'sagas';
 import { IGlobalState } from 'types/global';
 
-export const configureStore = (initialState: {} | IGlobalState, history: History): Store<IGlobalState> => {
+export default (initialState: {} | IGlobalState, history: History): Store<IGlobalState> => {
   // Create the saga middleware
   const sagaMiddleware = createSagaMiddleware();
 

@@ -9,7 +9,7 @@ const initialState: INotesState = {
   error: '',
 };
 
-export const notes = (state = initialState, action: IActionsNotes): INotesState => {
+export default (state = initialState, action: IActionsNotes): INotesState => {
   switch (action.type) {
     case FETCH_ALL_NOTES_REQUESTED:
       return {

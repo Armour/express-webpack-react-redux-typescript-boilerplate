@@ -1,1 +1,1 @@
-export * from './pushpin';
+export {default} from './pushpin';

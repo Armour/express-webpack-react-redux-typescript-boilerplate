@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import { Carousel } from './components/Carousel';
-import { FAB } from './components/FAB';
-import { Pushpin } from './components/Pushpin';
+import Carousel from './components/Carousel';
+import FAB from './components/FAB';
+import Pushpin from './components/Pushpin';
 
 const styles = require('./homePage.scss');
 
-export class HomePage extends React.Component {
+export default class HomePage extends React.Component {
   public componentDidMount() {
     document.querySelectorAll('.pushpin-nav').forEach((elem, _) => {
       const target = document.querySelector('.' + elem.getAttribute('data-target')!);

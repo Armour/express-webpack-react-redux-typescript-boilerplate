@@ -9,7 +9,7 @@ interface IPushpinProps {
   depth: string;
 }
 
-export class Pushpin extends React.Component<IPushpinProps> {
+export default class Pushpin extends React.Component<IPushpinProps> {
   public render() {
     return (
       <div id={this.props.color} className={`${styles.pushpin} ${this.props.color} ${this.props.depth}`}>

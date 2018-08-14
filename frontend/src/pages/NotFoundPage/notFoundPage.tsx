@@ -13,7 +13,7 @@ interface INotFoundPageState {
   imageId: number;
 }
 
-export class NotFoundPage extends React.Component<{}, INotFoundPageState> {
+export default class NotFoundPage extends React.Component<{}, INotFoundPageState> {
   constructor(props: {}) {
     super(props);
     this.state = { imageId: this.getRandomInt(0, notFoundImageList.length) };
