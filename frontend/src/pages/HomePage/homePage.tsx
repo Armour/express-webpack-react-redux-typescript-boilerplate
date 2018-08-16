@@ -1,12 +1,30 @@
 import * as React from 'react';
+import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 
 import Carousel from './components/Carousel';
-import FAB from './components/FAB';
 import Pushpin from './components/Pushpin';
+import TranslationButton from './components/TranslationButton';
+import i18ns from './i18n';
 
 const styles = require('./homePage.scss');
 
-export default class HomePage extends React.Component {
+interface IHomeProps extends InjectedI18nProps, InjectedTranslateProps { }
+
+class HomePage extends React.Component<IHomeProps> {
+  constructor(props: IHomeProps) {
+    super(props);
+    this.loadI18ns();
+  }
+
+  public loadI18ns() {
+    const { i18n } = this.props;
+    for (const key in i18ns) {
+      if (i18ns.hasOwnProperty(key)) {
+        i18n.addResourceBundle(key, 'HomePage', i18ns[key]);
+      }
+    }
+  }
+
   public componentDidMount() {
     document.querySelectorAll('.pushpin-nav').forEach((elem, _) => {
       const target = document.querySelector('.' + elem.getAttribute('data-target')!);
@@ -25,10 +43,11 @@ export default class HomePage extends React.Component {
   }
 
   public render() {
+    const { t } = this.props;
     return (
       <div>
         <div className={styles['home-page-block']}>
-          <h1 className='page-title'>Home</h1>
+          <h1 className='page-title'>{t('title')}</h1>
           <div className='container'>
             <Carousel />
           </div>
@@ -39,8 +58,10 @@ export default class HomePage extends React.Component {
         <Pushpin color='red' depth='lighten-1' />
         <Pushpin color='purple' depth='lighten-1' />
         <Pushpin color='cyan' depth='lighten-1' />
-        <FAB />
+        <TranslationButton />
       </div>
     );
   }
 }
+
+export default translate('HomePage')(HomePage);

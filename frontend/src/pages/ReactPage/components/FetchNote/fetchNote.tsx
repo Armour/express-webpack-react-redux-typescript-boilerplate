@@ -1,11 +1,13 @@
 import { List } from 'immutable';
 import * as React from 'react';
+import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
 import { ADD_NOTE_REQUESTED, EDIT_NOTE_REQUESTED, FETCH_ALL_NOTES_REQUESTED, FETCH_NOTE_REQUESTED, REMOVE_NOTE_REQUESTED } from 'services/notes/constants';
 import { INote } from 'services/notes/types';
 import { IGlobalState } from 'types/global';
+import i18ns from './i18n';
 
 const styles = require('./fetchNote.scss');
 
@@ -25,11 +27,21 @@ interface IFetchNoteDispatchProps {
   removeNote(id: number): void;
 }
 
-type IFetchNoteProps = IFetchNoteStateProps & IFetchNoteDispatchProps;
+interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps, InjectedI18nProps,  InjectedTranslateProps { }
 
 class FetchNote extends React.Component<IFetchNoteProps> {
   constructor(props: IFetchNoteProps) {
     super(props);
+    this.loadI18ns();
+  }
+
+  public loadI18ns() {
+    const { i18n } = this.props;
+    for (const key in i18ns) {
+      if (i18ns.hasOwnProperty(key)) {
+        i18n.addResourceBundle(key, 'FetchNote', i18ns[key]);
+      }
+    }
   }
 
   public fetchAllNotes = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -38,6 +50,7 @@ class FetchNote extends React.Component<IFetchNoteProps> {
   }
 
   public render() {
+    const { t } = this.props;
     const noteList = this.props.notes.map((note) =>
       (
         <li className='collection-item'>
@@ -53,9 +66,9 @@ class FetchNote extends React.Component<IFetchNoteProps> {
     );
     return (
       <div className={`center-align z-depth-2 ${styles['fetch-note-layout']}`}>
-        <span className={styles['fetch-note-title']}>async calls</span>
+        <span className={styles['fetch-note-title']}>{t('async-calls')}</span>
         <div className='fetch-all-notes'>
-          <a className={`btn waves-effect ${styles['fetch-note-filter-btn']}`} onClick={this.fetchAllNotes} role='button'>Fetch All Notes</a>
+          <a className={`btn waves-effect ${styles['fetch-note-filter-btn']}`} onClick={this.fetchAllNotes} role='button'>{t('fetch-all-notes')}</a>
         </div>
         {noteList.count() > 0 && noteListCollection}
         {this.props.error !== '' && errorPanel}
@@ -93,4 +106,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): IFetchNoteDispatchPr
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(FetchNote);
+)(translate('FetchNote')(FetchNote));

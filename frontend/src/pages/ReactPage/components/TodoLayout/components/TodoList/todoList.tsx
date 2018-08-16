@@ -19,7 +19,7 @@ interface ITodoListDispatchProps {
   toggleTodo(id: string): void;
 }
 
-type ITodoListProps = ITodoListStateProps & ITodoListDispatchProps;
+interface ITodoListProps extends ITodoListStateProps, ITodoListDispatchProps { }
 
 class TodoList extends React.Component<ITodoListProps> {
   public onClick = (id: string) => {

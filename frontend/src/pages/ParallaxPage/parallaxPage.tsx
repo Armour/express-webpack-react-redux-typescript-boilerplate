@@ -1,20 +1,39 @@
 import * as React from 'react';
+import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 
 import PrismCodes, { PARALLAX_CODE } from './components/PrismCodes';
+import i18ns from './i18n';
 
 const styles = require('./parallaxPage.scss');
 
-export default class ParallaxPage extends React.Component {
+interface IParallaxPageProps extends InjectedI18nProps, InjectedTranslateProps { }
+
+class ParallaxPage extends React.Component<IParallaxPageProps> {
+  constructor(props: IParallaxPageProps) {
+    super(props);
+    this.loadI18ns();
+  }
+
+  public loadI18ns() {
+    const { i18n } = this.props;
+    for (const key in i18ns) {
+      if (i18ns.hasOwnProperty(key)) {
+        i18n.addResourceBundle(key, 'ParallaxPage', i18ns[key]);
+      }
+    }
+  }
+
   public componentDidMount() {
     const elems = document.querySelectorAll('.parallax');
     M.Parallax.init(elems);
   }
 
   public render() {
+    const { t } = this.props;
     return (
       <div>
         <div className='white'>
-          <h1 className='page-title'>Parallax</h1>
+          <h1 className='page-title'>{t('title')}</h1>
         </div>
         <div className='parallax-container'>
           <div className='parallax'>
@@ -24,10 +43,10 @@ export default class ParallaxPage extends React.Component {
         <div className='section white'>
           <div className='row container'>
             <h2 className={styles['parallax-header']}>Parallax</h2>
-            <p className='grey-text text-darken-3'>Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+            <p className='grey-text text-darken-3'>{t('parallax-description')}</p>
           </div>
           <div className='row container'>
-            <h4 className='light'>Parallax Demo HTML</h4>
+            <h4 className='light'>Parallax Demo Code</h4>
             <PrismCodes language='language-markup'>
               {PARALLAX_CODE}
             </PrismCodes>
@@ -42,3 +61,5 @@ export default class ParallaxPage extends React.Component {
     );
   }
 }
+
+export default translate('ParallaxPage')(ParallaxPage);

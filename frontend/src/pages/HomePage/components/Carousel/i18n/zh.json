@@ -1,0 +1,13 @@
+{
+  "focus-button-text": "看我看我!",
+  "first-panel-title": "第一个面板",
+  "second-panel-title": "第二个面板",
+  "third-panel-title": "第三个面板",
+  "fourth-panel-title": "第四个面板",
+  "first-panel-description": "这是你的第一个面板，试试左右滑动它！",
+  "second-panel-description": "这是你的第二个面板，试试左右滑动它！",
+  "third-panel-description": "这是你的第三个面板，试试左右滑动它！",
+  "fourth-panel-description": "这是你的第四个面板，试试左右滑动它！",
+  "tooltip-text": "戳我! >. <",
+  "toast-text": "哇我是一个toast!"
+}

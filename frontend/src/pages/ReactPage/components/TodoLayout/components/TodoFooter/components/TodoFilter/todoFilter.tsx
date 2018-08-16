@@ -17,7 +17,7 @@ interface ITodoFilterDispatchProps {
   setVisibilityFilter(): void;
 }
 
-type ITodoFilterProps = ITodoFilterStateProps & ITodoFilterDispatchProps;
+interface ITodoFilterProps extends ITodoFilterStateProps, ITodoFilterDispatchProps { }
 
 class TodoFilter extends React.Component<ITodoFilterProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

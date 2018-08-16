@@ -1,14 +1,33 @@
 import * as React from 'react';
+import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 
 import FetchNote from './components/FetchNote';
 import TodoLayout from './components/TodoLayout';
+import i18ns from './i18n';
 
-export default class ReactPage extends React.Component {
+interface IReactPageProps extends InjectedI18nProps, InjectedTranslateProps { }
+
+class ReactPage extends React.Component<IReactPageProps> {
+  constructor(props: IReactPageProps) {
+    super(props);
+    this.loadI18ns();
+  }
+
+  public loadI18ns() {
+    const { i18n } = this.props;
+    for (const key in i18ns) {
+      if (i18ns.hasOwnProperty(key)) {
+        i18n.addResourceBundle(key, 'ReactPage', i18ns[key]);
+      }
+    }
+  }
+
   public render() {
+    const { t } = this.props;
     return (
       <div>
         <div className='react-container'>
-          <h1 className='page-title'>React</h1>
+          <h1 className='page-title'>{t('title')}</h1>
           <TodoLayout />
           <FetchNote />
         </div>
@@ -16,3 +35,5 @@ export default class ReactPage extends React.Component {
     );
   }
 }
+
+export default translate('ReactPage')(ReactPage);
