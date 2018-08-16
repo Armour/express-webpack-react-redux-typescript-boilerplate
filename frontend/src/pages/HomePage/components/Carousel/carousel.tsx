@@ -40,12 +40,6 @@ class Carousel extends React.Component<ICarouselProps> {
   }
 
   public componentDidMount() {
-    const { t } = this.props;
-    toastConfig.html = t('toast-text');
-    tooltipConfig.html = t('tooltip-text');
-
-    const tooltipElems = document.querySelectorAll('.tooltipped');
-    M.Tooltip.init(tooltipElems, tooltipConfig);
     const carouselElems = document.querySelectorAll('.carousel.carousel-slider');
     const carousels = M.Carousel.init(carouselElems, carouselConfig);
     this.timer = window.setTimeout(() => this.autoPlayCarousel(carousels), CAROUSEL_AUTOPLAY_INTERVAL);
@@ -70,6 +64,10 @@ class Carousel extends React.Component<ICarouselProps> {
 
   public render() {
     const { t } = this.props;
+    toastConfig.html = t('toast-text');
+    tooltipConfig.html = t('tooltip-text');
+    const tooltipElems = document.querySelectorAll('.tooltipped');
+    M.Tooltip.init(tooltipElems, tooltipConfig);
     return (
       <div className='carousel carousel-slider center z-depth-3' data-indicators='true'>
         <div className='carousel-fixed-item center'>
