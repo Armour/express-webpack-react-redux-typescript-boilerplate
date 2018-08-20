@@ -4,15 +4,17 @@ import webpack from 'webpack';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 
 const reactVendors = [
+  'connected-react-router',
   'react',
   'react-dom',
   'react-hot-loader',
+  'react-i18next',
+  'react-loadable',
   'react-router-dom',
   'react-redux',
   'redux',
   'redux-logger',
   'redux-saga',
-  'connected-react-router',
 ];
 
 const immutableVendors = [
