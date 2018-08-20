@@ -10,7 +10,7 @@ interface IPushpinProps extends InjectedI18nProps, InjectedTranslateProps {
   depth: string;
 }
 
-class Pushpin extends React.Component<IPushpinProps> {
+export class Pushpin extends React.Component<IPushpinProps> {
   constructor(props: IPushpinProps) {
     super(props);
     this.loadI18ns();
@@ -18,11 +18,9 @@ class Pushpin extends React.Component<IPushpinProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'Pushpin', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'Pushpin', i18ns[key]);
+    });
   }
 
   public render() {

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pushpin should renders correctly 1`] = `
+<div
+  className="pushpin red base"
+  id="red"
+>
+  <nav
+    className="pushpin-nav pin-top"
+    data-target="pushpin-red"
+  >
+    <div
+      className="nav-wrapper red pushpin-red"
+    >
+      <div
+        className="container"
+      >
+        <a
+          className="brand-logo"
+          href="#"
+        >
+          red
+        </a>
+        <ul
+          className="right hide-on-med-and-down"
+          id="nav-demo-red"
+        >
+          <li>
+            <a
+              href="#"
+            >
+              link-1
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+            >
+              link-2
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

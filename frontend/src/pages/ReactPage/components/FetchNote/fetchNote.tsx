@@ -29,7 +29,7 @@ interface IFetchNoteDispatchProps {
 
 interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps, InjectedI18nProps,  InjectedTranslateProps { }
 
-class FetchNote extends React.Component<IFetchNoteProps> {
+export class FetchNote extends React.Component<IFetchNoteProps> {
   constructor(props: IFetchNoteProps) {
     super(props);
     this.loadI18ns();
@@ -37,11 +37,9 @@ class FetchNote extends React.Component<IFetchNoteProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'FetchNote', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'FetchNote', i18ns[key]);
+    });
   }
 
   public fetchAllNotes = (e: React.MouseEvent<HTMLAnchorElement>) => {

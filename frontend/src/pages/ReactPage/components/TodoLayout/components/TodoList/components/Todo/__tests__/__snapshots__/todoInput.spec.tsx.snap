@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo should renders correctly 1`] = `
+<a
+  className="collection-item waves-effect waves-teal"
+  href="#"
+  onClick={[Function]}
+>
+  <div
+    className="truncate todo-incompleted"
+  />
+</a>
+`;

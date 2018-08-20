@@ -17,7 +17,7 @@ interface IHeaderStateProps {
 
 interface IHeaderProps extends IHeaderStateProps, InjectedI18nProps, InjectedTranslateProps { }
 
-class Header extends React.Component<IHeaderProps> {
+export class Header extends React.Component<IHeaderProps> {
   constructor(props: IHeaderProps) {
     super(props);
     this.loadI18ns();
@@ -25,11 +25,9 @@ class Header extends React.Component<IHeaderProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'Header', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'Header', i18ns[key]);
+    });
   }
 
   public checkActive(urls: string[]) {

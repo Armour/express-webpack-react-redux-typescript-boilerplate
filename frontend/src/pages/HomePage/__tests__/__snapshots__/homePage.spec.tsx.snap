@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage should renders correctly 1`] = `
+<div>
+  <div
+    className="home-page-block"
+  >
+    <h1
+      className="page-title"
+    >
+      title
+    </h1>
+    <div
+      className="container"
+    >
+      <Carousel />
+    </div>
+  </div>
+  <Pushpin
+    color="blue"
+    depth="lighten-1"
+  />
+  <Pushpin
+    color="green"
+    depth="lighten-1"
+  />
+  <Pushpin
+    color="orange"
+    depth="lighten-1"
+  />
+  <Pushpin
+    color="red"
+    depth="lighten-1"
+  />
+  <Pushpin
+    color="purple"
+    depth="lighten-1"
+  />
+  <Pushpin
+    color="cyan"
+    depth="lighten-1"
+  />
+  <TranslationButton />
+</div>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FetchNote should renders correctly 1`] = `
+<div
+  className="center-align z-depth-2 fetch-note-layout"
+>
+  <span
+    className="fetch-note-title"
+  >
+    async-calls
+  </span>
+  <div
+    className="fetch-all-notes"
+  >
+    <a
+      className="btn waves-effect fetch-note-filter-btn"
+      onClick={[Function]}
+      role="button"
+    >
+      fetch-all-notes
+    </a>
+  </div>
+</div>
+`;

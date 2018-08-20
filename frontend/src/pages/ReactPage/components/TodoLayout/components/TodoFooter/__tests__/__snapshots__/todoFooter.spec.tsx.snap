@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFooter should renders correctly 1`] = `
+<div
+  className="todo-footer"
+>
+  <TodoFilter
+    filter="SHOW_ALL"
+  >
+    all
+  </TodoFilter>
+  <TodoFilter
+    filter="SHOW_ACTIVE"
+  >
+    active
+  </TodoFilter>
+  <TodoFilter
+    filter="SHOW_COMPLETED"
+  >
+    completed
+  </TodoFilter>
+</div>
+`;

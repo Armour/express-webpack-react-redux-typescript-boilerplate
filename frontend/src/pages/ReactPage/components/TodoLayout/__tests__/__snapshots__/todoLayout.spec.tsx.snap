@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoLayout should renders correctly 1`] = `
+<div
+  className="center-align z-depth-2 todo-layout"
+>
+  <span
+    className="todo-title"
+  >
+    todos
+  </span>
+  <TodoInput />
+  <TodoList />
+  <TodoFooter />
+</div>
+`;

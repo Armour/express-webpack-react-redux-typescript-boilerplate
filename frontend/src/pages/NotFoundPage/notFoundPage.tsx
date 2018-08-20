@@ -18,7 +18,7 @@ interface INotFoundPageState {
   imageId: number;
 }
 
-class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
+export class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
   constructor(props: INotFoundPageProps) {
     super(props);
     this.loadI18ns();
@@ -27,11 +27,9 @@ class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageStat
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'NotFoundPage', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'NotFoundPage', i18ns[key]);
+    });
   }
 
   public getRandomInt = (min: number, max: number) => {

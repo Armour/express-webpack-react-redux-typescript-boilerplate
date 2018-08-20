@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoFilter should renders correctly 1`] = `
+<a
+  className="btn waves-effect waves-light todo-filter-btn"
+  href="#"
+  onClick={[Function]}
+>
+  test
+</a>
+`;

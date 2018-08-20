@@ -7,7 +7,7 @@ const floatingActionButtonConfig: Partial<M.FloatingActionButtonOptions> = {
 
 interface ITranslationButtonProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class TranslationButton extends React.Component<ITranslationButtonProps> {
+export class TranslationButton extends React.Component<ITranslationButtonProps> {
   public componentDidMount() {
     const elems = document.querySelectorAll('.fixed-action-btn');
     M.FloatingActionButton.init(elems, floatingActionButtonConfig);

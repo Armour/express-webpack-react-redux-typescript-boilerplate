@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrismCodes component 1`] = `
+<pre
+  className="language-tsx"
+>
+  <code
+    className="col s12 language-tsx"
+  >
+    
+&lt;div&gt;
+  &lt;div className='white'&gt;
+    &lt;h1 className='page-title'&gt;{t('title')}&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div className='parallax-container'&gt;
+    &lt;div className='parallax'&gt;
+      &lt;img className='parallax-img' src={require('./assets/images/parallax1.jpg')} alt='parallax-img' /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div className='section white'&gt;
+    &lt;div className='row container'&gt;
+      &lt;h2 className={styles['parallax-header']}&gt;Parallax&lt;/h2&gt;
+      &lt;p className='grey-text text-darken-3'&gt;{t('parallax-description')}&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div className='row container'&gt;
+      &lt;h4 className='light'&gt;Parallax Demo Code&lt;/h4&gt;
+      &lt;PrismCodes language='language-tsx'&gt;
+        {PARALLAX_CODE}
+      &lt;/PrismCodes&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div className='parallax-container'&gt;
+    &lt;div className='parallax'&gt;
+      &lt;img className='parallax-img' src={require('./assets/images/parallax2.jpg')} alt='parallax-img' /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+  </code>
+</pre>
+`;

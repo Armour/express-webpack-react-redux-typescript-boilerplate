@@ -16,7 +16,7 @@ interface ITodoInputProps extends ITodoInputDispatchProps, InjectedI18nProps, In
 
 let input: HTMLInputElement;
 
-class TodoInput extends React.Component<ITodoInputProps> {
+export class TodoInput extends React.Component<ITodoInputProps> {
   constructor(props: ITodoInputProps) {
     super(props);
     this.loadI18ns();
@@ -24,11 +24,9 @@ class TodoInput extends React.Component<ITodoInputProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'TodoInput', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'TodoInput', i18ns[key]);
+    });
   }
 
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {

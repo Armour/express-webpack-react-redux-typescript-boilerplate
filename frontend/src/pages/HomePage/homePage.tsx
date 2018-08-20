@@ -10,7 +10,7 @@ const styles = require('./homePage.scss');
 
 interface IHomeProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class HomePage extends React.Component<IHomeProps> {
+export class HomePage extends React.Component<IHomeProps> {
   constructor(props: IHomeProps) {
     super(props);
     this.loadI18ns();
@@ -18,11 +18,9 @@ class HomePage extends React.Component<IHomeProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'HomePage', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'HomePage', i18ns[key]);
+    });
   }
 
   public componentDidMount() {

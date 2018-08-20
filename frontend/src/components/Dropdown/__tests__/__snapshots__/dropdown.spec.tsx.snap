@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should renders correctly 1`] = `
+<div>
+  <ul
+    className="dropdown-content"
+    id="id"
+  >
+    <li>
+      <a
+        href="/dropdown"
+        onClick={[Function]}
+      >
+        dropdown
+      </a>
+    </li>
+  </ul>
+  ,
+</div>
+`;

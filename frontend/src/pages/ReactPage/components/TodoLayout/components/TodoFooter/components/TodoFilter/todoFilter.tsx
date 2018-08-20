@@ -19,7 +19,7 @@ interface ITodoFilterDispatchProps {
 
 interface ITodoFilterProps extends ITodoFilterStateProps, ITodoFilterDispatchProps { }
 
-class TodoFilter extends React.Component<ITodoFilterProps> {
+export class TodoFilter extends React.Component<ITodoFilterProps> {
   public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     this.props.setVisibilityFilter();

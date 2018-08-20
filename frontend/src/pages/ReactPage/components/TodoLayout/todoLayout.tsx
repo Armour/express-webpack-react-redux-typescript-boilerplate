@@ -10,7 +10,7 @@ const styles = require('./todoLayout.scss');
 
 interface ITodoLayoutProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class TodoLayout extends React.Component<ITodoLayoutProps> {
+export class TodoLayout extends React.Component<ITodoLayoutProps> {
   constructor(props: ITodoLayoutProps) {
     super(props);
     this.loadI18ns();
@@ -18,11 +18,9 @@ class TodoLayout extends React.Component<ITodoLayoutProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'TodoLayout', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'TodoLayout', i18ns[key]);
+    });
   }
 
   public render() {

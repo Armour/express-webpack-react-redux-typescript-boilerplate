@@ -6,7 +6,7 @@ import i18ns from './i18n';
 
 interface ITodoFooterProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class TodoFooter extends React.Component<ITodoFooterProps> {
+export class TodoFooter extends React.Component<ITodoFooterProps> {
   constructor(props: ITodoFooterProps) {
     super(props);
     this.loadI18ns();
@@ -14,11 +14,9 @@ class TodoFooter extends React.Component<ITodoFooterProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'TodoFooter', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'TodoFooter', i18ns[key]);
+    });
   }
 
   public render() {

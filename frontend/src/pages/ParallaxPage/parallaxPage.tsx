@@ -8,7 +8,7 @@ const styles = require('./parallaxPage.scss');
 
 interface IParallaxPageProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class ParallaxPage extends React.Component<IParallaxPageProps> {
+export class ParallaxPage extends React.Component<IParallaxPageProps> {
   constructor(props: IParallaxPageProps) {
     super(props);
     this.loadI18ns();
@@ -16,11 +16,9 @@ class ParallaxPage extends React.Component<IParallaxPageProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'ParallaxPage', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'ParallaxPage', i18ns[key]);
+    });
   }
 
   public componentDidMount() {
@@ -47,7 +45,7 @@ class ParallaxPage extends React.Component<IParallaxPageProps> {
           </div>
           <div className='row container'>
             <h4 className='light'>Parallax Demo Code</h4>
-            <PrismCodes language='language-markup'>
+            <PrismCodes language='language-tsx'>
               {PARALLAX_CODE}
             </PrismCodes>
           </div>

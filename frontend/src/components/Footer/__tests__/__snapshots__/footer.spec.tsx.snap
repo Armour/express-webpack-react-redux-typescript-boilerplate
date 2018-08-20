@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should renders correctly 1`] = `
+<footer
+  className="page-footer"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col l6 s12"
+      >
+        <h5
+          className="white-text"
+        >
+          footer-title
+        </h5>
+        <p
+          className="grey-text text-lighten-4"
+        >
+          footer-content
+        </p>
+      </div>
+      <div
+        className="col l3 offset-l3 s12"
+      >
+        <h5
+          className="white-text"
+        >
+          links
+        </h5>
+        <ul>
+          <li>
+            <a
+              className="grey-text text-lighten-3"
+              href="#"
+            >
+              link-1
+            </a>
+          </li>
+          <li>
+            <a
+              className="grey-text text-lighten-3"
+              href="#"
+            >
+              link-2
+            </a>
+          </li>
+          <li>
+            <a
+              className="grey-text text-lighten-3"
+              href="#"
+            >
+              link-3
+            </a>
+          </li>
+          <li>
+            <a
+              className="grey-text text-lighten-3"
+              href="#"
+            >
+              link-4
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer-copyright"
+  >
+    <div
+      className="container"
+    >
+      © 2017 Copyright 
+      <a
+        className="grey-text text-lighten-4"
+        href="https://github.com/Armour"
+      >
+        Armour
+      </a>
+      <a
+        className="grey-text text-lighten-4 right"
+        href="#"
+      >
+        more-links
+      </a>
+    </div>
+  </div>
+</footer>
+`;

@@ -16,7 +16,7 @@ export const PARALLAX_CODE = `
     </div>
     <div className='row container'>
       <h4 className='light'>Parallax Demo Code</h4>
-      <PrismCodes language='language-markup'>
+      <PrismCodes language='language-tsx'>
         {PARALLAX_CODE}
       </PrismCodes>
     </div>

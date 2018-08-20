@@ -21,7 +21,7 @@ interface ITodoListDispatchProps {
 
 interface ITodoListProps extends ITodoListStateProps, ITodoListDispatchProps { }
 
-class TodoList extends React.Component<ITodoListProps> {
+export class TodoList extends React.Component<ITodoListProps> {
   public onClick = (id: string) => {
     return () => {
       this.props.toggleTodo(id);

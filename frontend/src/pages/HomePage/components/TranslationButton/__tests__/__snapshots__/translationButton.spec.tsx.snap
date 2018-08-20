@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TranslationButton should renders correctly 1`] = `
+<div
+  className="fixed-action-btn vertical"
+>
+  <a
+    className="btn-floating btn-large red"
+  >
+    <i
+      className="large material-icons"
+    >
+      translate
+    </i>
+  </a>
+  <ul>
+    <li>
+      <a
+        className="btn-floating red"
+        onClick={[Function]}
+      >
+        en
+      </a>
+    </li>
+    <li>
+      <a
+        className="btn-floating green"
+        onClick={[Function]}
+      >
+        zh
+      </a>
+    </li>
+    <li>
+      <a
+        className="btn-floating yellow darken-1"
+        onClick={[Function]}
+      >
+        jp
+      </a>
+    </li>
+  </ul>
+</div>
+`;

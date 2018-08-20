@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReactPage should renders correctly 1`] = `
+<div>
+  <div
+    className="react-container"
+  >
+    <h1
+      className="page-title"
+    >
+      title
+    </h1>
+    <TodoLayout />
+    <FetchNote />
+  </div>
+</div>
+`;

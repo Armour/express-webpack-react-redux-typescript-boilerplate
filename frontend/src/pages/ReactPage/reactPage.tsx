@@ -7,7 +7,7 @@ import i18ns from './i18n';
 
 interface IReactPageProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class ReactPage extends React.Component<IReactPageProps> {
+export class ReactPage extends React.Component<IReactPageProps> {
   constructor(props: IReactPageProps) {
     super(props);
     this.loadI18ns();
@@ -15,11 +15,9 @@ class ReactPage extends React.Component<IReactPageProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'ReactPage', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'ReactPage', i18ns[key]);
+    });
   }
 
   public render() {

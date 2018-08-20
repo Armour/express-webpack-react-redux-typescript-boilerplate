@@ -22,7 +22,7 @@ const toastConfig: Partial<M.ToastOptions> = {
 
 interface ICarouselProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class Carousel extends React.Component<ICarouselProps> {
+export class Carousel extends React.Component<ICarouselProps> {
   public timer: number = 0;
 
   constructor(props: ICarouselProps) {
@@ -32,11 +32,9 @@ class Carousel extends React.Component<ICarouselProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'Carousel', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'Carousel', i18ns[key]);
+    });
   }
 
   public componentDidMount() {

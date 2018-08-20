@@ -13,7 +13,7 @@ const dropdownConfig: Partial<M.DropdownOptions> = {
   coverTrigger: false,
 };
 
-class Dropdown extends React.Component<IDropdownProps> {
+export class Dropdown extends React.Component<IDropdownProps> {
   constructor(props: IDropdownProps) {
     super(props);
     this.loadI18ns();
@@ -21,11 +21,9 @@ class Dropdown extends React.Component<IDropdownProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'Dropdown', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'Dropdown', i18ns[key]);
+    });
   }
 
   public componentDidMount() {

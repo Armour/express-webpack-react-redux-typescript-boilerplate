@@ -5,7 +5,7 @@ import i18ns from './i18n';
 
 interface IFooterProps extends InjectedI18nProps, InjectedTranslateProps { }
 
-class Footer extends React.Component<IFooterProps> {
+export class Footer extends React.Component<IFooterProps> {
   constructor(props: IFooterProps) {
     super(props);
     this.loadI18ns();
@@ -13,11 +13,9 @@ class Footer extends React.Component<IFooterProps> {
 
   public loadI18ns() {
     const { i18n } = this.props;
-    for (const key in i18ns) {
-      if (i18ns.hasOwnProperty(key)) {
-        i18n.addResourceBundle(key, 'Footer', i18ns[key]);
-      }
-    }
+    Object.keys(i18ns).forEach((key) => {
+      i18n.addResourceBundle(key, 'Footer', i18ns[key]);
+    });
   }
 
   public render() {

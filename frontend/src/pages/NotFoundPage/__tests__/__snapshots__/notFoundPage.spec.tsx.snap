@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage should renders correctly 1`] = `
+<div>
+  <h1
+    className="page-title"
+  >
+    title
+  </h1>
+  <img
+    alt="not-found-img"
+    className="not-found-img"
+    height="550px"
+    src={
+      Object {
+        "default": "test-file-stub",
+      }
+    }
+    width="750px"
+  />
+</div>
+`;

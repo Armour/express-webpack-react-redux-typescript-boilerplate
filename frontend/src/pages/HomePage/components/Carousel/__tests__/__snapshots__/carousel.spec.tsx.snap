@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel should renders correctly 1`] = `
+<div
+  className="carousel carousel-slider center z-depth-3"
+  data-indicators="true"
+>
+  <div
+    className="carousel-fixed-item center"
+  >
+    <a
+      className="btn tooltipped waves-effect white grey-text text-darken-2"
+      onClick={[Function]}
+      role="button"
+    >
+      focus-button-text
+    </a>
+  </div>
+  <a
+    className="carousel-item green white-text"
+    href="#one!"
+  >
+    <h2>
+      first-panel-title
+    </h2>
+    <p>
+      first-panel-description
+    </p>
+  </a>
+  <a
+    className="carousel-item amber white-text"
+    href="#two!"
+  >
+    <h2>
+      second-panel-title
+    </h2>
+    <p>
+      second-panel-description
+    </p>
+  </a>
+  <a
+    className="carousel-item red white-text"
+    href="#three!"
+  >
+    <h2>
+      third-panel-title
+    </h2>
+    <p>
+      third-panel-description
+    </p>
+  </a>
+  <a
+    className="carousel-item purple white-text"
+    href="#four!"
+  >
+    <h2>
+      fourth-panel-title
+    </h2>
+    <p>
+      fourth-panel-description
+    </p>
+  </a>
+</div>
+`;

@@ -10,5 +10,34 @@
         "react-hot-loader/babel"
       ]
     }
-  }
+  },
+  "plugins": [
+    [
+      "prismjs",
+      {
+        "languages": [
+          "javascript",
+          "css",
+          "markup",
+          "cpp",
+          "bash",
+          "docker",
+          "go",
+          "json",
+          "markdown",
+          "python",
+          "jsx",
+          "tsx",
+          "scss",
+          "typescript"
+        ],
+        "plugins": [
+          "autolinker",
+          "command-line"
+        ],
+        "theme": "default",
+        "css": true
+      }
+    ]
+  ]
 }

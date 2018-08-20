@@ -18,7 +18,7 @@
     "serve": "cross-env NODE_ENV=production nodemon --exec babel-node backend/server.js",
     "profile": "yarn clean && yarn dll && cross-env NODE_ENV=production webpack --config webpack.config.profile.babel.js",
     "eslint": "eslint -f codeframe \"**/*.js\"",
-    "tslint": "tslint -t codeFrame \"**/*.tsx\" \"**/*.d.ts\" -e \"node_modules/**\"",
+    "tslint": "tslint -t codeFrame \"**/*.tsx\" \"**/*.d.ts\" -e \"node_modules/**\" -e \"**/__tests__/**\"",
     "stylelint": "stylelint \"**/*.css **/*.sass **/*.scss\"",
     "lint": "yarn eslint && yarn tslint && yarn stylelint",
     "test": "jest --no-cache --coverage",
@@ -54,6 +54,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-prismjs": "^1.0.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -121,6 +122,7 @@
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
+    "@types/react-test-renderer": "^16.0.2",
     "commitlint": "^7.0.0",
     "commitlint-config-armour": "^1.2.1",
     "coveralls": "^3.0.2",
@@ -131,7 +133,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "husky": "1.0.0-rc.13",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
+    "react-test-renderer": "^16.4.2",
     "stylelint": "^9.4.0",
     "stylelint-config-standard": "^18.2.0",
     "ts-jest": "^23.1.3",
@@ -153,18 +157,20 @@
     ]
   },
   "jest": {
-    "testEnvironment": "node",
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
-    "testRegex": "(/tests/.*|\\.(test|spec))\\.(js|jsx|ts|tsx)$",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(js|jsx|ts|tsx)$",
     "testPathIgnorePatterns": [
       "node_modules"
     ],
     "coveragePathIgnorePatterns": [
-      "node_modules",
-      "tests"
+      "node_modules"
     ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.tsx",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    },
     "moduleDirectories": [
       "node_modules",
       "frontend/src",

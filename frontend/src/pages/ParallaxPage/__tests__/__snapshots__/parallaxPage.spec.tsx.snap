@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ParallaxPage should renders correctly 1`] = `
+<div>
+  <div
+    className="white"
+  >
+    <h1
+      className="page-title"
+    >
+      title
+    </h1>
+  </div>
+  <div
+    className="parallax-container"
+  >
+    <div
+      className="parallax"
+    >
+      <img
+        alt="parallax-img"
+        className="parallax-img"
+        src={
+          Object {
+            "default": "test-file-stub",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    className="section white"
+  >
+    <div
+      className="row container"
+    >
+      <h2
+        className="parallax-header"
+      >
+        Parallax
+      </h2>
+      <p
+        className="grey-text text-darken-3"
+      >
+        parallax-description
+      </p>
+    </div>
+    <div
+      className="row container"
+    >
+      <h4
+        className="light"
+      >
+        Parallax Demo Code
+      </h4>
+      <PrismCodes
+        language="language-tsx"
+      />
+    </div>
+  </div>
+  <div
+    className="parallax-container"
+  >
+    <div
+      className="parallax"
+    >
+      <img
+        alt="parallax-img"
+        className="parallax-img"
+        src={
+          Object {
+            "default": "test-file-stub",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
