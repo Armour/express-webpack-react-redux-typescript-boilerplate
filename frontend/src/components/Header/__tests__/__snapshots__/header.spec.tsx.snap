@@ -11,6 +11,7 @@ exports[`Header should renders correctly 1`] = `
           className="container"
         >
           <a
+            className="brand-logo"
             href="/"
             onClick={[Function]}
           >
@@ -58,6 +59,11 @@ exports[`Header should renders correctly 1`] = `
                 href="#"
               >
                 dropdown
+                <i
+                  className="material-icons right"
+                >
+                  arrow_drop_down
+                </i>
               </a>
             </li>
             <li
@@ -105,6 +111,11 @@ exports[`Header should renders correctly 1`] = `
           href="#"
         >
           dropdown
+          <i
+            className="material-icons right"
+          >
+            arrow_drop_down
+          </i>
         </a>
       </li>
       <li
