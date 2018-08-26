@@ -1,7 +1,6 @@
 import path from 'path';
 import merge from 'webpack-merge';
 
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import OfflinePlugin from 'offline-plugin';
 
 import BaseWebpackConfig from './webpack.config.base.babel';
@@ -27,18 +26,6 @@ export default merge(BaseWebpackConfig, {
 
   // A list of used webpack plugins
   plugins: [
-    // Copy static files to build dir
-    new CopyWebpackPlugin([
-      {
-        from: 'frontend/public/*',
-        to: '[name].[ext]',
-        ignore: [
-          'favicon.ico',
-          'index.ejs',
-          'logo.png',
-        ],
-      },
-    ]),
     // It's always better if OfflinePlugin is the last plugin added
     new OfflinePlugin(),
   ],

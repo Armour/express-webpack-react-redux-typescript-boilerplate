@@ -6,11 +6,11 @@ import postcssImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
 
 import AddAssetHtmlPlugin from 'add-asset-html-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
-import WebpackPwaManifest from 'webpack-pwa-manifest';
 
 const ReactManifest = './frontend/dist/dll/react_manifest.json';
 const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
@@ -134,44 +134,21 @@ export default {
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
-      favicon: path.resolve(__dirname, 'frontend/public/favicon.ico'),
       template: path.resolve(__dirname, 'frontend/public/index.ejs'),
-    }),
-    // Add Progressive Web Application manifest
-    new WebpackPwaManifest({
-      name: 'Boilerplate',
-      short_name: 'Boilerplate',
-      start_url: '.',
-      background_color: '#2196f3',
-      theme_color: '#2196f3',
-      orientation: 'portrait',
-      display: 'standalone',
-      ios: true,
-      icons: [
-        {
-          src: path.resolve(__dirname, 'frontend/public/logo.png'),
-          sizes: [120, 152, 167, 180],
-          destination: path.join('icons', 'ios'),
-          ios: true, // Generate apple touch icons
-        },
-        {
-          src: path.resolve(__dirname, 'frontend/public/logo.png'),
-          sizes: 1024,
-          destination: path.join('icons', 'ios'),
-          ios: 'startup', // Generate apple touch startup image
-        },
-        {
-          src: path.resolve(__dirname, 'frontend/public/logo.png'),
-          sizes: [36, 48, 72, 96, 144, 192, 512],
-          destination: path.join('icons', 'android'), // Generate android icons
-        },
-      ],
     }),
     // Add dll reference files to html
     new AddAssetHtmlPlugin({
       filepath: path.resolve(__dirname, 'frontend/dist/dll/*_dll.js'),
       includeSourcemap: false,
     }),
+    // Copy static files to build dir
+    new CopyWebpackPlugin([
+      {
+        from: 'frontend/public/**/*',
+        to: '[name].[ext]',
+        ignore: ['index.ejs'],
+      },
+    ]),
   ],
 
   // Change how modules are resolved

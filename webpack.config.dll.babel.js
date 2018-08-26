@@ -25,7 +25,6 @@ const materializeVendors = [
   'materialize-css',
 ];
 
-// Base config
 const config = {
   // Get mode from NODE_ENV
   mode: process.env.NODE_ENV,
@@ -60,6 +59,11 @@ const config = {
       name: '[name]_dll',
     }),
   ],
+
+  // Turn off performance hints (assets size limit)
+  performance: {
+    hints: false,
+  },
 };
 
 export default config;

@@ -1,7 +1,16 @@
+@import 'sass/variables';
+
 .not-found-img {
   display: block;
   margin: auto;
   padding: 60px;
   max-width: 90%;
   object-fit: cover;
+}
+
+@media only screen and (max-width: $small-screen) {
+  .not-found-img {
+    height: 360px;
+    max-width: 100%;
+  }
 }

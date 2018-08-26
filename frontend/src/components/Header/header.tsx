@@ -53,14 +53,14 @@ export class Header extends React.Component<IHeaderProps> {
         <nav>
           <div className='nav-wrapper'>
             <div className='container'>
-              <Link to='/'><img className={styles.logo} alt='logo' src={require('./assets/images/logo.png')}/></Link>
+              <Link className='brand-logo' to='/'><img className={styles.logo} alt='logo' src={require('./assets/images/logo.png')}/></Link>
               <a href='#' data-target='nav-mobile' className='sidenav-trigger'>
                 <i className='material-icons'>menu</i>
               </a>
               <ul id='nav-desktop' className='right hide-on-med-and-down'>
                 <li className={this.checkActive(['react'])} key='react'><Link to='/react'>{t('react')}</Link></li>
                 <li className={this.checkActive(dropdownList)} key='materialize'>
-                  <a className='dropdown-button' href='#' data-target='header-dropdown-desktop'>{t('dropdown')}</a>
+                  <a className='dropdown-button' href='#' data-target='header-dropdown-desktop'>{t('dropdown')}<i className='material-icons right'>arrow_drop_down</i></a>
                 </li>
                 <li className={this.checkActive(['404'])} key='404'><Link to='/404'>{t('notfound')}</Link></li>
                 <Dropdown id='header-dropdown-desktop' dropdownLists={dropdownList} />
@@ -71,7 +71,7 @@ export class Header extends React.Component<IHeaderProps> {
         <ul id='nav-mobile' className='sidenav'>
           <li className={this.checkActive(['react'])} key='react'><Link to='/react'>{t('react')}</Link></li>
           <li className={this.checkActive(dropdownList)} key='materialize'>
-            <a className='dropdown-button' href='#' data-target='header-dropdown-mobile'>{t('dropdown')}</a>
+            <a className='dropdown-button' href='#' data-target='header-dropdown-mobile'>{t('dropdown')}<i className='material-icons right'>arrow_drop_down</i></a>
           </li>
           <li className={this.checkActive(['404'])} key='404'><Link to='/404'>{t('notfound')}</Link></li>
           <Dropdown id='header-dropdown-mobile' dropdownLists={dropdownList} />

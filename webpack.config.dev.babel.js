@@ -39,5 +39,5 @@ export default merge(BaseWebpackConfig, {
 
   // Source map mode
   // https://webpack.js.org/configuration/devtool
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval-source-map',
 });
