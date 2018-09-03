@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@types/i18next": "^8.4.4",
+    "@types/i18next": "^8.4.5",
     "@types/i18next-browser-languagedetector": "^2.0.1",
     "@types/materialize-css": "^1.0.4",
     "@types/prismjs": "^1.9.0",
