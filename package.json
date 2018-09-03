@@ -123,7 +123,7 @@
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "@types/react-test-renderer": "^16.0.2",
-    "commitlint": "^7.0.0",
+    "commitlint": "^7.1.1",
     "commitlint-config-armour": "^1.2.1",
     "coveralls": "^3.0.2",
     "eslint": "^5.4.0",
