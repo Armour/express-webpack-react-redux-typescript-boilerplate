@@ -270,9 +270,9 @@
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/i18next-browser-languagedetector/-/i18next-browser-languagedetector-2.0.1.tgz#35490253884b15311c54108697d5a7147a75df95"
 
-"@types/i18next@*", "@types/i18next@^8.4.4":
-  version "8.4.4"
-  resolved "https://registry.yarnpkg.com/@types/i18next/-/i18next-8.4.4.tgz#76591ab5974b65910e44b8860202d4f544f39b9d"
+"@types/i18next@*", "@types/i18next@^8.4.5":
+  version "8.4.5"
+  resolved "https://registry.yarnpkg.com/@types/i18next/-/i18next-8.4.5.tgz#d6c0cb594258815219c70006e9f5cd65ad6d797f"
 
 "@types/jest@^23.3.1":
   version "23.3.1"
