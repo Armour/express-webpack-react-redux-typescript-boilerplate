@@ -111,7 +111,7 @@
     "style-loader": "^0.22.1",
     "trash-cli": "^1.4.0",
     "ts-loader": "^4.5.0",
-    "typescript": "^3.0.1",
+    "typescript": "^3.0.3",
     "url-loader": "^1.1.1",
     "uuid": "^3.3.2",
     "webpack": "^4.17.1",
