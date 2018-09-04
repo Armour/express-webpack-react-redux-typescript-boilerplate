@@ -1,8 +1,7 @@
 {
   "presets": [
-    "env",
-    "react",
-    "stage-0"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
   "env": {
     "development": {
@@ -38,6 +37,7 @@
         "theme": "default",
         "css": true
       }
-    ]
+    ],
+    "@babel/plugin-syntax-dynamic-import"
   ]
 }
