@@ -9,7 +9,7 @@ jobs:
   build:
     working_directory: ~
     docker:
-      - image: circleci/node:10.7.0
+      - image: circleci/node:10
     steps:
       - checkout
       - run:
@@ -19,7 +19,7 @@ jobs:
           name: Install Docker client
           command: |
             set -x
-            VER="18.06.0-ce"
+            VER="18.06.1-ce"
             curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
             tar -xz -C /tmp -f /tmp/docker-$VER.tgz
             sudo cp -r /tmp/docker/* /usr/bin
