@@ -6,7 +6,7 @@
   "orientation": "portrait",
   "background_color": "#2196f3",
   "theme_color": "#2196f3",
-  "description": "Full-stack boilerplate that using express with webpack, react and typescirpt!",
+  "description": "Full-stack boilerplate that using express with webpack, react and typescript!",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
