@@ -5,8 +5,10 @@ services:
     image: cguo/express-webpack-react-redux-typescript-boilerplate
     build: # ignored when deploying a stack in swarm mode or kubernetes
       context: .
+      args:
+        - PORT=${PORT}
     ports:
-      - "3003:3003"
+      - "${PORT}:${PORT}"
     depends_on: # ignored when deploying a stack in swarm mode or kubernetes
       - postgres
       - redis
@@ -22,9 +24,9 @@ services:
       - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/1-schema.sql
       - ./backend/sql/data.sql:/docker-entrypoint-initdb.d/2-data.sql
     environment:
-      - POSTGRES_DB=docker
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     restart: always # ignored when deploying a stack in swarm mode or kubernetes

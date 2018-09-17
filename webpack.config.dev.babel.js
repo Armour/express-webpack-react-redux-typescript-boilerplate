@@ -23,11 +23,11 @@ export default merge(BaseWebpackConfig, {
 
   devServer: {
     // Port number for webpack dev server
-    port: 3004,
+    port: process.env.PORT_WEBPACK_DEV_SERVER || 3004,
     // Add proxy for api call
     proxy: {
       '/api/v1': {
-        target: 'http://localhost:3003/',
+        target: `http://localhost:${process.env.PORT || 3003}/`,
         secure: false,
       },
     },

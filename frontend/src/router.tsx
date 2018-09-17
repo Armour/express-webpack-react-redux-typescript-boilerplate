@@ -13,22 +13,42 @@ import ParallaxPageLoader from 'pages/ParallaxPage/components/ContentLoader';
 import ReactPageLoader from 'pages/ReactPage/components/ContentLoader';
 
 const HomePage = Loadable({
-  loader: () => import(/* webpackChunkName: "home-page" */ './pages/HomePage'),
+  loader: () => import(
+    /*
+      webpackChunkName: "home-page",
+      webpackPreload: true
+    */
+    './pages/HomePage'),
   loading: HomePageLoader,
 });
 
 const NotFoundPage = Loadable({
-  loader: () => import(/* webpackChunkName: "not-found-page" */ './pages/NotFoundPage'),
+  loader: () => import(
+    /*
+      webpackChunkName: "not-found-page",
+      webpackPrefetch: true
+    */
+    './pages/NotFoundPage'),
   loading: NotFoundPageLoader,
 });
 
 const ParallaxPage = Loadable({
-  loader: () => import(/* webpackChunkName: "parallax-page" */ './pages/ParallaxPage'),
+  loader: () => import(
+    /*
+      webpackChunkName: "parallax-page",
+      webpackPrefetch: true
+    */
+    './pages/ParallaxPage'),
   loading: ParallaxPageLoader,
 });
 
 const ReactPage = Loadable({
-  loader: () => import(/* webpackChunkName: "react-page" */ './pages/ReactPage'),
+  loader: () => import(
+    /*
+      webpackChunkName: "react-page",
+      webpackPrefetch: true
+    */
+    './pages/ReactPage'),
   loading: ReactPageLoader,
 });
 

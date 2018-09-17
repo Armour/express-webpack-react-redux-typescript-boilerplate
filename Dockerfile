@@ -1,5 +1,7 @@
 FROM node:alpine
 
+ARG PORT=${PORT}
+
 WORKDIR /usr/src/app
 COPY . /usr/src/app/
 
@@ -7,6 +9,6 @@ RUN apk add --no-cache --update make gcc g++ libc-dev libpng-dev automake autoco
 RUN yarn install
 RUN yarn build
 
-EXPOSE 3003
+EXPOSE ${PORT}
 
 CMD ["yarn", "serve"]
