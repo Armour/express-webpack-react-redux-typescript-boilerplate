@@ -133,7 +133,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "1.0.0-rc.13",
+    "husky": "1.0.0-rc.14",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.5.0",
     "react-test-renderer": "^16.5.0",
