@@ -96,7 +96,7 @@
     "progress-bar-webpack-plugin": "^1.11.0",
     "react": "^16.5.0",
     "react-content-loader": "^3.1.2",
-    "react-dom": "^16.5.0",
+    "react-dom": "^16.5.1",
     "react-hot-loader": "^4.3.6",
     "react-i18next": "^7.12.0",
     "react-loadable": "^5.5.0",
