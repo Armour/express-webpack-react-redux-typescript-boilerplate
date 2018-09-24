@@ -139,7 +139,7 @@
     "husky": "1.0.0-rc.14",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
-    "react-test-renderer": "^16.5.1",
+    "react-test-renderer": "^16.5.2",
     "stylelint": "^9.5.0",
     "stylelint-config-standard": "^18.2.0",
     "ts-jest": "^23.1.4",
