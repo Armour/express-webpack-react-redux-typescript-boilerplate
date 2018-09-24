@@ -81,7 +81,7 @@
     "i18next": "^11.9.0",
     "i18next-browser-languagedetector": "^2.2.3",
     "image-webpack-loader": "^4.3.1",
-    "immutable": "4.0.0-rc.9",
+    "immutable": "4.0.0-rc.10",
     "materialize-css": "1.0.0",
     "mini-css-extract-plugin": "^0.4.2",
     "morgan": "^1.9.1",
