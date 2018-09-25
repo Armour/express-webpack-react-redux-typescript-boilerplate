@@ -8,11 +8,11 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "es2015",
+      "es2015"
     ],
     "jsx": "react",
-    "allowSyntheticDefaultImports": true, // FIXME: workaround for immutable.js
-    "keyofStringsOnly": true, // FIXME: workaround for immutable.js
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "noEmitOnError": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,

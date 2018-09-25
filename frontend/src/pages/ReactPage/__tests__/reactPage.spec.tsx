@@ -1,14 +1,11 @@
-import * as React from 'react';
-import * as TestRenderer from 'react-test-renderer';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
 
+import { i18nMock, tMock } from 'utils/mocks';
 import { ReactPage } from '../reactPage';
 
-jest.mock('../components/FetchNote', () => ({ default: 'FetchNote' }));
-jest.mock('../components/TodoLayout', () => ({ default: 'TodoLayout' }));
-const tMock = (k: string) => k;
-const i18nMock: any = {
-  addResourceBundle: () => { return; },
-};
+jest.mock('../components/FetchNote', () => 'FetchNote');
+jest.mock('../components/TodoLayout', () => 'TodoLayout');
 
 describe('ReactPage', () => {
   it('should renders correctly', () => {

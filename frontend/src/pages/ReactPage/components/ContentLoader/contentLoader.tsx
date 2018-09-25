@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import ContentLoader, { ContentLoaderProps } from 'react-content-loader';
 
 const styles = require('./contentLoader.scss');

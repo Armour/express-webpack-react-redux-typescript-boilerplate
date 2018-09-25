@@ -8,6 +8,8 @@ exports[`Todo should renders correctly 1`] = `
 >
   <div
     className="truncate todo-incompleted"
-  />
+  >
+    text
+  </div>
 </a>
 `;

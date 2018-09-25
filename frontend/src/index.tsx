@@ -1,7 +1,7 @@
 import { createBrowserHistory } from 'history';
-import * as OfflinePluginRuntime from 'offline-plugin/runtime';
-import * as React from 'react';
-import * as ReactDom from 'react-dom';
+import OfflinePluginRuntime from 'offline-plugin/runtime';
+import React from 'react';
+import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import App from 'App';

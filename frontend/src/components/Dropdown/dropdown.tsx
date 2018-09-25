@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 import { Link } from 'react-router-dom';
 

@@ -1,9 +1,8 @@
-import * as React from 'react';
-import * as TestRenderer from 'react-test-renderer';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
 
+import { dispatchMock } from 'utils/mocks';
 import { TodoFilter } from '../todoFilter';
-
-const dispatchMock = () => { return; };
 
 describe('TodoFilter', () => {
   it('should renders correctly', () => {

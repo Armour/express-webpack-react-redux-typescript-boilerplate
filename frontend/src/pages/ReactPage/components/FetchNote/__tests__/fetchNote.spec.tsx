@@ -1,15 +1,10 @@
 import { List } from 'immutable';
 import 'materialize-css';
-import * as React from 'react';
-import * as TestRenderer from 'react-test-renderer';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
 
+import { dispatchMock, i18nMock, tMock } from 'utils/mocks';
 import { FetchNote } from '../fetchNote';
-
-const tMock = (k: string) => k;
-const i18nMock: any = {
-  addResourceBundle: () => { return; },
-};
-const dispatchMock = () => { return; };
 
 describe('FetchNote', () => {
   it('should renders correctly', () => {

@@ -1,13 +1,11 @@
-import * as React from 'react';
-import * as renderer from 'react-test-renderer';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
 import { PARALLAX_CODE } from '../constants/prismCodes';
 import PrismCodes from '../prismCodes';
 
 jest.mock('prismjs', () => ({
-  default: {
-    highlightAll: () => { return; },
-  },
+  highlightAll: () => { return; },
 }));
 
 test('PrismCodes component', () => {

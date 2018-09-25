@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { ITodo } from 'services/todos/types';
 

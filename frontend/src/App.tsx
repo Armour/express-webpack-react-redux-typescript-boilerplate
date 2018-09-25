@@ -1,6 +1,6 @@
 import { ConnectedRouter } from 'connected-react-router';
 import { History } from 'history';
-import * as React from 'react';
+import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { Store } from 'redux';

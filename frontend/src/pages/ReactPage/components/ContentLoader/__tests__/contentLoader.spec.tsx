@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as ShallowRenderer from 'react-test-renderer/shallow';
+import React from 'react';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 import ContentLoader from '../contentLoader';
 

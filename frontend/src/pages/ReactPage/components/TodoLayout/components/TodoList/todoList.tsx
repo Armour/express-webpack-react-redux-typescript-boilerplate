@@ -1,5 +1,5 @@
 import { List } from 'immutable';
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 

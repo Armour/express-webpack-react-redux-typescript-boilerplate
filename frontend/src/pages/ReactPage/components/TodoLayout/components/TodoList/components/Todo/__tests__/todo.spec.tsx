@@ -1,15 +1,18 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import { i18nMock, tMock } from 'utils/mocks';
-import { TodoFooter } from '../todoFooter';
+import { dispatchMock } from 'utils/mocks';
+import Todo from '../todo';
 
-jest.mock('../components/TodoFilter', () => 'TodoFilter');
-
-describe('TodoFooter', () => {
+describe('Todo', () => {
   it('should renders correctly', () => {
+    const todo = {
+      id: 'id',
+      completed: false,
+      text: 'text',
+    };
     const renderer = TestRenderer.create(
-      <TodoFooter t={tMock} i18n={i18nMock} />,
+      <Todo {...todo} onClick={dispatchMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

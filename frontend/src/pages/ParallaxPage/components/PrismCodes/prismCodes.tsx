@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-import Prism from 'prismjs';
+import { highlightAll } from 'prismjs';
 import 'prismjs/themes/prism.css';
 import './prismCodes.scss';
 
@@ -10,7 +10,7 @@ interface IPrismCodesProps {
 
 export default class PrismCodes extends React.Component<IPrismCodesProps> {
   public componentDidMount() {
-    Prism.highlightAll();
+    highlightAll();
   }
 
   public render() {

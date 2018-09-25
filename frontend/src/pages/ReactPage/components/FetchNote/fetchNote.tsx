@@ -1,5 +1,5 @@
 import { List } from 'immutable';
-import * as React from 'react';
+import React from 'react';
 import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';

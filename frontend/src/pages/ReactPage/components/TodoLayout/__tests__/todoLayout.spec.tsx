@@ -1,15 +1,12 @@
-import * as React from 'react';
-import * as TestRenderer from 'react-test-renderer';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
 
+import { i18nMock, tMock } from 'utils/mocks';
 import { TodoLayout } from '../todoLayout';
 
-jest.mock('../components/TodoFooter', () => ({ default: 'TodoFooter' }));
-jest.mock('../components/TodoInput', () => ({ default: 'TodoInput' }));
-jest.mock('../components/TodoList', () => ({ default: 'TodoList' }));
-const tMock = (k: string) => k;
-const i18nMock: any = {
-  addResourceBundle: () => { return; },
-};
+jest.mock('../components/TodoFooter', () => 'TodoFooter');
+jest.mock('../components/TodoInput', () => 'TodoInput');
+jest.mock('../components/TodoList', () => 'TodoList');
 
 describe('TodoLayout', () => {
   it('should renders correctly', () => {

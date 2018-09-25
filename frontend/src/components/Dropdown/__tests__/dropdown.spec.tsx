@@ -1,14 +1,10 @@
 import 'materialize-css';
-import * as React from 'react';
+import React from 'react';
 import { MemoryRouter } from 'react-router';
-import * as TestRenderer from 'react-test-renderer';
+import TestRenderer from 'react-test-renderer';
 
+import { i18nMock, tMock } from 'utils/mocks';
 import { Dropdown } from '../dropdown';
-
-const tMock = (k: string) => k;
-const i18nMock: any = {
-  addResourceBundle: () => { return; },
-};
 
 describe('Dropdown', () => {
   it('should renders correctly', () => {

@@ -1,14 +1,11 @@
 import 'materialize-css';
-import * as React from 'react';
-import * as TestRenderer from 'react-test-renderer';
+import React from 'react';
+import TestRenderer from 'react-test-renderer';
 
+import { i18nMock, tMock } from 'utils/mocks';
 import { ParallaxPage } from '../parallaxPage';
 
-jest.mock('../components/PrismCodes', () => ({ default: 'PrismCodes' }));
-const tMock = (k: string) => k;
-const i18nMock: any = {
-  addResourceBundle: () => { return; },
-};
+jest.mock('../components/PrismCodes', () => 'PrismCodes');
 
 describe('ParallaxPage', () => {
   it('should renders correctly', () => {
