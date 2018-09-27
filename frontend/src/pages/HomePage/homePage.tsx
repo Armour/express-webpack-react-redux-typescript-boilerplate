@@ -30,7 +30,7 @@ export class HomePage extends React.Component<IHomeProps> {
       let top = rect.top;
       // Make sure element is not hidden (display: none) or disconnected
       if (rect.width || rect.height || target!.getClientRects().length) {
-        top += window.pageYOffset - target!.ownerDocument.documentElement.clientTop;
+        top += window.pageYOffset - target!.ownerDocument!.documentElement!.clientTop;
       }
       const bottom = top + elem.parentElement!.getBoundingClientRect().height - rect.height;
       M.Pushpin.init(elem, {
