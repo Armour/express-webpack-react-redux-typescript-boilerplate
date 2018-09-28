@@ -36,14 +36,19 @@ export default {
         test: /\.tsx?$/,
         use: [
           { loader: 'babel-loader' },
-          // Use those two flags to speed up babel compilation
-          // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
           {
             loader: 'awesome-typescript-loader',
             options: {
+              silent: true,
+              // Use those two flags to speed up babel compilation
+              // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
               useBabel: true,
               useCache: true,
-              silent: true,
+              // Workaround for at-loader not respecting "exclude" property
+              // https://github.com/s-panferov/awesome-typescript-loader/issues/492
+              reportFiles: [
+                'frontend/src/**/*.{ts,tsx}',
+              ],
             },
           },
           // Alternatively, we can use ts-loader

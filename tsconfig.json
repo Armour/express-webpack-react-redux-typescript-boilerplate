@@ -8,7 +8,7 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "es2015"
+      "es6"
     ],
     "jsx": "react",
     "allowSyntheticDefaultImports": true,

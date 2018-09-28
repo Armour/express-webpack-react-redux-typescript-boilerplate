@@ -1,9 +1,10 @@
 import React from 'react';
-import ContentLoader, { ContentLoaderProps } from 'react-content-loader';
+import ContentLoader from 'react-content-loader';
+import { LoadingComponentProps } from 'react-loadable';
 
 const styles = require('./contentLoader.scss');
 
-export default (props: ContentLoaderProps) => (
+export default (_: LoadingComponentProps) => (
   <div className={styles.contentLoader}>
     <ContentLoader
       height={500}
@@ -11,7 +12,6 @@ export default (props: ContentLoaderProps) => (
       speed={2}
       primaryColor='#f3f3f3'
       secondaryColor='#ecebeb'
-      {...props}
     >
       <rect x='160' y='12' rx='4' ry='4' width='80' height='15.6468' />
       <rect x='0' y='41.05' rx='4' ry='4' width='399.5904' height='112.7321' />
