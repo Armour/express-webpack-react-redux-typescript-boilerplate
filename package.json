@@ -96,7 +96,7 @@
     "prismjs": "^1.15.0",
     "progress-bar-webpack-plugin": "^1.11.0",
     "react": "^16.5.2",
-    "react-content-loader": "^3.1.2",
+    "react-content-loader": "^3.2.0",
     "react-dom": "^16.5.2",
     "react-hot-loader": "^4.3.11",
     "react-i18next": "^7.13.0",
