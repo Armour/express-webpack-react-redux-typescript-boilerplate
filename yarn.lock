@@ -6480,16 +6480,16 @@ ignore@^4.0.0, ignore@^4.0.6:
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-4.0.6.tgz#750e3db5862087b4737ebac8207ffd1ef27b25fc"
   integrity sha512-cyFDKrqc/YdcWFniJhzI42+AzS+gNwmUzOSFcRCQYwySuBBBy/KjuxWLZ/FHEH6Moq1NizMOBWyTcv8O4OZIMg==
 
-image-webpack-loader@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.yarnpkg.com/image-webpack-loader/-/image-webpack-loader-4.3.1.tgz#71b15714c509faaadd3effbdcc072ba2787b2957"
-  integrity sha512-Qk4gAuN0+aRJsIK2tRvEPR7ZVQ8MWVSt5N4R7FXpkEST9eehclhfZbPGUXdnBfPNzuB6N/h9DluUR4B/TFxPpw==
+image-webpack-loader@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/image-webpack-loader/-/image-webpack-loader-4.4.0.tgz#6ad64fb71b3774405d6000d2996caa991ea3976a"
+  integrity sha512-j+ye74k0/OvYL64Z2IH7mknoqb2+6ndOhiqzd6SKqoxJ1NSHd5f4y6L29Rznvng1OKCYCodqoS8UEhvzpQDo/w==
   dependencies:
     imagemin "^5.3.1"
     imagemin-gifsicle "^5.2.0"
     imagemin-mozjpeg "^7.0.0"
     imagemin-optipng "^5.2.1"
-    imagemin-pngquant "^5.1.0"
+    imagemin-pngquant "^6.0.0"
     imagemin-svgo "^6.0.0"
     imagemin-webp "^4.1.0"
     loader-utils "^1.1.0"
@@ -6522,15 +6522,15 @@ imagemin-optipng@^5.2.1:
     is-png "^1.0.0"
     optipng-bin "^3.0.0"
 
-imagemin-pngquant@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-5.1.0.tgz#b9eb563d9e6a3876f6248be0061ba1b0ef269c07"
-  integrity sha512-RtIUPbp8/HYX5EKY6p/L1NLKnkxNj37I92IFNsrptzBVql8FqBgPra9DO/eUgE4EWx+zq6ih4a/Y9YhF3pNM5A==
+imagemin-pngquant@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/imagemin-pngquant/-/imagemin-pngquant-6.0.0.tgz#7c0c956338fa9a3a535deb63973c1c894519cc78"
+  integrity sha512-lZ87Y7u0UaJuhtQZ2wkKyxsFeNTEv1C5xxoHN7jFD89rKpiC/Qu2cIYGAOypOsxqAxWlsHaoz0hJlFFdCnG6Zg==
   dependencies:
     execa "^0.10.0"
     is-png "^1.0.0"
     is-stream "^1.1.0"
-    pngquant-bin "^4.0.0"
+    pngquant-bin "^5.0.0"
 
 imagemin-svgo@^6.0.0:
   version "6.0.0"
@@ -9938,10 +9938,10 @@ pngjs@^3.0.0:
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.3.3.tgz#85173703bde3edac8998757b96e5821d0966a21b"
   integrity sha512-1n3Z4p3IOxArEs1VRXnZ/RXdfEniAUS9jb68g58FIXMNkPJeZd+Qh4Uq7/e0LVxAQGos1eIUrqrt4FpjdnEd+Q==
 
-pngquant-bin@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-4.0.0.tgz#468adf7036f50fae09c9c264ef62b6d10c02f5c2"
-  integrity sha512-jhjMp87bvaUeQOfNaPhSKx3tLCEwRaAycgDpIhMflgFr2+vYhw4ZrcK06eQeYg4OprXPanFljXLl5VuuAP2IHw==
+pngquant-bin@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/pngquant-bin/-/pngquant-bin-5.0.0.tgz#91df99c15b0492cb30b001746a10a67d3202509e"
+  integrity sha512-oJ9Kcmm5oSFkgvYB32bopBN0F6lw0OBnVY36IpkIteBLKt9s8EswiOzAsbSVZ79I8zrvoP/i8IcQPZxsORCOfg==
   dependencies:
     bin-build "^3.0.0"
     bin-wrapper "^3.0.0"
