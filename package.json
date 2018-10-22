@@ -122,7 +122,7 @@
   },
   "devDependencies": {
     "@babel/node": "^7.0.0",
-    "@types/jest": "^23.3.5",
+    "@types/jest": "^23.3.7",
     "@types/react-test-renderer": "^16.0.3",
     "babel-core": "^7.0.0-bridge.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
