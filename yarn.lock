@@ -1116,10 +1116,10 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-i18next@^7.8.2":
-  version "7.8.2"
-  resolved "https://registry.yarnpkg.com/@types/react-i18next/-/react-i18next-7.8.2.tgz#a388e3a2b97da361761000cdcd23b9a621f81472"
-  integrity sha512-axbJJ7N3I7RsZSmQiM2tbLWTYCtfIszSr+KW0CJYMd6G8yiQEMG62NSBOk2xIuyZbncSwM67LO5maLN1WvOLnw==
+"@types/react-i18next@^7.8.3":
+  version "7.8.3"
+  resolved "https://registry.yarnpkg.com/@types/react-i18next/-/react-i18next-7.8.3.tgz#ba1820c91923c7f2b2abf6755d4372e503821c4b"
+  integrity sha512-VPopxbHXz/1Sjl+ljXQQchf6FHXaYLaH0a6TH6KnGOQGD4LzNbUVlofK26S30OIYfYibm8r/sAb2KeTst+AwTQ==
   dependencies:
     "@types/i18next" "*"
     "@types/react" "*"
