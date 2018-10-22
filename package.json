@@ -65,7 +65,7 @@
     "connect-redis": "^3.4.0",
     "connected-react-router": "^4.5.0",
     "cookie-parser": "^1.4.3",
-    "copy-webpack-plugin": "^4.5.3",
+    "copy-webpack-plugin": "^4.5.4",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.4",
