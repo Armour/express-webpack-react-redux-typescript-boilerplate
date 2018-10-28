@@ -1,12 +1,10 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import i18ns from './i18n';
 
-interface IFooterProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class Footer extends React.Component<IFooterProps> {
-  constructor(props: IFooterProps) {
+export class Footer extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -50,4 +48,4 @@ export class Footer extends React.Component<IFooterProps> {
   }
 }
 
-export default translate('Footer')(Footer);
+export default withNamespaces('Footer')(Footer);

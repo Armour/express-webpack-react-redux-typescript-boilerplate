@@ -1,13 +1,11 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 const floatingActionButtonConfig: Partial<M.FloatingActionButtonOptions> = {
   direction: 'top',
 };
 
-interface ITranslationButtonProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class TranslationButton extends React.Component<ITranslationButtonProps> {
+export class TranslationButton extends React.Component<Ii18nProps> {
   public componentDidMount() {
     const elems = document.querySelectorAll('.fixed-action-btn');
     M.FloatingActionButton.init(elems, floatingActionButtonConfig);
@@ -36,4 +34,4 @@ export class TranslationButton extends React.Component<ITranslationButtonProps> 
   }
 }
 
-export default translate('TranslationButton')(TranslationButton);
+export default withNamespaces('TranslationButton')(TranslationButton);

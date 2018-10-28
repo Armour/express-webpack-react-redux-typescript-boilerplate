@@ -1,13 +1,11 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import TodoFilter from './components/TodoFilter';
 import i18ns from './i18n';
 
-interface ITodoFooterProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class TodoFooter extends React.Component<ITodoFooterProps> {
-  constructor(props: ITodoFooterProps) {
+export class TodoFooter extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -37,4 +35,4 @@ export class TodoFooter extends React.Component<ITodoFooterProps> {
   }
 }
 
-export default translate('TodoFooter')(TodoFooter);
+export default withNamespaces('TodoFooter')(TodoFooter);

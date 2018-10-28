@@ -8,7 +8,7 @@ import { TranslationButton } from '../translationButton';
 describe('TranslationButton', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <TranslationButton t={tMock} i18n={i18nMock} />,
+      <TranslationButton t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

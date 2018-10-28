@@ -1,5 +1,5 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import i18ns from './i18n';
 
@@ -12,14 +12,12 @@ const notFoundImageList = [
   '404.jpg',
 ];
 
-interface INotFoundPageProps extends InjectedI18nProps, InjectedTranslateProps { }
-
 interface INotFoundPageState {
   imageId: number;
 }
 
-export class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundPageState> {
-  constructor(props: INotFoundPageProps) {
+export class NotFoundPage extends React.Component<Ii18nProps, INotFoundPageState> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
     this.state = { imageId: this.getRandomInt(0, notFoundImageList.length) };
@@ -49,4 +47,4 @@ export class NotFoundPage extends React.Component<INotFoundPageProps, INotFoundP
   }
 }
 
-export default translate('NotFoundPage')(NotFoundPage);
+export default withNamespaces('NotFoundPage')(NotFoundPage);

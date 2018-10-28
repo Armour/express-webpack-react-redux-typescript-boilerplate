@@ -11,7 +11,7 @@ jest.mock('../components/TodoList', () => 'TodoList');
 describe('TodoLayout', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <TodoLayout t={tMock} i18n={i18nMock} />,
+      <TodoLayout t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

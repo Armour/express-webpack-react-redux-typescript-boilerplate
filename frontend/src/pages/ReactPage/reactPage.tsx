@@ -1,14 +1,12 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import FetchNote from './components/FetchNote';
 import TodoLayout from './components/TodoLayout';
 import i18ns from './i18n';
 
-interface IReactPageProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class ReactPage extends React.Component<IReactPageProps> {
-  constructor(props: IReactPageProps) {
+export class ReactPage extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -34,4 +32,4 @@ export class ReactPage extends React.Component<IReactPageProps> {
   }
 }
 
-export default translate('ReactPage')(ReactPage);
+export default withNamespaces('ReactPage')(ReactPage);

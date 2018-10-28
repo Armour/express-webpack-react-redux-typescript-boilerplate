@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
@@ -27,7 +27,7 @@ interface IFetchNoteDispatchProps {
   removeNote(id: number): void;
 }
 
-interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps, InjectedI18nProps,  InjectedTranslateProps { }
+interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps, Ii18nProps { }
 
 export class FetchNote extends React.Component<IFetchNoteProps> {
   constructor(props: IFetchNoteProps) {
@@ -104,4 +104,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): IFetchNoteDispatchPr
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(translate('FetchNote')(FetchNote));
+)(withNamespaces('FetchNote')(FetchNote));

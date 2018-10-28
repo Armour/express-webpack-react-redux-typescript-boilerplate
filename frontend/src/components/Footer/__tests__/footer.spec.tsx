@@ -7,7 +7,7 @@ import { Footer } from '../footer';
 describe('Footer', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <Footer t={tMock} i18n={i18nMock} />,
+      <Footer t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

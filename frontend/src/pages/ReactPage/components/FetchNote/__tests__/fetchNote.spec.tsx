@@ -19,6 +19,7 @@ describe('FetchNote', () => {
         editNote={dispatchMock}
         removeNote={dispatchMock}
         t={tMock}
+        tReady={true}
         i18n={i18nMock}
       />,
     );

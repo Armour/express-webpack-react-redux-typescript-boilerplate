@@ -11,7 +11,7 @@ describe('Dropdown', () => {
     const renderer = TestRenderer.create(
       <MemoryRouter>
         <div>
-          <Dropdown id='id' dropdownLists={['dropdown']} t={tMock} i18n={i18nMock} />,
+          <Dropdown id='id' dropdownLists={['dropdown']} t={tMock} tReady={true} i18n={i18nMock} />,
         </div>
       </MemoryRouter>,
     );

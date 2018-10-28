@@ -1,11 +1,11 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import i18ns from './i18n';
 
 const styles = require('./pushpin.scss');
 
-interface IPushpinProps extends InjectedI18nProps, InjectedTranslateProps {
+interface IPushpinProps extends Ii18nProps {
   color: string;
   depth: string;
 }
@@ -43,4 +43,4 @@ export class Pushpin extends React.Component<IPushpinProps> {
   }
 }
 
-export default translate('Pushpin')(Pushpin);
+export default withNamespaces('Pushpin')(Pushpin);

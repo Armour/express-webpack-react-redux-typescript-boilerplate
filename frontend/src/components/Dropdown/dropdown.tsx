@@ -1,10 +1,10 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import i18ns from './i18n';
 
-interface IDropdownProps extends InjectedI18nProps, InjectedTranslateProps {
+interface IDropdownProps extends Ii18nProps {
   id: string;
   dropdownLists: string[];
 }
@@ -44,4 +44,4 @@ export class Dropdown extends React.Component<IDropdownProps> {
   }
 }
 
-export default translate('Dropdown')(Dropdown);
+export default withNamespaces('Dropdown')(Dropdown);

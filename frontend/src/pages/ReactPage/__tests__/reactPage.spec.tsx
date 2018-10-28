@@ -10,7 +10,7 @@ jest.mock('../components/TodoLayout', () => 'TodoLayout');
 describe('ReactPage', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <ReactPage t={tMock} i18n={i18nMock} />,
+      <ReactPage t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

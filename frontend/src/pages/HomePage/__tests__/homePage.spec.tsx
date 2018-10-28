@@ -12,7 +12,7 @@ jest.mock('../components/TranslationButton', () => 'TranslationButton');
 describe('HomePage', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <HomePage t={tMock} i18n={i18nMock} />,
+      <HomePage t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

@@ -7,7 +7,7 @@ import { Pushpin } from '../pushpin';
 describe('Pushpin', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <Pushpin color='red' depth='base' t={tMock} i18n={i18nMock} />,
+      <Pushpin color='red' depth='base' t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
@@ -12,7 +12,7 @@ interface ITodoInputDispatchProps {
   onSubmit(inputValue: string): void;
 }
 
-interface ITodoInputProps extends ITodoInputDispatchProps, InjectedI18nProps, InjectedTranslateProps { }
+interface ITodoInputProps extends ITodoInputDispatchProps, Ii18nProps { }
 
 let input: HTMLInputElement;
 
@@ -68,4 +68,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoInputDispatchPr
 export default connect(
   null,
   mapDispatchToProps,
-)(translate('TodoInput')(TodoInput));
+)(withNamespaces('TodoInput')(TodoInput));

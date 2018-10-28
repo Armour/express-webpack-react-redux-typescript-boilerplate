@@ -8,7 +8,7 @@ import { Carousel } from '../carousel';
 describe('Carousel', () => {
   it('should renders correctly', () => {
     const renderer = TestRenderer.create(
-      <Carousel t={tMock} i18n={i18nMock} />,
+      <Carousel t={tMock} tReady={true} i18n={i18nMock} />,
     );
     expect(renderer).toMatchSnapshot();
     renderer.unmount();

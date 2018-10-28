@@ -1,5 +1,5 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import { CAROUSEL_AUTOPLAY_INTERVAL, TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from './constants/carousel';
 import i18ns from './i18n';
@@ -20,12 +20,10 @@ const toastConfig: Partial<M.ToastOptions> = {
   displayLength: TOAST_DISPLAY_DURATION,
 };
 
-interface ICarouselProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class Carousel extends React.Component<ICarouselProps> {
+export class Carousel extends React.Component<Ii18nProps> {
   public timer: number = 0;
 
-  constructor(props: ICarouselProps) {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -92,4 +90,4 @@ export class Carousel extends React.Component<ICarouselProps> {
   }
 }
 
-export default translate('Carousel')(Carousel);
+export default withNamespaces('Carousel')(Carousel);

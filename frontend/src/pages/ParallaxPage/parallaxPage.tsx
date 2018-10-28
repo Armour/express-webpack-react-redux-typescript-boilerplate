@@ -1,15 +1,13 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import PrismCodes, { PARALLAX_CODE } from './components/PrismCodes';
 import i18ns from './i18n';
 
 const styles = require('./parallaxPage.scss');
 
-interface IParallaxPageProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class ParallaxPage extends React.Component<IParallaxPageProps> {
-  constructor(props: IParallaxPageProps) {
+export class ParallaxPage extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -60,4 +58,4 @@ export class ParallaxPage extends React.Component<IParallaxPageProps> {
   }
 }
 
-export default translate('ParallaxPage')(ParallaxPage);
+export default withNamespaces('ParallaxPage')(ParallaxPage);

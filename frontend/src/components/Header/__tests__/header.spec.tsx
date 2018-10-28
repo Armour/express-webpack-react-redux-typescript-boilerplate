@@ -13,7 +13,7 @@ describe('Header', () => {
     const renderer = TestRenderer.create(
       <MemoryRouter>
         <div>
-          <Header pathname='/parallax' t={tMock} i18n={i18nMock} />,
+          <Header pathname='/parallax' t={tMock} tReady={true} i18n={i18nMock} />,
         </div>
       </MemoryRouter>,
     );

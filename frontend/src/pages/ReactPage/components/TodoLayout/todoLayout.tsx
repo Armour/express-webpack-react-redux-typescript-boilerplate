@@ -1,5 +1,5 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import TodoFooter from './components/TodoFooter';
 import TodoInput from './components/TodoInput';
@@ -8,10 +8,8 @@ import i18ns from './i18n';
 
 const styles = require('./todoLayout.scss');
 
-interface ITodoLayoutProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class TodoLayout extends React.Component<ITodoLayoutProps> {
-  constructor(props: ITodoLayoutProps) {
+export class TodoLayout extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -36,4 +34,4 @@ export class TodoLayout extends React.Component<ITodoLayoutProps> {
   }
 }
 
-export default translate('TodoLayout')(TodoLayout);
+export default withNamespaces('TodoLayout')(TodoLayout);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InjectedI18nProps, InjectedTranslateProps, translate } from 'react-i18next';
+import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
 
 import Carousel from './components/Carousel';
 import Pushpin from './components/Pushpin';
@@ -8,10 +8,8 @@ import i18ns from './i18n';
 
 const styles = require('./homePage.scss');
 
-interface IHomeProps extends InjectedI18nProps, InjectedTranslateProps { }
-
-export class HomePage extends React.Component<IHomeProps> {
-  constructor(props: IHomeProps) {
+export class HomePage extends React.Component<Ii18nProps> {
+  constructor(props: Ii18nProps) {
     super(props);
     this.loadI18ns();
   }
@@ -62,4 +60,4 @@ export class HomePage extends React.Component<IHomeProps> {
   }
 }
 
-export default translate('HomePage')(HomePage);
+export default withNamespaces('HomePage')(HomePage);
