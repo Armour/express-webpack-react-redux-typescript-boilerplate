@@ -25,6 +25,10 @@ const materializeVendors = [
   'materialize-css',
 ];
 
+const i18nextVendors = [
+  'i18next',
+];
+
 const config = {
   // Get mode from NODE_ENV
   mode: process.env.NODE_ENV,
@@ -37,6 +41,7 @@ const config = {
     react: reactVendors,
     immutable: immutableVendors,
     materialize: materializeVendors,
+    i18next: i18nextVendors,
   },
 
   // Affecting the output of the compilation
