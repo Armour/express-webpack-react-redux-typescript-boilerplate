@@ -79,7 +79,7 @@
     "http-status": "^1.2.0",
     "i18next": "^12.0.0",
     "i18next-browser-languagedetector": "^2.2.3",
-    "image-webpack-loader": "^4.4.0",
+    "image-webpack-loader": "^4.5.0",
     "immutable": "4.0.0-rc.12",
     "materialize-css": "1.0.0",
     "mini-css-extract-plugin": "^0.4.4",
