@@ -84,7 +84,7 @@
     "materialize-css": "1.0.0",
     "mini-css-extract-plugin": "^0.4.4",
     "morgan": "^1.9.1",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.10.0",
     "nodemon": "^1.18.5",
     "offline-plugin": "^5.0.5",
     "pg": "^7.6.0",
