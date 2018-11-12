@@ -87,7 +87,7 @@
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.5",
     "offline-plugin": "^5.0.5",
-    "pg": "^7.6.0",
+    "pg": "^7.6.1",
     "postcss": "^7.0.5",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
