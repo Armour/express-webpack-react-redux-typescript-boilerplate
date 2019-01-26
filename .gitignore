@@ -31,7 +31,6 @@ coverage/
 .coveralls.yml
 
 # Misc
-.awcache/
 node_modules/
 dist/
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
 import { setVisibilityFilter } from 'services/todos/actions';
-import { IGlobalState } from 'types/global';
+import { IGlobalStateRecord } from 'types/global';
 
 const styles = require('./todoFilter.scss');
 
@@ -20,7 +20,7 @@ interface ITodoFilterDispatchProps {
 interface ITodoFilterProps extends ITodoFilterStateProps, ITodoFilterDispatchProps { }
 
 export class TodoFilter extends React.Component<ITodoFilterProps> {
-  public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  public onClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     this.props.setVisibilityFilter();
   }
@@ -48,8 +48,8 @@ interface ITodoFilterOwnProps {
   filter: string;
 }
 
-const mapStateToProps = (state: IGlobalState, ownProps: ITodoFilterOwnProps): ITodoFilterStateProps => ({
-  active: ownProps.filter === state.todosState.visibilityFilter,
+const mapStateToProps = (state: IGlobalStateRecord, ownProps: ITodoFilterOwnProps): ITodoFilterStateProps => ({
+  active: ownProps.filter === state.get('todosState').visibilityFilter,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>, ownProps: ITodoFilterOwnProps): ITodoFilterDispatchProps => ({

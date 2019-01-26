@@ -13,7 +13,7 @@ exports[`Carousel should renders correctly 1`] = `
       onClick={[Function]}
       role="button"
     >
-      focus-button-text
+      carousel.focusButtonText
     </a>
   </div>
   <a
@@ -21,10 +21,10 @@ exports[`Carousel should renders correctly 1`] = `
     href="#one!"
   >
     <h2>
-      first-panel-title
+      carousel.firstPanelTitle
     </h2>
     <p>
-      first-panel-description
+      carousel.firstPanelDescription
     </p>
   </a>
   <a
@@ -32,10 +32,10 @@ exports[`Carousel should renders correctly 1`] = `
     href="#two!"
   >
     <h2>
-      second-panel-title
+      carousel.secondPanelTitle
     </h2>
     <p>
-      second-panel-description
+      carousel.secondPanelDescription
     </p>
   </a>
   <a
@@ -43,10 +43,10 @@ exports[`Carousel should renders correctly 1`] = `
     href="#three!"
   >
     <h2>
-      third-panel-title
+      carousel.thirdPanelTitle
     </h2>
     <p>
-      third-panel-description
+      carousel.thirdPanelDescription
     </p>
   </a>
   <a
@@ -54,10 +54,10 @@ exports[`Carousel should renders correctly 1`] = `
     href="#four!"
   >
     <h2>
-      fourth-panel-title
+      carousel.fourthPanelTitle
     </h2>
     <p>
-      fourth-panel-description
+      carousel.fourthPanelDescription
     </p>
   </a>
 </div>

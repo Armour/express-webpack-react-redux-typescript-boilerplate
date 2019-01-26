@@ -3,7 +3,6 @@ import React from 'react';
 import { MemoryRouter } from 'react-router';
 import TestRenderer from 'react-test-renderer';
 
-import { i18nMock, tMock } from 'utils/mocks';
 import { Dropdown } from '../dropdown';
 
 describe('Dropdown', () => {
@@ -11,7 +10,7 @@ describe('Dropdown', () => {
     const renderer = TestRenderer.create(
       <MemoryRouter>
         <div>
-          <Dropdown id='id' dropdownLists={['dropdown']} t={tMock} tReady={true} i18n={i18nMock} />,
+          <Dropdown id='id' dropdownLists={['dropdown']} />,
         </div>
       </MemoryRouter>,
     );

@@ -1,8 +1,7 @@
 import React from 'react';
-import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
+import { NamespacesConsumer } from 'react-i18next';
 
 import { CAROUSEL_AUTOPLAY_INTERVAL, TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from './constants/carousel';
-import i18ns from './i18n';
 
 const tooltipConfig: Partial<M.TooltipOptions> = {
   enterDelay: TOOLTIP_DELAY_TIME,
@@ -20,20 +19,8 @@ const toastConfig: Partial<M.ToastOptions> = {
   displayLength: TOAST_DISPLAY_DURATION,
 };
 
-export class Carousel extends React.Component<Ii18nProps> {
+export class Carousel extends React.Component {
   public timer: number = 0;
-
-  constructor(props: Ii18nProps) {
-    super(props);
-    this.loadI18ns();
-  }
-
-  public loadI18ns() {
-    const { i18n } = this.props;
-    Object.keys(i18ns).forEach((key) => {
-      i18n.addResourceBundle(key, 'Carousel', i18ns[key]);
-    });
-  }
 
   public componentDidMount() {
     const carouselElems = document.querySelectorAll('.carousel.carousel-slider');
@@ -54,40 +41,50 @@ export class Carousel extends React.Component<Ii18nProps> {
     this.timer = window.setTimeout(() => this.autoPlayCarousel(carousels), CAROUSEL_AUTOPLAY_INTERVAL);
   }
 
-  public displayToast = () => {
+  public displayToast = (text: string) => (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    toastConfig.html = text;
     M.toast(toastConfig);
   }
 
-  public render() {
-    const { t } = this.props;
-    toastConfig.html = t('toast-text');
-    tooltipConfig.html = t('tooltip-text');
+  public initTooltip = (text: string) => {
+    tooltipConfig.html = text;
     const tooltipElems = document.querySelectorAll('.tooltipped');
     M.Tooltip.init(tooltipElems, tooltipConfig);
+  }
+
+  public render() {
     return (
-      <div className='carousel carousel-slider center z-depth-3' data-indicators='true'>
-        <div className='carousel-fixed-item center'>
-          <a className='btn tooltipped waves-effect white grey-text text-darken-2' onClick={this.displayToast} role='button'>{t('focus-button-text')}</a>
-        </div>
-        <a className='carousel-item green white-text' href='#one!'>
-          <h2>{t('first-panel-title')}</h2>
-          <p>{t('first-panel-description')}</p>
-        </a>
-        <a className='carousel-item amber white-text' href='#two!'>
-          <h2>{t('second-panel-title')}</h2>
-          <p>{t('second-panel-description')}</p>
-        </a>
-        <a className='carousel-item red white-text' href='#three!'>
-          <h2>{t('third-panel-title')}</h2>
-          <p>{t('third-panel-description')}</p>
-        </a>
-        <a className='carousel-item purple white-text' href='#four!'>
-          <h2>{t('fourth-panel-title')}</h2>
-          <p>{t('fourth-panel-description')}</p>
-        </a>
-      </div>
+      <NamespacesConsumer ns='homePage'>
+        {(t) => (
+          this.initTooltip(t('carousel.tooltipText')),
+          <div className='carousel carousel-slider center z-depth-3' data-indicators='true'>
+            <div className='carousel-fixed-item center'>
+              <a className='btn tooltipped waves-effect white grey-text text-darken-2' onClick={this.displayToast(t('carousel.toastText'))} role='button'>
+                {t('carousel.focusButtonText')}
+              </a>
+            </div>
+            <a className='carousel-item green white-text' href='#one!'>
+              <h2>{t('carousel.firstPanelTitle')}</h2>
+              <p>{t('carousel.firstPanelDescription')}</p>
+            </a>
+            <a className='carousel-item amber white-text' href='#two!'>
+              <h2>{t('carousel.secondPanelTitle')}</h2>
+              <p>{t('carousel.secondPanelDescription')}</p>
+            </a>
+            <a className='carousel-item red white-text' href='#three!'>
+              <h2>{t('carousel.thirdPanelTitle')}</h2>
+              <p>{t('carousel.thirdPanelDescription')}</p>
+            </a>
+            <a className='carousel-item purple white-text' href='#four!'>
+              <h2>{t('carousel.fourthPanelTitle')}</h2>
+              <p>{t('carousel.fourthPanelDescription')}</p>
+            </a>
+          </div>
+        )}
+      </NamespacesConsumer>
     );
   }
 }
 
-export default withNamespaces('Carousel')(Carousel);
+export default Carousel;

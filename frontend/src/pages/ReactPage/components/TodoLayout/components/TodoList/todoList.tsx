@@ -5,8 +5,8 @@ import { AnyAction, Dispatch } from 'redux';
 
 import { toggleTodo } from 'services/todos/actions';
 import { VISIBILITY_FILTER_OPTIONS } from 'services/todos/constants';
-import { ITodo, ITodosState } from 'services/todos/types';
-import { IGlobalState } from 'types/global';
+import { ITodo, ITodosStateRecord } from 'services/todos/types';
+import { IGlobalStateRecord } from 'types/global';
 import Todo from './components/Todo';
 
 // Component
@@ -22,10 +22,9 @@ interface ITodoListDispatchProps {
 interface ITodoListProps extends ITodoListStateProps, ITodoListDispatchProps { }
 
 export class TodoList extends React.Component<ITodoListProps> {
-  public onClick = (id: string) => {
-    return () => {
-      this.props.toggleTodo(id);
-    };
+  public onClick = (id: string) => (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    this.props.toggleTodo(id);
   }
 
   public render() {
@@ -46,21 +45,21 @@ export class TodoList extends React.Component<ITodoListProps> {
 
 // Container
 
-const getVisibleTodos = (todosState: ITodosState): List<ITodo> => {
+const getVisibleTodos = (todosState: ITodosStateRecord): List<ITodo> => {
   switch (todosState.visibilityFilter) {
     case VISIBILITY_FILTER_OPTIONS.SHOW_ALL:
       return todosState.todos;
     case VISIBILITY_FILTER_OPTIONS.SHOW_COMPLETED:
-      return todosState.todos.filter((t) => t !== undefined && t.completed).toList();
+      return todosState.todos.filter((t) => t !== undefined && t.completed);
     case VISIBILITY_FILTER_OPTIONS.SHOW_ACTIVE:
-      return todosState.todos.filter((t) => t !== undefined && !t.completed).toList();
+      return todosState.todos.filter((t) => t !== undefined && !t.completed);
     default:
       return todosState.todos;
   }
 };
 
-const mapStateToProps = (state: IGlobalState): ITodoListStateProps => ({
-  todos: getVisibleTodos(state.todosState),
+const mapStateToProps = (state: IGlobalStateRecord): ITodoListStateProps => ({
+  todos: getVisibleTodos(state.get('todosState')),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoListDispatchProps => ({

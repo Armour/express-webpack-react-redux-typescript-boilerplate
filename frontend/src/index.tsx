@@ -4,7 +4,10 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
+import 'i18n';
+
 import App from 'App';
+import { Map } from 'immutable';
 import configureStore from 'store';
 import { isProduction } from 'utils';
 
@@ -16,13 +19,13 @@ if (isProduction) {
 // To keep reducers self-sufficient and reusable, we choose to not set
 // initial state here, and let each reducer to handle the default state
 // https://github.com/reactjs/redux/issues/1189#issuecomment-168025590
-const initialState = {};
+const initialState = Map();
 
 // Create browser history
 const history = createBrowserHistory();
 
 // Configure store
-const store = configureStore(initialState, history);
+const store = configureStore(history, initialState);
 
 // Create render function
 const render = (Component: any) => {

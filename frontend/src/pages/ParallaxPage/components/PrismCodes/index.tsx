@@ -1,2 +1,2 @@
-export {default} from './prismCodes';
+export { default } from './prismCodes';
 export * from './constants/prismCodes';

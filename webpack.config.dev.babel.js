@@ -23,18 +23,20 @@ export default merge(BaseWebpackConfig, {
 
   devServer: {
     // Port number for webpack dev server
-    port: process.env.PORT_WEBPACK_DEV_SERVER || 3004,
-    // Add proxy for api call
+    port: process.env.PORT_WEBPACK_DEV_SERVER,
+    // Proxy for api call
     proxy: {
       '/api/v1': {
-        target: `http://localhost:${process.env.PORT || 3003}/`,
+        target: `http://localhost:${process.env.PORT}/`,
         secure: false,
       },
     },
     // Automatically open page
     open: true,
-    // Served index.html (contains 404 page in react-router) in place of any 404 responses
+    // Serves index.html (contains 404 page in react-router) in place of any 404 responses
     historyApiFallback: true,
+    // Shows a full-screen overlay when there are compiler errors
+    overlay: true,
   },
 
   // Source map mode

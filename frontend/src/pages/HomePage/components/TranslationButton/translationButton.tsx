@@ -1,37 +1,40 @@
+import i18next from 'i18next';
 import React from 'react';
-import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
+import { NamespacesConsumer } from 'react-i18next';
 
 const floatingActionButtonConfig: Partial<M.FloatingActionButtonOptions> = {
   direction: 'top',
 };
 
-export class TranslationButton extends React.Component<Ii18nProps> {
+export class TranslationButton extends React.Component {
   public componentDidMount() {
     const elems = document.querySelectorAll('.fixed-action-btn');
     M.FloatingActionButton.init(elems, floatingActionButtonConfig);
   }
 
-  public changeLanguage = (lng: string) => {
-    return () => {
-      const { i18n } = this.props;
-      i18n.changeLanguage(lng);
-    };
+  public changeLanguage = (i18n: i18next.i18n, lng: string) => (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    i18n.changeLanguage(lng);
   }
 
   public render() {
     return (
-      <div className='fixed-action-btn vertical'>
-        <a className='btn-floating btn-large red'>
-          <i className='large material-icons'>translate</i>
-        </a>
-        <ul>
-          <li><a className='btn-floating red' onClick={this.changeLanguage('en')}>en</a></li>
-          <li><a className='btn-floating green' onClick={this.changeLanguage('zh')}>zh</a></li>
-          <li><a className='btn-floating yellow darken-1' onClick={this.changeLanguage('jp')}>jp</a></li>
-        </ul>
-      </div>
+      <NamespacesConsumer>
+        {(_, {i18n}) => (
+          <div className='fixed-action-btn vertical'>
+            <a className='btn-floating btn-large red'>
+              <i className='large material-icons'>translate</i>
+            </a>
+            <ul>
+              <li><a className='btn-floating red' onClick={this.changeLanguage(i18n, 'en')}>en</a></li>
+              <li><a className='btn-floating green' onClick={this.changeLanguage(i18n, 'zh')}>zh</a></li>
+              <li><a className='btn-floating yellow darken-1' onClick={this.changeLanguage(i18n, 'jp')}>jp</a></li>
+            </ul>
+          </div>
+        )}
+      </NamespacesConsumer>
     );
   }
 }
 
-export default withNamespaces('TranslationButton')(TranslationButton);
+export default TranslationButton;

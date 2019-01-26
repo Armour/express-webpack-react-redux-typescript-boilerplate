@@ -2,16 +2,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "frontend/src",
-    "target": "es5",
+    "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "es6"
-    ],
     "jsx": "react",
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noEmitOnError": true,
     "noImplicitReturns": true,

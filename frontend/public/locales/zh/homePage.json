@@ -1,0 +1,26 @@
+{
+  "title": "首页",
+  "carousel": {
+    "focusButtonText": "看我看我!",
+    "firstPanelTitle": "第一个面板",
+    "secondPanelTitle": "第二个面板",
+    "thirdPanelTitle": "第三个面板",
+    "fourthPanelTitle": "第四个面板",
+    "firstPanelDescription": "这是你的第一个面板，试试左右滑动它！",
+    "secondPanelDescription": "这是你的第二个面板，试试左右滑动它！",
+    "thirdPanelDescription": "这是你的第三个面板，试试左右滑动它！",
+    "fourthPanelDescription": "这是你的第四个面板，试试左右滑动它！",
+    "tooltipText": "戳我! >. <",
+    "toastText": "哇我是一个toast!"
+  },
+  "pushpin": {
+    "green": "绿色",
+    "blue": "蓝色",
+    "orange": "橘色",
+    "red": "红色",
+    "purple": "紫色",
+    "cyan": "青色",
+    "linkOne": "链接 1",
+    "linkTwo": "链接 2"
+  }
+}

@@ -31,8 +31,12 @@ coverage/
 .coveralls.yml
 
 # Misc
-.awcache/
+__mocks__/
+.circleci/
 .github/
 node_modules/
 dist/
+.appveyor.yml
+.*lintrc*
+.*lintignore*
 yarn.lock

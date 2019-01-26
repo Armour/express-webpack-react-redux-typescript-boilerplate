@@ -5,10 +5,12 @@ import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 
 const reactVendors = [
   'connected-react-router',
+  'connected-react-router/immutable',
   'react',
   'react-dom',
   'react-hot-loader',
   'react-i18next',
+  'redux-immutable',
   'react-loadable',
   'react-router-dom',
   'react-redux',
@@ -17,16 +19,20 @@ const reactVendors = [
   'redux-saga',
 ];
 
-const immutableVendors = [
-  'immutable',
-];
-
 const materializeVendors = [
   'materialize-css',
 ];
 
 const i18nextVendors = [
   'i18next',
+  'i18next-xhr-backend',
+  'i18next-browser-languagedetector',
+];
+
+const otherVendors = [
+  'axios',
+  'immutable',
+  'regenerator-runtime',
 ];
 
 const config = {
@@ -39,9 +45,9 @@ const config = {
   // The point or points to enter the application.
   entry: {
     react: reactVendors,
-    immutable: immutableVendors,
     materialize: materializeVendors,
     i18next: i18nextVendors,
+    other: otherVendors,
   },
 
   // Affecting the output of the compilation
@@ -62,6 +68,7 @@ const config = {
     new webpack.DllPlugin({
       path: path.resolve(__dirname, 'frontend/dist/dll/[name]_manifest.json'),
       name: '[name]_dll',
+      format: true,
     }),
   ],
 

@@ -7,17 +7,17 @@ exports[`TodoFooter should renders correctly 1`] = `
   <TodoFilter
     filter="SHOW_ALL"
   >
-    all
+    todoLayout.todoFooter.all
   </TodoFilter>
   <TodoFilter
     filter="SHOW_ACTIVE"
   >
-    active
+    todoLayout.todoFooter.active
   </TodoFilter>
   <TodoFilter
     filter="SHOW_COMPLETED"
   >
-    completed
+    todoLayout.todoFooter.completed
   </TodoFilter>
 </div>
 `;

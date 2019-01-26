@@ -1,0 +1,18 @@
+{
+  "title": "React页面",
+  "fetchNote": {
+    "asyncCalls": "异步函数",
+    "fetchAllNotes": "获取数据库所有笔记"
+  },
+  "todoLayout": {
+    "title": "待办事项",
+    "todoFooter": {
+      "all": "全部",
+      "active": "待办",
+      "completed": "已完成"
+    },
+    "todoInput": {
+      "addTodo": "添加待办事项"
+    }
+  }
+}

@@ -9,25 +9,22 @@ jobs:
   build:
     working_directory: ~
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:11
     steps:
       - checkout
-      - run:
-          name: Install System Dependencies
-          command: sudo apt-get update && sudo apt-get install gcc make libpng12-dev nasm -y
       - run:
           name: Install Docker client
           command: |
             set -x
-            VER="18.06.1-ce"
-            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
-            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            VER="18.09.1"
+            curl -L -o /tmp/docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker.tgz
             sudo cp -r /tmp/docker/* /usr/bin
       - run:
           name: Install Docker Compose
           command: |
             set -x
-            VER="1.22.0"
+            VER="1.23.2"
             curl -L https://github.com/docker/compose/releases/download/$VER/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
             sudo cp /tmp/docker-compose /usr/local/bin/docker-compose
             sudo chmod +x /usr/local/bin/docker-compose

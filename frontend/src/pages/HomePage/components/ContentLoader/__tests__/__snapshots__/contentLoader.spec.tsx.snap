@@ -4,7 +4,7 @@ exports[`ContentLoader should renders correctly 1`] = `
 <div
   className="contentLoader"
 >
-  <ContentLoader
+  <Holder
     height={400}
     primaryColor="#f3f3f3"
     secondaryColor="#ecebeb"
@@ -27,6 +27,6 @@ exports[`ContentLoader should renders correctly 1`] = `
       x="60.5"
       y="35.05"
     />
-  </ContentLoader>
+  </Holder>
 </div>
 `;

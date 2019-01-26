@@ -7,7 +7,7 @@ exports[`TodoLayout should renders correctly 1`] = `
   <span
     className="todo-title"
   >
-    todos
+    title
   </span>
   <TodoInput />
   <TodoList />

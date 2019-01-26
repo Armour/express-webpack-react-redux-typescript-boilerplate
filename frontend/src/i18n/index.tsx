@@ -1,16 +1,24 @@
 import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import detector from 'i18next-browser-languagedetector';
+import backend from 'i18next-xhr-backend';
+import { reactI18nextModule } from 'react-i18next';
 
 import { isProduction } from 'utils';
 
 export default i18n
-  .use(LanguageDetector)
+  .use(detector)
+  .use(backend)
+  .use(reactI18nextModule)
   .init({
+    debug: !isProduction,
+    backend: {
+      loadPath: './locales/{{lng}}/{{ns}}.json',
+    },
     whitelist: ['en', 'zh', 'jp'],
     fallbackLng: 'en',
-    debug: !isProduction,
+    fallbackNS: 'common',
     interpolation: {
-      escapeValue: false, // not needed for react!!
+      escapeValue: false, // not needed for react.
     },
     react: {
       wait: false,

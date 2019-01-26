@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import { List, Record } from 'immutable';
 
 import { ADD_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO } from './constants';
 
@@ -12,6 +12,7 @@ export interface ITodo {
   text: string;
   completed: boolean;
 }
+export interface ITodosStateRecord extends Record<ITodosState>, ITodosState {}
 
 // Todos actions
 export interface IActionAddTodo {
@@ -29,7 +30,7 @@ export interface IActionSetVisibilityFilter {
   filter: string;
 }
 
-export type IActionsTodo =
-  | IActionAddTodo
+export type IActionsTodo
+  = IActionAddTodo
   | IActionToggleTodo
   | IActionSetVisibilityFilter;

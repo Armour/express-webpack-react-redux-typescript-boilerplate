@@ -1,13 +1,12 @@
 import { List } from 'immutable';
 import React from 'react';
-import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
+import { NamespacesConsumer } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
 import { ADD_NOTE_REQUESTED, EDIT_NOTE_REQUESTED, FETCH_ALL_NOTES_REQUESTED, FETCH_NOTE_REQUESTED, REMOVE_NOTE_REQUESTED } from 'services/notes/constants';
 import { INote } from 'services/notes/types';
-import { IGlobalState } from 'types/global';
-import i18ns from './i18n';
+import { IGlobalStateRecord } from 'types/global';
 
 const styles = require('./fetchNote.scss');
 
@@ -27,28 +26,15 @@ interface IFetchNoteDispatchProps {
   removeNote(id: number): void;
 }
 
-interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps, Ii18nProps { }
+interface IFetchNoteProps extends IFetchNoteStateProps, IFetchNoteDispatchProps { }
 
 export class FetchNote extends React.Component<IFetchNoteProps> {
-  constructor(props: IFetchNoteProps) {
-    super(props);
-    this.loadI18ns();
-  }
-
-  public loadI18ns() {
-    const { i18n } = this.props;
-    Object.keys(i18ns).forEach((key) => {
-      i18n.addResourceBundle(key, 'FetchNote', i18ns[key]);
-    });
-  }
-
-  public fetchAllNotes = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  public fetchAllNotes = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     this.props.fetchAllNotes();
   }
 
   public render() {
-    const { t } = this.props;
     const noteList = this.props.notes.map((note) =>
       (
         <li className='collection-item'>
@@ -63,24 +49,30 @@ export class FetchNote extends React.Component<IFetchNoteProps> {
       </div>
     );
     return (
-      <div className={`center-align z-depth-2 ${styles['fetch-note-layout']}`}>
-        <span className={styles['fetch-note-title']}>{t('async-calls')}</span>
-        <div className='fetch-all-notes'>
-          <a className={`btn waves-effect ${styles['fetch-note-filter-btn']}`} onClick={this.fetchAllNotes} role='button'>{t('fetch-all-notes')}</a>
-        </div>
-        {noteList.count() > 0 && noteListCollection}
-        {this.props.error !== '' && errorPanel}
-      </div>
+      <NamespacesConsumer ns='reactPage'>
+        {(t) => (
+          <div className={`center-align z-depth-2 ${styles['fetch-note-layout']}`}>
+            <span className={styles['fetch-note-title']}>{t('fetchNote.asyncCalls')}</span>
+            <div className='fetchAllNotes'>
+              <a className={`btn waves-effect ${styles['fetch-note-filter-btn']}`} onClick={this.fetchAllNotes} role='button'>
+                {t('fetchNote.fetchAllNotes')}
+              </a>
+            </div>
+            {noteList.count() > 0 && noteListCollection}
+            {this.props.error !== '' && errorPanel}
+          </div>
+        )}
+      </NamespacesConsumer>
     );
   }
 }
 
 // Container
 
-const mapStateToProps = (state: IGlobalState): IFetchNoteStateProps => ({
-  notes: state.notesState.notes,
-  loading: state.notesState.loading,
-  error: state.notesState.error,
+const mapStateToProps = (state: IGlobalStateRecord): IFetchNoteStateProps => ({
+    notes: state.get('notesState').notes,
+    loading: state.get('notesState').loading,
+    error: state.get('notesState').error,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): IFetchNoteDispatchProps => ({
@@ -104,4 +96,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): IFetchNoteDispatchPr
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(withNamespaces('FetchNote')(FetchNote));
+)(FetchNote);

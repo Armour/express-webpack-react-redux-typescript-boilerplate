@@ -11,7 +11,7 @@ exports[`Dropdown should renders correctly 1`] = `
         href="/dropdown"
         onClick={[Function]}
       >
-        dropdown
+        dropdown.dropdown
       </a>
     </li>
   </ul>

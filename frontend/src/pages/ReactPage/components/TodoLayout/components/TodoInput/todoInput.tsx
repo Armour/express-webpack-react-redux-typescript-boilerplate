@@ -1,10 +1,9 @@
 import React from 'react';
-import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
+import { NamespacesConsumer } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
 import { addTodo } from 'services/todos/actions';
-import i18ns from './i18n';
 
 // Component
 
@@ -12,23 +11,9 @@ interface ITodoInputDispatchProps {
   onSubmit(inputValue: string): void;
 }
 
-interface ITodoInputProps extends ITodoInputDispatchProps, Ii18nProps { }
-
 let input: HTMLInputElement;
 
-export class TodoInput extends React.Component<ITodoInputProps> {
-  constructor(props: ITodoInputProps) {
-    super(props);
-    this.loadI18ns();
-  }
-
-  public loadI18ns() {
-    const { i18n } = this.props;
-    Object.keys(i18ns).forEach((key) => {
-      i18n.addResourceBundle(key, 'TodoInput', i18ns[key]);
-    });
-  }
-
+export class TodoInput extends React.Component<ITodoInputDispatchProps> {
   public onSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (!input.value.trim()) {
@@ -43,16 +28,19 @@ export class TodoInput extends React.Component<ITodoInputProps> {
   }
 
   public render() {
-    const { t } = this.props;
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <div className='input-field'>
-            <input id='input-add-todo' type='text' ref={this.setInput} />
-            <label>{t('add-todo')}</label>
+      <NamespacesConsumer ns='reactPage'>
+        {(t) => (
+          <div>
+            <form onSubmit={this.onSubmit}>
+              <div className='input-field'>
+                <input id='input-addTodo' type='text' ref={this.setInput} />
+                <label>{t('todoLayout.todoInput.addTodo')}</label>
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+        )}
+      </NamespacesConsumer>
     );
   }
 }
@@ -68,4 +56,4 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>): ITodoInputDispatchPr
 export default connect(
   null,
   mapDispatchToProps,
-)(withNamespaces('TodoInput')(TodoInput));
+)(TodoInput);

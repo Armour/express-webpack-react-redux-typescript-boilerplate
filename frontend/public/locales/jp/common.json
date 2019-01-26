@@ -1,0 +1,20 @@
+{
+  "header": {
+    "react": "React",
+    "dropdown": "ドロップダウンリスト",
+    "notfound": "404"
+  },
+  "footer": {
+    "title": "フッターコンテンツ",
+    "content": "ここでは行と列を使用してフッターのコンテンツを整理できます。",
+    "links": "リンク",
+    "linkOne": "リンク 1",
+    "linkTwo": "リンク 2",
+    "linkThree": "リンク 3",
+    "linkFour": "リンク 4",
+    "moreLinks": "その他のリンク"
+  },
+  "dropdown": {
+    "parallax": "視差"
+  }
+}

@@ -12,7 +12,7 @@ export const PARALLAX_CODE = `
   <div className='section white'>
     <div className='row container'>
       <h2 className={styles['parallax-header']}>Parallax</h2>
-      <p className='grey-text text-darken-3'>{t('parallax-description')}</p>
+      <p className='grey-text text-darken-3'>{t('description')}</p>
     </div>
     <div className='row container'>
       <h4 className='light'>Parallax Demo Code</h4>

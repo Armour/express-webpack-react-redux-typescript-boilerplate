@@ -1,0 +1,20 @@
+{
+  "header": {
+    "react": "React",
+    "dropdown": "下拉列表",
+    "notfound": "404"
+  },
+  "footer": {
+    "title": "页脚内容",
+    "content": "你可以在这里使用行或者列来编辑的页脚内容.",
+    "links": "链接",
+    "linkOne": "链接 1",
+    "linkTwo": "链接 2",
+    "linkThree": "链接 3",
+    "linkFour": "链接 4",
+    "moreLinks": "更多链接"
+  },
+  "dropdown": {
+    "parallax": "视差"
+  }
+}

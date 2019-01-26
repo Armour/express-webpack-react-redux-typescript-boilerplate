@@ -1,0 +1,26 @@
+{
+  "title": "ホームページ",
+  "carousel": {
+    "focusButtonText": "フォーカス!",
+    "firstPanelTitle": "最初のパネル",
+    "secondPanelTitle": "第2のパネル",
+    "thirdPanelTitle": "第3のパネル",
+    "fourthPanelTitle": "第4のパネル",
+    "firstPanelDescription": "これはあなたの最初のパネルです、それをスワイプしよう！",
+    "secondPanelDescription": "これはあなたの第2のパネルです、それをスワイプしよう！",
+    "thirdPanelDescription": "これはあなたの第3のパネルです、それをスワイプしよう！",
+    "fourthPanelDescription": "これはあなたの第4のパネルです、それをスワイプしよう！",
+    "tooltipText": "クリック! >. <",
+    "toastText": "私はトーストです！"
+  },
+  "pushpin": {
+    "green": "緑",
+    "blue": "青",
+    "orange": "橙",
+    "red": "赤",
+    "purple": "紫",
+    "cyan": "シアン",
+    "linkOne": "リンク 1",
+    "linkTwo": "リンク 2"
+  }
+}

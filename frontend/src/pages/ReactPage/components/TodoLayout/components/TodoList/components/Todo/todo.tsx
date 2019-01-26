@@ -5,13 +5,13 @@ import { ITodo } from 'services/todos/types';
 const styles = require('./todo.scss');
 
 interface ITodoProps extends ITodo {
-  onClick(): void;
+  onClick(e: React.MouseEvent<HTMLElement>): void;
 }
 
 export default class Todo extends React.Component<ITodoProps> {
-  public onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  public onClick = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
-    this.props.onClick();
+    this.props.onClick(e);
   }
 
   public render() {

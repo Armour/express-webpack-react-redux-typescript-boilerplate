@@ -9,11 +9,11 @@ exports[`TodoInput should renders correctly 1`] = `
       className="input-field"
     >
       <input
-        id="input-add-todo"
+        id="input-addTodo"
         type="text"
       />
       <label>
-        add-todo
+        todoLayout.todoInput.addTodo
       </label>
     </div>
   </form>

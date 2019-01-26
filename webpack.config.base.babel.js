@@ -15,11 +15,12 @@ import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plu
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 const ReactManifest = './frontend/dist/dll/react_manifest.json';
-const I18nextManifest = './frontend/dist/dll/i18next_manifest.json';
-const ImmutableManifest = './frontend/dist/dll/immutable_manifest.json';
 const MaterializeManifest = './frontend/dist/dll/materialize_manifest.json';
+const I18nextManifest = './frontend/dist/dll/i18next_manifest.json';
+const OtherManifest = './frontend/dist/dll/other_manifest.json';
 const devMode = process.env.NODE_ENV !== 'production';
 
 export default {
@@ -32,28 +33,17 @@ export default {
   // Determine how the different types of modules within a project will be treated
   module: {
     rules: [
-      // Use awesome-typescript-loader and babel-loader for ts(x) files
+      // Use babel-loader for ts(x) files
       {
         test: /\.tsx?$/,
+        exclude: /node_modules/,
         use: [
-          { loader: 'babel-loader' },
           {
-            loader: 'awesome-typescript-loader',
+            loader: 'babel-loader',
             options: {
-              silent: true,
-              // Use those two flags to speed up babel compilation
-              // https://github.com/s-panferov/awesome-typescript-loader#differences-between-ts-loader
-              useBabel: true,
-              useCache: true,
-              // Workaround for at-loader not respecting "exclude" property
-              // https://github.com/s-panferov/awesome-typescript-loader/issues/492
-              reportFiles: [
-                'frontend/src/**/*.{ts,tsx}',
-              ],
+              cacheDirectory: true,
             },
           },
-          // Alternatively, we can use ts-loader
-          // { loader: 'ts-loader' },
         ],
       },
       // Use a list of loaders to load materialize and prism css files
@@ -65,9 +55,10 @@ export default {
             loader: 'css-loader',
             options: {
               sourceMap: !devMode,
+              modules: true,
               importLoaders: 1,
             },
-          }, // TODO: enable sourceMap in devMode without FOUC
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -86,11 +77,10 @@ export default {
             loader: 'css-loader',
             options: {
               sourceMap: !devMode,
-              importLoaders: 2,
               modules: true,
-              localIdentName: '[local]--[hash:base64:8]',
+              importLoaders: 2,
             },
-          }, // TODO: enable sourceMap in devMode without FOUC
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -105,7 +95,7 @@ export default {
       {
         test: /\.(png|jpe?g|gif|svg|webp|tiff)(\?.*)?$/,
         use: [
-          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[ext]' } },
           { loader: 'image-webpack-loader', options: { disable: devMode } },
         ],
       },
@@ -113,14 +103,14 @@ export default {
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         use: [
-          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[ext]' } },
         ],
       },
       // Use url-loader to load audio related files
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         use: [
-          { loader: 'url-loader', options: { limit: 10000, name: '[name].[hash:7].[ext]' } },
+          { loader: 'url-loader', options: { limit: 10000, name: '[name].[ext]' } },
         ],
       },
     ],
@@ -136,9 +126,9 @@ export default {
     new DuplicatePackageCheckerPlugin(),
     // Load pre-build dll reference files
     new webpack.DllReferencePlugin({ manifest: ReactManifest }),
-    new webpack.DllReferencePlugin({ manifest: I18nextManifest }),
-    new webpack.DllReferencePlugin({ manifest: ImmutableManifest }),
     new webpack.DllReferencePlugin({ manifest: MaterializeManifest }),
+    new webpack.DllReferencePlugin({ manifest: I18nextManifest }),
+    new webpack.DllReferencePlugin({ manifest: OtherManifest }),
     // Extract css part from javascript bundle into separated file
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:10].css',
@@ -146,6 +136,8 @@ export default {
     }),
     // Better building progress display
     new ProgressBarWebpackPlugin(),
+    // Runs typescript type checker on a separate process
+    new ForkTsCheckerWebpackPlugin(),
     // Generate html file to dist folder
     new HtmlWebpackPlugin({
       title: 'Boilerplate',
@@ -159,8 +151,7 @@ export default {
     // Copy static files to build dir
     new CopyWebpackPlugin([
       {
-        from: 'frontend/public/**/*',
-        to: '[name].[ext]',
+        from: 'frontend/public',
         ignore: ['index.ejs'],
       },
     ]),

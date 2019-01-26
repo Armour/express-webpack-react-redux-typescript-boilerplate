@@ -3,8 +3,10 @@ import 'materialize-css';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import { dispatchMock, i18nMock, tMock } from 'utils/mocks';
 import { FetchNote } from '../fetchNote';
+
+// Mock dispatch
+const dispatchMock = () => { return; };
 
 describe('FetchNote', () => {
   it('should renders correctly', () => {
@@ -18,9 +20,6 @@ describe('FetchNote', () => {
         addNote={dispatchMock}
         editNote={dispatchMock}
         removeNote={dispatchMock}
-        t={tMock}
-        tReady={true}
-        i18n={i18nMock}
       />,
     );
     expect(renderer).toMatchSnapshot();

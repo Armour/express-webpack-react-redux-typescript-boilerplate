@@ -7,17 +7,17 @@ exports[`FetchNote should renders correctly 1`] = `
   <span
     className="fetch-note-title"
   >
-    async-calls
+    fetchNote.asyncCalls
   </span>
   <div
-    className="fetch-all-notes"
+    className="fetchAllNotes"
   >
     <a
       className="btn waves-effect fetch-note-filter-btn"
       onClick={[Function]}
       role="button"
     >
-      fetch-all-notes
+      fetchNote.fetchAllNotes
     </a>
   </div>
 </div>

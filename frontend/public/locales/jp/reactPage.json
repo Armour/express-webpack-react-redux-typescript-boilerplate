@@ -1,0 +1,18 @@
+{
+  "title": "Reactページ",
+  "fetchNote": {
+    "asyncCalls": "非同期関数",
+    "fetchAllNotes": "DB内のメモを取得する"
+  },
+  "todoLayout": {
+    "title": "todoリスト",
+    "todoFooter": {
+      "all": "全部",
+      "active": "アクティブ",
+      "completed": "完成した"
+    },
+    "todoInput": {
+      "addTodo": "追加する"
+    }
+  }
+}

@@ -36,9 +36,9 @@
 * [x] [react](https://facebook.github.io/react/) - a JavaScript library for building user interfaces
 * [x] [react-hot-loader 4](https://github.com/gaearon/react-hot-loader) - hot module reload!
 * [x] [react-router 4](https://github.com/ReactTraining/react-router) - declarative routing for React
-* [x] [react-redux](https://github.com/reactjs/react-redux) - the official react bindings for [redux 4](https://github.com/reactjs/redux) (a predictable state container for js apps)
+* [x] [react-redux 6](https://github.com/reactjs/react-redux) - the official react bindings for [redux 4](https://github.com/reactjs/redux) (a predictable state container for js apps)
 * [x] [react-saga](https://github.com/redux-saga/redux-saga/) - make redux asynchronous flows easy to read, write and test, the replacement for [redux-thunk](https://github.com/reduxjs/redux-thunk)
-* [x] [connected-react-router](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, the replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+* [x] [connected-react-router 6](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, the replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
 * [x] [react-loadable](https://github.com/jamiebuilds/react-loadable) - better user experience for dynamic loading components
 * [x] [react-i18next](https://github.com/i18next/react-i18next) - internationalization for react done right
 * [x] [immutable.js](https://github.com/facebook/immutable-js/) - persistent Immutable data structures for react redux state management
@@ -106,7 +106,7 @@ On development (with hot reload):
 yarn dev
 ```
 
-On production (with uglify-js and other optimazitions):
+On production (with [terser](https://github.com/terser-js/terser) and other optimazitions):
 
 ```bash
 yarn prod

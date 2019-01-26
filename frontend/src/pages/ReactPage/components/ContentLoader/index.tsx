@@ -1,1 +1,1 @@
-export {default} from './contentLoader';
+export { default } from './contentLoader';

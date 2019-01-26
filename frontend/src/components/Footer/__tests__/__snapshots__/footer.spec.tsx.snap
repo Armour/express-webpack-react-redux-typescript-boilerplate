@@ -16,12 +16,12 @@ exports[`Footer should renders correctly 1`] = `
         <h5
           className="white-text"
         >
-          footer-title
+          footer.title
         </h5>
         <p
           className="grey-text text-lighten-4"
         >
-          footer-content
+          footer.content
         </p>
       </div>
       <div
@@ -30,7 +30,7 @@ exports[`Footer should renders correctly 1`] = `
         <h5
           className="white-text"
         >
-          links
+          footer.links
         </h5>
         <ul>
           <li>
@@ -38,7 +38,7 @@ exports[`Footer should renders correctly 1`] = `
               className="grey-text text-lighten-3"
               href="#"
             >
-              link-1
+              footer.linkOne
             </a>
           </li>
           <li>
@@ -46,7 +46,7 @@ exports[`Footer should renders correctly 1`] = `
               className="grey-text text-lighten-3"
               href="#"
             >
-              link-2
+              footer.linkTwo
             </a>
           </li>
           <li>
@@ -54,7 +54,7 @@ exports[`Footer should renders correctly 1`] = `
               className="grey-text text-lighten-3"
               href="#"
             >
-              link-3
+              footer.linkThree
             </a>
           </li>
           <li>
@@ -62,7 +62,7 @@ exports[`Footer should renders correctly 1`] = `
               className="grey-text text-lighten-3"
               href="#"
             >
-              link-4
+              footer.linkFour
             </a>
           </li>
         </ul>
@@ -86,7 +86,7 @@ exports[`Footer should renders correctly 1`] = `
         className="grey-text text-lighten-4 right"
         href="#"
       >
-        more-links
+        footer.moreLinks
       </a>
     </div>
   </div>

@@ -20,7 +20,7 @@ exports[`PrismCodes component 1`] = `
   &lt;div className='section white'&gt;
     &lt;div className='row container'&gt;
       &lt;h2 className={styles['parallax-header']}&gt;Parallax&lt;/h2&gt;
-      &lt;p className='grey-text text-darken-3'&gt;{t('parallax-description')}&lt;/p&gt;
+      &lt;p className='grey-text text-darken-3'&gt;{t('description')}&lt;/p&gt;
     &lt;/div&gt;
     &lt;div className='row container'&gt;
       &lt;h4 className='light'&gt;Parallax Demo Code&lt;/h4&gt;

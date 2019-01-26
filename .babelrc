@@ -1,16 +1,19 @@
 {
   "presets": [
     "@babel/preset-env",
-    "@babel/preset-react"
+    "@babel/preset-react",
+    "@babel/preset-typescript"
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "react-hot-loader/babel"
-      ]
-    }
-  },
   "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true,
+      }
+    ],
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-runtime",
+    "react-hot-loader/babel",
     [
       "prismjs",
       {
@@ -37,7 +40,6 @@
         "theme": "default",
         "css": true
       }
-    ],
-    "@babel/plugin-syntax-dynamic-import"
+    ]
   ]
 }

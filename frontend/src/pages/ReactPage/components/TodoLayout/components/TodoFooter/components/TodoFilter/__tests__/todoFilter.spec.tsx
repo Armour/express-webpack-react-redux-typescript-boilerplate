@@ -1,8 +1,10 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import { dispatchMock } from 'utils/mocks';
 import { TodoFilter } from '../todoFilter';
+
+// Mock dispatch
+const dispatchMock = () => { return; };
 
 describe('TodoFilter', () => {
   it('should renders correctly', () => {

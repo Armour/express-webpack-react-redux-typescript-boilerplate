@@ -42,7 +42,7 @@ exports[`ParallaxPage should renders correctly 1`] = `
       <p
         className="grey-text text-darken-3"
       >
-        parallax-description
+        description
       </p>
     </div>
     <div

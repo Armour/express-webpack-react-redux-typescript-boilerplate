@@ -5,6 +5,7 @@
   ],
   "rules": {
     "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
     "max-line-length": false,
     "no-console": [
       true,

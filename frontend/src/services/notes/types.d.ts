@@ -1,4 +1,4 @@
-import { List } from 'immutable';
+import { List, Record } from 'immutable';
 
 import { ADD_NOTE_FAILURE, ADD_NOTE_REQUESTED, ADD_NOTE_SUCCESS, EDIT_NOTE_FAILURE, EDIT_NOTE_REQUESTED, EDIT_NOTE_SUCCESS, FETCH_ALL_NOTES_FAILURE, FETCH_ALL_NOTES_REQUESTED, FETCH_ALL_NOTES_SUCCESS, FETCH_NOTE_FAILURE, FETCH_NOTE_REQUESTED, FETCH_NOTE_SUCCESS, REMOVE_NOTE_FAILURE, REMOVE_NOTE_REQUESTED, REMOVE_NOTE_SUCCESS } from './constants';
 
@@ -12,6 +12,7 @@ export interface INote {
   id: number;
   content: string;
 }
+export interface INotesStateRecord extends Record<INotesState>, INotesState {}
 
 // Notes actions
 export interface IActionFetchAllNotesRequested {
@@ -108,8 +109,8 @@ export interface IActionRemoveNoteFailure {
   };
 }
 
-export type IActionsNotes =
-  | IActionFetchAllNotesRequested
+export type IActionsNotes
+  = IActionFetchAllNotesRequested
   | IActionFetchAllNotesSuccess
   | IActionFetchAllNotesFailure
   | IActionFetchNoteRequested

@@ -19,7 +19,7 @@ exports[`Pushpin should renders correctly 1`] = `
           className="brand-logo"
           href="#"
         >
-          red
+          pushpin.red
         </a>
         <ul
           className="right hide-on-med-and-down"
@@ -29,14 +29,14 @@ exports[`Pushpin should renders correctly 1`] = `
             <a
               href="#"
             >
-              link-1
+              pushpin.linkOne
             </a>
           </li>
           <li>
             <a
               href="#"
             >
-              link-2
+              pushpin.linkTwo
             </a>
           </li>
         </ul>

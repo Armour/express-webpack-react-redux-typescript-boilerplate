@@ -1,8 +1,10 @@
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import { dispatchMock } from 'utils/mocks';
 import Todo from '../todo';
+
+// Mock dispatch
+const dispatchMock = () => { return; };
 
 describe('Todo', () => {
   it('should renders correctly', () => {

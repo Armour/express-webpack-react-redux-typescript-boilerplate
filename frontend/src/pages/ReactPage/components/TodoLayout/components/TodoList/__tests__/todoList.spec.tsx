@@ -2,10 +2,12 @@ import { List } from 'immutable';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
 
-import { dispatchMock } from 'utils/mocks';
 import { TodoList } from '../todoList';
 
 jest.mock('../components/Todo', () => 'Todo');
+
+// Mock dispatch
+const dispatchMock = () => { return; };
 
 describe('TodoList', () => {
   it('should renders correctly', () => {

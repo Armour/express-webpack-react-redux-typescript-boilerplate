@@ -1,7 +1,5 @@
 import React from 'react';
-import { withNamespaces, WithNamespaces as Ii18nProps } from 'react-i18next';
-
-import i18ns from './i18n';
+import { NamespacesConsumer } from 'react-i18next';
 
 const styles = require('./notFoundPage.scss');
 
@@ -16,18 +14,10 @@ interface INotFoundPageState {
   imageId: number;
 }
 
-export class NotFoundPage extends React.Component<Ii18nProps, INotFoundPageState> {
-  constructor(props: Ii18nProps) {
+export class NotFoundPage extends React.Component<{}, INotFoundPageState> {
+  constructor(props: {}) {
     super(props);
-    this.loadI18ns();
     this.state = { imageId: this.getRandomInt(0, notFoundImageList.length) };
-  }
-
-  public loadI18ns() {
-    const { i18n } = this.props;
-    Object.keys(i18ns).forEach((key) => {
-      i18n.addResourceBundle(key, 'NotFoundPage', i18ns[key]);
-    });
   }
 
   public getRandomInt = (min: number, max: number) => {
@@ -37,14 +27,17 @@ export class NotFoundPage extends React.Component<Ii18nProps, INotFoundPageState
   }
 
   public render() {
-    const { t } = this.props;
     return (
-      <div>
-        <h1 className='page-title'>{t('title')}</h1>
-        <img className={styles['not-found-img']} src={require('./assets/images/' + notFoundImageList[this.state.imageId])} alt='not-found-img' height='550px' width='750px' />
-      </div>
+      <NamespacesConsumer ns='notFoundPage'>
+        {(t) => (
+          <div>
+            <h1 className='page-title'>{t('title')}</h1>
+            <img className={styles['not-found-img']} src={require('./assets/images/' + notFoundImageList[this.state.imageId])} alt='not-found-img' height='550px' width='750px' />
+          </div>
+        )}
+      </NamespacesConsumer>
     );
   }
 }
 
-export default withNamespaces('NotFoundPage')(NotFoundPage);
+export default NotFoundPage;

@@ -1,0 +1,26 @@
+{
+  "title": "Home Page",
+  "carousel": {
+    "focusButtonText": "Focus me!",
+    "firstPanelTitle": "First Panel",
+    "secondPanelTitle": "Second Panel",
+    "thirdPanelTitle": "Third Panel",
+    "fourthPanelTitle": "Fourth Panel",
+    "firstPanelDescription": "This is your first panel, try to swipe it!",
+    "secondPanelDescription": "This is your second panel, try to swipe it!",
+    "thirdPanelDescription": "This is your third panel, try to swipe it!",
+    "fourthPanelDescription": "This is your fourth panel, try to swipe it!",
+    "tooltipText": "Click me! >. <",
+    "toastText": "I am a toast!"
+  },
+  "pushpin": {
+    "green": "Green",
+    "blue": "Blue",
+    "orange": "Orange",
+    "red": "Red",
+    "purple": "Purple",
+    "cyan": "Cyan",
+    "linkOne": "Link 1",
+    "linkTwo": "Link 2"
+  }
+}
