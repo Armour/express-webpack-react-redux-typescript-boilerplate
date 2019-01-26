@@ -154,6 +154,9 @@
     "tslint-react": "^3.6.0",
     "webpack-dev-server": "^3.1.14"
   },
+  "resolutions": {
+    "**/event-stream": "^4.0.1"
+  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
