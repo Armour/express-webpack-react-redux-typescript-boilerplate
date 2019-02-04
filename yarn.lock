@@ -10292,10 +10292,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-content-loader@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-4.0.0.tgz#29e100eb2eaa082800eea86ed8f80ef9a4b8c474"
-  integrity sha512-Wtoqju+DTscmflFaicu8riVFBAJ4AymI3zqJjgdys/fcl6Q6jl6eWBuwc8m1dIJajGt5VGCMFj2F1HENlg1bEQ==
+react-content-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-4.0.1.tgz#a1e20110d7efecc446fb95d47766d3d792e5ea4c"
+  integrity sha512-qLuPQkaIRaUpAm65vaBQsiF+yfDuX5jTffok7zT0FDDXBn6qI6O8ZYoLtyDdO7Mqpq2pu/6jpzi8cD+rSDiEoQ==
 
 react-dom@^16.7.0:
   version "16.7.0"
