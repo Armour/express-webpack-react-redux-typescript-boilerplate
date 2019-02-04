@@ -10322,10 +10322,10 @@ react-hot-loader@^4.6.3:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-i18next@^9.0.9:
-  version "9.0.9"
-  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-9.0.9.tgz#92afa0c457b200d57a3c76bba7a1d5712384f328"
-  integrity sha512-VQCu2hel5qj+5FlzvOWu+AdoFq1dwTWFSuHZaiCE69GrMi75jYwN9gfJWs+v17btWJPgsxJD1Lj1shRp0M42eA==
+react-i18next@^9.0.10:
+  version "9.0.10"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-9.0.10.tgz#ba596b98e8dd06dbb805cf720147459ad55a3ada"
+  integrity sha512-xpeCWNut7ylQLs3Qqyo7dT13kgZbML1CdftbdnswLCv0RbRT16bRP16ma59iLe1KHIbn92VJo0Q8LSKYoXVNvg==
   dependencies:
     "@babel/runtime" "^7.3.1"
     hoist-non-react-statics "3.2.1"
