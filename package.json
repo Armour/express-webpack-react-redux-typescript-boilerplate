@@ -22,8 +22,7 @@
     "stylelint": "stylelint \"**/*.css **/*.sass **/*.scss\"",
     "lint": "yarn eslint && yarn tslint && yarn stylelint",
     "test": "jest --runInBand --coverage",
-    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-    "deploy": "heroku container:push web"
+    "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "husky": {
     "hooks": {
