@@ -134,9 +134,7 @@ yarn coverage
 
 ## Deployment
 
-```bash
-yarn deploy
-```
+Every push on master branch will trigger [Github Actions](.github/main.workflow) for heroku deployment.
 
 ## Contributing
 
