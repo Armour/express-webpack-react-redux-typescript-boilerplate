@@ -122,13 +122,13 @@
     "uuid": "^3.3.2",
     "webpack": "^4.29.1",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.2.1",
+    "webpack-cli": "^3.2.2",
     "webpack-merge": "^4.2.1",
     "webpack-pwa-manifest": "^4.0.0"
   },
   "devDependencies": {
     "@babel/node": "^7.2.2",
-    "@types/jest": "^23.3.13",
+    "@types/jest": "^24.0.0",
     "@types/react-test-renderer": "^16.0.3",
     "babel-core": "7.0.0-bridge.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
