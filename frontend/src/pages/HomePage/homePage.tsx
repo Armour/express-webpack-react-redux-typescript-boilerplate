@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 import Carousel from './components/Carousel';
 import Pushpin from './components/Pushpin';
@@ -27,7 +27,7 @@ export class HomePage extends React.Component {
 
   public render() {
     return (
-      <NamespacesConsumer ns='homePage'>
+      <Translation ns='homePage'>
         {(t) => (
           <div>
             <div className={styles['home-page-block']}>
@@ -45,7 +45,7 @@ export class HomePage extends React.Component {
             <TranslationButton />
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

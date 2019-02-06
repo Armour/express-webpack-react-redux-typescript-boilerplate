@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
@@ -29,7 +29,7 @@ export class TodoInput extends React.Component<ITodoInputDispatchProps> {
 
   public render() {
     return (
-      <NamespacesConsumer ns='reactPage'>
+      <Translation ns='reactPage'>
         {(t) => (
           <div>
             <form onSubmit={this.onSubmit}>
@@ -40,7 +40,7 @@ export class TodoInput extends React.Component<ITodoInputDispatchProps> {
             </form>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

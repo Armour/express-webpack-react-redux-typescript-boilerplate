@@ -1,12 +1,12 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 import TodoFilter from './components/TodoFilter';
 
 export class TodoFooter extends React.Component {
   public render() {
     return (
-      <NamespacesConsumer ns='reactPage'>
+      <Translation ns='reactPage'>
         {(t) => (
           <div className='todo-footer'>
             <TodoFilter filter='SHOW_ALL'>
@@ -20,7 +20,7 @@ export class TodoFooter extends React.Component {
             </TodoFilter>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 interface IDropdownProps {
@@ -19,7 +19,7 @@ export class Dropdown extends React.Component<IDropdownProps> {
 
   public render() {
     return (
-      <NamespacesConsumer ns='common'>
+      <Translation ns='common'>
         {(t) => (
           <ul id={this.props.id} className='dropdown-content'>
             {this.props.dropdownLists.map((key) =>
@@ -27,7 +27,7 @@ export class Dropdown extends React.Component<IDropdownProps> {
             )}
           </ul>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

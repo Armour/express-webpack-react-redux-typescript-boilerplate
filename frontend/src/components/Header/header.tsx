@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -37,7 +37,7 @@ export class Header extends React.Component<IHeaderStateProps> {
   public render() {
     const dropdownList = ['parallax'];
     return (
-      <NamespacesConsumer ns='common'>
+      <Translation ns='common'>
         {(t) => (
           <div>
             <nav>
@@ -68,7 +68,7 @@ export class Header extends React.Component<IHeaderStateProps> {
             </ul>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

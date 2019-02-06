@@ -1,6 +1,6 @@
 import i18next from 'i18next';
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 const floatingActionButtonConfig: Partial<M.FloatingActionButtonOptions> = {
   direction: 'top',
@@ -19,7 +19,7 @@ export class TranslationButton extends React.Component {
 
   public render() {
     return (
-      <NamespacesConsumer>
+      <Translation>
         {(_, {i18n}) => (
           <div className='fixed-action-btn vertical'>
             <a className='btn-floating btn-large red'>
@@ -32,7 +32,7 @@ export class TranslationButton extends React.Component {
             </ul>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

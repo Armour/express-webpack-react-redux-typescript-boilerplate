@@ -1,6 +1,6 @@
 import { List } from 'immutable';
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { AnyAction, Dispatch } from 'redux';
 
@@ -49,7 +49,7 @@ export class FetchNote extends React.Component<IFetchNoteProps> {
       </div>
     );
     return (
-      <NamespacesConsumer ns='reactPage'>
+      <Translation ns='reactPage'>
         {(t) => (
           <div className={`center-align z-depth-2 ${styles['fetch-note-layout']}`}>
             <span className={styles['fetch-note-title']}>{t('fetchNote.asyncCalls')}</span>
@@ -62,7 +62,7 @@ export class FetchNote extends React.Component<IFetchNoteProps> {
             {this.props.error !== '' && errorPanel}
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

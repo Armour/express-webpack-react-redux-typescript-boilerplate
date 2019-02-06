@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 const styles = require('./pushpin.scss');
 
@@ -11,7 +11,7 @@ interface IPushpinProps {
 export class Pushpin extends React.Component<IPushpinProps> {
   public render() {
     return (
-      <NamespacesConsumer ns='homePage'>
+      <Translation ns='homePage'>
         {(t) => (
           <div id={this.props.color} className={`${styles.pushpin} ${this.props.color} ${this.props.depth}`}>
             <nav className='pushpin-nav pin-top' data-target={'pushpin-' + this.props.color}>
@@ -27,7 +27,7 @@ export class Pushpin extends React.Component<IPushpinProps> {
             </nav>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

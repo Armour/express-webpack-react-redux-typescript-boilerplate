@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 import PrismCodes, { PARALLAX_CODE } from './components/PrismCodes';
 
@@ -13,7 +13,7 @@ export class ParallaxPage extends React.Component {
 
   public render() {
     return (
-      <NamespacesConsumer ns='parallaxPage'>
+      <Translation ns='parallaxPage'>
         {(t) => (
           <div>
             <div className='white'>
@@ -43,7 +43,7 @@ export class ParallaxPage extends React.Component {
             </div>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

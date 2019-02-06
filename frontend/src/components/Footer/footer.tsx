@@ -1,10 +1,10 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 export class Footer extends React.Component {
   public render() {
     return (
-      <NamespacesConsumer ns='common'>
+      <Translation ns='common'>
         {(t) => (
           <footer className='page-footer'>
             <div className='container'>
@@ -32,7 +32,7 @@ export class Footer extends React.Component {
             </div>
           </footer>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

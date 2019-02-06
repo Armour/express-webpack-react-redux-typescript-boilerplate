@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 const styles = require('./notFoundPage.scss');
 
@@ -28,14 +28,14 @@ export class NotFoundPage extends React.Component<{}, INotFoundPageState> {
 
   public render() {
     return (
-      <NamespacesConsumer ns='notFoundPage'>
+      <Translation ns='notFoundPage'>
         {(t) => (
           <div>
             <h1 className='page-title'>{t('title')}</h1>
             <img className={styles['not-found-img']} src={require('./assets/images/' + notFoundImageList[this.state.imageId])} alt='not-found-img' height='550px' width='750px' />
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

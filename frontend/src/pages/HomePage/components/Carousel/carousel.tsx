@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 import { CAROUSEL_AUTOPLAY_INTERVAL, TOAST_DISPLAY_DURATION, TOOLTIP_DELAY_TIME } from './constants/carousel';
 
@@ -55,7 +55,7 @@ export class Carousel extends React.Component {
 
   public render() {
     return (
-      <NamespacesConsumer ns='homePage'>
+      <Translation ns='homePage'>
         {(t) => (
           this.initTooltip(t('carousel.tooltipText')),
           <div className='carousel carousel-slider center z-depth-3' data-indicators='true'>
@@ -82,7 +82,7 @@ export class Carousel extends React.Component {
             </a>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }

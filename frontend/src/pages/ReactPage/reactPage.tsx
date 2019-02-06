@@ -1,5 +1,5 @@
 import React from 'react';
-import { NamespacesConsumer } from 'react-i18next';
+import { Translation } from 'react-i18next';
 
 import FetchNote from './components/FetchNote';
 import TodoLayout from './components/TodoLayout';
@@ -7,7 +7,7 @@ import TodoLayout from './components/TodoLayout';
 export class ReactPage extends React.Component {
   public render() {
     return (
-      <NamespacesConsumer ns='reactPage'>
+      <Translation ns='reactPage'>
         {(t) => (
           <div>
             <div className='react-container'>
@@ -17,7 +17,7 @@ export class ReactPage extends React.Component {
             </div>
           </div>
         )}
-      </NamespacesConsumer>
+      </Translation>
     );
   }
 }
