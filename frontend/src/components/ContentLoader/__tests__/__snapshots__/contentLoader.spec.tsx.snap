@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BodyContentLoader should renders correctly 1`] = `
+<div
+  className="bodyContentLoader"
+>
+  <ContentLoader
+    height={200}
+    primaryColor="#f3f3f3"
+    secondaryColor="#d7d6d8"
+    speed={1}
+    width={400}
+  >
+    <rect
+      height="15.1"
+      rx="4"
+      ry="4"
+      width="76.63"
+      x="160.5"
+      y="11"
+    />
+    <rect
+      height="151.36"
+      rx="1"
+      ry="1"
+      width="275.4"
+      x="60.5"
+      y="35.05"
+    />
+  </ContentLoader>
+</div>
+`;
+
+exports[`FooterContentLoader should renders correctly 1`] = `
+<ContentLoader
+  height={400}
+  primaryColor="#f3f3f3"
+  secondaryColor="#d7d6d8"
+  speed={1}
+  width={2500}
+>
+  <rect
+    height="400"
+    width="2500"
+    x="0"
+    y="0"
+  />
+</ContentLoader>
+`;
+
+exports[`HeaderContentLoader should renders correctly 1`] = `
+<ContentLoader
+  height={95}
+  primaryColor="#f3f3f3"
+  secondaryColor="#d7d6d8"
+  speed={1}
+  width={2500}
+>
+  <rect
+    height="95"
+    width="2500"
+    x="0"
+    y="0"
+  />
+</ContentLoader>
+`;

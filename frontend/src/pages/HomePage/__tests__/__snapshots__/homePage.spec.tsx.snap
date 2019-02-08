@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage should renders correctly 1`] = `
-<div>
+Array [
   <div
     className="home-page-block"
   >
@@ -15,31 +15,31 @@ exports[`HomePage should renders correctly 1`] = `
     >
       <Carousel />
     </div>
-  </div>
+  </div>,
   <Pushpin
     color="blue"
     depth="lighten-1"
-  />
+  />,
   <Pushpin
     color="green"
     depth="lighten-1"
-  />
+  />,
   <Pushpin
     color="orange"
     depth="lighten-1"
-  />
+  />,
   <Pushpin
     color="red"
     depth="lighten-1"
-  />
+  />,
   <Pushpin
     color="purple"
     depth="lighten-1"
-  />
+  />,
   <Pushpin
     color="cyan"
     depth="lighten-1"
-  />
-  <TranslationButton />
-</div>
+  />,
+  <TranslationButton />,
+]
 `;

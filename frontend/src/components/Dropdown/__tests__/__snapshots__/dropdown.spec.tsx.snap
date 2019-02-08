@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Dropdown should renders correctly 1`] = `
-<div>
+Array [
   <ul
     className="dropdown-content"
     id="id"
@@ -14,7 +14,7 @@ exports[`Dropdown should renders correctly 1`] = `
         dropdown.dropdown
       </a>
     </li>
-  </ul>
-  ,
-</div>
+  </ul>,
+  ",",
+]
 `;

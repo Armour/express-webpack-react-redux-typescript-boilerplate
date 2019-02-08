@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ParallaxPage should renders correctly 1`] = `
-<div>
+Array [
   <div
     className="white"
   >
@@ -10,7 +10,7 @@ exports[`ParallaxPage should renders correctly 1`] = `
     >
       title
     </h1>
-  </div>
+  </div>,
   <div
     className="parallax-container"
   >
@@ -27,7 +27,7 @@ exports[`ParallaxPage should renders correctly 1`] = `
         }
       />
     </div>
-  </div>
+  </div>,
   <div
     className="section white"
   >
@@ -57,7 +57,7 @@ exports[`ParallaxPage should renders correctly 1`] = `
         language="language-tsx"
       />
     </div>
-  </div>
+  </div>,
   <div
     className="parallax-container"
   >
@@ -74,6 +74,6 @@ exports[`ParallaxPage should renders correctly 1`] = `
         }
       />
     </div>
-  </div>
-</div>
+  </div>,
+]
 `;

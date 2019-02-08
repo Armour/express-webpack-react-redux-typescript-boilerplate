@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`NotFoundPage should renders correctly 1`] = `
-<div>
+Array [
   <h1
     className="page-title"
   >
     title
-  </h1>
+  </h1>,
   <img
     alt="not-found-img"
     className="not-found-img"
@@ -17,6 +17,6 @@ exports[`NotFoundPage should renders correctly 1`] = `
       }
     }
     width="750px"
-  />
-</div>
+  />,
+]
 `;

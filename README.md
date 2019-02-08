@@ -39,7 +39,6 @@
 * [x] [react-redux 6](https://github.com/reactjs/react-redux) - the official react bindings for [redux 4](https://github.com/reactjs/redux) (a predictable state container for js apps)
 * [x] [react-saga](https://github.com/redux-saga/redux-saga/) - make redux asynchronous flows easy to read, write and test, the replacement for [redux-thunk](https://github.com/reduxjs/redux-thunk)
 * [x] [connected-react-router 6](https://github.com/supasate/connected-react-router) - a redux binding for react-router 4, the replacement for [react-router-redux v5](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
-* [x] [react-loadable](https://github.com/jamiebuilds/react-loadable) - better user experience for dynamic loading components
 * [x] [react-i18next](https://github.com/i18next/react-i18next) - internationalization for react done right
 * [x] [immutable.js](https://github.com/facebook/immutable-js/) - persistent Immutable data structures for react redux state management
 * [x] [editorconfig](http://editorconfig.org/) - maintain consistent coding styles between different editors and IDEs

@@ -1,66 +1,56 @@
-import React from 'react';
-import Loadable from 'react-loadable';
+import React, { Fragment, lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router';
 
 import 'materialize-css';
 import 'sass/global';
 
+import { BodyContentLoader, FooterContentLoader, HeaderContentLoader } from 'components/ContentLoader';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
-import HomePageLoader from 'pages/HomePage/components/ContentLoader';
-import NotFoundPageLoader from 'pages/NotFoundPage/components/ContentLoader';
-import ParallaxPageLoader from 'pages/ParallaxPage/components/ContentLoader';
-import ReactPageLoader from 'pages/ReactPage/components/ContentLoader';
 
-const HomePage = Loadable({
-  loader: () => import(
-    /*
-      webpackChunkName: "home-page",
-      webpackPreload: true
-    */
-    './pages/HomePage'),
-  loading: HomePageLoader,
-});
+const HomePage = lazy(() => import(
+  /*
+    webpackChunkName: "home-page",
+    webpackPreload: true
+  */
+  'pages/HomePage'));
 
-const NotFoundPage = Loadable({
-  loader: () => import(
-    /*
-      webpackChunkName: "not-found-page",
-      webpackPrefetch: true
-    */
-    './pages/NotFoundPage'),
-  loading: NotFoundPageLoader,
-});
+const NotFoundPage = lazy(() => import(
+  /*
+    webpackChunkName: "not-found-page",
+    webpackPrefetch: true
+  */
+ 'pages/NotFoundPage'));
 
-const ParallaxPage = Loadable({
-  loader: () => import(
-    /*
-      webpackChunkName: "parallax-page",
-      webpackPrefetch: true
-    */
-    './pages/ParallaxPage'),
-  loading: ParallaxPageLoader,
-});
+const ParallaxPage = lazy(() => import(
+  /*
+    webpackChunkName: "parallax-page",
+    webpackPrefetch: true
+  */
+  'pages/ParallaxPage'));
 
-const ReactPage = Loadable({
-  loader: () => import(
-    /*
-      webpackChunkName: "react-page",
-      webpackPrefetch: true
-    */
-    './pages/ReactPage'),
-  loading: ReactPageLoader,
-});
+const ReactPage = lazy(() => import(
+  /*
+    webpackChunkName: "react-page",
+    webpackPrefetch: true
+  */
+  'pages/ReactPage'));
 
 export default (
-  <div>
-    <Header />
-    <Switch>
-      <Route exact path='/' component={HomePage} />
-      <Route path='/react' component={ReactPage} />
-      <Route path='/parallax' component={ParallaxPage} />
-      <Route component={NotFoundPage} />
-    </Switch>
-    <Footer />
-  </div>
+  <Fragment>
+    <Suspense fallback={<HeaderContentLoader />}>
+      <Header />
+    </Suspense>
+    <Suspense fallback={<BodyContentLoader />}>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/react' component={ReactPage} />
+        <Route path='/parallax' component={ParallaxPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
+    </Suspense>
+    <Suspense fallback={<FooterContentLoader />}>
+      <Footer />
+    </Suspense>
+  </Fragment>
 );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Translation } from 'react-i18next';
 
 import Carousel from './components/Carousel';
@@ -29,7 +29,7 @@ export class HomePage extends React.Component {
     return (
       <Translation ns='homePage'>
         {(t) => (
-          <div>
+          <Fragment>
             <div className={styles['home-page-block']}>
               <h1 className='page-title'>{t('title')}</h1>
               <div className='container'>
@@ -43,7 +43,7 @@ export class HomePage extends React.Component {
             <Pushpin color='purple' depth='lighten-1' />
             <Pushpin color='cyan' depth='lighten-1' />
             <TranslationButton />
-          </div>
+          </Fragment>
         )}
       </Translation>
     );

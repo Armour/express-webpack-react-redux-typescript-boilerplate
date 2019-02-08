@@ -11,7 +11,6 @@ const reactVendors = [
   'react-hot-loader',
   'react-i18next',
   'redux-immutable',
-  'react-loadable',
   'react-router-dom',
   'react-redux',
   'redux',

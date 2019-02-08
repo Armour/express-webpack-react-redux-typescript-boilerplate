@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Translation } from 'react-i18next';
 
 import PrismCodes, { PARALLAX_CODE } from './components/PrismCodes';
@@ -15,7 +15,7 @@ export class ParallaxPage extends React.Component {
     return (
       <Translation ns='parallaxPage'>
         {(t) => (
-          <div>
+          <Fragment>
             <div className='white'>
               <h1 className='page-title'>{t('title')}</h1>
             </div>
@@ -41,7 +41,7 @@ export class ParallaxPage extends React.Component {
                 <img className='parallax-img' src={require('./assets/images/parallax2.jpg')} alt='parallax-img' />
               </div>
             </div>
-          </div>
+          </Fragment>
         )}
       </Translation>
     );
