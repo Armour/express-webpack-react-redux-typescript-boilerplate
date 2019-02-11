@@ -781,13 +781,13 @@
     lodash.pick "4.4.0"
     meow "^5.0.0"
 
-"@commitlint/cli@^7.5.0":
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.5.0.tgz#6967633e45239daa09f1ff080cbd66e6e9ac11bc"
-  integrity sha512-ts5b7eCF5B2qhUtgXuFFVkhlgnkSqKVyrq9Eu197bCyT1KyxCmAGTVCvPznaK8VhG3ts7rTt7byE+lyDXpuvSg==
+"@commitlint/cli@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.5.1.tgz#370e465df67325c964c6255f865e914b47405ede"
+  integrity sha512-5LTc56dbuK+B83JPriUraORD/opZTqmJg43A0AgZLw01ougEvaE/bGqCEmMcEFapNohHPbdFLbuSRdXlUMWFMQ==
   dependencies:
     "@commitlint/format" "^7.5.0"
-    "@commitlint/lint" "^7.5.0"
+    "@commitlint/lint" "^7.5.1"
     "@commitlint/load" "^7.5.0"
     "@commitlint/read" "^7.5.0"
     babel-polyfill "6.26.0"
@@ -827,12 +827,30 @@
   dependencies:
     semver "5.6.0"
 
-"@commitlint/lint@^7.0.0", "@commitlint/lint@^7.5.0":
+"@commitlint/is-ignored@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/is-ignored/-/is-ignored-7.5.1.tgz#c4f7ffc1c8b4cf9dc3204d22ef8e78ff82536d67"
+  integrity sha512-8JZCgy6bWSnjOT5cTTiyEAGp+Y4+5CUknhVbyiPxTRbjy6yF0aMKs1gMTfHrNHTKsasgmkCyPQd4C2eOPceuKA==
+  dependencies:
+    semver "5.6.0"
+
+"@commitlint/lint@^7.0.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-7.5.0.tgz#6f8560b491e10ec2a5a894d5d701cd6444547072"
   integrity sha512-sRd6V/SoJuF6Qwwd9cjz8pLd8lCh1jisnyRlubkq0spgZFR9IXE3Qj1hK29q4EPVvXHwli/z3fBZx2hrrZqqsQ==
   dependencies:
     "@commitlint/is-ignored" "^7.5.0"
+    "@commitlint/parse" "^7.5.0"
+    "@commitlint/rules" "^7.5.0"
+    babel-runtime "^6.23.0"
+    lodash "4.17.11"
+
+"@commitlint/lint@^7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/lint/-/lint-7.5.1.tgz#e0ff67c759a5633609a3f50318a382005be22fff"
+  integrity sha512-y0clwEl+l1EcuFA1ckV0HnHJpH3VOBAmXGVBQicglvWGG1sXBl1iJUqBEzi2xExq36EINKsXLjs45272H9I1dQ==
+  dependencies:
+    "@commitlint/is-ignored" "^7.5.1"
     "@commitlint/parse" "^7.5.0"
     "@commitlint/rules" "^7.5.0"
     babel-runtime "^6.23.0"
@@ -2757,12 +2775,12 @@ commitlint-config-armour@^1.2.1:
   dependencies:
     "@commitlint/cli" "7.0.0"
 
-commitlint@^7.5.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-7.5.0.tgz#1033203e20fd00c6176055da5e0e194066536472"
-  integrity sha512-ya3RpBPBG0KZD+6CwYLNYSAUpedDjpEfH3R4ID6EnAGPdUaztScT9rr6Qf/pTtIHy+pWKKe4Ye250ml8K3iOew==
+commitlint@^7.5.1:
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/commitlint/-/commitlint-7.5.1.tgz#e6af5518f459f2aff1e06eda3d745854c1576415"
+  integrity sha512-j0iWE9bKlCpM1F9m5FC9wwKwI6++wamWR8XWxDPUflT0d/8cGBf12olHN6wfD/5I0Di2ebiIpPGp2drKzgGcIA==
   dependencies:
-    "@commitlint/cli" "^7.5.0"
+    "@commitlint/cli" "^7.5.1"
     read-pkg "3.0.0"
     resolve-pkg "1.0.0"
 
