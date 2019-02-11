@@ -65,7 +65,7 @@
     "compression": "^1.7.3",
     "concurrently": "^4.1.0",
     "connect-redis": "^3.4.0",
-    "connected-react-router": "^6.2.2",
+    "connected-react-router": "^6.3.0",
     "cookie-parser": "^1.4.3",
     "copy-webpack-plugin": "^4.6.0",
     "cross-env": "^5.2.0",
