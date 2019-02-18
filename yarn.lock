@@ -2887,10 +2887,10 @@ connect-redis@^3.4.0:
     debug "^4.0.1"
     redis "^2.8.0"
 
-connected-react-router@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.2.2.tgz#10ed0942ee2032de7cb0fd8479bde526853906ed"
-  integrity sha512-tPI3s7yYtnTt/XLoQFsQqIEQxdQCrsZltEdozjG7LPkOTNglJJ7WqUqnlnh9thC6ebavfaJoTtPa9G2EibuJbg==
+connected-react-router@^6.3.1:
+  version "6.3.1"
+  resolved "https://registry.yarnpkg.com/connected-react-router/-/connected-react-router-6.3.1.tgz#b68e505cca553ce9b6a179d4166cf43b948c85bf"
+  integrity sha512-nhuQiLOAQlCgkCypGSUhycgaqqTh2IUwVFvzw2y13v8JqB92yTk3yeAKG6X1b0IcD7S4gQizYbjgejf7DJjbyw==
   dependencies:
     immutable "^3.8.1"
     seamless-immutable "^7.1.3"
