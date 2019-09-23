@@ -130,7 +130,7 @@
     "@types/react-test-renderer": "^16.8.0",
     "babel-core": "7.0.0-bridge.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
-    "commitlint": "^7.5.0",
+    "commitlint": "^8.2.0",
     "commitlint-config-armour": "^1.2.1",
     "coveralls": "^3.0.2",
     "dotenv": "^6.2.0",
