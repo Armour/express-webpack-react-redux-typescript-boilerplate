@@ -54,7 +54,7 @@
 * [x] [docker](https://github.com/docker/docker) - the open-source application container engine
 * [x] [RESTful API design](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design) - follow RESTful api design best practice
 
-## How to run the example code
+## How to run the sample code
 
 ### Prerequisite
 
@@ -113,7 +113,7 @@ yarn prod
 
 ## Profile assets bundle
 
-Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), we can analyze and then optimize our assets bundle through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
+Thanks to [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer), assets bundle can be analyzed and optimized through [DLL Plugin](https://webpack.js.org/plugins/dll-plugin/).
 
 ```bash
 yarn profile
