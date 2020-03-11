@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "trash frontend/dist coverage",
     "dll": "cross-env NODE_ENV=production webpack --config webpack.config.dll.babel.js",
-    "dev": "yarn clean && yarn dll && concurrently 'yarn dev-server' 'yarn dev-client'",
+    "dev": "yarn clean && yarn dll && concurrently \"yarn dev-server\" \"yarn dev-client\"",
     "dev-server": "cross-env NODE_ENV=development nodemon --exec babel-node backend/server.js",
     "dev-client": "cross-env NODE_ENV=development webpack-dev-server --hot --config webpack.config.dev.babel.js",
     "prod": "yarn build && yarn serve",
