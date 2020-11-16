@@ -1045,10 +1045,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.22.tgz#eb2a8a1c24ee4a59cf87549cc67d60976ebaebd2"
   integrity sha512-sozsyYqmHUD1OKzMb61UH4Es1oMLLA4g4eX6Zu1i8ZpG1sTlmZClL9ZU9GuNQQ2fHDKmaRUWlDSvzQ/aIDaIiQ==
 
-"@types/prismjs@^1.9.0":
-  version "1.9.0"
-  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.9.0.tgz#38af9491e2f105079a443703ee675fb27371ec94"
-  integrity sha512-zeh+xd2pcCvWm1XtWLR4v5pzZMybKeq6X8Q4cIZMMx8GmyKDUfJaOtw+JaONHUQt5ncKFXezl8QGIDQsSF5YfA==
+"@types/prismjs@^1.16.2":
+  version "1.16.2"
+  resolved "https://registry.yarnpkg.com/@types/prismjs/-/prismjs-1.16.2.tgz#c130c977191c988cb35e97585da5d580948cc2d2"
+  integrity sha512-1M/j21xgTde7RPtpJVQebW5rzrquj7S+wnqt4x9uWrIPpr0Ya/uXypcqC2aUQL5gtLXFCKSH7GnjfAijMdfbuA==
 
 "@types/prop-types@*":
   version "15.5.8"
