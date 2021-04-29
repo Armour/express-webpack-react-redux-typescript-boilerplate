@@ -1,0 +1,48 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "09:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@types/prismjs"
+    versions:
+    - 1.16.2
+    - 1.16.3
+    - 1.16.4
+  - dependency-name: commitlint
+    versions:
+    - 11.0.0
+    - 12.0.1
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.0
+    - 17.0.1
+    - 17.0.2
+  - dependency-name: i18next
+    versions:
+    - 19.8.4
+    - 19.8.5
+    - 19.8.7
+    - 19.8.9
+    - 19.9.1
+  - dependency-name: lodash-es
+    versions:
+    - 4.17.20
+  - dependency-name: i18next-browser-languagedetector
+    versions:
+    - 6.0.1
+  - dependency-name: prismjs
+    versions:
+    - 1.21.0
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: connected-react-router
+    versions:
+    - 6.6.1
